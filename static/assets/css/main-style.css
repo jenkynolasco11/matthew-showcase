@@ -9925,20 +9925,6 @@ body.color-turquoise #road {
           user-select: none;
 }
 
-header.header.active-scroll {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 20;
-  background-color: black !important;
-}
-
-@media screen and (max-width: 1000px) {
-  header.header .navbar-brand {
-    margin-top: 20px !important;
-  }
-}
-
 #page-content {
   z-index: 2;
 }
@@ -10217,6 +10203,15 @@ header.header.active-scroll {
   margin-bottom: 40px;
 }
 
+.services-page .service-text {
+  font-size: .8rem;
+}
+
+.services-page .service-text ~ input {
+  margin-top: 30px;
+  font-size: 10px;
+}
+
 /***************/
 .wheel-contact-logo {
   font-size: 1.8em;
@@ -10251,10 +10246,10 @@ header.header.active-scroll {
   width: 100%;
   top: 40px;
   height: 100px;
-  -webkit-transition: height .1s linear, width .1s linear;
-     -moz-transition: height .1s linear, width .1s linear;
-       -o-transition: height .1s linear, width .1s linear;
-          transition: height .1s linear, width .1s linear;
+  -webkit-transition: height .1s linear, width .1s linear, background .1s linear;
+     -moz-transition: height .1s linear, width .1s linear, background .1s linear;
+       -o-transition: height .1s linear, width .1s linear, background .1s linear;
+          transition: height .1s linear, width .1s linear, background .1s linear;
 }
 
 .custom-header-menu .row {
@@ -10315,6 +10310,10 @@ header.header.active-scroll {
   height: 50%;
 }
 
+.custom-header-menu .row .half i {
+  margin-right: 6px;
+}
+
 .custom-header-menu .row .half:first-child {
   -webkit-transition: height .1s linear, opacity .1s linear;
      -moz-transition: height .1s linear, opacity .1s linear;
@@ -10349,6 +10348,7 @@ header.header.active-scroll {
 }
 
 .custom-header-menu .row .logo img {
+  min-width: 100px;
   -webkit-transition: all .1s linear;
      -moz-transition: all .1s linear;
        -o-transition: all .1s linear;
@@ -10405,6 +10405,7 @@ header.header.active-scroll {
 }
 
 .custom-header-menu.special {
+  background-color: #353535;
   position: relative;
   width: 100%;
   top: 0;
@@ -10415,19 +10416,42 @@ header.header.active-scroll {
   background-color: red;
 }
 
+.custom-header-menu.special .half .menu-items ul li a {
+  color: white !important;
+  font-size: .9rem;
+}
+
+.custom-header-menu.special .half:last-child {
+  margin-top: 28px;
+}
+
 .custom-header-menu.active-scroll {
+  background-color: #1f1f1f;
   z-index: 20;
   position: fixed;
   top: 0;
   width: 100%;
   height: 50px;
   max-width: none;
-  border-bottom: 1px solid #5c5c5c;
 }
 
 .custom-header-menu.active-scroll .menu-mobile-button {
   height: 40px !important;
   margin-top: 5px !important;
+}
+
+.custom-header-menu.active-scroll .menu-items ul li a {
+  color: white !important;
+  font-size: .9rem;
+}
+
+.custom-header-menu.active-scroll.special .half:last-child {
+  color: red;
+  margin-top: 0px;
+}
+
+.custom-header-menu.active-scroll.special button {
+  margin-top: -14px !important;
 }
 
 .custom-header-menu.active-scroll .half:first-child {
@@ -10518,7 +10542,7 @@ header.header.active-scroll {
   padding-bottom: 60px;
   overflow: hidden;
   margin-bottom: 40px;
-  min-height: 100vh;
+  min-height: 60vh;
 }
 
 .landing-top .bg-overlay {
@@ -10554,7 +10578,8 @@ header.header.active-scroll {
 
 .landing-top .bg-overlay img {
   max-width: 1920px;
-  width: auto;
+  width: 1600px;
+  margin-top: -150px;
   height: auto;
 }
 
@@ -10564,7 +10589,7 @@ header.header.active-scroll {
   position: absolute;
   color: white;
   font-size: 2em;
-  bottom: 360px;
+  bottom: 300px;
 }
 
 .landing-top .bg-overlay .text-top-img p {
@@ -10572,11 +10597,11 @@ header.header.active-scroll {
 }
 
 .landing-top .bg-overlay .text-top-img p:first-child {
-  margin-left: -300px;
+  margin-left: -330px;
 }
 
 .landing-top .bg-overlay .text-top-img p:last-child {
-  margin-right: -500px;
+  margin-right: -600px;
 }
 
 .landing-top .dealer-logo {
@@ -10922,7 +10947,7 @@ header.header.active-scroll {
 }
 
 .interested-button_looking .cstm-button {
-  background-color: #ff8629;
+  background-color: red;
   float: right;
   -webkit-transition: background-color .2s linear;
      -moz-transition: background-color .2s linear;
@@ -10931,11 +10956,11 @@ header.header.active-scroll {
 }
 
 .interested-button_looking .cstm-button:hover {
-  background-color: #ffa967;
+  background-color: #ff6767;
 }
 
 .interested-button_looking .cstm-button .after {
-  background-color: #ffa662;
+  background-color: #ff6262;
 }
 
 .interested-button_selling .cstm-button {

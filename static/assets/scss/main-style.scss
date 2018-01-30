@@ -107,20 +107,20 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	user-select: none;
 }
 
-header.header {
-	&.active-scroll {
-		position: fixed;
-		width: 100%;
-		top: 0;
-		z-index: 20;
-		background-color: black !important;
-	}
-	.navbar-brand {
-		@media screen and (max-width: 1000px) {
-			margin-top: 20px !important;
-		}
-	}
-}
+// header.header {
+// 	&.active-scroll {
+// 		position: fixed;
+// 		width: 100%;
+// 		top: 0;
+// 		z-index: 20;
+// 		background-color: black !important;
+// 	}
+// 	.navbar-brand {
+// 		@media screen and (max-width: 1000px) {
+// 			margin-top: 20px !important;
+// 		}
+// 	}
+// }
 
 ///////////////////////
 #page-content {
@@ -338,6 +338,15 @@ header.header {
 	.img-services {
 		margin-bottom: 40px;
 	}
+
+	.service-text {
+		font-size : .8rem;
+	}
+
+	.service-text ~ input {
+		margin-top : 30px;
+		font-size : 10px;
+	}
 }
 
 /***************/
@@ -384,7 +393,7 @@ header.header {
 	width: 100%;
 	top: 40px;
 	height: 100px;
-	transition: height .1s linear, width .1s linear;
+	transition: height .1s linear, width .1s linear, background .1s linear;
 	.row {
 		height: 100%;
 		.right {
@@ -434,6 +443,10 @@ header.header {
 			
 		}
 		.half {
+			i {
+				margin-right : 6px;
+			}
+
 			height: 50%;
 			&:first-child {
 				transition: height .1s linear, opacity .1s linear;
@@ -452,6 +465,7 @@ header.header {
 			align-items: center;
 			justify-content: center;
 			img {
+				min-width : 100px;
 				transition: all .1s linear;
 				margin: auto 0;
 				max-width: 50%;
@@ -490,7 +504,13 @@ header.header {
 		}
 	}
 
+	// .left,
+	// .right {
+
+	// }
+
 	&.special {
+		background-color : rgb(53, 53, 53);
 		position : relative;
 		width :100%;
 		top : 0;
@@ -499,26 +519,61 @@ header.header {
 		button {
 			background-color  :red;
 		}
+
+		.half {
+			.menu-items {
+				ul li a {
+					color : white !important;
+					font-size : .9rem;
+				}
+			}
+			&:last-child {
+				margin-top : 28px;
+			}
+		}
 	}
 
 	&.active-scroll {
+		background-color : rgb(31, 31, 31);
 		z-index: 20;
 		position: fixed;
 		top: 0;
 		width: 100%;
 		height: 50px;
 		max-width: none;
-		border-bottom : 1px solid rgb(92, 92, 92);
+		
 		.menu-mobile-button {
 			height: 40px !important;
 			margin-top: 5px !important;
 		}
-		.half:first-child {
-			height: 0;
-			opacity: 0;
+
+		.menu-items {
+			ul li a {
+				color : white !important;
+				font-size : .9rem;
+			}
 		}
+
+		&.special {
+
+			.half:last-child {
+				color : red;
+				margin-top : 0px;
+			}
+			button {
+
+				margin-top : -14px !important;
+			}
+		}
+
+		.half {
+			&:first-child {
+				height: 0;
+				opacity: 0;
+			}
+		}
+
 		.logo {
-			// height : 50%;
 			img {
 				width: 100px;
 			}
@@ -585,7 +640,7 @@ header.header {
 	padding-bottom: 60px;
 	overflow: hidden;
 	margin-bottom: 40px;
-	min-height: 100vh;
+	min-height: 60vh;
 	.bg-overlay {
 		z-index: -1;
 		display: flex;
@@ -605,7 +660,8 @@ header.header {
 		img {
 			// margin-top : 200px;
 			max-width: 1920px;
-			width: auto;
+			width: 1600px;
+			margin-top : -150px;
 			height: auto;
 		}
 		.text-top-img {
@@ -614,14 +670,14 @@ header.header {
 			position: absolute;
 			color: white;
 			font-size: 2em;
-			bottom: 360px;
+			bottom: 300px;
 			p {
 				margin-bottom: 16px;
 				&:first-child {
-					margin-left: -300px;
+					margin-left: -330px;
 				}
 				&:last-child {
-					margin-right: -500px;
+					margin-right: -600px;
 				}
 			}
 		}
@@ -734,34 +790,8 @@ header.header {
 	.container-fluid {
 		margin-top: -30px;
 		max-width: 800px;
-	} // & > :first-child {
-	// 	text-align : center;
-	// }
-	// .row {
-	// 	max-width : 800px;
-	// }
-	// display : flex;
-	// justify-content : center;
-	// .approved-sign {
-	// 	margin-top : -80px;
-	// 	// flex : 1;
-	// 	height : 280px;
-	// 	width : 280px;
-	// 	background : red;
-	// 	border : 1px solid black;
-	// 	// width : 300px;
-	// 	// max-width : 300px;
-	// }
-	// @media screen and (max-width : 680px) {
-	// 	align-items : center;
-	// 	flex-flow : column nowrap;
-	// 	.approved-sign {
-	// 		margin-top : 30px;
-	// 		&:last-child {
-	// 			margin-bottom : 40px;
-	// 		}
-	// 	}
-	// }
+	} 
+	
 	.section-advantages {
 		margin-top: -20px;
 		background-color: #f4f4f4;
@@ -922,14 +952,14 @@ header.header {
 	margin-bottom: 20px;
 	&_looking {
 		.cstm-button {
-			background-color: rgb(255, 134, 41);
+			background-color: red;
 			float: right;
 			transition: background-color .2s linear;
 			&:hover {
-				background-color: rgb(255, 169, 103);
+				background-color: rgb(255, 103, 103);
 			}
 			.after {
-				background-color: rgb(255, 166, 98);
+				background-color: rgb(255, 98, 98);
 			}
 		}
 	}
