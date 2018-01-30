@@ -2709,7 +2709,16 @@ blockquote cite {
 }
 
 .b-filter-2__group {
+  text-align : center;
   padding-bottom: 42px;
+}
+
+.b-filter-2__group [type=submit] {
+  text-align : center;
+  /* width : 60%; */
+  font-size : 0.8rem !important;
+  padding : 10px 26px !important;
+
 }
 
 .b-filter-2__group-title {
