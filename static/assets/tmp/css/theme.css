@@ -115,6 +115,10 @@ body {
   padding-top: 40px !important;
 }
 
+.contact-form .b-filter-2__group {
+  padding-bottom : 10px;
+}
+
 .l-sidebar textarea,
 .l-sidebar-2 textarea {
   min-height : 150px;

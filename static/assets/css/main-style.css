@@ -10142,14 +10142,16 @@ body.color-turquoise #road {
   text-align: center;
 }
 
-.services-page .dealer-picture img {
-  margin: 0 auto 40px;
-}
-
 .services-page .img-get-approved,
 .services-page .img-testimonials,
 .services-page .img-contact-us {
   position: relative;
+}
+
+.services-page .img-get-approved img,
+.services-page .img-testimonials img,
+.services-page .img-contact-us img {
+  width: 100%;
 }
 
 .services-page .img-get-approved a,

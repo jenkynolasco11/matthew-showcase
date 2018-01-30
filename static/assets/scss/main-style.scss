@@ -299,12 +299,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*****************/
 
 .services-page {
+	// background-color : red;
 	margin-top: 40px;
 	margin-bottom: 80px;
+
 	.dealer-picture {
 		text-align: center;
 		img {
-			margin: 0 auto 40px; // width: 80%;
+			// margin: 0 !important;// auto 40px; // width: 80%;
 			// margin-bottom: 40px; // height : auto;
 		}
 	}
@@ -312,6 +314,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	.img-testimonials,
 	.img-contact-us {
 		position: relative;
+
+		img {
+			width : 100%;
+		}
+		
 		a {
 			top: 0;
 			left: 0;
@@ -329,6 +336,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				height: 100%;
 				width: 100%;
 			}
+
 		}
 		&:hover a .overlay-hidden {
 			opacity: 1;
