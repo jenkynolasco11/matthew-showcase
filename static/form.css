@@ -1,0 +1,301 @@
+.modern-input,
+input[type=text],
+textarea,
+select {
+  border: 1px solid #b1b5bb;
+  background: #fff;
+  color: #222;
+  padding: 0 8px;
+  font-size: 15px;
+  float: left
+}
+
+select,
+input[type=text],
+.modern-input {
+  height: 33px
+}
+
+.modern-input,
+input[type=text] {
+  line-height: 16px
+}
+
+.ie8 .modern-input,
+.ie8 input[type=text] {
+  line-height: 31px
+}
+
+input[type=file] {
+  font-size: 12px
+}
+
+textarea {
+  padding: 8px
+}
+
+input {
+  float: left
+}
+
+select {
+  padding: 6px 5px 4px 8px
+}
+
+.formBlock {
+  margin-bottom: 40px
+}
+
+.formBlock h2 {
+  font-size: 18px;
+  color: #222;
+  font-weight: bold
+}
+
+.formContent {
+  background-color: #f7f7f7;
+  border: 1px solid #d3d3d3;
+  padding: 35px 0;
+  overflow: auto
+}
+
+fieldset {
+  padding-right: 15px;
+  padding-left: 15px
+}
+
+.field {
+  margin-bottom: 5px;
+  *overflow: auto
+}
+
+.field:before,
+.field:after {
+  display: table;
+  content: " "
+}
+
+.field:after {
+  clear: both
+}
+
+.label {
+  font-size: 13px;
+  text-align: left;
+  font-weight: bold;
+  color: #222;
+  float: left;
+  padding: 10px 0;
+  margin: 0 15px 0 22px;
+  width: 110px;
+  line-height: normal;
+  white-space: normal
+}
+
+::-webkit-input-placeholder {
+  opacity: 1;
+  color: #fff;
+  font-weight: normal;
+  font-style: italic
+}
+
+:-moz-placeholder {
+  opacity: 1;
+  color: #fff;
+  font-weight: normal;
+  font-style: italic
+}
+
+::-moz-placeholder {
+  opacity: 1;
+  color: #fff;
+  font-weight: normal;
+  font-style: italic
+}
+
+:-ms-input-placeholder {
+  opacity: 1;
+  color: #fff!important;
+  font-weight: normal;
+  font-style: italic
+}
+
+.custom-placeholder {
+  color: #fff!important;
+  font-style: italic
+}
+
+input.jsError,
+select.jsError,
+textarea.jsError {
+  background-color: #fff4f8;
+  border-color: #e60046
+}
+
+input.jsError:hover,
+select.jsError:hover,
+textarea.jsError:hover {
+  background-color: #fff4f8
+}
+
+.jsError::-webkit-input-placeholder {
+  color: #fff4f8
+}
+
+.jsError:-moz-placeholder {
+  color: #fff4f8
+}
+
+.jsError::-moz-placeholder {
+  color: #fff4f8
+}
+
+.jsError:-ms-input-placeholder {
+  color: #fff4f8!important
+}
+
+.jsError.custom-placeholder {
+  color: #fff4f8!important
+}
+
+.visible-placeholder::-webkit-input-placeholder {
+  color: #666!important
+}
+
+.visible-placeholder:-moz-placeholder {
+  color: #666!important
+}
+
+.visible-placeholder::-moz-placeholder {
+  color: #666!important
+}
+
+.visible-placeholder:-ms-input-placeholder {
+  color: #666!important
+}
+
+.visible-placeholder.custom-placeholder {
+  color: #666!important
+}
+
+input[type=number].digits::-webkit-outer-spin-button,
+input[type=number].digits::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0
+}
+
+input[type=number].digits {
+  -moz-appearance: textfield
+}
+
+.error-message {
+  float: left;
+  font-style: italic;
+  color: #e80042;
+  font-size: 14px;
+  background: url(/public/images/error.png) left center no-repeat;
+  padding: 5px 0 5px 30px;
+  margin-left: 10px
+}
+
+.error-icon {
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 18px;
+  background: url(/public/images/error.png) left center no-repeat;
+  margin-bottom: -3px
+}
+
+input+.error-icon,
+textarea+.error-icon,
+input+.tooltip+.error-icon,
+textarea+.tooltip+.error-icon {
+  margin-left: -27px;
+  margin-top: 7px
+}
+
+select+.error-icon,
+select+.tooltip+.error-icon {
+  margin-left: -50px;
+  margin-top: 7px
+}
+
+.modern-input.tooltip-error,
+input[type=text].tooltip-error,
+input[type=tel].tooltip-error,
+input[type=email].tooltip-error,
+textarea.tooltip-error {
+  padding-right: 33px
+}
+
+.check-errors-block {
+  text-align: center;
+  padding: 5px 0 0 0;
+  clear: both
+}
+
+.check-errors-message {
+  font-style: italic;
+  color: #e80042;
+  font-size: 14px;
+  background: url(/public/images/error.png) left center no-repeat;
+  padding: 5px 0 5px 30px;
+  margin-left: 10px
+}
+
+.required {
+  color: #bf0032
+}
+
+.submit-condition {
+  color: #666;
+  clear: both;
+  font-size: 12px;
+  font-style: italic;
+  margin: 2% auto 1% auto;
+  text-align: center;
+  max-width: 600px
+}
+
+@media (min-width:768px) {
+  input[type=file] {
+    font-size: inherit
+  }
+}
+
+@media (max-width:767px) {
+  ::-webkit-input-placeholder {
+    color: #666!important
+  }
+  :-moz-placeholder {
+    color: #666!important
+  }
+  ::-moz-placeholder {
+    color: #666!important
+  }
+  :-ms-input-placeholder {
+    color: #666!important
+  }
+  .custom-placeholder {
+    color: #666!important
+  }
+  .label {
+    display: none
+  }
+  .label.visible,
+  .label.visible-xs {
+    display: block!important;
+    float: none!important;
+    margin: 0;
+    width: auto
+  }
+  .modern-input,
+  input[type=text],
+  textarea,
+  select {
+    width: 99%!important;
+    max-width: none!important;
+    margin: 0
+  }
+}
