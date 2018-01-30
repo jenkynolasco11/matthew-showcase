@@ -121,7 +121,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 // 		}
 // 	}
 // }
-
 ///////////////////////
 #page-content {
 	// padding-bottom: 60px;
@@ -240,8 +239,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	.form-inputs {
 		margin-top: 40px;
 		.submit-button {
+			
 			margin-top: 30px;
 			margin-bottom: 50px;
+
+			input {
+				padding : 20px 24px;
+				font-size : 0.75em !important;
+			}
 		}
 	}
 }
@@ -338,14 +343,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	.img-services {
 		margin-bottom: 40px;
 	}
-
 	.service-text {
-		font-size : .8rem;
+		font-size: .8rem;
 	}
-
-	.service-text ~ input {
-		margin-top : 30px;
-		font-size : 10px;
+	.service-text~input {
+		margin-top: 30px;
+		font-size: 10px;
 	}
 }
 
@@ -386,8 +389,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /***************/
 
 .custom-header-menu {
-	position: absolute;
-	// background-color: rgb(31, 31, 31);
+	position: absolute; // background-color: rgb(31, 31, 31);
 	background-color: white;
 	max-width: 1170px;
 	width: 100%;
@@ -400,53 +402,44 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			// display : flex;
 			// justify-content : flex-end;
 			.menu-mobile-button {
+				margin-top : 25px;
 				height: 50px;
-				margin-top: 25px;
-				position : relative;
-				text-align : center;
-
-				& > div {
-					margin-top : -8px;
-					margin-left : -10px;
-					width : 100%;
-					height : 100%;
-
+				position: relative;
+				text-align: center;
+				&>div {
+					margin-top: -8px;
+					margin-left: -10px;
+					width: 100%;
+					height: 100%;
 					span {
 						transition: all .1s linear;
-						transform-origin : 0 50%;
-						display : block;
-						height : 3px;
-						width : 22px;
-						background-color : white;
-						margin-bottom : 4px;
+						transform-origin: 0 50%;
+						display: block;
+						height: 3px;
+						width: 22px;
+						background-color: white;
+						margin-bottom: 4px;
 					}
 				}
-
 				&.open {
 					span:first-child {
-						width : 20px;
-						transform : rotate(45deg);
+						width: 20px;
+						transform: rotate(45deg);
 					}
-
 					span:nth-child(2) {
-						opacity : 0;
+						opacity: 0;
 					}
-
 					span:last-child {
-						width : 20px;
-						transform : rotate(-45deg);
+						width: 20px;
+						transform: rotate(-45deg);
 					}
 				}
-				
 			}
-
-			
 		}
 		.half {
 			i {
-				margin-right : 6px;
+				margin-right: 6px;
 			}
-
 			height: 50%;
 			&:first-child {
 				transition: height .1s linear, opacity .1s linear;
@@ -464,11 +457,16 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			img {
-				min-width : 100px;
-				transition: all .1s linear;
-				margin: auto 0;
-				max-width: 50%;
+			a {
+				display : flex;
+				justify-content: center;
+				align-items : center;
+				img {
+					min-width: 100px;
+					transition: all .1s linear;
+					margin: 10px 0 auto;
+					max-width: 50%;
+				}
 			}
 		}
 		.details {
@@ -502,85 +500,70 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				}
 			}
 		}
-	}
-
-	// .left,
+	} // .left,
 	// .right {
-
 	// }
-
 	&.special {
-		background-color : rgb(53, 53, 53);
-		position : relative;
-		width :100%;
-		top : 0;
-		max-width : none;
-
+		background-color: rgb(53, 53, 53);
+		position: relative;
+		width: 100%;
+		top: 0;
+		max-width: none;
 		button {
-			background-color  :red;
+			margin-top: -20px !important;
+			background-color: red;
 		}
-
 		.half {
 			.menu-items {
 				ul li a {
-					color : white !important;
-					font-size : .9rem;
+					color: white !important;
+					font-size: .9rem;
 				}
 			}
 			&:last-child {
-				margin-top : 28px;
+				margin-top: 28px;
 			}
 		}
 	}
-
 	&.active-scroll {
-		background-color : rgb(31, 31, 31);
+		background-color: rgb(31, 31, 31);
 		z-index: 20;
 		position: fixed;
 		top: 0;
 		width: 100%;
 		height: 50px;
 		max-width: none;
-		
 		.menu-mobile-button {
 			height: 40px !important;
 			margin-top: 5px !important;
 		}
-
 		.menu-items {
 			ul li a {
-				color : white !important;
-				font-size : .9rem;
+				color: white !important;
+				font-size: .9rem;
 			}
 		}
-
 		&.special {
-
 			.half:last-child {
-				color : red;
-				margin-top : 0px;
+				color: red;
+				margin-top: 0px;
 			}
 			button {
-
-				margin-top : -14px !important;
+				margin-top: -14px !important;
 			}
 		}
-
 		.half {
 			&:first-child {
 				height: 0;
 				opacity: 0;
 			}
 		}
-
 		.logo {
 			img {
 				width: 100px;
 			}
 		}
 	}
-
-	
 }
 
 .mobile-menu-custom {
@@ -630,6 +613,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				width: 100%;
 			}
 		}
+
+		button {
+			font-size : 0.8em;
+		}
 	}
 }
 
@@ -640,7 +627,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	padding-bottom: 60px;
 	overflow: hidden;
 	margin-bottom: 40px;
-	min-height: 60vh;
+	min-height: 600px;
 	.bg-overlay {
 		z-index: -1;
 		display: flex;
@@ -661,7 +648,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			// margin-top : 200px;
 			max-width: 1920px;
 			width: 1600px;
-			margin-top : -150px;
+			margin-top: -150px;
 			height: auto;
 		}
 		.text-top-img {
@@ -671,6 +658,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			color: white;
 			font-size: 2em;
 			bottom: 300px;
+
+
 			p {
 				margin-bottom: 16px;
 				&:first-child {
@@ -679,7 +668,16 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				&:last-child {
 					margin-right: -600px;
 				}
+
+				@media screen and (max-width: 768px) {
+					font-size: 0.8em;
+					// margin-bottom: 10px;
+					margin : 0 0 10px;
+					margin-left : 0 !important;
+					margin-right : 0 !important;
+				}
 			}
+			
 		}
 	}
 	.dealer-logo {
@@ -695,105 +693,104 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		flex-flow: column wrap;
 		align-items: center;
 		justify-content: space-around;
-		@media screen and (min-width: 768px) {
-			.search-form, .text-intro {
-				height: 60vh;
-				width: 45vw;
-			}
-		}
-		@media screen and (max-width: 768px) {
-			.search-form {
-				width: 100%;
-			}
-			.text-intro {
-				text-align: center;
-				margin: 80px 0;
-				h3 {
-					font-size: 2em;
-				}
-			}
-		}
-		.top-banner {
-			margin: 30px 0 60px;
-			z-index: 2;
-			width: 80vw;
-			height: 90px;
-			background-color: rgb(43, 43, 43);
-		}
-		.search-form {
-			align-self: center;
-			background-color: rgba(255, 255, 255, 0.825);
-			min-height: 400px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			form {
-				label {
-					height: 60px;
-					display: flex;
-					align-items: center;
-					width: 100%;
-					background-color: white;
-					margin-bottom: 16px;
-					span,
-					select {
-						flex: 1;
-						color: rgb(174, 174, 174);
-					}
-					span {
-						padding-top: 8px;
-						height: 60%;
-						border-right: 1px solid rgb(174, 174, 174);
-						;
-					}
-					select {
-						// flex : 3;
-						height: 100%;
-						border-radius: none;
-					}
-				}
-			}
-		}
-		.text-intro {
-			.wrapper {
-				height: 100%;
-				display: flex;
-				flex-flow: column nowrap;
-				justify-content: center;
-				h3,
-				p {
-					color: white;
-				} // .text-top,
-				// .text-bottom {
-				// 	// height : auto;
-				// }
-				.text-top {
-					margin-bottom: 50px;
-				}
-				.text-bottom {
-					p {
-						font-size: 0.8em;
-					}
-				}
-			} // background-color : red;
-		}
-	}
+	} // @media screen and (min-width: 768px) {
+	// 	.search-form, .text-intro {
+	// 		height: 60vh;
+	// 		width: 45vw;
+	// 	}
+	// }
+	// @media screen and (max-width: 768px) {
+	// 	.search-form {
+	// 		width: 100%;
+	// 	}
+	// 	.text-intro {
+	// 		text-align: center;
+	// 		margin: 80px 0;
+	// 		h3 {
+	// 			font-size: 2em;
+	// 		}
+	// 	}
+	// }
+	// .top-banner {
+	// 	margin: 30px 0 60px;
+	// 	z-index: 2;
+	// 	width: 80vw;
+	// 	height: 90px;
+	// 	background-color: rgb(43, 43, 43);
+	// }
+	// 	.search-form {
+	// 		align-self: center;
+	// 		background-color: rgba(255, 255, 255, 0.825);
+	// 		min-height: 400px;
+	// 		display: flex;
+	// 		align-items: center;
+	// 		justify-content: center;
+	// 		form {
+	// 			label {
+	// 				height: 60px;
+	// 				display: flex;
+	// 				align-items: center;
+	// 				width: 100%;
+	// 				background-color: white;
+	// 				margin-bottom: 16px;
+	// 				span,
+	// 				select {
+	// 					flex: 1;
+	// 					color: rgb(174, 174, 174);
+	// 				}
+	// 				span {
+	// 					padding-top: 8px;
+	// 					height: 60%;
+	// 					border-right: 1px solid rgb(174, 174, 174);
+	// 					;
+	// 				}
+	// 				select {
+	// 					// flex : 3;
+	// 					height: 100%;
+	// 					border-radius: none;
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// 	.text-intro {
+	// 		.wrapper {
+	// 			height: 100%;
+	// 			display: flex;
+	// 			flex-flow: column nowrap;
+	// 			justify-content: center;
+	// 			h3,
+	// 			p {
+	// 				color: white;
+	// 			} // .text-top,
+	// 			// .text-bottom {
+	// 			// 	// height : auto;
+	// 			// }
+	// 			.text-top {
+	// 				margin-bottom: 50px;
+	// 			}
+	// 			.text-bottom {
+	// 				p {
+	// 					font-size: 0.8em;
+	// 				}
+	// 			}
+	// 		} // background-color : red;
+	// 	}
+	// }
 }
 
 /***************/
 
 .get-approved {
-	margin-bottom: 50px;
+	margin-bottom: 140px;
 	display: flex;
 	justify-content: center;
 	text-align: center;
 	.container-fluid {
-		margin-top: -30px;
+		margin-top: -140px;
 		max-width: 800px;
-	} 
-	
+	}
 	.section-advantages {
-		margin-top: -20px;
+		// margin-top: -20px;
 		background-color: #f4f4f4;
 		box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
 		a {

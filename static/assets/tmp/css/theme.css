@@ -72,7 +72,7 @@ header.header-boxed-width.active-scroll {
 }
 
 .menu-mobile-button {
-  margin-top : 0 !important;
+  margin-top : 0;
   top : 18px !important;
 }
 
@@ -111,8 +111,19 @@ body {
 
 .l-sidebar {
   min-width : 180px;
-  margin-bottom: 70px;
-  padding-top: 100px;
+  /* margin-bottom: 70px; */
+  padding-top: 40px !important;
+}
+
+.l-sidebar textarea,
+.l-sidebar-2 textarea {
+  min-height : 150px;
+}
+
+@media screen and (min-width:992px) {
+  .l-sidebar:last-child {
+    margin-top : 20px;
+  }
 }
 
 .l-sidebar-2 {
