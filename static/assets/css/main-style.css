@@ -10494,6 +10494,10 @@ body.color-turquoise #road {
   opacity: 0;
 }
 
+.custom-header-menu.active-scroll .half:last-child {
+  height: 100%;
+}
+
 .custom-header-menu.active-scroll .logo img {
   width: 100px;
 }

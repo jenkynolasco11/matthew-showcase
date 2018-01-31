@@ -582,6 +582,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				height: 0;
 				opacity: 0;
 			}
+
+			&:last-child {
+				height : 100%
+			}
 		}
 		.logo {
 			img {
