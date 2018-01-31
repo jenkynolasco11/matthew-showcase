@@ -402,7 +402,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	max-width: 1170px;
 	width: 100%;
 	top: 40px;
-	height: 100px;
+	height: 120px;
 	transition: height .1s linear, width .1s linear, background .1s linear;
 	.row {
 		height: 100%;
@@ -453,10 +453,19 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				transition: height .1s linear, opacity .1s linear;
 			}
 			.menu-items {
+				height : 100%;
 				ul {
+					height : 100%;
 					float: right;
 					li {
-						font-size: .7em;
+						height : 100%;
+						font-size: .8em;
+						// display : flex;
+						// justify-content: center;
+						// align-content: center; 
+						a {
+							height : 100%;
+						}
 					}
 				}
 			}
@@ -491,8 +500,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				width: 0;
 				height: 0;
 				border-style: solid;
-				border-width: 55px 0 0 50px;
+				border-width: 65px 0 0 60px;
 				border-color: transparent transparent transparent #ffffff;
+				// transition : all .1s linear;
 			}
 			ul {
 				height: 100%;
@@ -546,9 +556,16 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			margin-top: 5px !important;
 		}
 		.menu-items {
+			// height : 100%;
 			ul li a {
 				color: white !important;
 				font-size: .9rem;
+			}
+		}
+
+		.details {
+			&:before {
+				display : none;
 			}
 		}
 		&.special {

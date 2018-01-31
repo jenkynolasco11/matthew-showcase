@@ -6176,23 +6176,18 @@ header.site-header .social-list__icons {
 .carousel-models_fullwidth:after {
   position: absolute;
   content: "";
-  width: 897px;
+  width: 100%;
+  height: 100%;
   top: 0;
   bottom: 0;
-  left: 50%;
   background: url(../images/active_bg.png) center bottom no-repeat;
   -webkit-transform: translate(-50%, 0);
      -moz-transform: translate(-50%, 0);
        -o-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
-}
-
-@media (max-width: 1199px) {
-  .carousel-models_fullwidth:after {
-    width: -webkit-calc(897px / 1.5);
-    width: -moz-calc(897px / 1.5);
-    width: calc(897px / 1.5);
-  }
+  -moz-background-size: contain;
+    -o-background-size: contain;
+       background-size: contain;
 }
 
 .navigation_block {
@@ -10252,7 +10247,7 @@ body.color-turquoise #road {
   max-width: 1170px;
   width: 100%;
   top: 40px;
-  height: 100px;
+  height: 120px;
   -webkit-transition: height .1s linear, width .1s linear, background .1s linear;
      -moz-transition: height .1s linear, width .1s linear, background .1s linear;
        -o-transition: height .1s linear, width .1s linear, background .1s linear;
@@ -10328,12 +10323,22 @@ body.color-turquoise #road {
           transition: height .1s linear, opacity .1s linear;
 }
 
+.custom-header-menu .row .half .menu-items {
+  height: 100%;
+}
+
 .custom-header-menu .row .half .menu-items ul {
+  height: 100%;
   float: right;
 }
 
 .custom-header-menu .row .half .menu-items ul li {
-  font-size: .7em;
+  height: 100%;
+  font-size: .8em;
+}
+
+.custom-header-menu .row .half .menu-items ul li a {
+  height: 100%;
 }
 
 .custom-header-menu .row .logo {
@@ -10397,7 +10402,7 @@ body.color-turquoise #road {
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 55px 0 0 50px;
+  border-width: 65px 0 0 60px;
   border-color: transparent transparent transparent #ffffff;
 }
 
@@ -10469,6 +10474,10 @@ body.color-turquoise #road {
 .custom-header-menu.active-scroll .menu-items ul li a {
   color: white !important;
   font-size: .9rem;
+}
+
+.custom-header-menu.active-scroll .details:before {
+  display: none;
 }
 
 .custom-header-menu.active-scroll.special .half:last-child {

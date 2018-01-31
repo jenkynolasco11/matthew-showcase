@@ -134,16 +134,21 @@ $width-child: 897px;
 	&:after{
 		position: absolute;
 		content: "";
-		width: $width-child;
+		// width: $width-child;
+		width : 100%;
+		height : 100%;
 		top: 0;
 		bottom: 0;
-		left: 50%;
+		// left: 50%;
+		
 		background: url(../images/active_bg.png) center bottom no-repeat;
 		@include translate(-50%, 0);
 
 		@include media-breakpoint-down(lg) {
-			width: calc(897px / 1.5);
+			// width: calc(897px / 1.5);
 		}
+
+		background-size : contain;
 	}
 }
 
