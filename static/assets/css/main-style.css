@@ -10259,7 +10259,7 @@ body.color-turquoise #road {
 }
 
 .custom-header-menu .row .right .menu-mobile-button {
-  margin-top: 25px;
+  margin-top: 35px;
   height: 50px;
   position: relative;
   text-align: center;
@@ -10338,6 +10338,7 @@ body.color-turquoise #road {
 }
 
 .custom-header-menu .row .half .menu-items ul li a {
+  padding: 20px 10px;
   height: 100%;
 }
 
@@ -10378,13 +10379,19 @@ body.color-turquoise #road {
 }
 
 .custom-header-menu .row .logo a img {
-  min-width: 100px;
+  min-width: 120px;
   -webkit-transition: all .1s linear;
      -moz-transition: all .1s linear;
        -o-transition: all .1s linear;
           transition: all .1s linear;
   margin: 10px 0 auto;
-  max-width: 50%;
+  max-width: 80%;
+}
+
+@media screen and (max-width: 768px) {
+  .custom-header-menu .row .logo a img {
+    min-width: 200px;
+  }
 }
 
 .custom-header-menu .row .details {
