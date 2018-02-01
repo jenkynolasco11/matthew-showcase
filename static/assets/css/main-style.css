@@ -10258,7 +10258,7 @@ body.color-turquoise #road {
   max-width: 1170px;
   width: 100%;
   top: 40px;
-  height: 120px;
+  height: 140px;
   -webkit-transition: height .1s linear, width .1s linear, background .1s linear;
      -moz-transition: height .1s linear, width .1s linear, background .1s linear;
        -o-transition: height .1s linear, width .1s linear, background .1s linear;
@@ -10270,7 +10270,7 @@ body.color-turquoise #road {
 }
 
 .custom-header-menu .row .right .menu-mobile-button {
-  margin-top: 35px;
+  margin-top: 45px;
   height: 50px;
   position: relative;
   text-align: center;
@@ -10345,7 +10345,13 @@ body.color-turquoise #road {
 
 .custom-header-menu .row .half .menu-items ul li {
   height: 100%;
-  font-size: .8em;
+  font-size: .9em;
+}
+
+@media screen and (max-width: 998px) {
+  .custom-header-menu .row .half .menu-items ul li {
+    font-size: .8em;
+  }
 }
 
 .custom-header-menu .row .half .menu-items ul li a {
@@ -10395,7 +10401,6 @@ body.color-turquoise #road {
      -moz-transition: all .1s linear;
        -o-transition: all .1s linear;
           transition: all .1s linear;
-  margin: 10px 0 auto;
   max-width: 80%;
 }
 
@@ -10420,7 +10425,7 @@ body.color-turquoise #road {
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 65px 0 0 60px;
+  border-width: 75px 0 0 70px;
   border-color: transparent transparent transparent #ffffff;
 }
 
@@ -10441,7 +10446,7 @@ body.color-turquoise #road {
      -moz-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  font-size: .7em;
+  font-size: .8em;
 }
 
 .custom-header-menu .row .details ul li {
@@ -10461,7 +10466,7 @@ body.color-turquoise #road {
 }
 
 .custom-header-menu.special button {
-  margin-top: -10px !important;
+  margin-top: 0 !important;
   background-color: red;
 }
 
@@ -10469,10 +10474,6 @@ body.color-turquoise #road {
   .custom-header-menu.special button {
     display: none !important;
   }
-}
-
-.custom-header-menu.special .half .menu-items ul {
-  margin-top: 6px;
 }
 
 .custom-header-menu.special .half .menu-items ul li a {
@@ -10491,13 +10492,13 @@ body.color-turquoise #road {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 50px;
+  height: 60px;
   max-width: none;
 }
 
 .custom-header-menu.active-scroll .menu-mobile-button {
   height: 40px !important;
-  margin-top: 5px !important;
+  margin-top: 8px !important;
 }
 
 .custom-header-menu.active-scroll .menu-items ul li a {
@@ -10515,7 +10516,7 @@ body.color-turquoise #road {
 }
 
 .custom-header-menu.active-scroll.special button {
-  margin-top: -14px !important;
+  margin-top: -10px !important;
 }
 
 .custom-header-menu.active-scroll .half:first-child {
@@ -10528,7 +10529,15 @@ body.color-turquoise #road {
 }
 
 .custom-header-menu.active-scroll .logo img {
-  width: 100px;
+  min-width: 140px !important;
+  margin-top: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .custom-header-menu.active-scroll .logo img {
+    max-width: 40px !important;
+    margin-top: 0;
+  }
 }
 
 .mobile-menu-custom {
