@@ -21,7 +21,15 @@ app.post('/data', function(req, res) {
   var body = req.body
   var name = ''
 
-  if(body.firstname && body.lastname) name = body.firstname + ' ' + body.lastname
+  if(body.firstname && body.lastname) {
+    name = body.firstname + ' ' + body.lastname
+    delete body.firstname
+    delete body.lastname
+  }
+  else if (body.name) {
+    name = body.name
+    delete body.name
+  }
 
   if(!body.name || !body.email) return res.send('ok')
 
@@ -30,6 +38,8 @@ app.post('/data', function(req, res) {
   emailData.from = `${ name } <${ body.email }>`
   // emailData.to = 'angelo@jydautoleasing.com, office@jydautoleasing.com,info@jydautoleasing.com'
   emailData.to = 'info@jydautoleasing.com, jenky_nolasco@hotmail.com'
+  delete body.type
+
   emailData.subject = body.type + ' - ' + name
   emailData.text = JSON.stringify(body, null, 3)
 
