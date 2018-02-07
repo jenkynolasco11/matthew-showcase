@@ -237,7 +237,7 @@ $document.ready(function () {
 	}
 
 	var button = $('.toggle-menu-button')
-	
+
 	button.on('click', function(el){
 		// console.log(el)
 		button.toggleClass('open')
@@ -247,7 +247,7 @@ $document.ready(function () {
 
 function undateMenu() {
 	var scrollTop = window.pageYOffset;
-	// var bg = 
+	// var bg =
 	var menu = $('.custom-header-menu');
 
 	if (scrollTop => 140 || $(window).width() < 993) {
@@ -290,6 +290,12 @@ function submitInformation(f) {
 		formData.type = 'Credit App'
 	}
 
+	submitForm(form, formData)
+
+	return false
+}
+
+function submitForm(form, formData) {
 	var arr = form.serializeArray()
 	var data = arr.reduce(function(p,n) {
 		var x = $.extend({}, p)
@@ -304,22 +310,22 @@ function submitInformation(f) {
 	form.each(function(){ this.reset(); });
 
 	openModal();
-
-	return false
 }
 
-if($('#modal-close').length) {
+if($('#modal-close')) {
 	$('#modal-close').click(function(){
-		$('#myModal').fadeOut();
+		var modal = $('#myModal')
+		modal.fadeOut()
 	});
 }
 
 function openModal() {
-	$('#myModal').fadeIn();
+	var modal = $('#myModal')
+	modal.fadeIn()
 
-	setTimeout(function() {
-		$('#myModal').fadeOut();
-	}, 5000);
+	setTimeout(function(){
+		modal.fadeOut();
+	}, 2400)
 }
 
 ///////////////

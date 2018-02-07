@@ -235,7 +235,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 /*****************/
 
-#myModal {
+.custom-modal {
 	z-index : 20;
 	display : none;
 	position : absolute;
@@ -306,6 +306,17 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 .credit-app {
 	margin-top: 40px;
+
+	label.error {
+		// display : inline-block;
+		margin-top: 8px;
+		// margin-left: 8px;
+	}
+
+	// .cdriver_exp_date label.error {
+	// 	position : absolute;
+	// }
+
 	.heading {
 		p {
 			font-size: 0.85em;

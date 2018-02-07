@@ -141,7 +141,7 @@
     </div>
     <main id="page-content">
       <div class="container credit-app">
-        <form id="credit-app-form" method="post" action="javascript:void(0)" onsubmit="submitInformation('credit')" novalidate>
+        <form id="credit-app-form" method="post" action="void(0)" onsubmit="submitIfAgree()">
           <!-- <input type="hidden" name="leadId" value="162245"> -->
           <div class="content">
             <div class="heading">
@@ -152,7 +152,6 @@
                   with a wide variety of financial institutions helps us provide financing for all credit levels. To get
                   started, just complete our secure online credit application. We'll help you get pre-approved, making it
                   even easier for you to shop for your next vehicle.
-
                 </p>
               </div>
               <div class="secure-logo">
@@ -169,30 +168,37 @@
                 <fieldset class="col-md-12 col-sm-12 form-group single">
                   <div class="header-block"> Primary Applicant </div>
                   <div class="field csalesman_name">
-                    <label class="label" for="salesman_name">Salesman's Name/Promo Code
+                    <label class="label" for="salesman_name">
+                      <span>Salesman's Name/Promo Code</span>
                       <span class="required">*</span>
                     </label>
-                    <input required name="salesman_name" id="salesman_name" class="text salesman_name" placeholder="Salesman's Name/Promo Code" type="text"
-                      value=""> </div>
+                    <input name="Salesman's Name" class="text salesman_name" placeholder="Salesman's Name/Promo Code" type="text" required>
+                  </div>
                   <div class="field cfirstname">
-                    <label class="label" for="firstname">First Name
+                    <label class="label" for="firstname">
+                      <span>First Name</span>
                       <span class="required">*</span>
                     </label>
-                    <input required name="firstname" id="first_name" class="text first_name" placeholder="First Name" type="text" value=""> </div>
+                    <input name="First Name" id="first_name" class="text first_name" placeholder="First Name" type="text" required />
+                  </div>
                   <div class="field clast_name">
-                    <label class="label" for="lastname">Last Name
+                    <label class="label" for="lastname">
+                      <span>Last Name</span>
                       <span class="required">*</span>
                     </label>
-                    <input required name="lastname" id="last_name" class="text last_name" placeholder="Last Name" type="text" value=""> </div>
+                    <input name="Last Name" id="last_name" class="text last_name" placeholder="Last Name" type="text" />
+                  </div>
                   <div class="field cmiddle_name">
                     <label class="label" for="middle_name">Middle Initial</label>
-                    <input required name="middle_name" id="middle_name" class="text middle_name" placeholder="Middle Initial" type="text" value=""> </div>
+                    <input name="Middle Name" id="middle_name" class="text middle_name" placeholder="Middle Initial" type="text" />
+                  </div>
                   <div class="field cdob">
-                    <input required name="bdate_trigger" id="bdate_trigger" type="hidden" value="true">
-                    <label class="label visible" for="dob">Date of Birth
+                    <!-- <input required name="bdate_trigger" id="bdate_trigger" type="hidden" value="true"> -->
+                    <label class="label visible" for="dob">
+                      <span>Date of Birth</span>
                       <span class="required">*</span>
                     </label>
-                    <select name="dob_month" id="dob_month" class="select dob_month">
+                    <select name="DOB Month" id="dob_month" class="select dob_month">
                       <option value="1" label="January" selected="selected">January</option>
                       <option value="2" label="February">February</option>
                       <option value="3" label="March">March</option>
@@ -206,7 +212,7 @@
                       <option value="11" label="November">November</option>
                       <option value="12" label="December">December</option>
                     </select>
-                    <select name="dob_day" id="dob_day" class="select dob_day">
+                    <select name="DOB Day" id="dob_day" class="select dob_day">
                       <option value="1" label="1" selected="selected">1</option>
                       <option value="2" label="2">2</option>
                       <option value="3" label="3">3</option>
@@ -239,7 +245,7 @@
                       <option value="30" label="30">30</option>
                       <option value="31" label="31">31</option>
                     </select>
-                    <select name="dob_year" id="dob_year" class="select dob_year">
+                    <select name="DOB Year" id="dob_year" class="select dob_year">
                       <option value="2018" label="2018">2018</option>
                       <option value="2017" label="2017">2017</option>
                       <option value="2016" label="2016">2016</option>
@@ -339,37 +345,48 @@
                     </select>
                   </div>
                   <div class="field csocial_number">
-                    <label class="label" for="social_number">Social Security #
+                    <label class="label" for="social_number">
+                      <span>Social Security #</span>
                       <span class="required">*</span>
                     </label>
-                    <input required name="social_number" id="social_number" pattern="[0-9]*" class="text digits modern-input social_number" placeholder="*Social Security #"
-                      type="number" value=""> </div>
+                    <input name="SSN" id="social_number" pattern="[0-9]*" class="text digits modern-input social_number" placeholder="*Social Security #"
+                      type="number" required />
+                  </div>
                   <div class="field cdphone">
-                    <label class="label visible" for="dphone">Day Time Phone
+                    <label class="label visible" for="dphone">
+                      <span>Day Time Phone</span>
                       <span class="required">*</span>
                     </label>
-                    <input required name="dphone" id="dphone" class="text modern-input masked phone dphone" data-inputmask-mask="(999) 999-9999" data-inputmask-placeholder="x"
-                      placeholder="*Day Time Phone" type="tel" value=""> </div>
+                    <input name="Day Time Phone" id="dphone" class="text modern-input masked phone dphone" data-inputmask-mask="(999) 999-9999"
+                      data-inputmask-placeholder="x" placeholder="*Day Time Phone" type="tel" required />
+                  </div>
                   <div class="field cemail">
-                    <label class="label" for="email">Email Address
+                    <label class="label" for="email">
+                      <span>Email Address</span>
                       <span class="required">*</span>
                     </label>
-                    <input required name="email" id="email" class="text email" placeholder="Email Address" type="text" value=""> </div>
+                    <input name="email" id="email" class="text email" placeholder="Email Address" type="text" required />
+                  </div>
                   <div class="field caddress">
-                    <label class="label" for="address">Address Line 1
+                    <label class="label" for="address">
+                      <span>Address Line 1</span>
                       <span class="required">*</span>
                     </label>
-                    <input required name="address" id="address" class="text address" placeholder="Address Line 1" type="text" value=""> </div>
+                    <input name="Address" id="address" class="text address" placeholder="Address Line 1" type="text" required />
+                  </div>
                   <div class="field ccity">
-                    <label class="label" for="city">City
+                    <label class="label" for="city">
+                      <span>City</span>
                       <span class="required">*</span>
                     </label>
-                    <input required name="city" id="city" class="text city" placeholder="City" type="text" value=""> </div>
+                    <input name="City" id="city" class="text city" placeholder="City" type="text" required />
+                  </div>
                   <div class="field cstate">
-                    <label class="label" for="state">State
+                    <label class="label" for="state">
+                      <span>State</span>
                       <span class="required">*</span>
                     </label>
-                    <select name="state" id="state" class="select state">
+                    <select name="State" id="state" class="select state">
                       <option value="AL" label="Alabama">Alabama</option>
                       <option value="AK" label="Alaska">Alaska</option>
                       <option value="AZ" label="Arizona">Arizona</option>
@@ -424,64 +441,67 @@
                     </select>
                   </div>
                   <div class="field czipcode">
-                    <label class="label" for="zipcode">Zip
+                    <label class="label" for="zipcode">
+                      <span>Zip</span>
                       <span class="required">*</span>
                     </label>
-                    <input required name="zipcode" id="zipcode" pattern="[0-9]*" class="text digits modern-input zipcode" placeholder="*Zip" type="number"
-                      value=""> </div>
-
+                    <input name="ZIP Code" id="zipcode" pattern="[0-9]*" class="text digits modern-input zipcode" placeholder="*Zip" type="number"
+                      required />
+                  </div>
                   <div class="field chome_type">
-                    <label class="label visible" for="home_type">Rent or Own?
+                    <label class="label visible" for="home_type">
+                      <span>Rent or Own?</span>
                       <span class="required">*</span>
                     </label>
                     <div class="own-space">
-
                       <label for="home_type-Rent">
-                        <input type="radio" id="home_type-Rent" name="home_type" value="Rent" class="radio home_type">Rent</label>
+                        <input type="radio" id="home_type-Rent" name="Home Type" value="Rent" class="radio home_type" />Rent</label>
                       <label for="home_type-Own">
-                        <input type="radio" id="home_type-Own" name="home_type" value="Own" class="radio home_type">Own</label>
+                        <input type="radio" id="home_type-Own" name="Home Type" value="Own" class="radio home_type" />Own</label>
                       <label for="home_type-Other">
-                        <input type="radio" id="home_type-Other" name="home_type" value="Other" class="radio home_type">Other</label>
+                        <input type="radio" id="home_type-Other" name="Home Type" value="Other" class="radio home_type" />Other</label>
                     </div>
                   </div>
                   <div class="field">
-                    <label class="label notfloat" for="">Time at Address</label>
-
-
+                    <label class="label notfloat">Time at Address</label>
                     <div class="own-space">
                       <div class="cliving_since_year">
                         <label>Years</label>
-                        <input required name="living_since_year" id="living_since_year" pattern="[0-9]*" class="text digits modern-input living_since_year"
-                          placeholder="Years" type="number" value=""> </div>
+                        <input name="Years Living There" pattern="[0-9]*" class="text digits modern-input living_since_year" placeholder="Years"
+                          type="number" /> </div>
                       <div class="cliving_since_month">
                         <label>Months</label>
-                        <input required name="living_since_month" id="living_since_month" pattern="[0-9]*" class="text digits modern-input living_since_month"
-                          placeholder="Months" type="number" value=""> </div>
+                        <input name="Months Living There" id="living_since_month" pattern="[0-9]*" class="text digits modern-input living_since_month"
+                          placeholder="Months" type="number" />
+                      </div>
                     </div>
-
                     <div class="clearfix"></div>
                   </div>
                   <div class="field cprev_address">
                     <label class="label" for="prev_address">Previous Home Address</label>
-                    <input required name="prev_address" id="prev_address" class="text prev_address" placeholder="Previous Home Address" type="text" value=""> </div>
+                    <input name="Previous Address" id="prev_address" class="text prev_address" placeholder="Previous Home Address" type="text"> </div>
                   <div class="field cmonthly_payment">
-                    <label class="label" for="monthly_payment">Monthly Payment / Rent
+                    <label class="label" for="monthly_payment">
+                      <span>Monthly Payment / Rent</span>
                       <span class="required">*</span>
                     </label>
-                    <input required name="monthly_payment" id="monthly_payment" pattern="[0-9]*" class="text digits modern-input monthly_payment" placeholder="*Monthly Payment / Rent"
-                      type="number" value=""> </div>
+                    <input required name="Monthly Payment" id="monthly_payment" pattern="[0-9]*" class="text digits modern-input monthly_payment"
+                      placeholder="*Monthly Payment / Rent" type="number"> </div>
 
                   <div class="field cdriver_number">
-                    <label class="label" for="driver_number">Driver's License Number
+                    <label class="label" for="driver_number">
+                      <span>Driver's License Number</span>
                       <span class="required">*</span>
                     </label>
-                    <input required name="driver_number" id="driver_number" class="text driver_number" placeholder="Driver's License Number" type="text"
-                      value=""> </div>
+                    <input required name="Driver's Licence Number" id="driver_number" class="text driver_number" placeholder="Driver's License Number"
+                      type="text" />
+                  </div>
                   <div class="field cdriver_state">
-                    <label class="label visible" for="driver_state">Driver's License State
+                    <label class="label visible" for="driver_state">
+                      <span>Driver's License State</span>
                       <span class="required">*</span>
                     </label>
-                    <select name="driver_state" id="driver_state" class="select driver_state">
+                    <select required name="Driver's State" id="driver_state" class="select driver_state">
                       <option value="AL" label="Alabama">Alabama</option>
                       <option value="AK" label="Alaska">Alaska</option>
                       <option value="AZ" label="Arizona">Arizona</option>
@@ -536,11 +556,12 @@
                     </select>
                   </div>
                   <div class="field cdriver_exp_date">
-                    <label class="label visible" for="driver_exp_date">Driver's License Expiration Date
+                    <label class="label visible" for="driver_exp_date">
+                      <span>Driver's License Expiration Date</span>
                       <span class="required">*</span>
                     </label>
-                    <select name="driver_exp_date_month" id="driver_exp_date_month" class="select driver_exp_date_month">
-                      <option value="" label="Month" selected="selected">Month</option>
+                    <select required name="Driver's License Expiration Date Month" id="driver_exp_date_month" class="select driver_exp_date_month">
+                      <option label="Month" selected="selected">Month</option>
                       <option value="1" label="January">January</option>
                       <option value="2" label="February">February</option>
                       <option value="3" label="March">March</option>
@@ -554,8 +575,8 @@
                       <option value="11" label="November">November</option>
                       <option value="12" label="December">December</option>
                     </select>
-                    <select name="driver_exp_date_day" id="driver_exp_date_day" class="select driver_exp_date_day">
-                      <option value="" label="Day" selected="selected">Day</option>
+                    <select required name="Driver's License Expiration Date Day" id="driver_exp_date_day" class="select driver_exp_date_day">
+                      <option label="Day" selected="selected">Day</option>
                       <option value="1" label="1">1</option>
                       <option value="2" label="2">2</option>
                       <option value="3" label="3">3</option>
@@ -588,8 +609,8 @@
                       <option value="30" label="30">30</option>
                       <option value="31" label="31">31</option>
                     </select>
-                    <select name="driver_exp_date_year" id="driver_exp_date_year" class="select driver_exp_date_year">
-                      <option value="" label="Year" selected="selected">Year</option>
+                    <select required name="Driver's License Expiration Date Year" id="driver_exp_date_year" class="select driver_exp_date_year">
+                      <option label="Year" selected="selected">Year</option>
                       <option value="2028" label="2028">2028</option>
                       <option value="2027" label="2027">2027</option>
                       <option value="2026" label="2026">2026</option>
@@ -699,49 +720,62 @@
               <div class="formContent">
                 <fieldset class="col-md-12 col-sm-12 form-group single trtrtrrtr">
                   <div class="field cemployer_name">
-                    <label class="label" for="employer_name">Employer Name
+                    <label class="label" for="employer_name">
+                      <span>Employer Name</span>
                       <span class="required">*</span>
                     </label>
-                    <input required name="employer_name" id="employer_name" class="text employer_name" placeholder="Employer Name" type="text" value=""> </div>
+                    <input required name="Employer's Name" id="employer_name" class="text employer_name" placeholder="Employer Name" type="text"
+                    />
+                  </div>
                   <div class="field cemployer_phone">
-                    <label class="label" for="employer_phone">Employer Phone
+                    <label class="label" for="employer_phone">
+                      <span>Employer Phone</span>
                       <span class="required">*</span>
                     </label>
-                    <input required name="employer_phone" id="employer_phone" class="text modern-input masked phone employer_phone" data-inputmask-mask="(999) 999-9999"
-                      data-inputmask-placeholder="x" placeholder="*Employer Phone" type="tel" value=""> </div>
+                    <input required name="Employer's Phone" id="employer_phone" class="text modern-input masked phone employer_phone" data-inputmask-mask="(999) 999-9999"
+                      data-inputmask-placeholder="x" placeholder="*Employer Phone" type="tel" />
+                  </div>
                   <div class="field cjob_title">
-                    <label class="label" for="job_title">Job Title
+                    <label class="label" for="job_title">
+                      <span>Job Title</span>
                       <span class="required">*</span>
                     </label>
-                    <input required name="job_title" id="job_title" class="text job_title" placeholder="Job Title" type="text" value=""> </div>
+                    <input required name="Job Title" id="job_title" class="text job_title" placeholder="Job Title" type="text" />
+                  </div>
                   <div class="field cemployer_address">
                     <label class="label" for="employer_address">Employer Address</label>
-                    <input required name="employer_address" id="employer_address" class="text employer_address" placeholder="Employer Address" type="text"
-                      value=""> </div>
+                    <input name="Employer's Address" id="employer_address" class="text employer_address" placeholder="Employer Address" type="text"
+                    />
+                  </div>
                   <div class="field">
-                    <label class="label notfloat" for="">Employee Length of Time</label>
+                    <label class="label notfloat">Employee Length of Time</label>
                     <div class="own-space">
                       <div class="cliving_since_year">
                         <label>Years</label>
-                        <input required name="employee_year" id="employee_year" pattern="[0-9]*" class="text digits modern-input employee_year" placeholder="Years"
-                          type="number" value=""> </div>
+                        <input name="Employee Years" id="employee_year" pattern="[0-9]*" class="text digits modern-input employee_year" placeholder="Years"
+                          type="number" />
+                      </div>
                       <div class="cliving_since_month">
                         <label>Months</label>
-                        <input required name="employee_month" id="employee_month" pattern="[0-9]*" class="text digits modern-input employee_month" placeholder="Months"
-                          type="number" value=""> </div>
+                        <input name="Employee Months" id="employee_month" pattern="[0-9]*" class="text digits modern-input employee_month" placeholder="Months"
+                          type="number" />
+                      </div>
                     </div>
                     <div class="clearfix"></div>
                   </div>
                   <div class="field cprevious_employer">
                     <label class="label" for="previous_employer">If less than 2 years, previous employer?</label>
-                    <input required name="previous_employer" id="previous_employer" class="text previous_employer" placeholder="If less than 2 years, previous employer?"
-                      type="text" value=""> </div>
+                    <input name="Previous Employer" id="previous_employer" class="text previous_employer" placeholder="If less than 2 years, previous employer?"
+                      type="text" />
+                  </div>
                   <div class="field cmonthly_income">
-                    <label class="label" for="monthly_income">Monthly Income (before taxes)
+                    <label class="label" for="monthly_income">
+                      <span>Monthly Income (before taxes)</span>
                       <span class="required">*</span>
                     </label>
-                    <input required name="monthly_income" id="monthly_income" pattern="[0-9]*" class="text digits modern-input monthly_income" placeholder="*Monthly Income (before taxes)"
-                      type="number" value=""> </div>
+                    <input required name="Monthly Income" id="monthly_income" pattern="[0-9]*" class="text digits modern-input monthly_income"
+                      placeholder="*Monthly Income (before taxes)" type="number" />
+                  </div>
                 </fieldset>
                 <div class="clearfix"></div>
               </div>
@@ -751,7 +785,6 @@
               <h2>Privacy Statement
                 <span class="red2">
                   Please review the following privacy statement before submitting your application:
-
                 </span>
               </h2>
               <div class="privacy">
@@ -768,7 +801,7 @@
               </div>
             </div>
             <div class="box-terms agree-box">
-              <input required name="agree" id="agree" class="text agree" type="checkbox" value="1">
+              <input name="agree" id="agree" class="text agree" type="checkbox" value="1">
               <div class="details">
                 <b>I agree</b> to give permission for the above applicant(s) Consumer Credit Report(s) be obtained, at no cost
                 to me, in order to help determine the types and extent of financing which are available:
@@ -776,7 +809,7 @@
             </div>
             <!-- <div class="box-hs">
               <div class="hfield">
-                <input required name="hskey" id="hskey" class="text honeyspot" hidden type="text" value="">
+                <input required name="hskey" id="hskey" class="text honeyspot" hidden type="text">
                 <input required name="hsid" id="hsid" type="hidden" value="228503830.27173">
               </div>
             </div> -->
@@ -973,7 +1006,7 @@
         </div>
       </div>
     </footer>
-    <div id="myModal">
+    <div id="myModal" class="custom-modal">
       <div class="overlay"></div>
       <div class="modal-main">
         <div class="header">
@@ -988,13 +1021,29 @@
         </div>
       </div>
     </div>
+    <div id="modal-invalid" class="custom-modal">
+      <div class="overlay"></div>
+      <div class="modal-main">
+        <div class="header">
+          <h5>JYD Auto Leasing</h5>
+        </div>
+        <div class="body">
+          <h3>Error</h3>
+          <p>Please, fill the application correctly.</p>
+          <p>(The fields are marked with an *)</p>
+        </div>
+        <div class="footer">
+          <input id="modal-close" type="button" value="close" />
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- //Footer -->
   <!-- Google map -->
   <script src="assets/js/jquery.1.12.4.min.js"></script>
   <script src="assets/js/plugins/bootstrap.min.js"></script>
-  <!-- <script src="assets/js/plugins/wow.min.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script> -->
   <!-- <script src="assets/js/plugins/jquery.smartmenus.min.js"></script>
 	<script src="assets/js/plugins/jquery.smartmenus.bootstrap.js"></script> -->
   <!-- <script src="assets/js/plugins/jquery.nivo.slider.js"></script>
@@ -1007,8 +1056,10 @@
 	<script src="assets/js/plugins/jquery.validate.min.js"></script> -->
   <!-- <script src="assets/js/plugins/moment.js"></script> -->
   <!-- <script src="assets/js/plugins/bootstrap-datetimepicker.min.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.8.1/parsley.js"></script> -->
   <script src="assets/tmp/js/custom.js"></script>
   <script src="assets/js/custom.js"></script>
+  <script src="assets/js/validate-form.js"></script>
 </body>
 
 </html>

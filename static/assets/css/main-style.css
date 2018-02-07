@@ -10064,13 +10064,13 @@ body.color-turquoise #road {
 }
 
 /*****************/
-#myModal {
+.custom-modal {
   z-index: 20;
   display: none;
   position: absolute;
 }
 
-#myModal .overlay {
+.custom-modal .overlay {
   position: fixed;
   background-color: rgba(0, 0, 0, 0.289);
   width: 100vw;
@@ -10080,7 +10080,7 @@ body.color-turquoise #road {
   z-index: 2;
 }
 
-#myModal .modal-main {
+.custom-modal .modal-main {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
@@ -10099,7 +10099,7 @@ body.color-turquoise #road {
   left: 50%;
 }
 
-#myModal .modal-main .header {
+.custom-modal .modal-main .header {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -10119,11 +10119,11 @@ body.color-turquoise #road {
   margin-bottom: 15px;
 }
 
-#myModal .modal-main .header h5 {
+.custom-modal .modal-main .header h5 {
   color: rgba(255, 255, 255, 0.707);
 }
 
-#myModal .modal-main .footer {
+.custom-modal .modal-main .footer {
   padding-top: 40px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -10161,6 +10161,10 @@ body.color-turquoise #road {
 /*****************/
 .credit-app {
   margin-top: 40px;
+}
+
+.credit-app label.error {
+  margin-top: 8px;
 }
 
 .credit-app .heading p {

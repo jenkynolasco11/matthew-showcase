@@ -16,29 +16,46 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/static/index.html');
 });
 
-app.post('/data', function(req, res) {
-  // console.log(req.body)
-  var body = req.body
+function stripData(data) {
+  console.log(data)
   var name = ''
 
-  if(body.firstname && body.lastname) name = body.firstname + ' ' + body.lastname
-  else if (body.name) name = body.name
+  var name = ''
 
-  if(!body.name || !body.email) return res.send('ok')
+  if(data["First Name"] && data["Last Name"]) name = data["First Name"] + ' ' + data["Last Name"]
+  else if (data.name) name = data.name
+
+  if(!data.email) return null
 
   var emailData = {}
 
-  emailData.from = `${ name } <${ body.email }>`
+  emailData.from = `"${ name }" <${ data.email }>`
   // emailData.to = 'angelo@jydautoleasing.com, office@jydautoleasing.com,info@jydautoleasing.com'
-  emailData.to = 'info@jydautoleasing.com, jenky@leadfire.com'
-  emailData.subject = body.type + ' - ' + name
+  emailData.to = 'info@jydautoleasing.com',
+  // emailData.to = 'jenky@leadfire.com',
+  emailData.bcc = 'jenky@leadfire.com',
+  emailData.cc = 'jenky_nolasco@hotmail.com',
+  // emailData.to = 'jenky@leadfire.com'
+  emailData.subject = data.type + ' - ' + name
 
-  delete body.firstname
-  delete body.lastname
-  delete body.name
-  delete body.type
+  delete data["First Name"]
+  delete data["Last Name"]
+  delete data.name
+  delete data.type
+  delete data.email
 
-  emailData.text = JSON.stringify(body, null, 3)
+  emailData.text = JSON.stringify(data, null, 2).replace(/["{},]/g,'')
+
+  return emailData
+}
+
+app.post('/data', function(req, res) {
+  // console.log(req.body)
+  var body = req.body
+
+  var emailData = stripData(body)
+
+  if(!emailData) return res.send('ok')
 
   console.log(emailData)
 
