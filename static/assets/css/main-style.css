@@ -10064,6 +10064,85 @@ body.color-turquoise #road {
 }
 
 /*****************/
+#myModal {
+  z-index: 20;
+  display: none;
+  position: absolute;
+}
+
+#myModal .overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.289);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+#myModal .modal-main {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-border-radius: 2px;
+     -moz-border-radius: 2px;
+          border-radius: 2px;
+  text-align: center;
+  height: 300px;
+  width: 400px;
+  background: white;
+  position: fixed;
+  z-index: 30;
+  margin-top: -150px;
+  margin-left: -200px;
+  top: 50%;
+  left: 50%;
+}
+
+#myModal .modal-main .header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 40px;
+  margin-bottom: 15px;
+}
+
+#myModal .modal-main .header h5 {
+  color: rgba(255, 255, 255, 0.707);
+}
+
+#myModal .modal-main .footer {
+  padding-top: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/*****************/
 .sell-car .form-inputs {
   margin-top: 40px;
 }
@@ -10076,6 +10155,7 @@ body.color-turquoise #road {
 .sell-car .form-inputs .submit-button input {
   padding: 20px 24px;
   font-size: 0.75em !important;
+  width: 100%;
 }
 
 /*****************/
@@ -10124,7 +10204,13 @@ body.color-turquoise #road {
 }
 
 .credit-app .form-button input {
+  margin-bottom: 20px;
   margin-left: 20px;
+}
+
+.credit-app .form-button input.disabled {
+  background-color: gray;
+  cursor: default;
 }
 
 /*****************/

@@ -73,9 +73,9 @@
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:office@jydautoleasing.com">
+                  <a href="mailto:info@jydautoleasing.com">
                     <span>
-                      <i class="fa fa-envelope"></i>office@jydautoleasing.com
+                      <i class="fa fa-envelope"></i>info@jydautoleasing.com
                     </span>
                   </a>
                 </li>
@@ -172,23 +172,23 @@
                     <label class="label" for="salesman_name">Salesman's Name/Promo Code
                       <span class="required">*</span>
                     </label>
-                    <input name="salesman_name" id="salesman_name" class="text salesman_name" placeholder="Salesman's Name/Promo Code" type="text"
+                    <input required name="salesman_name" id="salesman_name" class="text salesman_name" placeholder="Salesman's Name/Promo Code" type="text"
                       value=""> </div>
                   <div class="field cfirstname">
                     <label class="label" for="firstname">First Name
                       <span class="required">*</span>
                     </label>
-                    <input name="firstname" id="first_name" class="text first_name" placeholder="First Name" type="text" value=""> </div>
+                    <input required name="firstname" id="first_name" class="text first_name" placeholder="First Name" type="text" value=""> </div>
                   <div class="field clast_name">
                     <label class="label" for="lastname">Last Name
                       <span class="required">*</span>
                     </label>
-                    <input name="lastname" id="last_name" class="text last_name" placeholder="Last Name" type="text" value=""> </div>
+                    <input required name="lastname" id="last_name" class="text last_name" placeholder="Last Name" type="text" value=""> </div>
                   <div class="field cmiddle_name">
                     <label class="label" for="middle_name">Middle Initial</label>
-                    <input name="middle_name" id="middle_name" class="text middle_name" placeholder="Middle Initial" type="text" value=""> </div>
+                    <input required name="middle_name" id="middle_name" class="text middle_name" placeholder="Middle Initial" type="text" value=""> </div>
                   <div class="field cdob">
-                    <input name="bdate_trigger" id="bdate_trigger" type="hidden" value="true">
+                    <input required name="bdate_trigger" id="bdate_trigger" type="hidden" value="true">
                     <label class="label visible" for="dob">Date of Birth
                       <span class="required">*</span>
                     </label>
@@ -342,29 +342,29 @@
                     <label class="label" for="social_number">Social Security #
                       <span class="required">*</span>
                     </label>
-                    <input name="social_number" id="social_number" pattern="[0-9]*" class="text digits modern-input social_number" placeholder="*Social Security #"
+                    <input required name="social_number" id="social_number" pattern="[0-9]*" class="text digits modern-input social_number" placeholder="*Social Security #"
                       type="number" value=""> </div>
                   <div class="field cdphone">
                     <label class="label visible" for="dphone">Day Time Phone
                       <span class="required">*</span>
                     </label>
-                    <input name="dphone" id="dphone" class="text modern-input masked phone dphone" data-inputmask-mask="(999) 999-9999" data-inputmask-placeholder="x"
+                    <input required name="dphone" id="dphone" class="text modern-input masked phone dphone" data-inputmask-mask="(999) 999-9999" data-inputmask-placeholder="x"
                       placeholder="*Day Time Phone" type="tel" value=""> </div>
                   <div class="field cemail">
                     <label class="label" for="email">Email Address
                       <span class="required">*</span>
                     </label>
-                    <input name="email" id="email" class="text email" placeholder="Email Address" type="text" value=""> </div>
+                    <input required name="email" id="email" class="text email" placeholder="Email Address" type="text" value=""> </div>
                   <div class="field caddress">
                     <label class="label" for="address">Address Line 1
                       <span class="required">*</span>
                     </label>
-                    <input name="address" id="address" class="text address" placeholder="Address Line 1" type="text" value=""> </div>
+                    <input required name="address" id="address" class="text address" placeholder="Address Line 1" type="text" value=""> </div>
                   <div class="field ccity">
                     <label class="label" for="city">City
                       <span class="required">*</span>
                     </label>
-                    <input name="city" id="city" class="text city" placeholder="City" type="text" value=""> </div>
+                    <input required name="city" id="city" class="text city" placeholder="City" type="text" value=""> </div>
                   <div class="field cstate">
                     <label class="label" for="state">State
                       <span class="required">*</span>
@@ -427,7 +427,7 @@
                     <label class="label" for="zipcode">Zip
                       <span class="required">*</span>
                     </label>
-                    <input name="zipcode" id="zipcode" pattern="[0-9]*" class="text digits modern-input zipcode" placeholder="*Zip" type="number"
+                    <input required name="zipcode" id="zipcode" pattern="[0-9]*" class="text digits modern-input zipcode" placeholder="*Zip" type="number"
                       value=""> </div>
 
                   <div class="field chome_type">
@@ -451,11 +451,11 @@
                     <div class="own-space">
                       <div class="cliving_since_year">
                         <label>Years</label>
-                        <input name="living_since_year" id="living_since_year" pattern="[0-9]*" class="text digits modern-input living_since_year"
+                        <input required name="living_since_year" id="living_since_year" pattern="[0-9]*" class="text digits modern-input living_since_year"
                           placeholder="Years" type="number" value=""> </div>
                       <div class="cliving_since_month">
                         <label>Months</label>
-                        <input name="living_since_month" id="living_since_month" pattern="[0-9]*" class="text digits modern-input living_since_month"
+                        <input required name="living_since_month" id="living_since_month" pattern="[0-9]*" class="text digits modern-input living_since_month"
                           placeholder="Months" type="number" value=""> </div>
                     </div>
 
@@ -463,19 +463,19 @@
                   </div>
                   <div class="field cprev_address">
                     <label class="label" for="prev_address">Previous Home Address</label>
-                    <input name="prev_address" id="prev_address" class="text prev_address" placeholder="Previous Home Address" type="text" value=""> </div>
+                    <input required name="prev_address" id="prev_address" class="text prev_address" placeholder="Previous Home Address" type="text" value=""> </div>
                   <div class="field cmonthly_payment">
                     <label class="label" for="monthly_payment">Monthly Payment / Rent
                       <span class="required">*</span>
                     </label>
-                    <input name="monthly_payment" id="monthly_payment" pattern="[0-9]*" class="text digits modern-input monthly_payment" placeholder="*Monthly Payment / Rent"
+                    <input required name="monthly_payment" id="monthly_payment" pattern="[0-9]*" class="text digits modern-input monthly_payment" placeholder="*Monthly Payment / Rent"
                       type="number" value=""> </div>
 
                   <div class="field cdriver_number">
                     <label class="label" for="driver_number">Driver's License Number
                       <span class="required">*</span>
                     </label>
-                    <input name="driver_number" id="driver_number" class="text driver_number" placeholder="Driver's License Number" type="text"
+                    <input required name="driver_number" id="driver_number" class="text driver_number" placeholder="Driver's License Number" type="text"
                       value=""> </div>
                   <div class="field cdriver_state">
                     <label class="label visible" for="driver_state">Driver's License State
@@ -702,45 +702,45 @@
                     <label class="label" for="employer_name">Employer Name
                       <span class="required">*</span>
                     </label>
-                    <input name="employer_name" id="employer_name" class="text employer_name" placeholder="Employer Name" type="text" value=""> </div>
+                    <input required name="employer_name" id="employer_name" class="text employer_name" placeholder="Employer Name" type="text" value=""> </div>
                   <div class="field cemployer_phone">
                     <label class="label" for="employer_phone">Employer Phone
                       <span class="required">*</span>
                     </label>
-                    <input name="employer_phone" id="employer_phone" class="text modern-input masked phone employer_phone" data-inputmask-mask="(999) 999-9999"
+                    <input required name="employer_phone" id="employer_phone" class="text modern-input masked phone employer_phone" data-inputmask-mask="(999) 999-9999"
                       data-inputmask-placeholder="x" placeholder="*Employer Phone" type="tel" value=""> </div>
                   <div class="field cjob_title">
                     <label class="label" for="job_title">Job Title
                       <span class="required">*</span>
                     </label>
-                    <input name="job_title" id="job_title" class="text job_title" placeholder="Job Title" type="text" value=""> </div>
+                    <input required name="job_title" id="job_title" class="text job_title" placeholder="Job Title" type="text" value=""> </div>
                   <div class="field cemployer_address">
                     <label class="label" for="employer_address">Employer Address</label>
-                    <input name="employer_address" id="employer_address" class="text employer_address" placeholder="Employer Address" type="text"
+                    <input required name="employer_address" id="employer_address" class="text employer_address" placeholder="Employer Address" type="text"
                       value=""> </div>
                   <div class="field">
                     <label class="label notfloat" for="">Employee Length of Time</label>
                     <div class="own-space">
                       <div class="cliving_since_year">
                         <label>Years</label>
-                        <input name="employee_year" id="employee_year" pattern="[0-9]*" class="text digits modern-input employee_year" placeholder="Years"
+                        <input required name="employee_year" id="employee_year" pattern="[0-9]*" class="text digits modern-input employee_year" placeholder="Years"
                           type="number" value=""> </div>
                       <div class="cliving_since_month">
                         <label>Months</label>
-                        <input name="employee_month" id="employee_month" pattern="[0-9]*" class="text digits modern-input employee_month" placeholder="Months"
+                        <input required name="employee_month" id="employee_month" pattern="[0-9]*" class="text digits modern-input employee_month" placeholder="Months"
                           type="number" value=""> </div>
                     </div>
                     <div class="clearfix"></div>
                   </div>
                   <div class="field cprevious_employer">
                     <label class="label" for="previous_employer">If less than 2 years, previous employer?</label>
-                    <input name="previous_employer" id="previous_employer" class="text previous_employer" placeholder="If less than 2 years, previous employer?"
+                    <input required name="previous_employer" id="previous_employer" class="text previous_employer" placeholder="If less than 2 years, previous employer?"
                       type="text" value=""> </div>
                   <div class="field cmonthly_income">
                     <label class="label" for="monthly_income">Monthly Income (before taxes)
                       <span class="required">*</span>
                     </label>
-                    <input name="monthly_income" id="monthly_income" pattern="[0-9]*" class="text digits modern-input monthly_income" placeholder="*Monthly Income (before taxes)"
+                    <input required name="monthly_income" id="monthly_income" pattern="[0-9]*" class="text digits modern-input monthly_income" placeholder="*Monthly Income (before taxes)"
                       type="number" value=""> </div>
                 </fieldset>
                 <div class="clearfix"></div>
@@ -768,20 +768,20 @@
               </div>
             </div>
             <div class="box-terms agree-box">
-              <input name="agree" id="agree" class="text agree" type="checkbox" value="1">
+              <input required name="agree" id="agree" class="text agree" type="checkbox" value="1">
               <div class="details">
                 <b>I agree</b> to give permission for the above applicant(s) Consumer Credit Report(s) be obtained, at no cost
                 to me, in order to help determine the types and extent of financing which are available:
               </div>
             </div>
-            <div class="box-hs">
+            <!-- <div class="box-hs">
               <div class="hfield">
-                <input name="hskey" id="hskey" class="text honeyspot" hidden type="text" value="">
-                <input name="hsid" id="hsid" type="hidden" value="228503830.27173">
+                <input required name="hskey" id="hskey" class="text honeyspot" hidden type="text" value="">
+                <input required name="hsid" id="hsid" type="hidden" value="228503830.27173">
               </div>
-            </div>
+            </div> -->
             <div class="form-button">
-              <input type="submit" value="Go">
+              <input type="submit" value="Go" class="disabled">
               <!-- <button type="submit" class="btn custom-btn"><span>Go</span></button> -->
             </div>
             <div class="check-errors-block">
@@ -860,9 +860,9 @@
                     </a>
                   </li>
                   <li>
-                    <a href="mailto:office@jydautoleasing.com">
+                    <a href="mailto:info@jydautoleasing.com">
                       <span>
-                        <i class="fa fa-envelope"></i>office@jydautoleasing.com
+                        <i class="fa fa-envelope"></i>info@jydautoleasing.com
                       </span>
                     </a>
                   </li>
@@ -973,6 +973,21 @@
         </div>
       </div>
     </footer>
+    <div id="myModal">
+      <div class="overlay"></div>
+      <div class="modal-main">
+        <div class="header">
+          <h5>JYD Auto Leasing</h5>
+        </div>
+        <div class="body">
+          <h3>Thank You!</h3>
+          <p>One of our sales specialists will be in contact shortly.</p>
+        </div>
+        <div class="footer">
+          <input id="modal-close" type="button" value="close" />
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- //Footer -->

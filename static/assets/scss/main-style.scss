@@ -235,6 +235,58 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 /*****************/
 
+#myModal {
+	z-index : 20;
+	display : none;
+	position : absolute;
+	// visibility : hidden;
+	// transition : all .2s linear;
+
+	.overlay {
+		position: fixed;
+		background-color: rgba(0, 0, 0, 0.289);
+		width: 100vw;
+		height: 100vh;
+		top: 0;
+		left: 0;
+		z-index: 2;
+	}
+	.modal-main {
+		// border: 1px solid rgba(0, 0, 0, 0.083);
+		box-sizing: border-box;
+		border-radius: 2px;
+		text-align: center;
+		height: 300px;
+		width: 400px;
+		background: white;
+		position: fixed;
+		z-index: 30;
+		margin-top: -150px;
+		margin-left: -200px;
+		top: 50%;
+		left: 50%;
+
+		.header {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 40px;
+			margin-bottom: 15px;
+			h5 {
+				color: rgba(255, 255, 255, 0.707);
+			}
+		}
+		.footer {
+			padding-top: 40px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+}
+
+/*****************/
+
 .sell-car {
 	.form-inputs {
 		margin-top: 40px;
@@ -244,6 +296,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			input {
 				padding: 20px 24px;
 				font-size: 0.75em !important;
+				width: 100%;
 			}
 		}
 	}
@@ -289,7 +342,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		margin: 30px 0;
 		input {
 			// height : 40px;
+			margin-bottom: 20px;
 			margin-left: 20px;
+			&.disabled {
+				background-color: gray;
+				cursor: default;
+			}
 		}
 	}
 }
@@ -467,9 +525,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 							padding: 20px 10px;
 							height: 100%;
 						}
-
 						&:hover a {
-							color : black !important;
+							color: black !important;
 						}
 					}
 				}
@@ -553,9 +610,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 								font-size: .8rem;
 							}
 						}
-
 						&:hover a {
-							color : white !important;
+							color: white !important;
 						}
 					}
 				}

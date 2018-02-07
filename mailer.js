@@ -16,14 +16,14 @@ const sendEmail = exports.sendEmail = (mailOptions, callback) => {
   if(!mailOptions.subject)
     mailOptions.subject = 'Do not reply - JYD Auto Leasing'; // change this to default subject
 
-  const verifyMail = (err,success) => {
-    if(err) return callback('Error verifying connection to SMTP server', err);
+  const verifyMail = (err, success) => {
+    if(err) return callback('Error verifying connection to SMTP server' + err);
 
     const send = (err, res) => {
-      if(err) return callback('Error', err);  //
+      if(err) return callback('Error => ' + err);  //
       return callback(null, res);
     };
-
+    console.log('About to send => ' + JSON.stringify(mailOptions))
     transporter.sendMail(mailOptions, send);
   };
 
