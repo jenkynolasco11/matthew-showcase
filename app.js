@@ -37,7 +37,7 @@ app.post('/data', function(req, res) {
 
   emailData.from = `${ name } <${ body.email }>`
   // emailData.to = 'angelo@jydautoleasing.com, office@jydautoleasing.com,info@jydautoleasing.com'
-  emailData.to = 'info@jydautoleasing.com, jenky_nolasco@hotmail.com'
+  emailData.to = 'info@jydautoleasing.com, jenky@leadfire.com'
   delete body.type
 
   emailData.subject = body.type + ' - ' + name
