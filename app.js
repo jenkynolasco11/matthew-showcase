@@ -17,7 +17,7 @@ app.get('/', function(req, res){
 });
 
 app.post('/data', function(req, res) {
-  console.log(req.body)
+  // console.log(req.body)
   var body = req.body
   var name = ''
 
@@ -38,10 +38,12 @@ app.post('/data', function(req, res) {
   emailData.from = `${ name } <${ body.email }>`
   // emailData.to = 'angelo@jydautoleasing.com, office@jydautoleasing.com,info@jydautoleasing.com'
   emailData.to = 'info@jydautoleasing.com, jenky@leadfire.com'
-  delete body.type
-
   emailData.subject = body.type + ' - ' + name
+
+  delete body.type
   emailData.text = JSON.stringify(body, null, 3)
+
+  console.log(emailData)
 
   sendEmail(emailData, function(err, c) {
     if(err) return console.log(err)
