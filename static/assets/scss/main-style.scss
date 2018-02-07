@@ -239,13 +239,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	.form-inputs {
 		margin-top: 40px;
 		.submit-button {
-			
 			margin-top: 30px;
 			margin-bottom: 50px;
-
 			input {
-				padding : 20px 24px;
-				font-size : 0.75em !important;
+				padding: 20px 24px;
+				font-size: 0.75em !important;
 			}
 		}
 	}
@@ -302,13 +300,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	// background-color : red;
 	margin-top: 40px;
 	margin-bottom: 80px;
-
 	.dealer-picture {
-		@media screen and (max-width : 768px) {
-			display : flex;
+		@media screen and (max-width: 768px) {
+			display: flex;
 			justify-content: center;
 		}
-
 		img {
 			// margin: 0 !important;// auto 40px; // width: 80%;
 			// margin-bottom: 40px; // height : auto;
@@ -318,11 +314,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	.img-testimonials,
 	.img-contact-us {
 		position: relative;
-
 		img {
-			width : 100%;
+			width: 100%;
 		}
-		
 		a {
 			top: 0;
 			left: 0;
@@ -340,7 +334,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				height: 100%;
 				width: 100%;
 			}
-
 		}
 		&:hover a .overlay-hidden {
 			opacity: 1;
@@ -402,7 +395,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 .custom-header-menu {
 	position: absolute; // background-color: rgb(31, 31, 31);
-	background-color: white;
+	background-color: rgb(31, 31, 31);
 	max-width: 1170px;
 	width: 100%;
 	top: 40px;
@@ -414,7 +407,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			// display : flex;
 			// justify-content : flex-end;
 			.menu-mobile-button {
-				margin-top : 45px;
+				margin-top: 45px;
 				height: 50px;
 				position: relative;
 				text-align: center;
@@ -457,23 +450,26 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				transition: height .1s linear, opacity .1s linear;
 			}
 			.menu-items {
-				height : 100%;
+				height: 100%;
 				ul {
-					height : 100%;
+					height: 100%;
 					float: right;
 					li {
-						height : 100%;
-						font-size: .9em;
-						// line-height : 10px;
-						@media screen and (max-width : 998px) {
-							font-size : .8em;
-						}
-						// display : flex;
+						height: 100%;
+						font-size: .9em; // line-height : 10px;
+						@media screen and (max-width: 998px) {
+							font-size: .7em;
+						} // display : flex;
 						// justify-content: center;
 						// align-content: center; 
 						a {
-							padding : 20px 10px;
-							height : 100%;
+							color: white !important;
+							padding: 20px 10px;
+							height: 100%;
+						}
+
+						&:hover a {
+							color : black !important;
 						}
 					}
 				}
@@ -484,24 +480,22 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			align-items: center;
 			justify-content: center;
 			a {
-				display : flex;
+				display: flex;
 				justify-content: center;
-				align-items : center;
+				align-items: center;
 				img {
 					min-width: 120px;
-					transition: all .1s linear;
-					// margin: 10px 0 auto;
-					max-width: 80%;
-
-					@media screen and (max-width : 768px) {
-						min-width : 200px;
+					transition: all .1s linear; // margin: 10px 0 auto;
+					max-width: 70%;
+					@media screen and (max-width: 768px) {
+						min-width: 200px;
 					}
 				}
 			}
 		}
 		.details {
 			position: relative;
-			background-color: rgb(31, 31, 31);
+			background-color: rgb(51, 51, 51);
 			padding-left: 100px;
 			&:before {
 				// background-color : rgb(31,31,31);
@@ -514,8 +508,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				height: 0;
 				border-style: solid;
 				border-width: 75px 0 0 70px;
-				border-color: transparent transparent transparent #ffffff;
-				// transition : all .1s linear;
+				border-color: transparent transparent transparent rgb(31, 31, 31); // transition : all .1s linear;
 			}
 			ul {
 				height: 100%;
@@ -526,7 +519,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				li {
 					margin: 0 10px;
 					a {
-						color: rgb(145, 145, 145);
+						color: rgb(223, 223, 223);
 					}
 				}
 			}
@@ -541,26 +534,34 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		top: 0;
 		max-width: none;
 		button {
-			margin-top: 0 !important;
+			margin-top: -12px !important;
 			background-color: red;
-
-			@media screen and (min-width : 992px) {
-				display : none !important;
+			@media screen and (min-width: 992px) {
+				display: none !important;
 			}
 		}
 		.half {
 			.menu-items {
 				ul {
-					// margin-top : 6px;
-					li a {
-						padding-top : 24px;
-						color: white !important;
-						font-size: .9rem;
+					margin-right: 60px;
+					li {
+						a {
+							padding-top: 24px;
+							color: white !important;
+							font-size: .9rem;
+							@media screen and (max-width: 998px) {
+								font-size: .8rem;
+							}
+						}
+
+						&:hover a {
+							color : white !important;
+						}
 					}
 				}
 			}
 			&:last-child {
-				margin-top: 28px;
+				margin-top: 42px;
 			}
 		}
 	}
@@ -585,7 +586,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		}
 		.details {
 			&:before {
-				display : none;
+				display: none;
 			}
 		}
 		&.special {
@@ -602,20 +603,17 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				height: 0;
 				opacity: 0;
 			}
-
 			&:last-child {
-				height : 100%
+				height: 100%
 			}
 		}
 		.logo {
 			img {
-				min-width : 140px !important;
-				// width: 80px;
-				margin-top : 10px;//0 auto !important;
-
-				@media screen and (min-width : 768px) {
-					max-width : 40px !important;
-					margin-top : 0;
+				min-width: 140px !important; // width: 80px;
+				margin-top: 10px; //0 auto !important;
+				@media screen and (min-width: 768px) {
+					max-width: 40px !important;
+					margin-top: 0;
 				}
 			}
 		}
@@ -652,7 +650,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			a {
 				color: white !important;
 				&:hover {
-					color: red !important;
+					color: black !important;
 				}
 			}
 		}
@@ -669,9 +667,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				width: 100%;
 			}
 		}
-
 		button {
-			font-size : 0.8em;
+			font-size: 0.8em;
 		}
 	}
 }
@@ -679,11 +676,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /***************/
 
 .landing-top {
-	position: relative;
-	padding-bottom: 60px;
-	overflow: hidden;
-	margin-bottom: 40px;
-	min-height: 600px;
+	// background-color : black;
+	position: relative; // padding-bottom: 60px;
+	overflow: hidden; // margin-bottom: 40px;
+	min-height: 760px;
 	.bg-overlay {
 		z-index: -1;
 		display: flex;
@@ -698,13 +694,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			width: 100%;
 			height: 100%;
 			background-color: black;
-			opacity: .5;
+			z-index: -1; // opacity: .5;
 		}
 		img {
 			// margin-top : 200px;
-			max-width: 1920px;
-			width: 1600px;
-			margin-top: -150px;
+			max-width: 1920px; // width: 1600px;
+			margin-top: -60px;
 			height: auto;
 		}
 		.text-top-img {
@@ -714,8 +709,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			color: white;
 			font-size: 2em;
 			bottom: 300px;
-
-
 			p {
 				margin-bottom: 16px;
 				&:first-child {
@@ -724,16 +717,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				&:last-child {
 					margin-right: -600px;
 				}
-
 				@media screen and (max-width: 768px) {
-					font-size: 0.8em;
-					// margin-bottom: 10px;
-					margin : 0 0 10px;
-					margin-left : 0 !important;
-					margin-right : 0 !important;
+					font-size: 0.8em; // margin-bottom: 10px;
+					margin: 0 0 10px;
+					margin-left: 0 !important;
+					margin-right: 0 !important;
 				}
 			}
-			
 		}
 	}
 	.dealer-logo {
@@ -842,7 +832,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	justify-content: center;
 	text-align: center;
 	.container-fluid {
-		margin-top: -140px;
+		margin-top: -180px;
 		max-width: 800px;
 	}
 	.section-advantages {

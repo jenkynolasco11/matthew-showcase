@@ -10254,7 +10254,7 @@ body.color-turquoise #road {
 /***************/
 .custom-header-menu {
   position: absolute;
-  background-color: white;
+  background-color: #1f1f1f;
   max-width: 1170px;
   width: 100%;
   top: 40px;
@@ -10350,13 +10350,18 @@ body.color-turquoise #road {
 
 @media screen and (max-width: 998px) {
   .custom-header-menu .row .half .menu-items ul li {
-    font-size: .8em;
+    font-size: .7em;
   }
 }
 
 .custom-header-menu .row .half .menu-items ul li a {
+  color: white !important;
   padding: 20px 10px;
   height: 100%;
+}
+
+.custom-header-menu .row .half .menu-items ul li:hover a {
+  color: black !important;
 }
 
 .custom-header-menu .row .logo {
@@ -10401,7 +10406,7 @@ body.color-turquoise #road {
      -moz-transition: all .1s linear;
        -o-transition: all .1s linear;
           transition: all .1s linear;
-  max-width: 80%;
+  max-width: 70%;
 }
 
 @media screen and (max-width: 768px) {
@@ -10412,7 +10417,7 @@ body.color-turquoise #road {
 
 .custom-header-menu .row .details {
   position: relative;
-  background-color: #1f1f1f;
+  background-color: #333333;
   padding-left: 100px;
 }
 
@@ -10426,7 +10431,7 @@ body.color-turquoise #road {
   height: 0;
   border-style: solid;
   border-width: 75px 0 0 70px;
-  border-color: transparent transparent transparent #ffffff;
+  border-color: transparent transparent transparent #1f1f1f;
 }
 
 .custom-header-menu .row .details ul {
@@ -10454,7 +10459,7 @@ body.color-turquoise #road {
 }
 
 .custom-header-menu .row .details ul li a {
-  color: #919191;
+  color: #dfdfdf;
 }
 
 .custom-header-menu.special {
@@ -10466,7 +10471,7 @@ body.color-turquoise #road {
 }
 
 .custom-header-menu.special button {
-  margin-top: 0 !important;
+  margin-top: -12px !important;
   background-color: red;
 }
 
@@ -10476,14 +10481,28 @@ body.color-turquoise #road {
   }
 }
 
+.custom-header-menu.special .half .menu-items ul {
+  margin-right: 60px;
+}
+
 .custom-header-menu.special .half .menu-items ul li a {
   padding-top: 24px;
   color: white !important;
   font-size: .9rem;
 }
 
+@media screen and (max-width: 998px) {
+  .custom-header-menu.special .half .menu-items ul li a {
+    font-size: .8rem;
+  }
+}
+
+.custom-header-menu.special .half .menu-items ul li:hover a {
+  color: white !important;
+}
+
 .custom-header-menu.special .half:last-child {
-  margin-top: 28px;
+  margin-top: 42px;
 }
 
 .custom-header-menu.active-scroll {
@@ -10601,7 +10620,7 @@ body.color-turquoise #road {
 }
 
 .mobile-menu-custom ul li a:hover {
-  color: red !important;
+  color: black !important;
 }
 
 /***************/
@@ -10620,10 +10639,8 @@ body.color-turquoise #road {
 /***************/
 .landing-top {
   position: relative;
-  padding-bottom: 60px;
   overflow: hidden;
-  margin-bottom: 40px;
-  min-height: 600px;
+  min-height: 760px;
 }
 
 .landing-top .bg-overlay {
@@ -10654,13 +10671,12 @@ body.color-turquoise #road {
   width: 100%;
   height: 100%;
   background-color: black;
-  opacity: .5;
+  z-index: -1;
 }
 
 .landing-top .bg-overlay img {
   max-width: 1920px;
-  width: 1600px;
-  margin-top: -150px;
+  margin-top: -60px;
   height: auto;
 }
 
@@ -10740,7 +10756,7 @@ body.color-turquoise #road {
 }
 
 .get-approved .container-fluid {
-  margin-top: -140px;
+  margin-top: -180px;
   max-width: 800px;
 }
 

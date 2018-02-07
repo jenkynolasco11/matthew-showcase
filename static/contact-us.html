@@ -33,6 +33,9 @@
                 <a href="index.html">Home</a>
             </li>
             <li>
+                <a href="credit-app.html">Credit App</a>
+            </li>
+            <li>
                 <a href="listing.html">Lease Specials</a>
             </li>
             <li>
@@ -83,6 +86,9 @@
                             <ul class="yamm main-menu nav navbar-nav">
                                 <li>
                                     <a href="index.html">Home</a>
+                                </li>
+                                <li>
+                                    <a href="credit-app.html">Credit App</a>
                                 </li>
                                 <li>
                                     <a href="listing.html">Lease Specials</a>
@@ -203,24 +209,24 @@
                     <div class="row">
                         <div class="col-xs-12 padd-lr0">
                             <div class="wheel-contact-form text-center marg-lg-b145">
-                                <form action="javascript:void(0)" method="post">
+                                <form action="javascript:void(0)" method="post" onsubmit="submitInformation('contact')">
                                     <div class="form">
                                         <div class="row">
                                             <div class="col-md-6 col-xs-12 mr-1 spacer-org">
-                                                <input class="form-control" type="text" placeholder="Your Name *">
+                                                <input name="name" class="form-control" type="text" placeholder="Your Name *" required>
                                             </div>
                                             <div class="col-md-6 col-xs-12 ml-1 spacer-org">
-                                                <input class="form-control" type="text" placeholder="Your Email *">
+                                                <input name="email" class="form-control" type="text" placeholder="Your Email *" required>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                <input class="form-control" type="text" placeholder="Subject*">
+                                                <input name="subject" class="form-control" type="text" placeholder="Subject*" required>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                <textarea class="form-control" placeholder="Message *"></textarea>
+                                                <textarea name="message" class="form-control" placeholder="Message *" required></textarea>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -425,21 +431,7 @@
     <!-- Google map -->
     <script src="assets/js/jquery.1.12.4.min.js"></script>
     <script src="assets/js/plugins/bootstrap.min.js"></script>
-    <!-- <script src="assets/js/plugins/wow.min.js"></script> -->
-    <!-- <script src="assets/js/plugins/jquery.smartmenus.min.js"></script>
-	<script src="assets/js/plugins/jquery.smartmenus.bootstrap.js"></script> -->
-    <script src="assets/js/plugins/jquery.nivo.slider.js"></script>
-    <script src="assets/js/plugins/swiper.min.js"></script>
-    <!-- <script src="assets/js/plugins/intlTelInput.min.js"></script> -->
-    <!-- <script src="assets/js/plugins/remodal.js"></script> -->
-    <!-- <script src="assets/js/plugins/stickup.min.js"></script> -->
-    <!-- <script src="assets/js/plugins/tool.js"></script> -->
-    <!-- <script src="assets/js/plugins/jquery.form.js"></script>
-	<script src="assets/js/plugins/jquery.validate.min.js"></script> -->
-    <!-- <script src="assets/js/plugins/moment.js"></script> -->
-    <!-- <script src="assets/js/plugins/bootstrap-datetimepicker.min.js"></script> -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt5tJTim4lOO3ojbGARhPd1Z3O3CnE-C8" type="text/javascript"></script>
-    <!-- <script src="assets/tmp/js/custom.js"></script> -->
     <script src="assets/tmp/js/custom.js"></script>
     <script src="assets/js/custom.js"></script>
 </body>

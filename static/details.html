@@ -32,6 +32,9 @@
                 <a href="index.html">Home</a>
             </li>
             <li>
+                <a href="credit-app.html">Credit App</a>
+            </li>
+            <li>
                 <a href="listing.html">Lease Specials</a>
             </li>
             <li>
@@ -82,6 +85,9 @@
                             <ul class="yamm main-menu nav navbar-nav">
                                 <li>
                                     <a href="index.html">Home</a>
+                                </li>
+                                <li>
+                                    <a href="credit-app.html">Credit App</a>
                                 </li>
                                 <li>
                                     <a href="listing.html">Lease Specials</a>
@@ -258,17 +264,18 @@
                                         <div class="row">
                                             <div class="col-xs-12 padd-lr0">
                                                 <div class="wheel-contact-form text-center marg-lg-b145">
-                                                    <form action="javascript:void(0)" method="post">
+                                                    <!-- Contact Form -->
+                                                    <form action="javascript:void(0)" method="post" onsubmit="submitInformation('contact')">
                                                         <div class="form">
                                                             <div class="row">
-                                                                <input class="col-md-6 col-xs-12" type="text" placeholder="Your Name *">
-                                                                <input class="col-md-6 col-xs-12" type="text" placeholder="Your Email *">
+                                                                <input name="name" class="col-md-6 col-xs-12" type="text" placeholder="Your Name *" required>
+                                                                <input name="email" class="col-md-6 col-xs-12" type="text" placeholder="Your Email *" required>
                                                             </div>
                                                             <div class="row">
-                                                                <input class="col-xs-12" type="text" placeholder="Subject*">
+                                                                <input name="subject" lass="col-xs-12" type="text" placeholder="Subject*" required>
                                                             </div>
                                                             <div class="row">
-                                                                <textarea class="col-xs-12" placeholder="Message *"></textarea>
+                                                                <textarea name="message" class="col-xs-12" placeholder="Message *" required></textarea>
                                                             </div>
                                                             <div class="row">
                                                                 <button class="col-md-offset-4 col-md-4 col-xs-offset-3 col-xs-6" class="wheel-btn">Submit Message</button>
@@ -319,7 +326,7 @@
                                     </div>
                                 </div>
                                 <!-- end .b-banner-->
-                                <form class="b-calculator">
+                                <form class="b-calculator" onsubmit="">
                                     <div class="b-calculator__header">
                                         <i class="icon flaticon-calculator text-primary"></i>
                                         <div class="b-calculator__header-inner">
@@ -329,19 +336,19 @@
                                     </div>
                                     <div class="b-calculator__group">
                                         <div class="b-calculator__label">VEHICLE PRICE ($)</div>
-                                        <input class="b-calculator__input form-control" type="text" placeholder="$28.600" />
+                                        <input name="price" class="b-calculator__input form-control" type="text" placeholder="$28.600" required />
                                     </div>
                                     <div class="b-calculator__group">
                                         <div class="b-calculator__label">INTEREST RATE (%)</div>
-                                        <input class="b-calculator__input form-control" type="text" placeholder="10%" />
+                                        <input name="interest" class="b-calculator__input form-control" type="text" placeholder="10%" required />
                                     </div>
                                     <div class="b-calculator__group">
                                         <div class="b-calculator__label">period in months</div>
-                                        <input class="b-calculator__input form-control" type="text" placeholder="15 Months" />
+                                        <input name="period" class="b-calculator__input form-control" type="text" placeholder="15 Months" required />
                                     </div>
                                     <div class="b-calculator__group">
                                         <div class="b-calculator__label">down payment</div>
-                                        <input class="b-calculator__input form-control" type="text" placeholder="$5,000" />
+                                        <input name="downPayment" class="b-calculator__input form-control" type="text" placeholder="$5,000" required />
                                     </div>
                                     <input class="b-calculator__input" type="submit" value="Calculate" />
                                 </form>
@@ -349,24 +356,24 @@
                             </div>
                         </aside>
                         <aside class="l-sidebar-2 contact-form">
-                            <form class="b-filter-2 bg-grey" action="javascript:void(0)">
+                            <form id="contact-form" class="b-filter-2 bg-grey" action="javascript:void(0)" onsubmit="submitInformation('contact')">
                                 <h3 class="b-filter-2__title">Contact Us</h3>
                                 <div class="b-filter-2__inner">
                                     <div class="b-filter-2__group">
                                         <!-- <div class="b-filter-2__group-title">Name</div> -->
-                                        <input class="form-control" placeholder="Name" type="text" required />
+                                        <input name="name" class="form-control" placeholder="Name" type="text" required />
                                     </div>
                                     <div class="b-filter-2__group">
                                         <!-- <div class="b-filter-2__group-title">Email</div> -->
-                                        <input class="form-control" placeholder="Email" type="email" required />
+                                        <input name="email" class="form-control" placeholder="Email" type="email" required />
                                     </div>
                                     <div class="b-filter-2__group">
                                         <!-- <div class="b-filter-2__group-title">Phone</div> -->
-                                        <input class="form-control" placeholder="Phone" type="phone" required />
+                                        <input name="phone" class="form-control" placeholder="Phone" type="phone" required />
                                     </div>
                                     <div class="b-filter-2__group">
                                         <!-- <div class="b-filter-2__group-title">Comment</div> -->
-                                        <textarea class="form-control" placeholder="Comment"></textarea>
+                                        <textarea name="comment" class="form-control" placeholder="Comment" required></textarea>
                                     </div>
                                     <div class="b-filter-2__group">
                                         <input type="submit" value="Submit" />
@@ -704,7 +711,7 @@
     <script src="assets/tmp/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
     <!-- Mail scripts-->
     <script src="assets/tmp/plugins/jqBootstrapValidation.js"></script>
-    <script src="assets/tmp/plugins/contact_me.js"></script>
+    <!-- <script src="assets/tmp/plugins/contact_me.js"></script> -->
     <!-- Filter and sorting images-->
     <script src="assets/tmp/plugins/isotope/isotope.pkgd.min.js"></script>
     <script src="assets/tmp/plugins/isotope/imagesLoaded.js"></script>

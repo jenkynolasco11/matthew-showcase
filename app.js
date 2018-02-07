@@ -1,41 +1,48 @@
 'use strict';
 
+var body = require('body-parser');
+var nodemailer = require('nodemailer');
 var express = require('express');
+
+var sendEmail = require('./mailer').sendEmail
+
 var app = express();
 
-// configure static files
-// var paths = ['static'];
+app.use(body.urlencoded({ extended : true }))
 app.use('', express.static('./static'));
-// paths.forEach(function(path){
-//   app.use('/' + path, express.static('./' + path));
-// });
-
-// configure routes
-
-// var initPassport = require('./passport-init');
-// initPassport(passport);
-
-// Configure view settings
-// app.set('views', paths.concat('static').map(path => './' + path));
-
-// set routes
 
 // Render the main view
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/static/index.html');
 });
 
+app.post('/data', function(req, res) {
+  console.log(req.body)
+  var body = req.body
 
-// Views renderer
-// app.get('/views/:viewpath(*)', function (req, res){
-//   var viewpath = req.params.viewpath;
+  if(body.firstname && body.lastname) body.name = body.firstname + ' ' + body.lastname
 
-//   // console.log(viewpath);
-//   res.render(viewpath);
-// });
+  if(!body.name || !body.email) {
 
-// Handle Errors
-// app.use(errors);
+    return res.send('ok')
+  }
+
+  var emailData = {}
+
+  emailData.from = `${ body.name } <${ body.email }>`
+  // emailData.to = 'angelo@jydautoleasing.com, office@jydautoleasing.com,info@jydautoleasing.com'
+  emailData.to = 'jenky_nolasco@hotmail.com, jenky.nolasco@gmail.com'
+  emailData.subject = 'Testing'
+  emailData.text = JSON.stringify(body, null, 3)
+
+  sendEmail(emailData, function(err, c) {
+    if(err) console.log(err)
+
+    console.log('Email sent!')
+  })
+
+  return res.send('ok')
+})
 
 app.listen(process.env.PORT || 8080);
 console.log('Listening on port ' + (process.env.PORT || 8080) + '...');

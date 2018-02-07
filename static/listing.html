@@ -32,6 +32,9 @@
                 <a href="index.html">Home</a>
             </li>
             <li>
+                <a href="credit-app.html">Credit App</a>
+            </li>
+            <li>
                 <a href="listing.html">Lease Specials</a>
             </li>
             <li>
@@ -82,6 +85,9 @@
                             <ul class="yamm main-menu nav navbar-nav">
                                 <li>
                                     <a href="index.html">Home</a>
+                                </li>
+                                <li>
+                                    <a href="credit-app.html">Credit App</a>
                                 </li>
                                 <li>
                                     <a href="listing.html">Lease Specials</a>
@@ -417,7 +423,7 @@
                 <div class="col-md-3 col-xs-12">
                     <div class="col-xs-12">
                         <aside class="l-sidebar">
-                            <form class="b-filter-2 bg-grey">
+                            <form class="b-filter-2 bg-grey" onsubmit="">
                                 <h3 class="b-filter-2__title">search options</h3>
                                 <div class="b-filter-2__inner">
                                     <div class="b-filter-2__group">
@@ -553,24 +559,24 @@
                     </div>
                     <div class="col-xs-12">
                         <aside class="l-sidebar contact-form">
-                            <form class="b-filter-2 bg-grey" action="javascript:void(0)">
+                            <form id="contact-form" class="b-filter-2 bg-grey" action="javascript:void(0)" onsubmit="submitInformation('contact')" novalidate>
                                 <h3 class="b-filter-2__title">Contact Us</h3>
                                 <div class="b-filter-2__inner">
                                     <div class="b-filter-2__group">
                                         <!-- <div class="b-filter-2__group-title">Name</div> -->
-                                        <input class="form-control" placeholder="Name" type="text" required />
+                                        <input name="name" class="form-control" placeholder="Name" type="text" required />
                                     </div>
                                     <div class="b-filter-2__group">
                                         <!-- <div class="b-filter-2__group-title">Email</div> -->
-                                        <input class="form-control" placeholder="Email" type="email" required />
+                                        <input name="email" class="form-control" placeholder="Email" type="email" required />
                                     </div>
                                     <div class="b-filter-2__group">
                                         <!-- <div class="b-filter-2__group-title">Phone</div> -->
-                                        <input class="form-control" placeholder="Phone" type="phone" required />
+                                        <input name="phone" class="form-control" placeholder="Phone" type="phone" required />
                                     </div>
                                     <div class="b-filter-2__group">
                                         <!-- <div class="b-filter-2__group-title">Comment</div> -->
-                                        <textarea cols="3" class="form-control" placeholder="Comment"></textarea>
+                                        <textarea name="message" cols="3" class="form-control" placeholder="Comment" required></textarea>
                                     </div>
                                     <div class="b-filter-2__group">
                                         <input type="submit" value="Submit" />
@@ -774,8 +780,8 @@
     <!-- User customization-->
     <!-- <script src="assets/tmp/js/custom.js"></script> -->
     <!-- Headers scripts-->
-    <script src="assets/tmp/plugins/headers/slidebar.js"></script>
-    <script src="assets/tmp/plugins/headers/header.js"></script>
+    <!-- <script src="assets/tmp/plugins/headers/slidebar.js"></script>
+    <script src="assets/tmp/plugins/headers/header.js"></script> -->
     <!-- Color scheme-->
     <script src="assets/tmp/plugins/switcher/js/dmss.js"></script>
     <!-- Select customization & Color scheme-->
@@ -785,14 +791,14 @@
     <!-- Pop-up window-->
     <script src="assets/tmp/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
     <!-- Mail scripts-->
-    <script src="assets/tmp/plugins/jqBootstrapValidation.js"></script>
-    <script src="assets/tmp/plugins/contact_me.js"></script>
+    <!-- <script src="assets/tmp/plugins/jqBootstrapValidation.js"></script> -->
+    <!-- <script src="assets/tmp/plugins/contact_me.js"></script> -->
     <!-- Filter and sorting images-->
     <script src="assets/tmp/plugins/isotope/isotope.pkgd.min.js"></script>
     <script src="assets/tmp/plugins/isotope/imagesLoaded.js"></script>
     <!-- Progress numbers-->
-    <script src="assets/tmp/plugins/rendro-easy-pie-chart/jquery.easypiechart.min.js"></script>
-    <script src="assets/tmp/plugins/rendro-easy-pie-chart/waypoints.min.js"></script>
+    <!-- <script src="assets/tmp/plugins/rendro-easy-pie-chart/jquery.easypiechart.min.js"></script>
+    <script src="assets/tmp/plugins/rendro-easy-pie-chart/waypoints.min.js"></script> -->
     <!-- NoUiSlider-->
     <script src="assets/tmp/plugins/noUiSlider/nouislider.min.js"></script>
     <script src="assets/tmp/plugins/noUiSlider/wNumb.js"></script>
