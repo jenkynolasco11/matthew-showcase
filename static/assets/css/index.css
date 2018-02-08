@@ -68,7 +68,10 @@ html {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+       -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 /* TEXT SETTING */
@@ -135,7 +138,10 @@ h6 {
   width: 60px;
   height: 60px;
   background-color: white;
-  transition: all 0.15s ease-out;
+  -webkit-transition: all 0.15s ease-out;
+     -moz-transition: all 0.15s ease-out;
+       -o-transition: all 0.15s ease-out;
+          transition: all 0.15s ease-out;
   text-align: center;
 }
 
@@ -167,7 +173,10 @@ h6 {
   border: 1px solid #fff;
   background-color: rgba(255, 255, 255, 0.05);
   text-align: center;
-  transition: all 0.15s ease-out;
+  -webkit-transition: all 0.15s ease-out;
+     -moz-transition: all 0.15s ease-out;
+       -o-transition: all 0.15s ease-out;
+          transition: all 0.15s ease-out;
 }
 
 .swiper-outer-left:hover,
@@ -197,7 +206,10 @@ h6 {
 
 .swiper-slide-visible.wheel-opacity {
   opacity: .2;
-  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+     -moz-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
 }
 
 .pagination {
@@ -211,7 +223,9 @@ h6 {
   display: inline-block !important;
   border: 2px solid transparent;
   margin: 5px;
-  border-radius: 50%;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
 }
 
 .swiper-active-switch {
@@ -242,7 +256,9 @@ h6 {
   height: 0;
   border-width: 0 1px;
   -webkit-transition: height .2s linear, padding-top .2s linear, padding-bottom .3s linear, border-top-width .3s linear, border-top-width .3s linear;
-  transition: height .2s linear, padding-top .2s linear, padding-bottom .3s linear, border-top-width .3s linear, border-top-width .3s linear;
+  -moz-transition: height .2s linear, padding-top .2s linear, padding-bottom .3s linear, border-top-width .3s linear, border-top-width .3s linear;
+    -o-transition: height .2s linear, padding-top .2s linear, padding-bottom .3s linear, border-top-width .3s linear, border-top-width .3s linear;
+       transition: height .2s linear, padding-top .2s linear, padding-bottom .3s linear, border-top-width .3s linear, border-top-width .3s linear;
 }
 
 .wpc-accordion .panel-wrap.active .panel-content {
@@ -267,7 +283,10 @@ h6 {
   top: 40px;
   margin: auto;
   z-index: 999;
-  transition: all 0.15s ease-out;
+  -webkit-transition: all 0.15s ease-out;
+     -moz-transition: all 0.15s ease-out;
+       -o-transition: all 0.15s ease-out;
+          transition: all 0.15s ease-out;
 }
 
 .wheel-menu-wrap a:hover {
@@ -361,14 +380,20 @@ h6 {
 .main-menu .sub-menu {
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+     -moz-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
 }
 
 .main-menu .menu-item:hover > .sub-menu {
   height: auto;
   visibility: visible;
   opacity: 1;
-  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+     -moz-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
 }
 
 /* Active menu items */
@@ -427,7 +452,6 @@ h6 {
 .wheel-navigation.active .nav-menu-icon i:before {
   top: 0;
   -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
@@ -436,7 +460,6 @@ h6 {
 .wheel-navigation.active .nav-menu-icon i:after {
   top: 0;
   -webkit-transform: rotate(135deg);
-  -ms-transform: rotate(135deg);
   -moz-transform: rotate(135deg);
   -o-transform: rotate(135deg);
   transform: rotate(135deg);
@@ -493,8 +516,14 @@ h6 {
     position: fixed;
   }
   .menu-item-has-children > .sub-menu {
-    transform: translate(200%);
-    transition: all 0.5s ease;
+    -webkit-transform: translate(200%);
+       -moz-transform: translate(200%);
+         -o-transform: translate(200%);
+            transform: translate(200%);
+    -webkit-transition: all 0.5s ease;
+       -moz-transition: all 0.5s ease;
+         -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
     position: absolute;
     width: 100%;
     background-color: #262626;
@@ -508,8 +537,14 @@ h6 {
     left: 0;
   }
   .menu-item-has-children.active > .sub-menu {
-    transform: translate(0);
-    transition: all 0.5s ease;
+    -webkit-transform: translate(0);
+       -moz-transform: translate(0);
+         -o-transform: translate(0);
+            transform: translate(0);
+    -webkit-transition: all 0.5s ease;
+       -moz-transition: all 0.5s ease;
+         -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
   }
   .nav-menu-icon {
     display: block;
@@ -647,7 +682,10 @@ h6 {
 }
 
 .top-menu-item .dropdown .dropdown-menu {
-  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+     -moz-transition: all 0.3s;
+       -o-transition: all 0.3s;
+          transition: all 0.3s;
   max-height: 0;
   display: block;
   overflow: hidden;
@@ -660,14 +698,20 @@ h6 {
 }
 
 .top-menu-item .dropdown {
-  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+     -moz-transition: all 0.5s ease-out;
+       -o-transition: all 0.5s ease-out;
+          transition: all 0.5s ease-out;
 }
 
 .top-menu-item .dropdown-menu > li > a {
   margin-right: 0;
   line-height: 40px;
   color: #999;
-  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+     -moz-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
 }
 
 .top-menu-item .dropdown-menu > li > a:hover {
@@ -677,7 +721,9 @@ h6 {
 .top-menu-item .dropdown-menu {
   margin: 0;
   padding: 0;
-  border-radius: 0;
+  -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+          border-radius: 0;
 }
 
 .top-menu-item button {
@@ -700,7 +746,10 @@ h6 {
 .menu-item {
   margin: 0 22px;
   position: relative;
-  transition: all 0.15s ease;
+  -webkit-transition: all 0.15s ease;
+     -moz-transition: all 0.15s ease;
+       -o-transition: all 0.15s ease;
+          transition: all 0.15s ease;
 }
 
 .menu-item ul a {
@@ -767,7 +816,10 @@ h6 {
   font-weight: 700;
   text-transform: uppercase;
   position: relative;
-  transition: all 0.15s ease;
+  -webkit-transition: all 0.15s ease;
+     -moz-transition: all 0.15s ease;
+       -o-transition: all 0.15s ease;
+          transition: all 0.15s ease;
 }
 
 .wheel-cheader-but:hover {
@@ -894,7 +946,10 @@ h6 {
   text-transform: uppercase;
   position: relative;
   border: none;
-  transition: all 0.15s ease;
+  -webkit-transition: all 0.15s ease;
+     -moz-transition: all 0.15s ease;
+       -o-transition: all 0.15s ease;
+          transition: all 0.15s ease;
 }
 
 .wheel-btn:before, .wheel-btn:after {
@@ -1175,7 +1230,9 @@ h6 {
   margin-bottom: 18px;
   padding: 15px 0 15px 0;
   border-right: 5px solid transparent;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
   display: inline-block;
 }
 
@@ -1255,7 +1312,9 @@ h6 {
 .wheel-date .bootstrap-select button {
   background-color: transparent;
   border-color: transparent;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
   outline: none;
 }
 
@@ -1272,7 +1331,9 @@ h6 {
   background-color: transparent;
   outline: none !important;
   border-color: transparent;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
 }
 
 .bootstrap-select .dropdown-toggle:focus {
@@ -1291,7 +1352,10 @@ h6 {
 }
 
 .wheel-service-logo:after {
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+     -moz-transition: all 0.3s ease;
+       -o-transition: all 0.3s ease;
+          transition: all 0.3s ease;
   position: absolute;
   content: '';
   display: inline-block;
@@ -1307,11 +1371,15 @@ h6 {
 
 .wheel-service-item {
   padding: 60px 0 155px;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+     -moz-transition: all 0.3s ease;
+       -o-transition: all 0.3s ease;
+          transition: all 0.3s ease;
 }
 
 .wheel-service-item:hover img {
-  filter: contrast(0);
+  -webkit-filter: contrast(0);
+          filter: contrast(0);
 }
 
 .wheel-service-item:hover .wheel-service-logo:after {
@@ -1320,7 +1388,10 @@ h6 {
 }
 
 .wheel-service-item img {
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+     -moz-transition: all 0.3s ease;
+       -o-transition: all 0.3s ease;
+          transition: all 0.3s ease;
 }
 
 .wheel-service-item h5 {
@@ -1349,14 +1420,18 @@ h6 {
   border: 8px solid white;
   position: relative;
   z-index: 2;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+     -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
 }
 
 .wheel-service-img {
   margin-top: -130px;
   position: relative;
   z-index: 3;
-  background-size: auto;
+  -moz-background-size: auto;
+    -o-background-size: auto;
+       background-size: auto;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -1412,7 +1487,9 @@ h6 {
   padding-left: 85px;
   float: left;
   width: 25%;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
   display: inline-block;
 }
 
@@ -1502,7 +1579,10 @@ h6 {
   display: inline-block;
   padding: 15px 25px;
   margin: -3px;
-  transition: all 0.15s ease;
+  -webkit-transition: all 0.15s ease;
+     -moz-transition: all 0.15s ease;
+       -o-transition: all 0.15s ease;
+          transition: all 0.15s ease;
 }
 
 .wheel-collection .tabs-header li a {
@@ -1514,7 +1594,10 @@ h6 {
 }
 
 .wheel-collection .tabs-header li.active {
-  transition: all 0.15s ease;
+  -webkit-transition: all 0.15s ease;
+     -moz-transition: all 0.15s ease;
+       -o-transition: all 0.15s ease;
+          transition: all 0.15s ease;
   border: 2px solid #d9d9d9;
   border-bottom: 2px solid transparent;
 }
@@ -1536,7 +1619,10 @@ h6 {
 }
 
 .wheel-collection-item:hover, .wheel-collection-item.active-car {
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+     -moz-transition: all 0.3s ease;
+       -o-transition: all 0.3s ease;
+          transition: all 0.3s ease;
   border: 10px solid red;
 }
 
@@ -1648,7 +1734,9 @@ h6 {
 }
 
 .wheel-info-img {
-  background-size: cover;
+  -moz-background-size: cover;
+    -o-background-size: cover;
+       background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -1826,7 +1914,10 @@ h6 {
   line-height: 27px;
   text-decoration: underline;
   text-transform: uppercase;
-  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+     -moz-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
 }
 
 .wheel-news-item a:hover {
@@ -1953,7 +2044,9 @@ h6 {
 }
 
 .wheel-quote-logo img {
-  border-radius: 50%;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
 }
 
 .wheel-quote-partners {
@@ -1962,7 +2055,10 @@ h6 {
 
 .wheel-quote-partners img {
   padding: 0 25px;
-  transition: all 0.30s ease-out;
+  -webkit-transition: all 0.30s ease-out;
+     -moz-transition: all 0.30s ease-out;
+       -o-transition: all 0.30s ease-out;
+          transition: all 0.30s ease-out;
 }
 
 .wheel-quote-partners img:hover {
@@ -2014,7 +2110,9 @@ h6 {
 /*--------------------------------------------------------------------------------------*/
 .wheel-footer {
   position: relative;
-  background-size: cover;
+  -moz-background-size: cover;
+    -o-background-size: cover;
+       background-size: cover;
   padding: 140px 0 140px;
 }
 
@@ -2044,7 +2142,10 @@ h6 {
 }
 
 .wheel-footer img {
-  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+     -moz-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
 }
 
 .wheel-footer a {
@@ -2052,12 +2153,17 @@ h6 {
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
   font-weight: 500;
-  transition: all 0.15s ease-out;
+  -webkit-transition: all 0.15s ease-out;
+     -moz-transition: all 0.15s ease-out;
+       -o-transition: all 0.15s ease-out;
+          transition: all 0.15s ease-out;
 }
 
 .wheel-footer a:hover img {
   opacity: 0.8;
-  box-shadow: 0 0 2px 0 #fff;
+  -webkit-box-shadow: 0 0 2px 0 #fff;
+     -moz-box-shadow: 0 0 2px 0 #fff;
+          box-shadow: 0 0 2px 0 #fff;
 }
 
 .wheel-footer a:hover:before {
@@ -2093,7 +2199,10 @@ h6 {
 
 .wheel-footer-item li a {
   line-height: 32px;
-  transition: all 0.15s ease-out;
+  -webkit-transition: all 0.15s ease-out;
+     -moz-transition: all 0.15s ease-out;
+       -o-transition: all 0.15s ease-out;
+          transition: all 0.15s ease-out;
 }
 
 .wheel-footer-item li a:hover {
@@ -2186,7 +2295,10 @@ h6 {
   font-size: 14px;
   font-weight: 500;
   line-height: 24px;
-  transition: all 0.15s ease-out;
+  -webkit-transition: all 0.15s ease-out;
+     -moz-transition: all 0.15s ease-out;
+       -o-transition: all 0.15s ease-out;
+          transition: all 0.15s ease-out;
 }
 
 .wheel-footer-info li a:hover {
@@ -2260,7 +2372,9 @@ h6 {
 }
 
 .wheel-start2 {
-  background-size: cover;
+  -moz-background-size: cover;
+    -o-background-size: cover;
+       background-size: cover;
   background-repeat: no-repeat;
   padding: 0;
 }
@@ -2288,7 +2402,9 @@ h6 {
   position: relative;
   margin-top: 20px;
   z-index: 2;
-  background-size: auto;
+  -moz-background-size: auto;
+    -o-background-size: auto;
+       background-size: auto;
   background-repeat: no-repeat;
   background-position: center;
   margin-bottom: -50px;
@@ -2378,11 +2494,16 @@ h6 {
 /* Index 2*/
 /*--------------------------------------------------------------------------------------*/
 .wheel-works-ico {
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+     -moz-transition: all 0.3s ease;
+       -o-transition: all 0.3s ease;
+          transition: all 0.3s ease;
   width: 120px;
   height: 120px;
   background-color: #eceff1;
-  border-radius: 50%;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -2390,7 +2511,10 @@ h6 {
 
 .wheel-works-ico img {
   position: absolute;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+     -moz-transition: all 0.3s ease;
+       -o-transition: all 0.3s ease;
+          transition: all 0.3s ease;
   top: 0;
   bottom: 0;
   right: 0;
@@ -2424,7 +2548,8 @@ h6 {
 }
 
 .wheel-works:hover .wheel-works-ico img {
-  filter: brightness(10);
+  -webkit-filter: brightness(10);
+          filter: brightness(10);
 }
 
 /*--------------------------------------------------------------------------------------*/
@@ -2435,7 +2560,9 @@ h6 {
 }
 
 .wheel-news-item2 .wheel-news-item-img {
-  background-size: cover;
+  -moz-background-size: cover;
+    -o-background-size: cover;
+       background-size: cover;
   background-repeat: no-repeat;
   min-height: 285px;
 }
@@ -2452,7 +2579,9 @@ h6 {
 /* Index 2*/
 /*--------------------------------------------------------------------------------------*/
 .wheel-app-body {
-  background-size: cover;
+  -moz-background-size: cover;
+    -o-background-size: cover;
+       background-size: cover;
   background-repeat: no-repeat;
   position: relative;
 }
@@ -2507,13 +2636,20 @@ h6 {
 
 .wheel-app a {
   display: inline-block;
-  transition: all 0.15s ease-out;
+  -webkit-transition: all 0.15s ease-out;
+     -moz-transition: all 0.15s ease-out;
+       -o-transition: all 0.15s ease-out;
+          transition: all 0.15s ease-out;
   margin: 0 5px;
-  border-radius: 3px;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
 }
 
 .wheel-app a:hover {
-  box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.6);
+     -moz-box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.6);
   opacity: .8;
 }
 
@@ -2522,7 +2658,9 @@ h6 {
 /*--------------------------------------------------------------------------------------*/
 .wheel-start3 {
   position: relative;
-  background-size: cover;
+  -moz-background-size: cover;
+    -o-background-size: cover;
+       background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -2638,7 +2776,10 @@ h6 {
   background-color: #eceff1;
   margin: auto;
   position: relative;
-  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+     -moz-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
 }
 
 .wheel-contact-logo i {
@@ -2781,7 +2922,10 @@ h6 {
   text-transform: uppercase;
   position: relative;
   border: none;
-  transition: all 0.15s ease;
+  -webkit-transition: all 0.15s ease;
+     -moz-transition: all 0.15s ease;
+       -o-transition: all 0.15s ease;
+          transition: all 0.15s ease;
 }
 
 .wheel-register-log button:before, .wheel-register-log button:after {
@@ -2882,7 +3026,10 @@ h6 {
   text-transform: uppercase;
   position: relative;
   border: none;
-  transition: all 0.15s ease;
+  -webkit-transition: all 0.15s ease;
+     -moz-transition: all 0.15s ease;
+       -o-transition: all 0.15s ease;
+          transition: all 0.15s ease;
 }
 
 .wheel-register-sign button:before, .wheel-register-sign button:after {
@@ -3005,7 +3152,10 @@ h6 {
 .wheel-register-link a {
   text-align: center;
   width: 100%;
-  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+     -moz-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
   display: inline-block;
   margin-bottom: 20px;
   line-height: 60px;
@@ -3268,7 +3418,10 @@ h6 {
   text-transform: uppercase;
   position: relative;
   border: none;
-  transition: all 0.15s ease;
+  -webkit-transition: all 0.15s ease;
+     -moz-transition: all 0.15s ease;
+       -o-transition: all 0.15s ease;
+          transition: all 0.15s ease;
 }
 
 .wheel-search-form button:before, .wheel-search-form button:after {
@@ -3419,7 +3572,10 @@ h6 {
   text-transform: uppercase;
   position: relative;
   border: none;
-  transition: all 0.15s ease;
+  -webkit-transition: all 0.15s ease;
+     -moz-transition: all 0.15s ease;
+       -o-transition: all 0.15s ease;
+          transition: all 0.15s ease;
 }
 
 .wheel-payment button:before, .wheel-payment button:after {
@@ -3505,7 +3661,10 @@ h6 {
 }
 
 .wheel-interest {
-  transition: all 1.5s ease-out;
+  -webkit-transition: all 1.5s ease-out;
+     -moz-transition: all 1.5s ease-out;
+       -o-transition: all 1.5s ease-out;
+          transition: all 1.5s ease-out;
   width: 0%;
   background-color: #404040;
   height: 100%;
@@ -3556,11 +3715,17 @@ h6 {
   right: 0;
   top: 0;
   text-align: center;
-  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+     -moz-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
 }
 
 .wheel-skills-accordion .panel-title span:before {
-  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+     -moz-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
   width: 5px;
   height: 15px;
   left: 0;
@@ -3575,7 +3740,10 @@ h6 {
 }
 
 .wheel-skills-accordion .panel-title span:after {
-  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+     -moz-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
   width: 15px;
   height: 5px;
   left: 0;
@@ -3601,7 +3769,10 @@ h6 {
 }
 
 .wpc-accordion .panel-wrap.active .panel-title span:before {
-  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+     -moz-transform: rotate(90deg);
+       -o-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 .wpc-accordion .panel-wrap.active .panel-content {
@@ -3673,7 +3844,10 @@ h6 {
 /* About*/
 /*--------------------------------------------------------------------------------------*/
 .wheel-partners a {
-  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+     -moz-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
   display: inline-block;
   margin: 0 50px;
   position: relative;
@@ -3688,7 +3862,8 @@ h6 {
 }
 
 .wheel-partners a:hover {
-  filter: blur(0px) brightness(0.1);
+  -webkit-filter: blur(0px) brightness(0.1);
+          filter: blur(0px) brightness(0.1);
 }
 
 /*--------------------------------------------------------------------------------------*/
@@ -3795,7 +3970,10 @@ h6 {
   font-size: 15px;
   font-weight: 400;
   line-height: 27px;
-  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+     -moz-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
   padding-right: 13px;
 }
 
@@ -3836,7 +4014,10 @@ h6 {
 }
 
 .wheel-page-pagination a {
-  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+     -moz-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
   vertical-align: top;
   color: #999;
   font-size: 14px;
@@ -4084,7 +4265,10 @@ h6 {
   line-height: 30px;
   text-transform: uppercase;
   margin: 10px 5px 0 0;
-  transition: all 0.30s ease-out;
+  -webkit-transition: all 0.30s ease-out;
+     -moz-transition: all 0.30s ease-out;
+       -o-transition: all 0.30s ease-out;
+          transition: all 0.30s ease-out;
 }
 
 .wheel-tags a:hover {
@@ -4311,7 +4495,10 @@ h6 {
   text-transform: uppercase;
   position: relative;
   border: none;
-  transition: all 0.15s ease;
+  -webkit-transition: all 0.15s ease;
+     -moz-transition: all 0.15s ease;
+       -o-transition: all 0.15s ease;
+          transition: all 0.15s ease;
 }
 
 .wheel-reply-form button:before, .wheel-reply-form button:after {
@@ -4461,7 +4648,9 @@ h6 {
   text-align: center;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  -moz-background-size: contain;
+    -o-background-size: contain;
+       background-size: contain;
   width: 40.5%;
 }
 
@@ -4525,7 +4714,10 @@ h6 {
 .product-list .metadata {
   visibility: hidden;
   text-align: right;
-  transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+     -moz-transition: all 300ms ease-in-out;
+       -o-transition: all 300ms ease-in-out;
+          transition: all 300ms ease-in-out;
   position: absolute;
   bottom: -15px;
   right: 60px;
@@ -4606,7 +4798,10 @@ h6 {
   font-family: "FontAwesome";
   color: #A9A9A9;
   top: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+     -moz-transform: translateY(-50%);
+       -o-transform: translateY(-50%);
+          transform: translateY(-50%);
   right: 20px;
 }
 
@@ -4728,7 +4923,9 @@ h6 {
 
 .r-return-block .img-wrap {
   background-repeat: no-repeat;
-  background-size: contain;
+  -moz-background-size: contain;
+    -o-background-size: contain;
+       background-size: contain;
 }
 
 .r-return-block .text-wrap .t-title {
@@ -4951,7 +5148,10 @@ h6 {
 .form-2 label a {
   color: #E33835;
   border-bottom: 1px solid #E33835;
-  transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+     -moz-transition: all 300ms ease-in-out;
+       -o-transition: all 300ms ease-in-out;
+          transition: all 300ms ease-in-out;
   font-weight: 400;
   font-size: 16px;
   letter-spacing: -.25px;
@@ -5061,7 +5261,9 @@ h6 {
   display: inline-block;
   width: 14px;
   height: 14px;
-  border-radius: 50%;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
   background-color: #fff;
   margin-right: 10px;
   position: absolute;
@@ -5083,14 +5285,18 @@ h6 {
   display: inline-block;
   width: 13px;
   height: 13px;
-  border-radius: 50%;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
   background-color: #F16541;
   margin-right: 10px;
   position: absolute;
   left: 0;
   top: 6px;
   border: 2px solid #fff;
-  box-shadow: 0 0 0 1px #F16541;
+  -webkit-box-shadow: 0 0 0 1px #F16541;
+     -moz-box-shadow: 0 0 0 1px #F16541;
+          box-shadow: 0 0 0 1px #F16541;
 }
 
 .payment .total {
@@ -5148,7 +5354,10 @@ h6 {
   color: #F16541;
   border-bottom: 1px solid #F16541;
   font-size: 16px;
-  transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+     -moz-transition: all 300ms ease-in-out;
+       -o-transition: all 300ms ease-in-out;
+          transition: all 300ms ease-in-out;
   letter-spacing: -.4px;
 }
 
@@ -5266,7 +5475,10 @@ h6 {
   text-decoration: underline;
   text-transform: uppercase;
   letter-spacing: -.1px;
-  transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+     -moz-transition: all 300ms ease-in-out;
+       -o-transition: all 300ms ease-in-out;
+          transition: all 300ms ease-in-out;
 }
 
 .car-item-wrap .link:hover {
@@ -5309,7 +5521,10 @@ h6 {
 .car-swiper-wrap .swiper-outer-left {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+     -moz-transform: translateY(-50%);
+       -o-transform: translateY(-50%);
+          transform: translateY(-50%);
   height: 60px;
   width: 60px;
   border: 1px solid #D4D4D4;
@@ -5452,7 +5667,10 @@ h6 {
   z-index: 100;
   left: 50%;
   bottom: 0;
-  transform: translate(-50%, 40%);
+  -webkit-transform: translate(-50%, 40%);
+     -moz-transform: translate(-50%, 40%);
+       -o-transform: translate(-50%, 40%);
+          transform: translate(-50%, 40%);
 }
 
 .imgOnBanner-wrap img {
@@ -5514,7 +5732,10 @@ h6 {
 @media screen and (max-width: 1200px) {
   .r-return-block.type-2.style-2 .img-wrap {
     position: static;
-    transform: none;
+    -webkit-transform: none;
+       -moz-transform: none;
+         -o-transform: none;
+            transform: none;
   }
   .wheel-start3.style-5 {
     padding-bottom: 120px;
@@ -5552,7 +5773,10 @@ h6 {
   .r-return-block .img-wrap {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+       -moz-transform: translateY(-50%);
+         -o-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
 }
 
@@ -5677,7 +5901,10 @@ h6 {
   }
   .r-return-block .img-wrap {
     position: static;
-    transform: none;
+    -webkit-transform: none;
+       -moz-transform: none;
+         -o-transform: none;
+            transform: none;
   }
 }
 
@@ -5774,7 +6001,10 @@ h6 {
 @media screen and (max-width: 1200px) {
   .r-return-block.type-2.style-2 .img-wrap {
     position: static;
-    transform: none;
+    -webkit-transform: none;
+       -moz-transform: none;
+         -o-transform: none;
+            transform: none;
   }
   .wheel-start3.style-5 {
     padding-bottom: 120px;
@@ -5812,7 +6042,10 @@ h6 {
   .r-return-block .img-wrap {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+       -moz-transform: translateY(-50%);
+         -o-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
 }
 
@@ -5937,7 +6170,10 @@ h6 {
   }
   .r-return-block .img-wrap {
     position: static;
-    transform: none;
+    -webkit-transform: none;
+       -moz-transform: none;
+         -o-transform: none;
+            transform: none;
   }
 }
 
@@ -6159,7 +6395,9 @@ h6 {
   bottom: 30px;
   left: 50%;
   -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+       transform: translateX(-50%);
 }
 
 .wheel-table-cart img {
@@ -6485,7 +6723,9 @@ h6 {
     max-width: 100%;
   }
   .wheel-service-img {
-    background-size: contain;
+    -moz-background-size: contain;
+      -o-background-size: contain;
+         background-size: contain;
   }
   .wheel-testimonial-item:before {
     display: none;
@@ -6520,7 +6760,9 @@ h6 {
   /* Index 2*/
   /*--------------------------------------------------------------------------------------*/
   .wheel-service-img2 {
-    background-size: contain;
+    -moz-background-size: contain;
+      -o-background-size: contain;
+         background-size: contain;
   }
   .wheel-start-form2 .wheel-date {
     width: 49%;
