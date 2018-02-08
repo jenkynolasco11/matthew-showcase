@@ -10718,11 +10718,11 @@ body.color-turquoise #road {
   margin-top: 40px;
 }
 
-.contact-page .form .spacer-org input {
+.contact-page #contact-form .spacer-org input {
   width: 100%;
 }
 
-.contact-page .form button {
+.contact-page #contact-form button {
   font-size: 0.8em;
 }
 
