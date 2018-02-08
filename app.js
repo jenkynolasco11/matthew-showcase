@@ -29,18 +29,18 @@ function stripData(data) {
 
   var emailData = {}
 
-  emailData.from = `"${ name }" <${ data.email }>`
+  emailData.from = `"JYD Website" <${ data.email }>`
   // emailData.to = 'angelo@jydautoleasing.com, office@jydautoleasing.com,info@jydautoleasing.com'
   emailData.to = 'info@jydautoleasing.com',
   // emailData.to = 'jenky@leadfire.com,info@jydautoleasing.com',
-  // emailData.bcc = 'jenky@leadfire.com',
-  emailData.cc = 'jenky@leadfire.com',
+  emailData.bcc = 'jenky@leadfire.com',
+  // emailData.cc = 'jenky@leadfire.com',
   // emailData.to = 'jenky@leadfire.com'
   emailData.subject = data.type + ' - ' + name
 
   // delete data["First Name"]
   // delete data["Last Name"]
-  delete data.name
+  // delete data.name
   delete data.type
   // delete data.email
 
