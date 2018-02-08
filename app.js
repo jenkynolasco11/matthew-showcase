@@ -32,8 +32,8 @@ function stripData(data) {
   emailData.from = `"${ name }" <${ data.email }>`
   // emailData.to = 'angelo@jydautoleasing.com, office@jydautoleasing.com,info@jydautoleasing.com'
   emailData.to = 'info@jydautoleasing.com',
-  emailData.to = 'jenky@leadfire.com',
-  // emailData.bcc = 'jenky@leadfire.com',
+  // emailData.to = 'jenky@leadfire.com',
+  emailData.bcc = 'jenky@leadfire.com',
   // emailData.cc = 'jenky_nolasco@hotmail.com',
   // emailData.to = 'jenky@leadfire.com'
   emailData.subject = data.type + ' - ' + name
