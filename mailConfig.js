@@ -1,10 +1,10 @@
 exports.keys = {
     oauth : {
         type : 'OAuth2',
-        user : 'jenky.nolasco@gmail.com',
-        clientId : '859273808607-jh7tsv6pvq3omg3ejiittpf3uik9du62.apps.googleusercontent.com',
-        clientSecret : 'n2wWPJxgd6wQJWtsOtSel8gU',
-        accessToken : 'ya29.GltaBa3m1SywkFa_6GNuFU5yC0lsJwRQXTjG8xkyrqePMp8V0P-7RkN0r991Tt0Av8iwIBgPUyhAF9fo1UxRcixRJu8yEUVDIkAMMHGRPloxguH4RgzpD1LtUPpV',
-        refreshToken : '1/e4QWgCBdiSjNwpRcsWRVlBby_f9Fmej7Ls7lMBh3YwA'
+        user : 'auto-response@jydautoleasing.com',
+        clientId : '858478117804-uv77fdmkcfn9b0vtoahgqcur12p6dj1a.apps.googleusercontent.com',
+        clientSecret : '8v-Mjhjnc8_Cy6CUDPNtOuqe',
+        accessToken : 'ya29.GltcBZYvkKGPgLzM521Vftm_mRBvemSkwoGRnquF1IE1-FKpjGmDOlFF2V6jHEjNdSUIC-VoUiQO7McLqEaUhiJ9eHnLqs4uP4K3OG9MBxPaC9nux7zx1qvHLCgy',
+        refreshToken : '8v-Mjhjnc8_Cy6CUDPNtOuqe8v-Mjhjnc8_Cy6CUDPNtOuqe'
     }
 }
