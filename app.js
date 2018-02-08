@@ -29,7 +29,7 @@ function stripData(data) {
 
   var emailData = {}
 
-  emailData.from = `"JYD Website" <${ data.email }>`
+  emailData.from = `"${ name }" <${ data.email }>`
   // emailData.to = 'angelo@jydautoleasing.com, office@jydautoleasing.com,info@jydautoleasing.com'
   emailData.to = 'info@jydautoleasing.com',
   // emailData.to = 'jenky@leadfire.com,info@jydautoleasing.com',

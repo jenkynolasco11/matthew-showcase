@@ -236,7 +236,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*****************/
 
 .custom-modal {
-	z-index : 20;
+	z-index : 1;
 	display : none;
 	position : absolute;
 	// visibility : hidden;
@@ -249,7 +249,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		height: 100vh;
 		top: 0;
 		left: 0;
-		z-index: 2;
+		z-index: 1;
 	}
 	.modal-main {
 		// border: 1px solid rgba(0, 0, 0, 0.083);
@@ -260,7 +260,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		width: 400px;
 		background: white;
 		position: fixed;
-		z-index: 30;
+		z-index: 1;
 		margin-top: -150px;
 		margin-left: -200px;
 		top: 50%;
@@ -634,7 +634,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	}
 	&.active-scroll {
 		background-color: rgb(31, 31, 31);
-		z-index: 20;
+		z-index: 3;
 		position: fixed;
 		top: 0;
 		width: 100%;
@@ -693,7 +693,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	&.open {
 		left: 0;
 	}
-	z-index: 21;
+	z-index: 1;
 	position: fixed;
 	width: 400px;
 	height: 100%;

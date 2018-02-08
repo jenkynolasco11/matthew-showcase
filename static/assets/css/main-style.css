@@ -10065,7 +10065,7 @@ body.color-turquoise #road {
 
 /*****************/
 .custom-modal {
-  z-index: 20;
+  z-index: 1;
   display: none;
   position: absolute;
 }
@@ -10077,7 +10077,7 @@ body.color-turquoise #road {
   height: 100vh;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 1;
 }
 
 .custom-modal .modal-main {
@@ -10092,7 +10092,7 @@ body.color-turquoise #road {
   width: 400px;
   background: white;
   position: fixed;
-  z-index: 30;
+  z-index: 1;
   margin-top: -150px;
   margin-left: -200px;
   top: 50%;
@@ -10597,7 +10597,7 @@ body.color-turquoise #road {
 
 .custom-header-menu.active-scroll {
   background-color: #1f1f1f;
-  z-index: 20;
+  z-index: 3;
   position: fixed;
   top: 0;
   width: 100%;
@@ -10655,7 +10655,7 @@ body.color-turquoise #road {
        -o-transition: left .1s linear;
           transition: left .1s linear;
   left: -400px;
-  z-index: 21;
+  z-index: 1;
   position: fixed;
   width: 400px;
   height: 100%;
