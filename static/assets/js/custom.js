@@ -296,7 +296,9 @@ $(window).on('load resize', undateMenu)
 // }
 
 var contactForm = $('form#contact-form')
-contactForm.submit(function(e) {
+contactForm.submit(submitContactForm)
+
+function submitContactForm(e) {
 	console.log('submitting...')
 	e.preventDefault()
 
@@ -304,27 +306,31 @@ contactForm.submit(function(e) {
 	formData.type = 'Contact Us'
 
 	submitForm(contactForm, formData);
-})
+}
 
 var sellingForm = $('form#selling-form')
-sellingForm.submit(function(e) {
+sellingForm.submit(submitSellingForm)
+
+function submitSellingForm(e) {
 	e.preventDefault()
 
 	var formData = {}
 	formData.type = 'Cash For Cars'
 
 	submitForm(sellingForm, formData);
-})
+}
 
 var creditAppForm = $('form#credit-app-form')
-creditAppForm.submit(function(e) {
+creditAppForm.submit(submitCreditApp)
+
+function submitCreditApp(e) {
 	e.preventDefault()
 
 	var formData = {}
 	formData.type = 'Credit App'
 
 	submitForm(creditAppForm, formData);
-})
+}
 
 function submitForm(form, formData) {
 	var arr = form.serializeArray()
