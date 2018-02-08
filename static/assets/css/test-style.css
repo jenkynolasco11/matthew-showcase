@@ -10718,8 +10718,8 @@ body.color-turquoise #road {
   margin-top: 40px;
 }
 
-.contact-page .form button {
-  font-size: 0.8em;
+.contact-page .form .spacer-org input {
+  width: 100%;
 }
 
 /***************/
