@@ -6,6 +6,13 @@ const transporter = nodemailer.createTransport({
   auth : mailConfig.oauth
 });
 
+transporter.on('token', token => {
+  console.log('A new access token was generated')
+  console.log('User: %s', token.user)
+  console.log('Access Token: %s', token.accessToken)
+  console.log('Expires: %s', new Date(token.expires))
+})
+
 const sendEmail = exports.sendEmail = (mailOptions, callback) => {
   if(!mailOptions.to || !mailOptions.text)
     return callback('Error on options.', new Error('Error: No text or sender email has been added to options sent.'));

@@ -203,15 +203,15 @@ $(document).ready(function () {
   /////////////////////////////////////
 
 
-  if ($('.scrollreveal').length > 0) {
-    window.sr = ScrollReveal({
-      reset: true,
-      duration: 1000,
-      delay: 200
-    });
+  // if ($('.scrollreveal').length > 0) {
+  //   window.sr = ScrollReveal({
+  //     reset: true,
+  //     duration: 1000,
+  //     delay: 200
+  //   });
 
-    sr.reveal('.scrollreveal');
-  }
+  //   sr.reveal('.scrollreveal');
+  // }
 
 
   //////////////////////////////
@@ -236,11 +236,11 @@ $(document).ready(function () {
   // Parallax(Stellar)
   //////////////////////////////
 
-  if ($('.stellar').length > 0) {
-    $.stellar({
-      responsive: true
-    });
-  }
+  // if ($('.stellar').length > 0) {
+  //   $.stellar({
+  //     responsive: true
+  //   });
+  // }
 
 
   ////////////////////////////////////////////
@@ -283,23 +283,23 @@ $(document).ready(function () {
   // }
 
 
-  function CharsStart() {
+  // function CharsStart() {
 
-    $('.js-chart').easyPieChart({
-      barColor: false,
-      trackColor: false,
-      scaleColor: false,
-      scaleLength: false,
-      lineCap: false,
-      lineWidth: false,
-      size: false,
-      animate: 5000,
+  //   $('.js-chart').easyPieChart({
+  //     barColor: false,
+  //     trackColor: false,
+  //     scaleColor: false,
+  //     scaleLength: false,
+  //     lineCap: false,
+  //     lineWidth: false,
+  //     size: false,
+  //     animate: 5000,
 
-      onStep: function (from, to, percent) {
-        $(this.el).find('.js-percent').text(Math.round(percent));
-      }
-    });
-  }
+  //     onStep: function (from, to, percent) {
+  //       $(this.el).find('.js-percent').text(Math.round(percent));
+  //     }
+  //   });
+  // }
 
 
 
@@ -319,17 +319,17 @@ $(document).ready(function () {
   /////////////////////////////////////
 
 
-  $(".js-scroll-next").on("click", function () {
+  // $(".js-scroll-next").on("click", function () {
 
-    var hiddenContent = $(".js-scroll-next + .js-scroll-content");
+  //   var hiddenContent = $(".js-scroll-next + .js-scroll-content");
 
-    $(".js-scroll-next").hide();
-    hiddenContent.show();
-    hiddenContent.addClass("animated");
-    hiddenContent.addClass("animation-done");
-    hiddenContent.addClass("bounceInUp");
+  //   $(".js-scroll-next").hide();
+  //   hiddenContent.show();
+  //   hiddenContent.addClass("animated");
+  //   hiddenContent.addClass("animation-done");
+  //   hiddenContent.addClass("bounceInUp");
 
-  });
+  // });
 
 
 
@@ -337,15 +337,15 @@ $(document).ready(function () {
   // Accordion
   /////////////////////////////////////////////////////////////////
 
-  $(".btn-collapse").on('click', function () {
-    $(this).parents('.panel-group').children('.panel').removeClass('panel-default');
-    $(this).parents('.panel').addClass('panel-default');
-    if ($(this).is(".collapsed")) {
-      $('.panel-title').removeClass('panel-passive');
-    } else {
-      $(this).next().toggleClass('panel-passive');
-    };
-  });
+  // $(".btn-collapse").on('click', function () {
+  //   $(this).parents('.panel-group').children('.panel').removeClass('panel-default');
+  //   $(this).parents('.panel').addClass('panel-default');
+  //   if ($(this).is(".collapsed")) {
+  //     $('.panel-title').removeClass('panel-passive');
+  //   } else {
+  //     $(this).next().toggleClass('panel-passive');
+  //   };
+  // });
 
 
   /////////////////////////////////////
@@ -353,12 +353,12 @@ $(document).ready(function () {
   /////////////////////////////////////
 
 
-  $('.link-tooltip-1').tooltip({
-    template: '<div class="tooltip tooltip-1" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
-  });
-  $('.link-tooltip-2').tooltip({
-    template: '<div class="tooltip tooltip-2" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
-  });
+  // $('.link-tooltip-1').tooltip({
+  //   template: '<div class="tooltip tooltip-1" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
+  // });
+  // $('.link-tooltip-2').tooltip({
+  //   template: '<div class="tooltip tooltip-2" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
+  // });
 
 
 
@@ -370,34 +370,34 @@ $(document).ready(function () {
 
 
 
-  if ($('.js-zoom-gallery').length > 0) {
-    $('.js-zoom-gallery').each(function () { // the containers for all your galleries
-      $(this).magnificPopup({
-        delegate: '.js-zoom-gallery__item', // the selector for gallery item
-        type: 'image',
-        gallery: {
-          enabled: true
-        },
-        mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+  // if ($('.js-zoom-gallery').length > 0) {
+  //   $('.js-zoom-gallery').each(function () { // the containers for all your galleries
+  //     $(this).magnificPopup({
+  //       delegate: '.js-zoom-gallery__item', // the selector for gallery item
+  //       type: 'image',
+  //       gallery: {
+  //         enabled: true
+  //       },
+  //       mainClass: 'mfp-with-zoom', // this class is for CSS animation below
 
-        zoom: {
-          enabled: true, // By default it's false, so don't forget to enable it
+  //       zoom: {
+  //         enabled: true, // By default it's false, so don't forget to enable it
 
-          duration: 300, // duration of the effect, in milliseconds
-          easing: 'ease-in-out', // CSS transition easing function
+  //         duration: 300, // duration of the effect, in milliseconds
+  //         easing: 'ease-in-out', // CSS transition easing function
 
-          // The "opener" function should return the element from which popup will be zoomed in
-          // and to which popup will be scaled down
-          // By defailt it looks for an image tag:
-          opener: function (openerElement) {
-            // openerElement is the element on which popup was initialized, in this case its <a> tag
-            // you don't need to add "opener" option if this code matches your needs, it's defailt one.
-            return openerElement.is('img') ? openerElement : openerElement.find('img');
-          }
-        }
-      });
-    });
-  }
+  //         // The "opener" function should return the element from which popup will be zoomed in
+  //         // and to which popup will be scaled down
+  //         // By defailt it looks for an image tag:
+  //         opener: function (openerElement) {
+  //           // openerElement is the element on which popup was initialized, in this case its <a> tag
+  //           // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+  //           return openerElement.is('img') ? openerElement : openerElement.find('img');
+  //         }
+  //       }
+  //     });
+  //   });
+  // }
 
 
   if ($('.js-zoom-images').length > 0) {
@@ -431,37 +431,37 @@ $(document).ready(function () {
   ///////////////////////////////////////////
 
 
-  if ($('.b-isotope').length > 0) {
+  // if ($('.b-isotope').length > 0) {
 
-    var $container = $('.b-isotope-grid');
+  //   var $container = $('.b-isotope-grid');
 
-    // init Isotope
-    var $grid = $('.grid').isotope({
-      itemSelector: '.grid-item',
-      percentPosition: true,
-      masonry: {
-        columnWidth: '.grid-sizer'
-      }
-    });
-    // layout Isotope after each image loads
-    $grid.imagesLoaded().progress(function () {
-      $grid.isotope('layout');
-    });
+  //   // init Isotope
+  //   var $grid = $('.grid').isotope({
+  //     itemSelector: '.grid-item',
+  //     percentPosition: true,
+  //     masonry: {
+  //       columnWidth: '.grid-sizer'
+  //     }
+  //   });
+  //   // layout Isotope after each image loads
+  //   $grid.imagesLoaded().progress(function () {
+  //     $grid.isotope('layout');
+  //   });
 
-    // filter items when filter link is clicked
-    $('.b-isotope-filter a').on('click', function () {
-      var selector = $(this).attr('data-filter');
-      $container.isotope({
-        filter: selector
-      });
-      return false;
-    });
+  //   // filter items when filter link is clicked
+  //   $('.b-isotope-filter a').on('click', function () {
+  //     var selector = $(this).attr('data-filter');
+  //     $container.isotope({
+  //       filter: selector
+  //     });
+  //     return false;
+  //   });
 
-    $('.b-isotope-filter a').on('click', function () {
-      $('.b-isotope-filter').find('.current').removeClass('current');
-      $(this).parent().addClass('current');
-    });
-  }
+  //   $('.b-isotope-filter a').on('click', function () {
+  //     $('.b-isotope-filter').find('.current').removeClass('current');
+  //     $(this).parent().addClass('current');
+  //   });
+  // }
 
 
 
@@ -492,51 +492,51 @@ $(document).ready(function () {
       formatDate: 'Y/m/d'
     });
   }
-  if ($('#datepicker').length > 0) {
-    $('#datepicker').datetimepicker({
-      timepicker: false,
-      format: 'd/m/Y',
-      formatDate: 'Y/m/d'
-    });
-  }
-  if ($('#offdatepicker').length > 0) {
-    $('#offdatepicker').datetimepicker({
-      timepicker: false,
-      format: 'd/m/Y',
-      formatDate: 'Y/m/d'
-    });
-  }
+  // if ($('#datepicker').length > 0) {
+  //   $('#datepicker').datetimepicker({
+  //     timepicker: false,
+  //     format: 'd/m/Y',
+  //     formatDate: 'Y/m/d'
+  //   });
+  // }
+  // if ($('#offdatepicker').length > 0) {
+  //   $('#offdatepicker').datetimepicker({
+  //     timepicker: false,
+  //     format: 'd/m/Y',
+  //     formatDate: 'Y/m/d'
+  //   });
+  // }
 
   /////////////////////////////////////
   // Enumerator
   /////////////////////////////////////
 
-  if ($('.enumerator').length > 0) {
-    $(".js-minus_btn").on('click', function () {
-      var inputEl = jQuery(this).parent().children().next();
-      var qty = inputEl.val();
-      if (jQuery(this).parent().hasClass("js-minus_btn"))
-        qty++;
-      else
-        qty--;
-      if (qty < 0)
-        qty = 0;
-      inputEl.val(qty);
-    });
+  // if ($('.enumerator').length > 0) {
+  //   $(".js-minus_btn").on('click', function () {
+  //     var inputEl = jQuery(this).parent().children().next();
+  //     var qty = inputEl.val();
+  //     if (jQuery(this).parent().hasClass("js-minus_btn"))
+  //       qty++;
+  //     else
+  //       qty--;
+  //     if (qty < 0)
+  //       qty = 0;
+  //     inputEl.val(qty);
+  //   });
 
 
-    $(".js-plus_btn").on('click', function () {
-      var inputEl = jQuery(this).parent().children().next();
-      var qty = inputEl.val();
-      if (jQuery(this).hasClass("js-plus_btn"))
-        qty++;
-      else
-        qty--;
-      if (qty < 0)
-        qty = 0;
-      inputEl.val(qty);
-    });
-  }
+  //   $(".js-plus_btn").on('click', function () {
+  //     var inputEl = jQuery(this).parent().children().next();
+  //     var qty = inputEl.val();
+  //     if (jQuery(this).hasClass("js-plus_btn"))
+  //       qty++;
+  //     else
+  //       qty--;
+  //     if (qty < 0)
+  //       qty = 0;
+  //     inputEl.val(qty);
+  //   });
+  // }
 
 
 
@@ -545,32 +545,32 @@ $(document).ready(function () {
   /////////////////////////////////////////////////////////////////
 
 
-  if ($('.js-slider-price').length > 0) {
+  // if ($('.js-slider-price').length > 0) {
 
 
-    $(".js-slider-price").noUiSlider({
-      start: [1000, 3000],
-      step: 10,
-      connect: true,
-      range: {
-        'min': 0,
-        'max': 5000
-      },
+  //   $(".js-slider-price").noUiSlider({
+  //     start: [1000, 3000],
+  //     step: 10,
+  //     connect: true,
+  //     range: {
+  //       'min': 0,
+  //       'max': 5000
+  //     },
 
-      // Full number format support.
-      format: wNumb({
-        decimals: 0,
-        prefix: '$'
-      })
-    });
+  //     // Full number format support.
+  //     format: wNumb({
+  //       decimals: 0,
+  //       prefix: '$'
+  //     })
+  //   });
 
-    // Reading/writing + validation from an input? One line.
-    $('.js-slider-price').Link('lower').to($('.js-slider-price_min'));
+  //   // Reading/writing + validation from an input? One line.
+  //   $('.js-slider-price').Link('lower').to($('.js-slider-price_min'));
 
-    // Write to a span? One line.
-    $('.js-slider-price').Link('upper').to($('.js-slider-price_max'));
+  //   // Write to a span? One line.
+  //   $('.js-slider-price').Link('upper').to($('.js-slider-price_max'));
 
-  }
+  // }
 
 
   ////////////////////////////////////////////
@@ -578,24 +578,24 @@ $(document).ready(function () {
   ///////////////////////////////////////////
 
 
-  if ($('#main-slider').length > 0) {
+  // if ($('#main-slider').length > 0) {
 
-    var sliderWidth = $("#main-slider").data("slider-width");
-    var sliderHeigth = $("#main-slider").data("slider-height");
-    var sliderArrows = $("#main-slider").data("slider-arrows");
-    var sliderButtons = $("#main-slider").data("slider-buttons");
+  //   var sliderWidth = $("#main-slider").data("slider-width");
+  //   var sliderHeigth = $("#main-slider").data("slider-height");
+  //   var sliderArrows = $("#main-slider").data("slider-arrows");
+  //   var sliderButtons = $("#main-slider").data("slider-buttons");
 
-    $('#main-slider').sliderPro({
-      width: sliderWidth,
-      height: sliderHeigth,
-      arrows: sliderArrows,
-      buttons: sliderButtons,
-      fade: true,
-      fullScreen: true,
-      touchSwipe: false,
-      autoplay: true
-    });
-  }
+  //   $('#main-slider').sliderPro({
+  //     width: sliderWidth,
+  //     height: sliderHeigth,
+  //     arrows: sliderArrows,
+  //     buttons: sliderButtons,
+  //     fade: true,
+  //     fullScreen: true,
+  //     touchSwipe: false,
+  //     autoplay: true
+  //   });
+  // }
 
 
   ////////////////////////////////////////////
@@ -603,34 +603,34 @@ $(document).ready(function () {
   ///////////////////////////////////////////
 
 
-  if ($('#slider-thumbnail').length > 0) {
+  // if ($('#slider-thumbnail').length > 0) {
 
-    $('#slider-thumbnail').sliderPro({
-      width: 682,
-      height: 505,
-      orientation: 'vertical',
-      loop: false,
-      arrows: false,
-      buttons: false,
-      thumbnailsPosition: 'left',
-      thumbnailPointer: true,
-      thumbnailWidth: 458,
-      thumbnailHeight: 101,
-      thumbnailArrows: true,
-      autoplay: true,
-      breakpoints: {
-        800: {
-          thumbnailsPosition: 'bottom',
-          thumbnailWidth: 270,
-          thumbnailHeight: 100
-        },
-        500: {
-          thumbnailsPosition: 'bottom',
-          thumbnailWidth: 200
-        }
-      }
-    });
-  }
+  //   $('#slider-thumbnail').sliderPro({
+  //     width: 682,
+  //     height: 505,
+  //     orientation: 'vertical',
+  //     loop: false,
+  //     arrows: false,
+  //     buttons: false,
+  //     thumbnailsPosition: 'left',
+  //     thumbnailPointer: true,
+  //     thumbnailWidth: 458,
+  //     thumbnailHeight: 101,
+  //     thumbnailArrows: true,
+  //     autoplay: true,
+  //     breakpoints: {
+  //       800: {
+  //         thumbnailsPosition: 'bottom',
+  //         thumbnailWidth: 270,
+  //         thumbnailHeight: 100
+  //       },
+  //       500: {
+  //         thumbnailsPosition: 'bottom',
+  //         thumbnailWidth: 200
+  //       }
+  //     }
+  //   });
+  // }
 
 
   if ($('#slider-car-details').length > 0) {
