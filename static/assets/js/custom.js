@@ -273,27 +273,57 @@ undateMenu()
 $(window).on('scroll', undateMenu)
 $(window).on('load resize', undateMenu)
 
-function submitInformation(f) {
-	var form = null;
+// function submitInformation(f) {
+// 	var form = null;
+// 	var formData = {}
+
+// 	if(f === 'contact') {
+// 		form = $('form#contact-form')
+// 		formData.type = 'Contact Us'
+// 	}
+// 	else if(f === 'selling') {
+// 		form = $('form#selling-form')
+// 		formData.type = 'Cash For Cars'
+// 	}
+// 	else {
+// 		form = $('form#credit-app-form')
+// 		formData.type = 'Credit App'
+// 	}
+
+// 	submitForm(form, formData)
+
+// 	return false
+// }
+
+var contactForm = $('form#contact-form')
+contactForm.submit(function(e) {
+	e.preventDefault()
+
 	var formData = {}
+	formData.type = 'Contact Us'
 
-	if(f === 'contact') {
-		form = $('form#contact-form')
-		formData.type = 'Contact Us'
-	}
-	else if(f === 'selling') {
-		form = $('form#selling-form')
-		formData.type = 'Cash For Cars'
-	}
-	else {
-		form = $('form#credit-app-form')
-		formData.type = 'Credit App'
-	}
+	submitForm(contactForm, formData);
+})
 
-	submitForm(form, formData)
+var sellingForm = $('form#selling-form')
+sellingForm.submit(function(e) {
+	e.preventDefault()
 
-	return false
-}
+	var formData = {}
+	formData.type = 'Cash For Cars'
+
+	submitForm(sellingForm, formData);
+})
+
+var creditAppForm = $('form#credit-app-form')
+creditAppForm.submit(function(e) {
+	e.preventDefault()
+
+	var formData = {}
+	formData.type = 'Credit App'
+
+	submitForm(creditAppForm, formData);
+})
 
 function submitForm(form, formData) {
 	var arr = form.serializeArray()
