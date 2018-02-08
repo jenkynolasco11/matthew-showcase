@@ -300,23 +300,23 @@ var sellingForm = $('#selling-form')
 var creditAppForm = $('#credit-app-form')
 
 contactForm.submit(function(e){
-	return submitInformation(e, 'Contact Us')
+	return submitInformation(e, 'Contact Us', contactForm)
 })
 sellingForm.submit(function(e){
-	return submitInformation(e, 'Cash For Cars')
+	return submitInformation(e, 'Cash For Cars', sellingForm)
 })
 
 creditAppForm.submit(function(e){
-	return submitInformation(e, 'Credit App')
+	return submitInformation(e, 'Credit App', creditAppForm)
 })
 
-function submitInformation(e, frm) {
+function submitInformation(e, type, form) {
 	e.preventDefault()
 
 	var formData = {}
-	formData.type = frm
+	formData.type = type
 
-	submitForm(creditAppForm, formData);
+	submitForm(form, formData);
 }
 
 function submitForm(form, formData) {
