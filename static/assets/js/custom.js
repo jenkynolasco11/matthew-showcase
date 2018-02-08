@@ -295,39 +295,26 @@ $(window).on('load resize', undateMenu)
 // 	return false
 // }
 
-var contactForm = $('form#contact-form')
-contactForm.submit(submitContactForm)
+var contactForm = $('#contact-form')
+var sellingForm = $('#selling-form')
+var creditAppForm = $('#credit-app-form')
 
-function submitContactForm(e) {
-	console.log('submitting...')
+contactForm.submit(function(e){
+	return submitInformation(e, 'Contact Us')
+})
+sellingForm.submit(function(e){
+	return submitInformation(e, 'Cash For Cars')
+})
+
+creditAppForm.submit(function(e){
+	return submitInformation(e, 'Credit App')
+})
+
+function submitInformation(e, frm) {
 	e.preventDefault()
 
 	var formData = {}
-	formData.type = 'Contact Us'
-
-	submitForm(contactForm, formData);
-}
-
-var sellingForm = $('form#selling-form')
-sellingForm.submit(submitSellingForm)
-
-function submitSellingForm(e) {
-	e.preventDefault()
-
-	var formData = {}
-	formData.type = 'Cash For Cars'
-
-	submitForm(sellingForm, formData);
-}
-
-var creditAppForm = $('form#credit-app-form')
-creditAppForm.submit(submitCreditApp)
-
-function submitCreditApp(e) {
-	e.preventDefault()
-
-	var formData = {}
-	formData.type = 'Credit App'
+	formData.type = frm
 
 	submitForm(creditAppForm, formData);
 }
