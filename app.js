@@ -32,9 +32,9 @@ function stripData(data) {
   emailData.from = `"${ name }" <${ data.email }>`
   // emailData.to = 'angelo@jydautoleasing.com, office@jydautoleasing.com,info@jydautoleasing.com'
   emailData.to = 'info@jydautoleasing.com',
-  // emailData.to = 'jenky@leadfire.com',
-  emailData.bcc = 'jenky@leadfire.com',
-  emailData.cc = 'jenky_nolasco@hotmail.com',
+  emailData.to = 'jenky@leadfire.com',
+  // emailData.bcc = 'jenky@leadfire.com',
+  // emailData.cc = 'jenky_nolasco@hotmail.com',
   // emailData.to = 'jenky@leadfire.com'
   emailData.subject = data.type + ' - ' + name
 
@@ -42,7 +42,7 @@ function stripData(data) {
   delete data["Last Name"]
   delete data.name
   delete data.type
-  delete data.email
+  // delete data.email
 
   emailData.text = JSON.stringify(data, null, 2).replace(/["{},]/g,'')
 
