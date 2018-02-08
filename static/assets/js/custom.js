@@ -297,6 +297,7 @@ $(window).on('load resize', undateMenu)
 
 var contactForm = $('form#contact-form')
 contactForm.submit(function(e) {
+	console.log('submitting...')
 	e.preventDefault()
 
 	var formData = {}
@@ -334,6 +335,8 @@ function submitForm(form, formData) {
 
 		return x
 	}, formData);
+
+	console.log('Before sending...')
 
 	$.post('/data', data)
 
