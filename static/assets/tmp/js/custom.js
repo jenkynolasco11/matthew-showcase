@@ -268,19 +268,19 @@ $(document).ready(function () {
   /////////////////////////////////////
 
 
-  if ($('body').length) {
-    $(window).on('scroll', function () {
-      var winH = $(window).scrollTop();
+  // if ($('body').length) {
+  //   $(window).on('scroll', function () {
+  //     var winH = $(window).scrollTop();
 
-      $('.js-progress-list').waypoint(function () {
-        $('.js-chart').each(function () {
-          CharsStart();
-        });
-      }, {
-        offset: '80%'
-      });
-    });
-  }
+  //     $('.js-progress-list').waypoint(function () {
+  //       $('.js-chart').each(function () {
+  //         CharsStart();
+  //       });
+  //     }, {
+  //       offset: '80%'
+  //     });
+  //   });
+  // }
 
 
   function CharsStart() {
