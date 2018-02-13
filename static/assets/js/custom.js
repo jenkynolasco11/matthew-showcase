@@ -273,28 +273,6 @@ undateMenu()
 $(window).on('scroll', undateMenu)
 $(window).on('load resize', undateMenu)
 
-// function submitInformation(f) {
-// 	var form = null;
-// 	var formData = {}
-
-// 	if(f === 'contact') {
-// 		form = $('form#contact-form')
-// 		formData.type = 'Contact Us'
-// 	}
-// 	else if(f === 'selling') {
-// 		form = $('form#selling-form')
-// 		formData.type = 'Cash For Cars'
-// 	}
-// 	else {
-// 		form = $('form#credit-app-form')
-// 		formData.type = 'Credit App'
-// 	}
-
-// 	submitForm(form, formData)
-
-// 	return false
-// }
-
 var contactForm = $('#contact-form')
 var sellingForm = $('#selling-form')
 var creditAppForm = $('#credit-app-form')
@@ -305,7 +283,6 @@ contactForm.submit(function(e){
 sellingForm.submit(function(e){
 	return submitInformation(e, 'Cash For Cars', sellingForm)
 })
-
 creditAppForm.submit(function(e){
 	return submitInformation(e, 'Credit App', creditAppForm)
 })

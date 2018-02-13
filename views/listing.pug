@@ -1,0 +1,159 @@
+extends _pug-page.pug
+
+block main-body
+  .container
+        .row
+          .col-md-9
+            main.l-main-content
+              .filter-goods
+                .filter-goods__info
+                  | Showing results from
+                  strong  1 - 3
+                  |  of total
+                  strong  3
+                .filter-goods__select
+                  span.hidden-xs Sort
+                  select.selectpicker(data-width="172")
+                    option Most Revelant
+                    option A-Z
+                    option Z-A
+                  .btns-switch
+                    i.btns-switch__item.js-view-th.icon.fa.fa-th-large
+                    i.btns-switch__item.js-view-list.active.icon.fa.fa-th-list
+              // end .filter-goods
+              #listing-section.goods-group-2.list-goods
+              // end .goods-group-2
+              ul.pagination.text-center
+                li
+                  a(href="#")
+                    i.icon.fa.fa-angle-double-left
+                li.active
+                  a(href="#") 1
+                li
+                  a(href="#")
+                    i.icon.fa.fa-angle-double-right
+          .col-md-3.col-xs-12
+            .col-xs-12
+              aside.l-sidebar
+                form.b-filter-2.bg-grey(onsubmit="")
+                  h3.b-filter-2__title search options
+                  .b-filter-2__inner
+                    .b-filter-2__group
+                      .b-filter-2__group-title keyword
+                      input.form-control(type="text" placeholder="Keyword...")
+                    .b-filter-2__group
+                      .b-filter-2__group-title Vehicle Type
+                      select.selectpicker(data-width="100%")
+                        option All Types
+                        option Type 1
+                        option Type 2
+                        option Type 3
+                    .b-filter-2__group
+                      .b-filter-2__group-title Make
+                      select.selectpicker(data-width="100%")
+                        option All Makes
+                        option Make 1
+                        option Make 2
+                    .b-filter-2__group
+                      .b-filter-2__group-title Model
+                      select.selectpicker(data-width="100%")
+                        option All Models
+                        option Model 1
+                        option Model 2
+                        option Model 3
+                    .b-filter-2__group
+                      .b-filter-2__group-title Model Year
+                      select.selectpicker(data-width="100%")
+                        option Min Year
+                        option Year 1
+                        option Year 2
+                      select.selectpicker(data-width="100%")
+                        option Max Year
+                        option Year 1
+                        option Year 2
+                    .b-filter-2__group
+                      .b-filter-2__group-title fuel type
+                      select.selectpicker(data-width="100%")
+                        option All Fuel Types
+                        option Type 1
+                        option Type 2
+                        option Type 3
+                    .b-filter-2__group
+                      .b-filter-2__group-title Filter Price
+                      .ui-filter-slider
+                        #slider-price
+                        .ui-filter-slider__info
+                          .ui-filter-slider__label Price Range:
+                          span#slider-snap-value-lower.ui-filter-slider__current
+                          | -
+                          span#slider-snap-value-upper.ui-filter-slider__current
+                    .b-filter-2__group
+                      .b-filter-2__group-title Body style
+                      .b-filter-type-2
+                        .b-filter-type-2__item
+                          input#typePickup.b-filter-type-2__input(type="checkbox")
+                          label.b-filter-type-2__label(for="typePickup")
+                            i.b-filter-type-2__icon.flaticon-pick-up
+                            span.b-filter-type-2__title PICKUP
+                        .b-filter-type-2__item
+                          input#typeSuv.b-filter-type-2__input(type="checkbox")
+                          label.b-filter-type-2__label(for="typeSuv")
+                            i.b-filter-type-2__icon.flaticon-car-of-hatchback-model
+                            span.b-filter-type-2__title SUV
+                        .b-filter-type-2__item
+                          input#typeCoupe.b-filter-type-2__input(type="checkbox")
+                          label.b-filter-type-2__label(for="typeCoupe")
+                            i.b-filter-type-2__icon.flaticon-coupe-car
+                            span.b-filter-type-2__title coupe
+                        .b-filter-type-2__item
+                          input#typeConvertible.b-filter-type-2__input(type="checkbox" checked="checked")
+                          label.b-filter-type-2__label(for="typeConvertible")
+                            i.b-filter-type-2__icon.flaticon-cabrio-car
+                            span.b-filter-type-2__title CONVERTIBLE
+                        .b-filter-type-2__item
+                          input#typeSedan.b-filter-type-2__input(type="checkbox")
+                          label.b-filter-type-2__label(for="typeSedan")
+                            i.b-filter-type-2__icon.flaticon-sedan-car-model
+                            span.b-filter-type-2__title sedan
+                        .b-filter-type-2__item
+                          input#typeMinicar.b-filter-type-2__input(type="checkbox")
+                          label.b-filter-type-2__label(for="typeMinicar")
+                            i.b-filter-type-2__icon.flaticon-car-1
+                            span.b-filter-type-2__title MINICAR
+                    .b-filter-2__group
+                      .b-filter-2__group-title TRANSMISSION
+                      .checkbox-group
+                        input#check-1.forms__check.hidden(type="checkbox")
+                        label.forms__label.forms__label-check.forms__label-check-1(for="check-1") 4 Speed Auto
+                        input#check-2.forms__check.hidden(type="checkbox")
+                        label.forms__label.forms__label-check.forms__label-check-1(for="check-2") 4 Speed Manual
+                        input#check-3.forms__check.hidden(type="checkbox" checked="checked")
+                        label.forms__label.forms__label-check.forms__label-check-1(for="check-3") 5 Speed Auto
+                        input#check-4.forms__check.hidden(type="checkbox")
+                        label.forms__label.forms__label-check.forms__label-check-1(for="check-4") 5 Speed Manual
+                        input#check-5.forms__check.hidden(type="checkbox" checked="checked")
+                        label.forms__label.forms__label-check.forms__label-check-1(for="check-5") 6 Speed Semi
+                        input#check-6.forms__check.hidden(type="checkbox")
+                        label.forms__label.forms__label-check.forms__label-check-1(for="check-6") 6 Speed Manual
+            .col-xs-12
+              aside.l-sidebar.contact-form
+                form#contact-form.b-filter-2.bg-grey(action="javascript:void(0)" novalidate="")
+                  h3.b-filter-2__title Contact Us
+                  .b-filter-2__inner
+                    .b-filter-2__group
+                      // <div class="b-filter-2__group-title">Name</div>
+                      input.form-control(name="name" placeholder="Name" type="text" required="")
+                    .b-filter-2__group
+                      // <div class="b-filter-2__group-title">Email</div>
+                      input.form-control(name="email" placeholder="Email" type="email" required="")
+                    .b-filter-2__group
+                      // <div class="b-filter-2__group-title">Phone</div>
+                      input.form-control(name="Phone Number" placeholder="Phone" type="phone" required="")
+                    .b-filter-2__group
+                      // <div class="b-filter-2__group-title">Comment</div>
+                      textarea.form-control(name="Message" cols="3" placeholder="Comment" required="")
+                    .b-filter-2__group
+                      input(type="submit" value="Submit")
+
+block scripts
+  script(src="assets/js/listing.js")

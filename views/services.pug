@@ -1,0 +1,38 @@
+extends _pug-page.pug
+
+block main-body
+      main#page-content
+        .container.services-page
+          .row
+            .col-md-6.col-sm-12.img-services
+              // <div class="container">
+              .row.dealer-picture
+                img(src="assets/images/car-dealer.jpg")
+              // </div>
+            .col-md-6.col-sm-12
+              h2 Services Offered in Queens NY
+              .small-separator
+              .service-text
+                p
+                  | We trust that you have enjoyed your current lease and that the car has served you well! We will continue to provide you with
+                  | excellent service as you approach the end of your lease. We are here to guide you through the entire lease
+                  | end process. Regardless of whether you are leasing through JYD or another lender, you probably have questions
+                  | about what to expect at the end of your lease and you have several important options to consider.
+              input(type="button" value="Order Our Services")
+            .col-xs-12(style="margin-top:30px; padding : 0;")
+              .row
+                .col-sm-4.col-xs-12.img-get-approved
+                  img.img-responsive(src="assets/images/get-approved.jpg")
+                  a(href="sell-car")
+                    .overlay-hidden
+                      span Get Approved
+                .col-sm-4.col-xs-12.img-testimonials
+                  img.img-responsive(src="assets/images/testimonials.jpg")
+                  a(href="")
+                    .overlay-hidden
+                      span Testimonials
+                .col-sm-4.col-xs-12.img-contact-us
+                  img.img-responsive(src="assets/images/contact-us.jpg")
+                  a(href="contact-us")
+                    .overlay-hidden
+                      span Contact Us

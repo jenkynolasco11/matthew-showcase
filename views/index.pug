@@ -1,0 +1,379 @@
+//- include index.html
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1")
+    meta(name="description" content="html 5 template")
+    meta(name="author" content="tonytemplates.com")
+    link(rel="icon" href="favicon.ico")
+    title JYD Auto Leasing
+    // Bootstrap core CSS
+    link(href="assets/css/plugins/bootstrap.min.css" rel="stylesheet")
+    link(href="assets/css/plugins/jquery.smartmenus.bootstrap.css" rel="stylesheet")
+    link(href="assets/css/plugins/nivo-slider.css" rel="stylesheet")
+    link(href="assets/css/plugins/swiper.min.css" rel="stylesheet")
+    link(href="assets/css/plugins/animate.css" rel="stylesheet")
+    link(href="assets/css/main-style.css" rel="stylesheet")
+    //if lt IE 9
+      script(src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js")
+      script(src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js")
+    // Icon Font
+    link(href="iconfont/style.css" rel="stylesheet")
+    // Google Fonts
+    link(href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet")
+    // Icons
+    link(href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet")
+  body.page__home
+    main#page-content
+      .mobile-menu-custom
+        a.navbar-brand.scroll(href="/")
+          img.dealer-logo(src="assets/images/dealer-logo.png" alt="dealer logo")
+        ul.nav.navbar-nav
+          li
+            a(href="/") Home
+          li
+            a(href="credit-app") Credit App
+          li
+            a(href="listing") Lease Specials
+          li
+            a(href="listing") Pre-Owned
+          li
+            a(href="sell-car") Sell your Car
+          li
+            a(href="services" tabindex="-1") Services
+          li
+            a.contact-button(href="contact-us") Contact
+      section.landing-top
+        .bg-overlay
+          // <img src="assets/images/img-bg-3.jpg" alt="backaground-image" />
+          img(src="assets/images/home-screen.jpg" alt="backaground-image")
+          //
+            <div class="text-top-img">
+            <p>THE MOST COMPETITIVE PRICING</p>
+            <p>ON ALL MAKES AND MODELS</p>
+            <p>ALL OF THE TIME</p>
+            </div>
+        .top-content.container-fluid
+          .container.custom-header-menu
+            .row
+              .col-xs-3.left.logo
+                a(href="/")
+                  img(src="assets/images/dealer-logo.png" alt="dealer logo")
+              .col-xs-9.right
+                .row.half.hidden-xs
+                  .col-xs-12.details.hide-if-scroll
+                    ul
+                      li
+                        a(href="tel:7186411003")
+                          i.fa.fa-phone
+                          span
+                            | (718) 641-1003
+                      li
+                        a(href="mailto:info@jydautoleasing.com")
+                          i.fa.fa-envelope
+                          span
+                            | info@jydautoleasing.com
+                      li.visible-lg
+                        a(href="https://www.google.com/maps/place/JYD+Auto+Leasing+%26+Sales+LLC/@40.6529097,-73.8400466,17.18z/data=!4m5!3m4!1s0x89c26781a9a2ed21:0x7a0bf6c6afd4fff0!8m2!3d40.6531069!4d-73.8387157" target="_blank")
+                          i.fa.fa-map-marker
+                          | 16238 Crossbay Boulevard, Queens, NY 11414
+                .row.half
+                  .col-xs-12.hidden-xs.menu-items
+                    ul.yamm.main-menu.nav.navbar-nav
+                      li
+                        a(href="/") Home
+                      li
+                        a(href="credit-app") Credit App
+                      li
+                        a(href="listing") Lease Specials
+                      li
+                        a(href="listing") Pre-Owned
+                      li
+                        a(href="sell-car") Sell your Car
+                      li
+                        a(href="services" tabindex="-1") Services
+                      li
+                        a.contact-button(href="contact-us") Contact
+                  .col-xs-offset-9.col-xs-2.col-xs-offset-1
+                    button.menu-mobile-button.visible-xs-block.toggle-menu-button
+                      div
+                        span
+                        span
+                        span
+      section.get-approved
+        .container-fluid
+          .row
+            .col-md-12
+              .section-advantages
+                a(href="#testimonials")
+                  section.b-advantages
+                    img.b-advantages__icon(src="testimonial.svg" alt="steering-wheel")
+                    h3.b-advantages__title View Testimonials
+                    .b-advantages__info
+                      | Our reviews and testimonials will paint you a full picture of the way we do business here at JYD Auto Group. See
+                      | for yourself what a great place we are to buy or lease a car.
+                    span.ui-decor
+                a(href="credit-app")
+                  section.b-advantages
+                    img.b-advantages__icon(src="steering-wheel.svg" alt="steering-wheel")
+                    h3.b-advantages__title Get Approved
+                    .b-advantages__info
+                      | We can get you approved for the car of your dreams right online. Just fill out our simple credit application and
+                      | get approved right away. We like to make things easy.
+                    span.ui-decor
+                a(href="contact-us")
+                  section.b-advantages
+                    img.b-advantages__icon(src="contact.svg" alt="steering-wheel")
+                    h3.b-advantages__title Contact Us
+                    .b-advantages__info
+                      | Getting in touch with us is easy. You can give us a call or send us an email. In fact, we can take care of most
+                      | if not all of our business right over the phone or the computer.
+                    span.ui-decor
+      if cars.length
+        section.carousel-models_fullwidth
+          .carousel-models_fullwidth__inner
+            h1 Featured Specials
+            .swiper-container-models.swiper-container
+              .swiper-wrapper
+                //- Loop!
+                each car in cars
+                  .model-info.swiper-slide
+                    figure.thumbnail
+                      a(href="/details/"+car.vin)
+                        img(src=''+car.img.src alt=''+car.name)
+                    .model-info__content
+                      h3 #{ car.make } #{ car.model }
+                      span.cost
+                        | Lease for
+                        strong $#{ car.price }
+                        |  per month
+                      span.btn.btn-model(data-remodal-target="modal" onclick="") Get E-Price
+            .swiper-pagination-models
+            .navigation_block
+              span.swiper-button-next
+                i.icon-left-arrow2
+              span.swiper-button-prev
+                i.icon-left-arrow
+      section.interested-button
+        .container
+          .row
+            .interested-button_looking.col-md-6.col-sm-12.col-xs-12
+              a(href="listing")
+                .cstm-button
+                  i.fa.fa-search.identifier
+                  .main-text
+                    h4.text.text-top Are you looking for a car?
+                    p.text.text-bottom
+                      | search our inventory with thousands of cars and more cars are adding on daily basis
+                  .see-more.after
+                    i.fa.fa-chevron-right
+            .interested-button_selling.col-md-6.col-sm-12.col-xs-12
+              a(href="sell-car")
+                .cstm-button
+                  i.fa.fa-usd.identifier
+                  .main-text
+                    h4.text.text-top Do you want to sell a car?
+                    p.text.text-bottom
+                      | Sell your car to us for cash, sell it privately, or trade-in the vehicle to us, either way you will know what it's WORTH!
+                  .see-more.after
+                    i.fa.fa-chevron-right
+      section#testimonials.testimonials-carousel_box
+        .bg-overlay
+          img.background-img(src="assets/images/quotes_bg_image.jpg" alt="bg image")
+        .container
+          h1 Clients Say
+          span.text-link What our clients say about us
+          .swiper-container-blockquote.swiper-container
+            .swiper-wrapper
+              .swiper-slide
+                article.block_tesimonial
+                  blockquote
+                    .inner_blockquote
+                      .wrapper
+                        p
+                          | I have given this review because it's been actually the best dealership experience I have had . Employer Apolinar actually
+                          | took time with us customers to give us what we want and make us happy not just to sell us or trade us a car but
+                          | to be happy with what we actually want and needed
+                        span.author_info
+                          img(src="assets/images/dealer-rater.png" alt="")
+                          span.name
+                            a(href="#") Thomas Burgess
+                          span.position Regular Customer
+              .swiper-slide
+                article.block_tesimonial
+                  blockquote
+                    .inner_blockquote
+                      .wrapper
+                        p
+                          | Mr. Singleton is a man who knows his stuff. He was great from beginning to end. He made me very comfortable in knowing that
+                          | I will get a good deal, which I love when looking to lease a new car.Thanks again! Can't wait to work with JYD
+                          | again once my lease is up in 3 years.
+                        span.author_info
+                          img(src="assets/images/dealer-rater.png" alt="")
+                          span.name
+                            a(href="#") Donald Alford
+                          span.position Regular Customer
+              .swiper-slide
+                article.block_tesimonial
+                  blockquote
+                    .inner_blockquote
+                      .wrapper
+                        p
+                          | If you treat them right they will come. JYD is just truly amazing. You will feel like you are dealing with family-the ones
+                          | you just love spending time with. Truly respectful, no pressure sales. It is my families 2nd round with them
+                          | & we are truly satisfied. You get exactly what you want.
+                        span.author_info
+                          img(src="assets/images/dealer-rater.png" alt="")
+                          span.name
+                            a(href="#") David Knudsen
+                          span.position Regular Customer
+          .swiper-pagination.swiper-pagination-blockquote
+          span.swiper-button-next1
+            i.icon-left-arrow2
+          span.swiper-button-prev1
+            i.icon-left-arrow
+    footer
+      .top-footer
+        .social-media
+          .text
+            span Connect
+          .icons
+            a(href="https://www.facebook.com/JYDAutoLeasingSales" target="_blank")
+              i.fa.fa-facebook
+            a(href="https://twitter.com/JYDLEASING" target="_blank")
+              i.fa.fa-twitter
+            a(href="https://www.instagram.com/jyd_ny/" target="_blank")
+              i.fa.fa-instagram
+            a(href="https://plus.google.com/113146897266709706626" target="_blank")
+              i.fa.fa-google-plus
+        //
+          <div class="car-demo">
+          <div class="car col-xm-3">
+          <img class="img-responsive" src="assets/images/img-1.jpg" alt="car-prop">
+          </div>
+          <div class="car col-xm-3">
+          <img class="img-responsive" src="assets/images/img-2.jpg" alt="car-prop">
+          </div>
+          <div class="car col-xm-3">
+          <img class="img-responsive" src="assets/images/img-3.jpg" alt="car-prop">
+          </div>
+          <div class="car col-xm-3">
+          <img class="img-responsive" src="assets/images/img-4.jpg" alt="car-prop">
+          </div>
+          </div>
+      .lower-footer
+        .container
+          .row
+            .col-md-4.col-sm-6.padd-lr0
+              .wheel-address
+                .wheel-footer-logo
+                  a(href="/")
+                    img(src="assets/images/dealer-logo.png" alt="")
+                ul
+                  li
+                    span
+                      a(href="https://www.google.com/maps/place/JYD+Auto+Leasing+%26+Sales+LLC/@40.6529097,-73.8400466,17.18z/data=!4m5!3m4!1s0x89c26781a9a2ed21:0x7a0bf6c6afd4fff0!8m2!3d40.6531069!4d-73.8387157" target="_blank")
+                        i.fa.fa-map-marker
+                        | 16238 Crossbay Boulevard
+                        br
+                        |  Queens, NY 11414
+                  li
+                    a(href="tel:7186411003")
+                      span
+                        i.fa.fa-phone
+                        | (718) 641-1003
+                  li
+                    a(href="mailto:info@jydautoleasing.com")
+                      span
+                        i.fa.fa-envelope
+                        | info@jydautoleasing.com
+            .col-md-4.col-sm-6.padd-lr0
+              .wheel-footer-item
+                h3 Menu
+                ul
+                  li
+                    a(href="/") Home
+                  li
+                    a(href="listing") Lease Specials
+                  li
+                    a(href="listing") Pre-Owned
+                  li
+                    a(href="sell-car") Sell your Car
+                  li
+                    a(href="services" tabindex="-1") Services
+                  li
+                    a.contact-button(href="contact-us") Contact
+            .col-md-4.col-sm-6.padd-lr0
+              .wheel-footer-item
+                h3 Trending Vehicles
+                ul
+                  li
+                    a(href="") Exotic Cars
+                  li
+                    a(href="") SUVs
+                  li
+                    a(href="") Trucks
+                  li
+                    a(href="") Mini Vans
+                  li
+                    a(href="") Moving Trucks
+                  li
+                    a(href="") Vans
+                  li
+                    a(href="") RVs
+            //
+              <div class="col-md-4 col-sm-6 padd-lr0">
+              <div class="wheel-footer-gallery">
+              <h3>Photo Gallery</h3>
+              <div class="  clearfix">
+              <div class="wheel-footer-galery-item">
+              <a href="">
+              <img src="images/i11.jpg" alt="">
+              </a>
+              </div>
+              <div class="wheel-footer-galery-item">
+              <a href="">
+              <img src="images/i12.jpg" alt="">
+              </a>
+              </div>
+              <div class="wheel-footer-galery-item">
+              <a href="">
+              <img src="images/i13.jpg" alt="">
+              </a>
+              </div>
+              <div class="wheel-footer-galery-item">
+              <a href="">
+              <img src="images/i14.jpg" alt="">
+              </a>
+              </div>
+              <div class="wheel-footer-galery-item">
+              <a href="">
+              <img src="images/i15.jpg" alt="">
+              </a>
+              </div>
+              <div class="wheel-footer-galery-item">
+              <a href="">
+              <img src="images/i16.jpg" alt="">
+              </a>
+              </div>
+              <div class="wheel-footer-galery-item">
+              <a href="">
+              <img src="images/i17.jpg" alt="">
+              </a>
+              </div>
+              <div class="wheel-footer-galery-item">
+              <a href="">
+              <img src="images/i18.jpg" alt="">
+              </a>
+              </div>
+              </div>
+              </div>
+              </div>
+    script(src="assets/js/jquery.1.12.4.min.js")
+    script(src="assets/js/plugins/bootstrap.min.js")
+    script(src="assets/js/plugins/jquery.nivo.slider.js")
+    script(src="assets/js/plugins/swiper.min.js")
+    script(src="assets/js/custom.js")

@@ -1,0 +1,621 @@
+extends _pug-page.pug
+
+block head
+  link(rel="stylesheet" href="form.css")
+
+block main-body
+    main#page-content
+        .container.credit-app
+          form#credit-app-form(method="post" action="javascript:void(0)")
+            // <input type="hidden" name="leadId" value="162245">
+            .content
+              .heading
+                .description
+                  h2 Get Online Pre-Approval
+                  p
+                    | No matter what your credit situation, our specialists can help tailor a finance package to fit your needs. Our experience
+                    | with a wide variety of financial institutions helps us provide financing for all credit levels. To get
+                    | started, just complete our secure online credit application. We'll help you get pre-approved, making it
+                    | even easier for you to shop for your next vehicle.
+                .secure-logo
+                  span#siteseal
+                    script(type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=DqqI7ORvLti9YawZCWUYXgtR898kjMD846fs24jA0HBv7CkKUZFDAP")
+                    img(style="cursor:pointer;cursor:hand" src="https://seal.godaddy.com/images/3/en/siteseal_gd_3_h_l_m.gif" onclick="verifySeal();" alt="SSL site seal - click to verify")
+              .formBlock
+                h2 Contact Info
+                .formContent.formBorder
+                  fieldset.col-md-12.col-sm-12.form-group.single
+                    .header-block  Primary Applicant 
+                    .field.csalesman_name
+                      label.label(for="salesman_name")
+                        span Salesman's Name/Promo Code
+                        span.required *
+                      input.text.salesman_name(name="Salesman's Name" placeholder="Salesman's Name/Promo Code" type="text" required="")
+                    .field.cfirstname
+                      label.label(for="firstname")
+                        span First Name
+                        span.required *
+                      input#first_name.text.first_name(name="First Name" placeholder="First Name" type="text" required="")
+                    .field.clast_name
+                      label.label(for="lastname")
+                        span Last Name
+                        span.required *
+                      input#last_name.text.last_name(name="Last Name" placeholder="Last Name" type="text")
+                    .field.cmiddle_name
+                      label.label(for="middle_name") Middle Initial
+                      input#middle_name.text.middle_name(name="Middle Name" placeholder="Middle Initial" type="text")
+                    .field.cdob
+                      // <input required name="bdate_trigger" id="bdate_trigger" type="hidden" value="true">
+                      label.label.visible(for="dob")
+                        span Date of Birth
+                        span.required *
+                      select#dob_month.select.dob_month(name="DOB Month")
+                        option(value="1" label="January" selected="selected") January
+                        option(value="2" label="February") February
+                        option(value="3" label="March") March
+                        option(value="4" label="April") April
+                        option(value="5" label="May") May
+                        option(value="6" label="June") June
+                        option(value="7" label="July") July
+                        option(value="8" label="August") August
+                        option(value="9" label="September") September
+                        option(value="10" label="October") October
+                        option(value="11" label="November") November
+                        option(value="12" label="December") December
+                      select#dob_day.select.dob_day(name="DOB Day")
+                        option(value="1" label="1" selected="selected") 1
+                        option(value="2" label="2") 2
+                        option(value="3" label="3") 3
+                        option(value="4" label="4") 4
+                        option(value="5" label="5") 5
+                        option(value="6" label="6") 6
+                        option(value="7" label="7") 7
+                        option(value="8" label="8") 8
+                        option(value="9" label="9") 9
+                        option(value="10" label="10") 10
+                        option(value="11" label="11") 11
+                        option(value="12" label="12") 12
+                        option(value="13" label="13") 13
+                        option(value="14" label="14") 14
+                        option(value="15" label="15") 15
+                        option(value="16" label="16") 16
+                        option(value="17" label="17") 17
+                        option(value="18" label="18") 18
+                        option(value="19" label="19") 19
+                        option(value="20" label="20") 20
+                        option(value="21" label="21") 21
+                        option(value="22" label="22") 22
+                        option(value="23" label="23") 23
+                        option(value="24" label="24") 24
+                        option(value="25" label="25") 25
+                        option(value="26" label="26") 26
+                        option(value="27" label="27") 27
+                        option(value="28" label="28") 28
+                        option(value="29" label="29") 29
+                        option(value="30" label="30") 30
+                        option(value="31" label="31") 31
+                      select#dob_year.select.dob_year(name="DOB Year")
+                        option(value="2018" label="2018") 2018
+                        option(value="2017" label="2017") 2017
+                        option(value="2016" label="2016") 2016
+                        option(value="2015" label="2015") 2015
+                        option(value="2014" label="2014") 2014
+                        option(value="2013" label="2013") 2013
+                        option(value="2012" label="2012") 2012
+                        option(value="2011" label="2011") 2011
+                        option(value="2010" label="2010") 2010
+                        option(value="2009" label="2009") 2009
+                        option(value="2008" label="2008") 2008
+                        option(value="2007" label="2007") 2007
+                        option(value="2006" label="2006") 2006
+                        option(value="2005" label="2005") 2005
+                        option(value="2004" label="2004") 2004
+                        option(value="2003" label="2003") 2003
+                        option(value="2002" label="2002") 2002
+                        option(value="2001" label="2001") 2001
+                        option(value="2000" label="2000") 2000
+                        option(value="1999" label="1999") 1999
+                        option(value="1998" label="1998") 1998
+                        option(value="1997" label="1997") 1997
+                        option(value="1996" label="1996") 1996
+                        option(value="1995" label="1995") 1995
+                        option(value="1994" label="1994") 1994
+                        option(value="1993" label="1993") 1993
+                        option(value="1992" label="1992") 1992
+                        option(value="1991" label="1991") 1991
+                        option(value="1990" label="1990") 1990
+                        option(value="1989" label="1989") 1989
+                        option(value="1988" label="1988") 1988
+                        option(value="1987" label="1987") 1987
+                        option(value="1986" label="1986") 1986
+                        option(value="1985" label="1985") 1985
+                        option(value="1984" label="1984") 1984
+                        option(value="1983" label="1983") 1983
+                        option(value="1982" label="1982") 1982
+                        option(value="1981" label="1981") 1981
+                        option(value="1980" label="1980") 1980
+                        option(value="1979" label="1979") 1979
+                        option(value="1978" label="1978") 1978
+                        option(value="1977" label="1977") 1977
+                        option(value="1976" label="1976") 1976
+                        option(value="1975" label="1975") 1975
+                        option(value="1974" label="1974") 1974
+                        option(value="1973" label="1973") 1973
+                        option(value="1972" label="1972") 1972
+                        option(value="1971" label="1971") 1971
+                        option(value="1970" label="1970") 1970
+                        option(value="1969" label="1969") 1969
+                        option(value="1968" label="1968") 1968
+                        option(value="1967" label="1967") 1967
+                        option(value="1966" label="1966") 1966
+                        option(value="1965" label="1965") 1965
+                        option(value="1964" label="1964") 1964
+                        option(value="1963" label="1963") 1963
+                        option(value="1962" label="1962") 1962
+                        option(value="1961" label="1961") 1961
+                        option(value="1960" label="1960") 1960
+                        option(value="1959" label="1959") 1959
+                        option(value="1958" label="1958") 1958
+                        option(value="1957" label="1957") 1957
+                        option(value="1956" label="1956") 1956
+                        option(value="1955" label="1955") 1955
+                        option(value="1954" label="1954") 1954
+                        option(value="1953" label="1953") 1953
+                        option(value="1952" label="1952") 1952
+                        option(value="1951" label="1951") 1951
+                        option(value="1950" label="1950") 1950
+                        option(value="1949" label="1949") 1949
+                        option(value="1948" label="1948") 1948
+                        option(value="1947" label="1947") 1947
+                        option(value="1946" label="1946") 1946
+                        option(value="1945" label="1945") 1945
+                        option(value="1944" label="1944") 1944
+                        option(value="1943" label="1943") 1943
+                        option(value="1942" label="1942") 1942
+                        option(value="1941" label="1941") 1941
+                        option(value="1940" label="1940") 1940
+                        option(value="1939" label="1939") 1939
+                        option(value="1938" label="1938") 1938
+                        option(value="1937" label="1937") 1937
+                        option(value="1936" label="1936") 1936
+                        option(value="1935" label="1935") 1935
+                        option(value="1934" label="1934") 1934
+                        option(value="1933" label="1933") 1933
+                        option(value="1932" label="1932") 1932
+                        option(value="1931" label="1931") 1931
+                        option(value="1930" label="1930") 1930
+                        option(value="1929" label="1929") 1929
+                        option(value="1928" label="1928") 1928
+                        option(value="1927" label="1927") 1927
+                        option(value="1926" label="1926") 1926
+                        option(value="1925" label="1925") 1925
+                        option(value="1924" label="1924") 1924
+                        option(value="1923" label="1923") 1923
+                    .field.csocial_number
+                      label.label(for="social_number")
+                        span Social Security #
+                        span.required *
+                      input#social_number.text.digits.modern-input.social_number(name="SSN" pattern="[0-9]*" placeholder="*Social Security #" type="number" required="")
+                    .field.cdphone
+                      label.label.visible(for="dphone")
+                        span Day Time Phone
+                        span.required *
+                      input#dphone.text.modern-input.masked.phone.dphone(name="Day Time Phone" data-inputmask-mask="(999) 999-9999" data-inputmask-placeholder="x" placeholder="*Day Time Phone" type="tel" required="")
+                    .field.cemail
+                      label.label(for="email")
+                        span Email Address
+                        span.required *
+                      input#email.text.email(name="email" placeholder="Email Address" type="text" required="")
+                    .field.caddress
+                      label.label(for="address")
+                        span Address Line 1
+                        span.required *
+                      input#address.text.address(name="Address" placeholder="Address Line 1" type="text" required="")
+                    .field.ccity
+                      label.label(for="city")
+                        span City
+                        span.required *
+                      input#city.text.city(name="City" placeholder="City" type="text" required="")
+                    .field.cstate
+                      label.label(for="state")
+                        span State
+                        span.required *
+                      select#state.select.state(name="State")
+                        option(value="AL" label="Alabama") Alabama
+                        option(value="AK" label="Alaska") Alaska
+                        option(value="AZ" label="Arizona") Arizona
+                        option(value="AR" label="Arkansas") Arkansas
+                        option(value="CA" label="California") California
+                        option(value="CO" label="Colorado") Colorado
+                        option(value="CT" label="Connecticut") Connecticut
+                        option(value="DE" label="Delaware") Delaware
+                        option(value="DC" label="District Of Columbia") District Of Columbia
+                        option(value="FL" label="Florida") Florida
+                        option(value="GA" label="Georgia") Georgia
+                        option(value="HI" label="Hawaii") Hawaii
+                        option(value="ID" label="Idaho") Idaho
+                        option(value="IL" label="Illinois") Illinois
+                        option(value="IN" label="Indiana") Indiana
+                        option(value="IA" label="Iowa") Iowa
+                        option(value="KS" label="Kansas") Kansas
+                        option(value="KY" label="Kentucky") Kentucky
+                        option(value="LA" label="Louisiana") Louisiana
+                        option(value="ME" label="Maine") Maine
+                        option(value="MD" label="Maryland") Maryland
+                        option(value="MA" label="Massachusetts") Massachusetts
+                        option(value="MI" label="Michigan") Michigan
+                        option(value="MN" label="Minnesota") Minnesota
+                        option(value="MS" label="Mississippi") Mississippi
+                        option(value="MO" label="Missouri") Missouri
+                        option(value="MT" label="Montana") Montana
+                        option(value="NE" label="Nebraska") Nebraska
+                        option(value="NV" label="Nevada") Nevada
+                        option(value="NH" label="New Hampshire") New Hampshire
+                        option(value="NJ" label="New Jersey") New Jersey
+                        option(value="NM" label="New Mexico") New Mexico
+                        option(value="NY" label="New York") New York
+                        option(value="NC" label="North Carolina") North Carolina
+                        option(value="ND" label="North Dakota") North Dakota
+                        option(value="OH" label="Ohio") Ohio
+                        option(value="OK" label="Oklahoma") Oklahoma
+                        option(value="OR" label="Oregon") Oregon
+                        option(value="PA" label="Pennsylvania") Pennsylvania
+                        option(value="RI" label="Rhode Island") Rhode Island
+                        option(value="SC" label="South Carolina") South Carolina
+                        option(value="SD" label="South Dakota") South Dakota
+                        option(value="TN" label="Tennessee") Tennessee
+                        option(value="TX" label="Texas") Texas
+                        option(value="UT" label="Utah") Utah
+                        option(value="VT" label="Vermont") Vermont
+                        option(value="VA" label="Virginia") Virginia
+                        option(value="WA" label="Washington") Washington
+                        option(value="WV" label="West Virginia") West Virginia
+                        option(value="WI" label="Wisconsin") Wisconsin
+                        option(value="WY" label="Wyoming") Wyoming
+                    .field.czipcode
+                      label.label(for="zipcode")
+                        span Zip
+                        span.required *
+                      input#zipcode.text.digits.modern-input.zipcode(name="ZIP Code" pattern="[0-9]*" placeholder="*Zip" type="number" required="")
+                    .field.chome_type
+                      label.label.visible(for="home_type")
+                        span Rent or Own?
+                        span.required *
+                      .own-space
+                        label(for="home_type-Rent")
+                          input#home_type-Rent.radio.home_type(type="radio" name="Home Type" value="Rent")
+                          | Rent
+                        label(for="home_type-Own")
+                          input#home_type-Own.radio.home_type(type="radio" name="Home Type" value="Own")
+                          | Own
+                        label(for="home_type-Other")
+                          input#home_type-Other.radio.home_type(type="radio" name="Home Type" value="Other")
+                          | Other
+                    .field
+                      label.label.notfloat Time at Address
+                      .own-space
+                        .cliving_since_year
+                          label Years
+                          input.text.digits.modern-input.living_since_year(name="Years Living There" pattern="[0-9]*" placeholder="Years" type="number")
+                        .cliving_since_month
+                          label Months
+                          input#living_since_month.text.digits.modern-input.living_since_month(name="Months Living There" pattern="[0-9]*" placeholder="Months" type="number")
+                      .clearfix
+                    .field.cprev_address
+                      label.label(for="prev_address") Previous Home Address
+                      input#prev_address.text.prev_address(name="Previous Address" placeholder="Previous Home Address" type="text")
+                    .field.cmonthly_payment
+                      label.label(for="monthly_payment")
+                        span Monthly Payment / Rent
+                        span.required *
+                      input#monthly_payment.text.digits.modern-input.monthly_payment(required="" name="Monthly Payment" pattern="[0-9]*" placeholder="*Monthly Payment / Rent" type="number")
+                    .field.cdriver_number
+                      label.label(for="driver_number")
+                        span Driver's License Number
+                        span.required *
+                      input#driver_number.text.driver_number(required="" name="Driver's Licence Number" placeholder="Driver's License Number" type="text")
+                    .field.cdriver_state
+                      label.label.visible(for="driver_state")
+                        span Driver's License State
+                        span.required *
+                      select#driver_state.select.driver_state(required="" name="Driver's State")
+                        option(value="AL" label="Alabama") Alabama
+                        option(value="AK" label="Alaska") Alaska
+                        option(value="AZ" label="Arizona") Arizona
+                        option(value="AR" label="Arkansas") Arkansas
+                        option(value="CA" label="California") California
+                        option(value="CO" label="Colorado") Colorado
+                        option(value="CT" label="Connecticut") Connecticut
+                        option(value="DE" label="Delaware") Delaware
+                        option(value="DC" label="District Of Columbia") District Of Columbia
+                        option(value="FL" label="Florida") Florida
+                        option(value="GA" label="Georgia") Georgia
+                        option(value="HI" label="Hawaii") Hawaii
+                        option(value="ID" label="Idaho") Idaho
+                        option(value="IL" label="Illinois") Illinois
+                        option(value="IN" label="Indiana") Indiana
+                        option(value="IA" label="Iowa") Iowa
+                        option(value="KS" label="Kansas") Kansas
+                        option(value="KY" label="Kentucky") Kentucky
+                        option(value="LA" label="Louisiana") Louisiana
+                        option(value="ME" label="Maine") Maine
+                        option(value="MD" label="Maryland") Maryland
+                        option(value="MA" label="Massachusetts") Massachusetts
+                        option(value="MI" label="Michigan") Michigan
+                        option(value="MN" label="Minnesota") Minnesota
+                        option(value="MS" label="Mississippi") Mississippi
+                        option(value="MO" label="Missouri") Missouri
+                        option(value="MT" label="Montana") Montana
+                        option(value="NE" label="Nebraska") Nebraska
+                        option(value="NV" label="Nevada") Nevada
+                        option(value="NH" label="New Hampshire") New Hampshire
+                        option(value="NJ" label="New Jersey") New Jersey
+                        option(value="NM" label="New Mexico") New Mexico
+                        option(value="NY" label="New York") New York
+                        option(value="NC" label="North Carolina") North Carolina
+                        option(value="ND" label="North Dakota") North Dakota
+                        option(value="OH" label="Ohio") Ohio
+                        option(value="OK" label="Oklahoma") Oklahoma
+                        option(value="OR" label="Oregon") Oregon
+                        option(value="PA" label="Pennsylvania") Pennsylvania
+                        option(value="RI" label="Rhode Island") Rhode Island
+                        option(value="SC" label="South Carolina") South Carolina
+                        option(value="SD" label="South Dakota") South Dakota
+                        option(value="TN" label="Tennessee") Tennessee
+                        option(value="TX" label="Texas") Texas
+                        option(value="UT" label="Utah") Utah
+                        option(value="VT" label="Vermont") Vermont
+                        option(value="VA" label="Virginia") Virginia
+                        option(value="WA" label="Washington") Washington
+                        option(value="WV" label="West Virginia") West Virginia
+                        option(value="WI" label="Wisconsin") Wisconsin
+                        option(value="WY" label="Wyoming") Wyoming
+                    .field.cdriver_exp_date
+                      label.label.visible(for="driver_exp_date")
+                        span Driver's License Expiration Date
+                        span.required *
+                      select#driver_exp_date_month.select.driver_exp_date_month(required="" name="Driver's License Expiration Date Month")
+                        option(label="Month" selected="selected") Month
+                        option(value="1" label="January") January
+                        option(value="2" label="February") February
+                        option(value="3" label="March") March
+                        option(value="4" label="April") April
+                        option(value="5" label="May") May
+                        option(value="6" label="June") June
+                        option(value="7" label="July") July
+                        option(value="8" label="August") August
+                        option(value="9" label="September") September
+                        option(value="10" label="October") October
+                        option(value="11" label="November") November
+                        option(value="12" label="December") December
+                      select#driver_exp_date_day.select.driver_exp_date_day(required="" name="Driver's License Expiration Date Day")
+                        option(label="Day" selected="selected") Day
+                        option(value="1" label="1") 1
+                        option(value="2" label="2") 2
+                        option(value="3" label="3") 3
+                        option(value="4" label="4") 4
+                        option(value="5" label="5") 5
+                        option(value="6" label="6") 6
+                        option(value="7" label="7") 7
+                        option(value="8" label="8") 8
+                        option(value="9" label="9") 9
+                        option(value="10" label="10") 10
+                        option(value="11" label="11") 11
+                        option(value="12" label="12") 12
+                        option(value="13" label="13") 13
+                        option(value="14" label="14") 14
+                        option(value="15" label="15") 15
+                        option(value="16" label="16") 16
+                        option(value="17" label="17") 17
+                        option(value="18" label="18") 18
+                        option(value="19" label="19") 19
+                        option(value="20" label="20") 20
+                        option(value="21" label="21") 21
+                        option(value="22" label="22") 22
+                        option(value="23" label="23") 23
+                        option(value="24" label="24") 24
+                        option(value="25" label="25") 25
+                        option(value="26" label="26") 26
+                        option(value="27" label="27") 27
+                        option(value="28" label="28") 28
+                        option(value="29" label="29") 29
+                        option(value="30" label="30") 30
+                        option(value="31" label="31") 31
+                      select#driver_exp_date_year.select.driver_exp_date_year(required="" name="Driver's License Expiration Date Year")
+                        option(label="Year" selected="selected") Year
+                        option(value="2028" label="2028") 2028
+                        option(value="2027" label="2027") 2027
+                        option(value="2026" label="2026") 2026
+                        option(value="2025" label="2025") 2025
+                        option(value="2024" label="2024") 2024
+                        option(value="2023" label="2023") 2023
+                        option(value="2022" label="2022") 2022
+                        option(value="2021" label="2021") 2021
+                        option(value="2020" label="2020") 2020
+                        option(value="2019" label="2019") 2019
+                        option(value="2018" label="2018") 2018
+                        option(value="2017" label="2017") 2017
+                        option(value="2016" label="2016") 2016
+                        option(value="2015" label="2015") 2015
+                        option(value="2014" label="2014") 2014
+                        option(value="2013" label="2013") 2013
+                        option(value="2012" label="2012") 2012
+                        option(value="2011" label="2011") 2011
+                        option(value="2010" label="2010") 2010
+                        option(value="2009" label="2009") 2009
+                        option(value="2008" label="2008") 2008
+                        option(value="2007" label="2007") 2007
+                        option(value="2006" label="2006") 2006
+                        option(value="2005" label="2005") 2005
+                        option(value="2004" label="2004") 2004
+                        option(value="2003" label="2003") 2003
+                        option(value="2002" label="2002") 2002
+                        option(value="2001" label="2001") 2001
+                        option(value="2000" label="2000") 2000
+                        option(value="1999" label="1999") 1999
+                        option(value="1998" label="1998") 1998
+                        option(value="1997" label="1997") 1997
+                        option(value="1996" label="1996") 1996
+                        option(value="1995" label="1995") 1995
+                        option(value="1994" label="1994") 1994
+                        option(value="1993" label="1993") 1993
+                        option(value="1992" label="1992") 1992
+                        option(value="1991" label="1991") 1991
+                        option(value="1990" label="1990") 1990
+                        option(value="1989" label="1989") 1989
+                        option(value="1988" label="1988") 1988
+                        option(value="1987" label="1987") 1987
+                        option(value="1986" label="1986") 1986
+                        option(value="1985" label="1985") 1985
+                        option(value="1984" label="1984") 1984
+                        option(value="1983" label="1983") 1983
+                        option(value="1982" label="1982") 1982
+                        option(value="1981" label="1981") 1981
+                        option(value="1980" label="1980") 1980
+                        option(value="1979" label="1979") 1979
+                        option(value="1978" label="1978") 1978
+                        option(value="1977" label="1977") 1977
+                        option(value="1976" label="1976") 1976
+                        option(value="1975" label="1975") 1975
+                        option(value="1974" label="1974") 1974
+                        option(value="1973" label="1973") 1973
+                        option(value="1972" label="1972") 1972
+                        option(value="1971" label="1971") 1971
+                        option(value="1970" label="1970") 1970
+                        option(value="1969" label="1969") 1969
+                        option(value="1968" label="1968") 1968
+                        option(value="1967" label="1967") 1967
+                        option(value="1966" label="1966") 1966
+                        option(value="1965" label="1965") 1965
+                        option(value="1964" label="1964") 1964
+                        option(value="1963" label="1963") 1963
+                        option(value="1962" label="1962") 1962
+                        option(value="1961" label="1961") 1961
+                        option(value="1960" label="1960") 1960
+                        option(value="1959" label="1959") 1959
+                        option(value="1958" label="1958") 1958
+                        option(value="1957" label="1957") 1957
+                        option(value="1956" label="1956") 1956
+                        option(value="1955" label="1955") 1955
+                        option(value="1954" label="1954") 1954
+                        option(value="1953" label="1953") 1953
+                        option(value="1952" label="1952") 1952
+                        option(value="1951" label="1951") 1951
+                        option(value="1950" label="1950") 1950
+                        option(value="1949" label="1949") 1949
+                        option(value="1948" label="1948") 1948
+                        option(value="1947" label="1947") 1947
+                        option(value="1946" label="1946") 1946
+                        option(value="1945" label="1945") 1945
+                        option(value="1944" label="1944") 1944
+                        option(value="1943" label="1943") 1943
+                        option(value="1942" label="1942") 1942
+                        option(value="1941" label="1941") 1941
+                        option(value="1940" label="1940") 1940
+                        option(value="1939" label="1939") 1939
+                        option(value="1938" label="1938") 1938
+                        option(value="1937" label="1937") 1937
+                        option(value="1936" label="1936") 1936
+                        option(value="1935" label="1935") 1935
+                        option(value="1934" label="1934") 1934
+                        option(value="1933" label="1933") 1933
+                  .clearfix
+                .clearfix
+              .formBlock
+                h2 Employment Info
+                .formContent
+                  fieldset.col-md-12.col-sm-12.form-group.single.trtrtrrtr
+                    .field.cemployer_name
+                      label.label(for="employer_name")
+                        span Employer Name
+                        span.required *
+                      input#employer_name.text.employer_name(required="" name="Employer's Name" placeholder="Employer Name" type="text")
+                    .field.cemployer_phone
+                      label.label(for="employer_phone")
+                        span Employer Phone
+                        span.required *
+                      input#employer_phone.text.modern-input.masked.phone.employer_phone(required="" name="Employer's Phone" data-inputmask-mask="(999) 999-9999" data-inputmask-placeholder="x" placeholder="*Employer Phone" type="tel")
+                    .field.cjob_title
+                      label.label(for="job_title")
+                        span Job Title
+                        span.required *
+                      input#job_title.text.job_title(required="" name="Job Title" placeholder="Job Title" type="text")
+                    .field.cemployer_address
+                      label.label(for="employer_address") Employer Address
+                      input#employer_address.text.employer_address(name="Employer's Address" placeholder="Employer Address" type="text")
+                    .field
+                      label.label.notfloat Employee Length of Time
+                      .own-space
+                        .cliving_since_year
+                          label Years
+                          input#employee_year.text.digits.modern-input.employee_year(name="Employee Years" pattern="[0-9]*" placeholder="Years" type="number")
+                        .cliving_since_month
+                          label Months
+                          input#employee_month.text.digits.modern-input.employee_month(name="Employee Months" pattern="[0-9]*" placeholder="Months" type="number")
+                      .clearfix
+                    .field.cprevious_employer
+                      label.label(for="previous_employer") If less than 2 years, previous employer?
+                      input#previous_employer.text.previous_employer(name="Previous Employer" placeholder="If less than 2 years, previous employer?" type="text")
+                    .field.cmonthly_income
+                      label.label(for="monthly_income")
+                        span Monthly Income (before taxes)
+                        span.required *
+                      input#monthly_income.text.digits.modern-input.monthly_income(required="" name="Monthly Income" pattern="[0-9]*" placeholder="*Monthly Income (before taxes)" type="number")
+                  .clearfix
+                .clearfix
+              .formBlock
+                h2
+                  | Privacy Statement
+                  span.red2
+                    | Please review the following privacy statement before submitting your application:
+                .privacy
+                  b Guiding Principles:
+                  p
+                    | In connection with your transaction, JYD Auto Group may acquire information about you as described in this
+                    | notice, which we handle as stated in this notice.
+                  p
+                    | We may collect personally identifiable information such as name, postal address, telephone number, e-mail
+                    | address, social security number, date of birth, etc. This personal information is collected and used by
+                    | JYD Auto Group staff for the purpose of facilitating a relationship or business transaction.
+                  p
+                    | Our website resides behind a firewall and uses SSL (Secure Sockets Layer, the industry-standard security
+                    | protocol used to communicate with browsers) to transmit personal information. Data is strongly encrypted
+                    | during transmission to ensure that personal and payment information is secure. Industry-standard data encryption
+                    | techniques are used to protect personal information.
+              .box-terms.agree-box
+                input#agree.text.agree(name="agree" type="checkbox" value="1")
+                .details
+                  b I agree
+                  |  to give permission for the above applicant(s) Consumer Credit Report(s) be obtained, at no cost
+                  |                 to me, in order to help determine the types and extent of financing which are available:
+              //
+                <div class="box-hs">
+                <div class="hfield">
+                <input required name="hskey" id="hskey" class="text honeyspot" hidden type="text">
+                <input required name="hsid" id="hsid" type="hidden" value="228503830.27173">
+                </div>
+                </div>
+              .form-button
+                input.disabled(type="submit" value="Go")
+                // <button type="submit" class="btn custom-btn"><span>Go</span></button>
+              .check-errors-block
+                span.check-errors-message.hide
+                  | Please check errors
+              .disclaimer
+                | JYD Auto Group does not sell, rent or disclose e-mail addresses to other organizations.
+
+block footer
+    #modal-invalid.custom-modal
+        .overlay
+        .modal-main
+          .header
+            h5 JYD Auto Leasing
+          .body
+            h3 Error
+            p Please, fill the application correctly.
+            p (The fields are marked with an *)
+          .footer
+            input#modal-close(type="button" value="close")
+
+block scripts
+    script(src="assets/js/validate-form.js")

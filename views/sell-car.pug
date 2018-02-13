@@ -1,0 +1,46 @@
+extends _pug-page.pug
+
+block main-body
+    main#page-content
+        .container.sell-car
+          .row
+            form#selling-form(action="javascript:void(0)" method="post")
+              .col-xs-12
+                h2 Sell Us Your Car
+                h3 Get an instant free book value for your car
+                p
+                  | Please complete the required information below. Trying to figure out how much your car is worth
+                  | could be stressful and overwhelming not knowing if you're getting the right quote. Here at
+                  | JYD we work with top notch parties to get you the most cash for your car. Sell your car to
+                  | us for cash, sell it privately, or trade-in the vehicle to us, either way you will know what
+                  | it's WORTH!!
+              .col-xs-12.form-inputs
+                .row
+                  .col-md-6.col-xs-12
+                    input.form-control(name="First Name" type="text" placeholder="First Name *" required="")
+                  .col-md-6.col-xs-12
+                    input.form-control(name="Last Name" type="text" placeholder="Last Name *" required="")
+                  .col-md-6.col-xs-12
+                    input.form-control(name="Phone Number" type="text" placeholder="Phone Number *" required="")
+                  .col-md-6.col-xs-12
+                    input.form-control(name="email" type="email" placeholder="Email *" required="")
+                  .col-md-6.col-xs-12
+                    input.form-control(name="Vehicule Year" type="number" placeholder="Vehicule Year *" required="")
+                  .col-md-6.col-xs-12
+                    input.form-control(name="Vehicule Make" type="text" placeholder="Vehicule Make *" required="")
+                  .col-md-6.col-xs-12
+                    input.form-control(name="Vehicule Model" type="text" placeholder="Vehicule Model *" required="")
+                  .col-md-6.col-xs-12
+                    input.form-control(name="Vehicule Mileage" type="number" placeholder="Vehicule Mileage *" required="")
+                  .col-md-6.col-xs-12
+                    input.form-control(name="Vehicule Vin" type="number" placeholder="VIN *" required="")
+                  .col-xs-12
+                    select.form-control(name="Vehicule Condition" placeholder="Vehicle Condition" required="")
+                      option(value="" label="Select..." selected="")  Select...
+                      option(value="Outstanding" label="Outstanding") Outstanding
+                      option(value="Clean" label="Clean") Clean
+                      option(value="Fair" label="Fair") Fair
+                      option(value="Rough" label="Rough") Rough
+                      option(value="Damaged" label="Damaged") Damaged
+                  .submit-button.col-md-offset-4.col-md-4.col-xs-offset-3.col-xs-6
+                    input(type="submit" value="Submit Request")

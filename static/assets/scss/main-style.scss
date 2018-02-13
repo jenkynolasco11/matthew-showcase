@@ -688,12 +688,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 }
 
 .mobile-menu-custom {
+	// z-index : 2;
 	transition: left .1s linear;
 	left: -400px;
 	&.open {
 		left: 0;
 	}
-	z-index: 1;
+	z-index: 2;
 	position: fixed;
 	width: 400px;
 	height: 100%;

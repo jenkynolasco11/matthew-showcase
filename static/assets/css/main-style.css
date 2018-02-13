@@ -10655,7 +10655,7 @@ body.color-turquoise #road {
        -o-transition: left .1s linear;
           transition: left .1s linear;
   left: -400px;
-  z-index: 1;
+  z-index: 2;
   position: fixed;
   width: 400px;
   height: 100%;
