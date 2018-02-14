@@ -45,12 +45,14 @@
 	cursor: pointer;
 	width: 60px;
 	height: 40px;
+
 	@include transition(0.3s);
 
 	@include media-breakpoint-up(md) {
 		font-size: 60px;
 	}
 	color: $color__grey-dark;
+	transition : color .1s linear;
 
 	&:hover {
 		color: $regular_link_color;
@@ -131,6 +133,16 @@ $width-child: 897px;
 		color: $color__white;
 		margin-bottom: 17px;
 	}
+
+	figure.thumbnail {
+		min-height : 300px;
+		max-height : 330px;
+
+		img {
+			max-width : 600px;
+		}
+	}
+
 	&:after{
 		position: absolute;
 		content: "";
@@ -140,15 +152,15 @@ $width-child: 897px;
 		top: 0;
 		bottom: 0;
 		// left: 50%;
-		
+
 		background: url(../images/active_bg.png) center bottom no-repeat;
 		@include translate(-50%, 0);
 
-		@include media-breakpoint-down(lg) {
-			// width: calc(897px / 1.5);
-		}
-
-		background-size : contain;
+		// @include media-breakpoint-down(lg) {
+		// 	// width: calc(897px / 1.5);
+		// }
+		max-width: 700px;
+		background-size : cover;
 	}
 }
 

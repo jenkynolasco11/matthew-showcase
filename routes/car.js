@@ -17,7 +17,7 @@ var extractImages = function(images) {
 
         fs.writeFile(
             path.resolve(__dirname, imgRoute, img.name),
-            img.src.split('data:image/png;base64,').pop(),
+            img.src.split(/data:image\/(png|jpg|jpeg);base64,/i).pop(),
             'base64',
             function(err) {
                 if(err) console.log(err)
@@ -84,7 +84,10 @@ route.post('/new', function(req, res) {
 
     var imgs = extractImages(body.imgs)
     var features = body.extraFeatures.split('\n')
+    var description = body.description.split('\n')
     var newCar = Object.assign({}, body, { imgs : imgs }, { extraFeatures : features })
+
+    console.log(newCar)
 
     new Car(newCar)
     .save(function(err, doc) {

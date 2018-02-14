@@ -12,9 +12,16 @@ function submitIfAgree() {
 function clearInputs() {
     check.prop('checked', false)
     $('.form-button input[type=submit]').addClass('disabled')
+    $('.form-button input[type=submit]').prop('disabled', true)
 }
 
 check.on('change', function (e) {
-    if (e.target.checked) $('.form-button input[type=submit]').removeClass('disabled')
-    else $('.form-button input[type=submit]').addClass('disabled')
+    if (e.target.checked) {
+        $('.form-button input[type=submit]').removeClass('disabled')
+        $('.form-button input[type=submit]').prop('disabled', false)
+    }
+    else {
+        $('.form-button input[type=submit]').addClass('disabled')
+        $('.form-button input[type=submit]').prop('disabled', true)
+    }
 })

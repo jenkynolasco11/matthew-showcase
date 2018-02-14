@@ -19,7 +19,7 @@ var CarSchema = new Schema({
     status: String,
     vin: { type : String, max : 17, unique : { index : true }},
     hp : Number,
-    description : String,
+    description : [ String ],
     overview : String,
     extraFeatures : [ String ],
     isFeatured : { type : Boolean, default : false },

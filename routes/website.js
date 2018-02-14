@@ -72,6 +72,19 @@ function filterCarData(car) {
     return car
 }
 
+route.get('/:route', function(req, res, next) {
+    var route = req.params.route
+
+    console.log(route)
+    if(paths.includes(route)) {
+        var title = titles[ route ]
+
+        return res.render(route, { title : 'JYD - ' + title })
+    }
+
+    return next()
+})
+
 route.post('/data', function(req, res) {
     var body = req.body
     var emailData = stripData(body)
@@ -109,18 +122,6 @@ route.get('/details/(:vin?)', function(req, res) {
         })
     })
 })
-
-route.get('/:route', function(req, res, next) {
-    var route = req.params.route
-    if(paths.includes(route)) {
-        var title = titles[ route ]
-
-        return res.render(route, { title : 'JYD - ' + title })
-    }
-
-    return next()
-})
-
 
 route.get('/', function(req, res) {
     Car.find({ isFeatured : true }, function(err, docs) {

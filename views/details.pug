@@ -4,7 +4,7 @@ block main-body
     main.l-main-content
         .container
           .row
-            .col-md-8
+            .col-md-8.col-sm-12
               section.b-car-details
                 .b-car-details__header
                   h2.b-car-details__title #{ car.year } #{ car.make } #{ car.model }
@@ -40,8 +40,9 @@ block main-body
                     a(href="#" onclick="window.location.href='/credit-app'" data-toggle="tab") get approved
                 .b-car-details__tabs.tab-content
                   #specifications.tab-pane.active.fade.in
-                    p
-                      | #{ car.description }
+                    each desc in car.description
+                      p
+                        | #{ desc }
                     .b-car-details__tabs-title more features
                     ul.list.list-mark-5.list_mark-prim.list-2-col
                       each feat in car.extraFeatures
@@ -148,7 +149,7 @@ block main-body
                   each c in related
                     .b-goods-feat
                       .b-goods-feat__img
-                        img.img-responsive(src="/assets/tmp/media/components/b-goods/featured-1.jpg" alt="foto")
+                        img.img-responsive(src=''+c.imgs[0].src alt="foto")
                         span.b-goods-feat__label
                           | $#{ c.price }
                           span.b-goods-feat__label_msrp MSRP $#{c.msrp}

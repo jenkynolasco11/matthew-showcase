@@ -6070,6 +6070,7 @@ header.site-header .social-list__icons {
        -o-transition: 0.3s;
           transition: 0.3s;
   color: #353639;
+  color: pink .swiper-button-next, .swiper-button-prev;
 }
 
 @media (min-width: 768px) {
@@ -6079,8 +6080,8 @@ header.site-header .social-list__icons {
   }
 }
 
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
+.swiper-button-next :hover,
+.swiper-button-prev :hover {
   color: red;
 }
 
@@ -6173,6 +6174,15 @@ header.site-header .social-list__icons {
   margin-bottom: 17px;
 }
 
+.carousel-models_fullwidth figure.thumbnail {
+  min-height: 300px;
+  max-height: 330px;
+}
+
+.carousel-models_fullwidth figure.thumbnail img {
+  max-width: 600px;
+}
+
 .carousel-models_fullwidth:after {
   position: absolute;
   content: "";
@@ -6185,9 +6195,10 @@ header.site-header .social-list__icons {
      -moz-transform: translate(-50%, 0);
        -o-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
-  -moz-background-size: contain;
-    -o-background-size: contain;
-       background-size: contain;
+  max-width: 700px;
+  -moz-background-size: cover;
+    -o-background-size: cover;
+       background-size: cover;
 }
 
 .navigation_block {
