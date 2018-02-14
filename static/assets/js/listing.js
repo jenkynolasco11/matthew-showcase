@@ -61,7 +61,7 @@ var carListingTemplate = function(i, src, price, msrp, make, model, overview, mi
 }
 
 var retrieveAllCars = function() {
-    $.get(`${ 'http://localhost:8000' }/car/all`, function(data) {
+    $.get(`/car/all`, function(data) {
         if(data.ok) {
             var listingSection = $('#listing-section')
 

@@ -102,7 +102,6 @@ route.post('/data', function(req, res) {
 route.get('/details/(:id?)', function(req, res) {
     var id = req.params.id
     if(!id) return res.render('listing', { title : 'JYD - Search'})
-    console.log(id)
 
     Car.findOne({ id : id }, function(err, car) {
         // console.log(err)

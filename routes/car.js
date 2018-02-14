@@ -73,37 +73,91 @@ var createNewID = function(cb) {
 
 //#region Routes
 route.get('/all', function(req, res) {
-    Car.find({}, function(err, docs) {
-        if(err) return res.status(200).send({ ok : false })
+    try {
+        Car.find({}, function(err, docs) {
+            if(err) return res.status(200).send({ ok : false })
 
-        var cars = docs.map(function(doc) {
-            var car = doc._doc
-            car.price = (''+car.price).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
-            car.msrp = (''+car.msrp).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
+            var cars = docs.map(function(doc) {
+                var car = doc._doc
+                car.price = (''+car.price).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
+                car.msrp = (''+car.msrp).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
 
-            return Object.assign({}, car)
+                return Object.assign({}, car)
+            })
+
+
+            return res.status(200).send({ ok : true, cars : [].concat(cars) })
         })
+    } catch (e) {
+        console.log(e)
+    }
 
-
-        return res.status(200).send({ ok : true, cars : [].concat(cars) })
-    })
+    return res.status(200).send({ ok : false, cars : [] })
 })
 
 route.get('/featured', function(req, res) {
-    Car.find({ isFeatured : true }, function(err, docs) {
-        if(err) return res.status(200).send({ ok : false })
+    try {
+        Car.find({ isFeatured : true }, function(err, docs) {
+            if(err) return res.status(200).send({ ok : false })
 
-        var cars = docs.map(function(doc) {
-            var car = doc._doc
-            car.price = (''+car.price).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
-            car.msrp = (''+car.msrp).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
+            var cars = docs.map(function(doc) {
+                var car = doc._doc
+                car.price = (''+car.price).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
+                car.msrp = (''+car.msrp).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
 
-            return Object.assign({}, car)
+                return Object.assign({}, car)
+            })
+
+
+            return res.status(200).send({ ok : true, cars : [].concat(cars) })
         })
+    } catch (e) {
+        console.log(e)
+    }
 
+    return res.status(200).send({ ok : false, cars : [] })
+})
 
-        return res.status(200).send({ ok : true, cars : [].concat(cars) })
-    })
+route.get('/edit/:id', function(req, res) {
+    var id = req.params.id
+
+    try {
+        Car.findOne({ id : id }, function(err, c) {
+            if(c) {
+                var car = c._doc
+                var description = car.description.join('\n')
+                var extraFeatures = car.extraFeatures.join('\n')
+                var imgs = car.imgs.reduce(function(prev, img) {
+                    var newObj = {}
+                    newObj.src = img.src
+                    newObj.main = img.main
+                    newObj.name = img.name
+
+                    prev[ img.name ] = newObj
+
+                    return prev
+                }, {})
+
+                var newState = {
+                    description : description,
+                    extraFeatures : extraFeatures,
+                    imgs : imgs
+                }
+
+                car = Object.assign({}, car, newState)
+
+                return res.status(200).send({ ok : true, car : car })
+            }
+            else if(err) console.log(err)
+            else console.log('Something weird happened....')
+
+            return res.status(200).send({ ok : false })
+        })
+    } catch (e) {
+        console.log(e)
+    }
+
+    return res.status(200).send({ ok : false, car : {} })
 })
 
 route.post('/new', function(req, res) {
@@ -116,54 +170,84 @@ route.post('/new', function(req, res) {
 
     console.log('Right here.... 0')
 
-    createNewID(function(err, id) {
-        if(err) {
-            console.log('There is an error 0')
-            console.log(err)
-            return res.status(200).send({ ok : false, car : [] })
-        }
-
-        newCar.id = id
-        console.log('Right here.... 1')
-        console.log(newCar)
-
-        new Car(newCar)
-        .save(function(err, doc) {
+    try {
+        createNewID(function(err, id) {
             if(err) {
-                console.log('There is an error 1')
+                console.log('There is an error 0')
                 console.log(err)
                 return res.status(200).send({ ok : false, car : [] })
             }
 
-            console.log('Right here.... 2')
-            console.log(doc)
+            newCar.id = id
+            console.log('Right here.... 1')
+            // console.log(newCar)
+
+            new Car(newCar)
+            .save(function(err, doc) {
+                if(err) {
+                    console.log('There is an error 1')
+                    console.log(err)
+                    return res.status(200).send({ ok : false, car : [] })
+                }
+
+                console.log('Right here.... 2')
+                console.log(doc)
+
+                getAllCars(function(_, cars) {
+                    return res.status(200).send({ ok : !!err, cars : [].concat(cars) })
+                })
+            })
+    })
+    } catch (e) {
+        console.log(e)
+    }
+
+    return res.status(200).send({ ok : false, cars : [] })
+})
+
+route.put('/edit/:id', function(req, res) {
+    var id = req.params.id
+    var body = req.body
+
+    var imgs = extractImages(body.imgs)
+    var features = body.extraFeatures.split('\n')
+    var description = body.description.split('\n')
+    var editCar = Object.assign({}, body, { imgs : imgs }, { extraFeatures : features })
+
+    try {
+        Car.findOneAndUpdate({ id : id }, { $set : editCar }, function(err, doc) {
+            if(err) return res.status(200).send({ ok : false })
 
             getAllCars(function(_, cars) {
                 return res.status(200).send({ ok : !!err, cars : [].concat(cars) })
             })
         })
-    })
-})
+    } catch (e) {
+        console.log(e)
+    }
 
-/**TODO: NOT IMPLEMENTED YET */
-route.put('/edit', function(req, res) {
-    /* */
-    return res.status(200).send({ ok : true })
+    return res.status(200).send({ ok : false, cars : [] })
 })
 
 route.delete('/delete/:id', function(req, res) {
     var id = req.params.id
 
-    Car.findOneAndRemove({ id : id }, function(err, rs) {
-        if(err) {
-            console.log(err)
-            return res.status(200).send({ ok : false })
-        }
+    try {
+        Car.findOneAndRemove({ id : id }, function(err, rs) {
+            if(err) {
+                console.log(err)
+                return res.status(200).send({ ok : false })
+            }
 
-        getAllCars(function(err, cars) {
-            return res.status(200).send({ ok : !!err, cars : [].concat(cars)  })
+            getAllCars(function(err, cars) {
+                return res.status(200).send({ ok : !!err, cars : [].concat(cars)  })
+            })
         })
-    })
+    } catch (e) {
+        console.log(e)
+    }
+
+    return res.status(200).send({ ok : false, cars : [] })
 })
 //#endregion
 

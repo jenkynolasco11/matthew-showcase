@@ -7,10 +7,10 @@ var admin = Router()
 
 var upload = multer({ dest : '../img-uploads' })
 
-route.post('/upload-car', upload.single('car-image'), function(req, res) {
-    var file = req.file
-    var body = req.body
-})
+// route.post('/upload-car', upload.single('car-image'), function(req, res) {
+//     var file = req.file
+//     var body = req.body
+// })
 
 route.get('/*', function(req, res) {
     res.render('admin')
