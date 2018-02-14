@@ -90,9 +90,8 @@ route.get('/all', function(req, res) {
         })
     } catch (e) {
         console.log(e)
+        return res.status(200).send({ ok : false, cars : [] })
     }
-
-    return res.status(200).send({ ok : false, cars : [] })
 })
 
 route.get('/featured', function(req, res) {
@@ -113,9 +112,8 @@ route.get('/featured', function(req, res) {
         })
     } catch (e) {
         console.log(e)
+        return res.status(200).send({ ok : false, cars : [] })
     }
-
-    return res.status(200).send({ ok : false, cars : [] })
 })
 
 route.get('/edit/:id', function(req, res) {
@@ -155,9 +153,8 @@ route.get('/edit/:id', function(req, res) {
         })
     } catch (e) {
         console.log(e)
+        return res.status(200).send({ ok : false, car : {} })
     }
-
-    return res.status(200).send({ ok : false, car : {} })
 })
 
 route.post('/new', function(req, res) {
@@ -200,9 +197,8 @@ route.post('/new', function(req, res) {
     })
     } catch (e) {
         console.log(e)
+        return res.status(200).send({ ok : false, cars : [] })
     }
-
-    return res.status(200).send({ ok : false, cars : [] })
 })
 
 route.put('/edit/:id', function(req, res) {
@@ -224,9 +220,8 @@ route.put('/edit/:id', function(req, res) {
         })
     } catch (e) {
         console.log(e)
+        return res.status(200).send({ ok : false, cars : [] })
     }
-
-    return res.status(200).send({ ok : false, cars : [] })
 })
 
 route.delete('/delete/:id', function(req, res) {
@@ -245,9 +240,8 @@ route.delete('/delete/:id', function(req, res) {
         })
     } catch (e) {
         console.log(e)
+        return res.status(200).send({ ok : false, cars : [] })
     }
-
-    return res.status(200).send({ ok : false, cars : [] })
 })
 //#endregion
 
