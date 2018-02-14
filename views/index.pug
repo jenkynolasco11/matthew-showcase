@@ -142,7 +142,7 @@ html(lang="en")
                 each car in cars
                   .model-info.swiper-slide
                     figure.thumbnail
-                      a(href="/details/"+car.vin)
+                      a(href="/details/"+car.id)
                         img(src=''+car.img.src alt=''+car.name)
                     .model-info__content
                       h3 #{ car.make } #{ car.model }

@@ -9,9 +9,17 @@ var bluebird = require('bluebird')
 var mongoose = require('mongoose')
 
 var routes = require('./routes')
+var Meta = require('./models').Meta
 
 mongoose.Promise = bluebird.Promise
 mongoose.connect('mongodb://127.0.0.1/jydautoleasing', function(err) {
+  // create new Meta
+  Meta.findOne({}, function(err, meta) {
+    if(meta) return
+
+    return new Meta({ lastCarId : 1 }).save(function(err,doc){ })
+  })
+
   if(err) process.exit(0)
 
   var app = express()

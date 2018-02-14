@@ -99,12 +99,12 @@ route.post('/data', function(req, res) {
     return res.send('ok')
 })
 
-/**TODO: NOT IMPLEMENTED YET */
-route.get('/details/(:vin?)', function(req, res) {
-    var vin = req.params.vin
-    if(!vin) return res.render('listing', { title : 'JYD - Search'})
-    console.log(vin)
-    Car.findOne({ vin : vin }, function(err, car) {
+route.get('/details/(:id?)', function(req, res) {
+    var id = req.params.id
+    if(!id) return res.render('listing', { title : 'JYD - Search'})
+    console.log(id)
+
+    Car.findOne({ id : id }, function(err, car) {
         // console.log(err)
         if(err) return res.status(200).send({ ok : false })
         // console.log(car._doc)
@@ -113,7 +113,7 @@ route.get('/details/(:vin?)', function(req, res) {
             // { $match : { bodyType : car.bodyType }},
             { $sample : { size : 3 }},
         ]).exec(function(err, related) {
-            if(err) return res.status(200).send({ ok : false })
+            if(err) return res.status(200).send({ ok : false, car : {}, related : [] })
 
             var cars = related.map(filterCarData)
             var featured = filterCarData(car._doc)

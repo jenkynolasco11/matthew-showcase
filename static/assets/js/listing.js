@@ -1,10 +1,10 @@
-var carListingTemplate = function(i, src, price, msrp, make, model, overview, mileage, year, trans, hp, engine, features, vin) {
+var carListingTemplate = function(i, src, price, msrp, make, model, overview, mileage, year, trans, hp, engine, features, id) {
     return (
         `
         <section class="b-goods-1">
             <div class="row">
                 <div class="b-goods-1__img">
-                    <a class="js-zoom-images" href="assets/tmp/media/components/b-goods/263x210_1.jpg">
+                    <a class="js-zoom-images" href="${src}">
                         <img class="img-responsive" src="${src}" alt="foto" />
                     </a>
                 </div>
@@ -17,7 +17,7 @@ var carListingTemplate = function(i, src, price, msrp, make, model, overview, mi
                             <i class="icon fa fa-heart-o"></i>
                         </a>
                         <h2 class="b-goods-1__name">
-                            <a href="details/${vin}">${make} ${model}</a>
+                            <a href="details/${id}">${make} ${model}</a>
                         </h2>
                     </div>
                     <div class="b-goods-1__info">${overview /*.slice(0,50)*/}</span>
@@ -84,7 +84,7 @@ var retrieveAllCars = function() {
                     car.hp,
                     car.engine,
                     car.extraFeatures,
-                    car.vin
+                    car.id
                 )))
             })
         }

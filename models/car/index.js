@@ -2,6 +2,7 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
 var CarSchema = new Schema({
+    id : { type : String, required : true, unique : { index : true }},
     year: Number,
     make: String,
     model: String,
