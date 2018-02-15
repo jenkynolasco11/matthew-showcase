@@ -3300,6 +3300,12 @@ blockquote cite {
   align-items : center;
 }
 
+@media screen and (max-width : 992px) {
+  .list-goods_th .b-goods-1__img img{
+    max-width : 50%;
+  }
+}
+
 .list-goods_th .b-goods-1__name {
   margin-top: 34px;
   margin-bottom: 0;
