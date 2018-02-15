@@ -3300,7 +3300,7 @@ blockquote cite {
   align-items : center;
 }
 
-@media screen and (max-width : 992px) {
+@media screen and (max-width : 768px) {
   .list-goods_th .b-goods-1__img img{
     max-width : 50%;
   }
