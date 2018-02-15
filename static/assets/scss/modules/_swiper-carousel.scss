@@ -137,9 +137,12 @@ $width-child: 897px;
 	figure.thumbnail {
 		min-height : 300px;
 		max-height : 330px;
+		display: flex;
+		align-items : center;
 
 		img {
-			max-width : 600px;
+			width : 100%;
+			// max-width : 600px;
 		}
 	}
 
