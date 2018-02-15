@@ -38,7 +38,7 @@ mongoose.connect('mongodb://127.0.0.1/jydautoleasing', function(err) {
       resave: false,
       saveUninitialized: true,
       cookie : {
-        // secure : true,
+        secure : true,
         maxAge : 60 * 60 * 1000 * 24,
         // store : new MongoStore({ collection : 'sessions', mongooseConnection : mongoose.connection })
       }
