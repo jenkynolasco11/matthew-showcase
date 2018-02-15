@@ -42,7 +42,7 @@ var carListingTemplate = function(i, src, price, msrp, make, model, overview, mi
                         </div>
                     </div>
                     <div class="b-goods-1__section hidden-th">
-                        <h3 class="b-goods-1__title collapsed" data-toggle="collapse" data-target="#list-${ i }" aria-expanded="falses">specifications</h3>
+                        <h3 class="b-goods-1__title collapsed" data-toggle="collapse" data-target="#list-${ i }" aria-expanded="false">specifications</h3>
                         <div class="collapse" id="list-${ i }">
                             <ul class="b-goods-1__list list list-mark-5 list_mark-prim">
                                 ${
