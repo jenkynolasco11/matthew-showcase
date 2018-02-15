@@ -6179,7 +6179,7 @@ header.site-header .social-list__icons {
 
 .carousel-models_fullwidth figure.thumbnail {
   min-height: 300px;
-  max-height: 330px;
+  height: 330px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
