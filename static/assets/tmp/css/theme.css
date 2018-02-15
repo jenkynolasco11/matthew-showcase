@@ -3276,7 +3276,7 @@ blockquote cite {
 }
 
 
-@media screen and (max-width : 744px) {
+@media screen and (max-width : 992px) {
   .list-goods_th .b-goods-1 {
     width : 50%;
   }
