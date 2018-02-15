@@ -3303,13 +3303,12 @@ blockquote cite {
 }
 
 .list-goods_th .b-goods-1__img a {
-  display : flex;
-  justify-content : center;
 }
 
 @media screen and (max-width : 768px) {
   .list-goods_th .b-goods-1__img img{
-    max-width : 50%;
+    max-width : 80%;
+    margin : auto;
   }
 }
 
