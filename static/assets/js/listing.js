@@ -42,8 +42,8 @@ var carListingTemplate = function(i, src, price, msrp, make, model, overview, mi
                         </div>
                     </div>
                     <div class="b-goods-1__section hidden-th">
-                        <h3 class="b-goods-1__title" data-toggle="collapse" data-target="#list-${ i }">specifications</h3>
-                        <div class="collapse in" id="list-${ i }">
+                        <h3 class="b-goods-1__title collapsed" data-toggle="collapse" data-target="#list-${ i }">specifications</h3>
+                        <div class="collapse" id="list-${ i }">
                             <ul class="b-goods-1__list list list-mark-5 list_mark-prim">
                                 ${
                                     features.reduce(function(p, feat){
