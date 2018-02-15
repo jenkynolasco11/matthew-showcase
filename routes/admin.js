@@ -7,6 +7,9 @@ var admin = Router()
 
 var upload = multer({ dest : '../img-uploads' })
 
+// route.post('/auth/login', function(req, res) {
+
+// })
 // route.post('/upload-car', upload.single('car-image'), function(req, res) {
 //     var file = req.file
 //     var body = req.body

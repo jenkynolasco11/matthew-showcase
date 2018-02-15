@@ -3,24 +3,25 @@
 var body = require('body-parser')
 var nodemailer = require('nodemailer')
 var express = require('express')
+// var session = require('cookie-session')
+var session = require('express-session')
+var cookie = require('cookie-parser')
+// var MongoStore = require('connect-mongo')(session)
+var passport = require('passport')
 var logger = require('morgan')
 var cors = require('cors')
 var bluebird = require('bluebird')
 var mongoose = require('mongoose')
 
 var routes = require('./routes')
-var Meta = require('./models').Meta
 
 mongoose.Promise = bluebird.Promise
 mongoose.connect('mongodb://127.0.0.1/jydautoleasing', function(err) {
-  // create new Meta
-  Meta.findOne({}, function(err, meta) {
-    if(meta) return
-
-    return new Meta({ lastCarId : 1 }).save(function(err,doc){ })
-  })
-
   if(err) process.exit(0)
+
+  // generate default meta
+  require('./generate-defaults')
+
 
   var app = express()
 
@@ -28,10 +29,30 @@ mongoose.connect('mongodb://127.0.0.1/jydautoleasing', function(err) {
   app.set('view engine', 'pug')
 
   app
-    .use(logger('tiny'))
-    .use(cors({ origin : '*' }))
-    .use(body.json({ limit : '30mb' }))
+    .use(cookie('jyd-session_cookie'))
+    .use(body.json({ limit : '50mb' }))
     .use(body.urlencoded({ extended : true }))
+    .use(session({
+      secret : 'M3S3CR37W311K3P7',
+      name : 'jyd-session_cookie',
+      resave: false,
+      saveUninitialized: true,
+      cookie : {
+        // secure : true,
+        maxAge : 60 * 60 * 1000 * 24,
+        // store : new MongoStore({ collection : 'sessions', mongooseConnection : mongoose.connection })
+      }
+
+    }))
+    .use(cors({ origin : ['http://localhost:3000'], credentials : true }))
+    .use(logger('tiny'))
+
+  // configure passport
+  require('./passport-init')(passport)
+
+  app
+    .use(passport.initialize())
+    .use(passport.session())
     .use('', express.static('./static'))
     .use('/', routes)
 

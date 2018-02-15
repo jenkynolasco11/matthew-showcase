@@ -31,10 +31,8 @@ function stripData(data) {
 
     if(!data.email) return null
 
-    if(data['First Name'] && data['Last Name'])
-        name = data['First Name'] + ' ' + data['Last Name']
-    else if
-        (data.name) name = data.name
+    if(data['First Name'] && data['Last Name']) name = data['First Name'] + ' ' + data['Last Name']
+    else if (data.name) name = data.name
 
     emailData.from = `'${ name }' <${ data.email }>`
     emailData.to = 'info@jydautoleasing.com'
