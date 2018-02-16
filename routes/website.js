@@ -40,6 +40,8 @@ function stripData(data) {
     emailData.subject = data.type + ' - ' + name
     emailData.text = JSON.stringify(data, null, 2).replace(/["{},]/g,'')
 
+    console.log(data)
+
     // emailData.to = 'angelo@jydautoleasing.com, office@jydautoleasing.com,info@jydautoleasing.com'
     // emailData.to = 'jenky@leadfire.com,info@jydautoleasing.com',
     // emailData.cc = 'jenky@leadfire.com',
