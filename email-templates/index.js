@@ -2896,7 +2896,7 @@ module.exports = {
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
                                 <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
                                   <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
-                                    <p style="margin: 0;font-size: 14px;line-height: 17px">$${ data[ 'Monthly Payment' ].toLocaleString() }</p>
+                                    <p style="margin: 0;font-size: 14px;line-height: 17px">$${ data[ 'Monthly Payment' ].toLocaleString() }.00</p>
                                   </div>
                                 </div>
                                 <!--[if mso]></td></tr></table><![endif]-->
@@ -3636,7 +3636,7 @@ module.exports = {
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
                                 <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
                                   <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
-                                    <p style="margin: 0;font-size: 14px;line-height: 17px">$${ data[ 'Monthly Income' ].toLocaleString() }</p>
+                                    <p style="margin: 0;font-size: 14px;line-height: 17px">$${ data[ 'Monthly Income' ].toLocaleString() }.00</p>
                                   </div>
                                 </div>
                                 <!--[if mso]></td></tr></table><![endif]-->
