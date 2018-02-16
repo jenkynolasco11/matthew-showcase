@@ -14,7 +14,7 @@ transporter.on('token', token => {
 })
 
 const sendEmail = exports.sendEmail = (mailOptions, callback) => {
-  if(!mailOptions.to || !mailOptions.text)
+  if(!mailOptions.to || (!mailOptions.text && !mailOptions.html))
     return callback('Error on options.', new Error('Error: No text or sender email has been added to options sent.'));
 
   if(!mailOptions.from)

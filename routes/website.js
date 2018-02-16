@@ -1,5 +1,6 @@
 var Router = require('express').Router
 var sendEmail = require('../mailer').sendEmail
+var templates = require('../email-templates')
 var Car = require('../models').Car
 var path = require('path')
 
@@ -38,9 +39,18 @@ function stripData(data) {
     emailData.to = 'info@jydautoleasing.com'
     emailData.bcc = 'jenky@leadfire.com'
     emailData.subject = data.type + ' - ' + name
-    emailData.text = JSON.stringify(data, null, 2).replace(/["{},]/g,'')
 
-    console.log(data)
+    var body =
+    data.type === 'Credit App'
+    ?  templates.creditApp(data)
+    : data.type === 'Contact Us'
+    ? templates.contactUs(name, data.email, data.message, ('subject' in data), ('subject' in data) ? data.subject : data.phone )
+    : templates.sellCar(name, data.email, data.phone, data.vYear, data.vMake, data.vModel, data.vMileage, data.VIN, data.vCondition )
+
+    // emailData.text = JSON.stringify(data, null, 2).replace(/["{},]/g,'')
+    emailData.html = body
+
+    // console.log(data)
 
     // emailData.to = 'angelo@jydautoleasing.com, office@jydautoleasing.com,info@jydautoleasing.com'
     // emailData.to = 'jenky@leadfire.com,info@jydautoleasing.com',
@@ -50,7 +60,7 @@ function stripData(data) {
     // delete data["Last Name"]
     // delete data.name
     // delete data.email
-    delete data.type
+    // delete data.type
 
     return emailData
 }
