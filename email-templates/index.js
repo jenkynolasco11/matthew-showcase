@@ -336,7 +336,7 @@ module.exports = {
                                 <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
                                   <div style="line-height:14px;font-size:12px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;line-height: 14px;text-align: center;font-size: 12px">
-                                      <span style="color: rgb(87, 161, 110); font-size: 12px; line-height: 14px;">
+                                      <span style="color:#434141; font-size: 12px; line-height: 14px;">
                                         <span style="font-size: 22px; line-height: 26px;">Contact Us</span>
                                       </span>
                                     </p>
@@ -1061,7 +1061,7 @@ module.exports = {
                                 <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
                                   <div style="line-height:14px;font-size:12px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;line-height: 14px;text-align: center;font-size: 12px">
-                                      <span style="color: rgb(87, 161, 110); font-size: 12px; line-height: 14px;">
+                                      <span style="color:#434141; font-size: 12px; line-height: 14px;">
                                         <span style="font-size: 22px; line-height: 26px;">Sell Your Car</span>
                                       </span>
                                     </p>
@@ -2193,7 +2193,7 @@ module.exports = {
                                 <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
                                   <div style="line-height:14px;font-size:12px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;line-height: 14px;text-align: center;font-size: 12px">
-                                      <span style="color: rgb(87, 161, 110); font-size: 12px; line-height: 14px;">
+                                      <span style="color:#434141; font-size: 12px; line-height: 14px;">
                                         <span style="font-size: 22px; line-height: 26px;">Credit Application</span>
                                       </span>
                                     </p>
@@ -2242,8 +2242,8 @@ module.exports = {
                               <!--<![endif]-->
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#59A06F;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#59A06F;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#434141;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#434141;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 14px;line-height: 17px;text-align: center">
                                       <span style="font-size: 22px; line-height: 26px;">Personal Information</span>
                                     </p>
@@ -2969,8 +2969,8 @@ module.exports = {
         
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#59A06F;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#59A06F;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#434141;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#434141;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 14px;line-height: 17px;text-align: center">
                                       <span style="font-size: 22px; line-height: 26px;">Driver's Information</span>
                                     </p>
@@ -3220,8 +3220,8 @@ module.exports = {
         
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#59A06F;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#59A06F;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#434141;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#434141;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 14px;line-height: 17px;text-align: center">
                                       <span style="font-size: 22px; line-height: 26px;">Employment Information</span>
                                     </p>
