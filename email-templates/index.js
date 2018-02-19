@@ -1994,7 +1994,7 @@ module.exports = {
 
             .ie-browser .block-grid.ten-up .col,
             [owa] .block-grid.ten-up .col {
-              width: 65px !important;
+              width: 62px !important;
             }
 
             .ie-browser .block-grid.eleven-up .col,
@@ -2007,7 +2007,7 @@ module.exports = {
               width: 54px !important;
             }
 
-            @media only screen and (min-width: 675px) {
+            @media only screen and (min-width: 672px) {
               .block-grid {
                 width: 780px !important;
               }
@@ -2048,7 +2048,7 @@ module.exports = {
                 width: 72px !important;
               }
               .block-grid.ten-up .col {
-                width: 65px !important;
+                width: 62px !important;
               }
               .block-grid.eleven-up .col {
                 width: 59px !important;
@@ -2058,7 +2058,7 @@ module.exports = {
               }
             }
 
-            @media (max-width: 675px) {
+            @media (max-width: 672px) {
               .block-grid,
               .col {
                 min-width: 320px !important;
@@ -2180,17 +2180,17 @@ module.exports = {
                       <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
                         <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
 
-                        <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                        <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                         <div class="col num12" style="min-width: 320px;max-width: 780px;display: table-cell;vertical-align: top;">
                           <div style="background-color: transparent; width: 100% !important;">
                             <!--[if (!mso)&(!IE)]><!-->
-                            <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                            <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                               <!--<![endif]-->
 
 
                               <div class="">
-                                <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                   <div style="line-height:14px;font-size:12px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;line-height: 14px;text-align: center;font-size: 12px">
                                       <span style="color: #000; font-size: 22px; line-height: 26px;">
@@ -2207,7 +2207,7 @@ module.exports = {
                               <table border="0" cellpadding="0" cellspacing="0" width="100%" class="divider " style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;min-width: 100%;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
                                 <tbody>
                                   <tr style="vertical-align: top">
-                                    <td class="divider_inner" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;padding-right: 10px;padding-left: 10px;padding-top: 10px;padding-bottom: 10px;min-width: 100%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                    <td class="divider_inner" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;padding-right: 10px;padding-left: 10px;padding-top: 2px;padding-bottom: 2px;min-width: 100%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
                                       <table class="divider_content" height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="98%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #CB0000;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
                                         <tbody>
                                           <tr style="vertical-align: top">
@@ -2239,17 +2239,17 @@ module.exports = {
                         <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
                           <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
 
-                          <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num12" style="min-width: 320px;max-width: 780px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 0px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 0px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
                                         <span style="font-size: 18px; line-height: 21px;">
@@ -2278,11 +2278,11 @@ module.exports = {
                         <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
                           <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
 
-                          <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num12" style="min-width: 320px;max-width: 780px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
@@ -2290,7 +2290,7 @@ module.exports = {
                                 <table border="0" cellpadding="0" cellspacing="0" width="100%" class="divider " style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;min-width: 100%;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
                                   <tbody>
                                     <tr style="vertical-align: top">
-                                      <td class="divider_inner" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;padding-right: 10px;padding-left: 10px;padding-top: 0px;padding-bottom: 0px;min-width: 100%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                      <td class="divider_inner" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;padding-right: 10px;padding-left: 10px;padding-top: 2px;padding-bottom: 2px;min-width: 100%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
                                         <table class="divider_content" height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="98%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #BBBBBB;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
                                           <tbody>
                                             <tr style="vertical-align: top">
@@ -2320,17 +2320,17 @@ module.exports = {
                         <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
                           <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
 
-                          <!--[if (mso)|(IE)]><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
                                         <span style="color: #000; font-size: 14px; line-height: 16px;">Full Name:</span>
@@ -2345,17 +2345,17 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ data[ 'First Name' ] } ${ data[ 'Middle Name' ] } ${ data['Last Name' ] }</p>
                                     </div>
@@ -2368,17 +2368,17 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
                                         <span style="color: #000; font-size: 14px; line-height: 16px;">Drivers License #:</span>
@@ -2393,17 +2393,17 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ data[ 'Driver\'s Licence Number' ] }</p>
                                     </div>
@@ -2426,17 +2426,17 @@ module.exports = {
                         <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
                           <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
 
-                          <!--[if (mso)|(IE)]><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
                                         <span style="color: #000; font-size: 14px; line-height: 16px;">Address:</span>
@@ -2451,17 +2451,17 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ data.Address }</p>
                                     </div>
@@ -2474,17 +2474,17 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
                                         <span style="color: #000; font-size: 14px; line-height: 16px;">DL State/Exp Date:</span>
@@ -2499,17 +2499,17 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ data[ 'Driver\'s State' ] } ${ ('00' + data[ 'Driver\'s License Expiration Date Month' ]).slice(-2) }/${ ('00'+data[ 'Driver\'s License Expiration Date Day' ]).slice(-2) }/${ (data[ 'Driver\'s License Expiration Date Year' ]).slice(-2) }</p>
                                     </div>
@@ -2532,17 +2532,17 @@ module.exports = {
                         <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
                           <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
 
-                          <!--[if (mso)|(IE)]><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
                                         <span style="color: #000; font-size: 14px; line-height: 16px;">City/State/ZIP:</span>
@@ -2557,17 +2557,17 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ data.City }, ${ data.State } ${ data[ 'ZIP Code' ] }</p>
                                     </div>
@@ -2580,17 +2580,17 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
                                         <span style="color: #000; font-size: 14px; line-height: 16px;">Phone Number:</span>
@@ -2605,17 +2605,17 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ formatPhone(data[ 'Day Time Phone' ]) }</p>
                                     </div>
@@ -2638,17 +2638,17 @@ module.exports = {
                         <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
                           <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
 
-                          <!--[if (mso)|(IE)]><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
                                         <span style="color: #000; font-size: 14px; line-height: 16px;">Social Security:</span>
@@ -2663,17 +2663,17 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ data.SSN }</p>
                                     </div>
@@ -2686,17 +2686,17 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
                                         <span style="color: #000; font-size: 14px; line-height: 16px;">Email:</span>
@@ -2711,17 +2711,17 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
                                         <a style="color:#000;text-decoration: none;" href="mailto:${ data.email }" target="_blank" rel="noopener">${ data.email }</a>
@@ -2746,17 +2746,17 @@ module.exports = {
                         <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
                           <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
 
-                          <!--[if (mso)|(IE)]><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
                                         <span style="color: #000; font-size: 14px; line-height: 16px;">DOB:﻿</span>
@@ -2771,17 +2771,17 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ ('00'+data[ 'DOB Month' ]).slice(-2) }/${ ('00'+data[ 'DOB Day' ]).slice(-2) }/${ ('00'+data[ 'DOB Year' ]).slice(-2) }</p>
                                     </div>
@@ -2794,17 +2794,17 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
                                         <span style="color: #000; font-size: 14px; line-height: 16px;">Time at Residency:</span>
@@ -2819,17 +2819,17 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ data[ 'Years Living There' ] || 0 } years, ${ data[ 'Months Living There' ] || 0 } months</p>
                                     </div>
@@ -2852,17 +2852,17 @@ module.exports = {
                         <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
                           <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
 
-                          <!--[if (mso)|(IE)]><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
                                         <span style="color: #000; line-height: 16px; font-size: 14px;">Residence Type:</span>
@@ -2877,17 +2877,17 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ data[ 'Home Type'  ] }</p>
                                     </div>
@@ -2900,17 +2900,17 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 12px;line-height: 14px">
                                         <span style="font-size: 14px; line-height: 16px; color: #000;">Rent/Morgage:&#160;</span>
@@ -2927,17 +2927,17 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">$${ data[ 'Monthly Payment' ].toLocaleString() }.00</p>
                                     </div>
@@ -2960,17 +2960,17 @@ module.exports = {
                         <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
                           <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
 
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 12px;line-height: 14px;text-align: left">
                                         <span style="font-size: 14px; line-height: 16px;">
@@ -2996,17 +2996,17 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ data[ 'Salesman\'s Name' ]}</p>
                                     </div>
@@ -3020,11 +3020,11 @@ module.exports = {
                             </div>
                           </div>
 
-                          <!--[if (mso)|(IE)]><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
@@ -3035,11 +3035,11 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
@@ -3059,26 +3059,7 @@ module.exports = {
                   <div style="background-color:transparent;">
                     <div style="Margin: 0 auto;min-width: 320px;max-width: 780px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;"
                       class="block-grid ">
-                      <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
-                        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
-
-                        <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
-                        <div class="col num12" style="min-width: 320px;max-width: 780px;display: table-cell;vertical-align: top;">
-                          <div style="background-color: transparent; width: 100% !important;">
-                            <!--[if (!mso)&(!IE)]><!-->
-                            <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
-                              <!--<![endif]-->
-
-
-                              &#160;
-
-                              <!--[if (!mso)&(!IE)]><!-->
-                            </div>
-                            <!--<![endif]-->
-                          </div>
-                        </div>
-                        <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
-                      </div>
+                      <!---------- IT GOES HERE ---------->
                     </div>
                   </div>
 <!--------------------- -->
@@ -3091,17 +3072,17 @@ module.exports = {
                         <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
                           <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
 
-                          <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num12" style="min-width: 320px;max-width: 780px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 0px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 0px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
                                         <span style="font-size: 18px; line-height: 21px;">
@@ -3130,11 +3111,11 @@ module.exports = {
                         <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
                           <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
 
-                          <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num12" style="min-width: 320px;max-width: 780px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
@@ -3142,7 +3123,7 @@ module.exports = {
                                 <table border="0" cellpadding="0" cellspacing="0" width="100%" class="divider " style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;min-width: 100%;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
                                   <tbody>
                                     <tr style="vertical-align: top">
-                                      <td class="divider_inner" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;padding-right: 10px;padding-left: 10px;padding-top: 0px;padding-bottom: 0px;min-width: 100%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                      <td class="divider_inner" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;padding-right: 10px;padding-left: 10px;padding-top: 2px;padding-bottom: 2px;min-width: 100%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
                                         <table class="divider_content" height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="98%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #BBBBBB;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
                                           <tbody>
                                             <tr style="vertical-align: top">
@@ -3172,17 +3153,17 @@ module.exports = {
                         <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
                           <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
 
-                          <!--[if (mso)|(IE)]><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
                                         <span style="color: #000; line-height: 16px; font-size: 14px;">Address:</span>
@@ -3197,17 +3178,17 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ data[ 'Previous Address' ] }</p>
                                     </div>
@@ -3221,11 +3202,11 @@ module.exports = {
                             </div>
                           </div>
 
-                          <!--[if (mso)|(IE)]><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
@@ -3236,11 +3217,11 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
@@ -3261,26 +3242,7 @@ module.exports = {
                   <div style="background-color:transparent;">
                     <div style="Margin: 0 auto;min-width: 320px;max-width: 780px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;"
                       class="block-grid ">
-                      <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
-                        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
-
-                        <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
-                        <div class="col num12" style="min-width: 320px;max-width: 780px;display: table-cell;vertical-align: top;">
-                          <div style="background-color: transparent; width: 100% !important;">
-                            <!--[if (!mso)&(!IE)]><!-->
-                            <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
-                              <!--<![endif]-->
-
-
-                              &#160;
-
-                              <!--[if (!mso)&(!IE)]><!-->
-                            </div>
-                            <!--<![endif]-->
-                          </div>
-                        </div>
-                        <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
-                      </div>
+                      <!---------- IT GOES HERE ---------->
                     </div>
                   </div>
 <!--------------------- -->
@@ -3291,16 +3253,16 @@ module.exports = {
                         <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
                           <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
 
-                          <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num12" style="min-width: 320px;max-width: 780px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 0px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 0px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 12px;line-height: 14px">
                                         <span style="font-size: 18px; line-height: 21px;">
@@ -3327,63 +3289,21 @@ module.exports = {
                     </div>
                     <div style="background-color:transparent;">
                       <div style="Margin: 0 auto;min-width: 320px;max-width: 780px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;"
-                        class="block-grid ">
-                        <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
-                          <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
-
-                          <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
-                          <div class="col num12" style="min-width: 320px;max-width: 780px;display: table-cell;vertical-align: top;">
-                            <div style="background-color: transparent; width: 100% !important;">
-                              <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
-                                <!--<![endif]-->
-
-
-
-                                <table border="0" cellpadding="0" cellspacing="0" width="100%" class="divider " style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;min-width: 100%;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
-                                  <tbody>
-                                    <tr style="vertical-align: top">
-                                      <td class="divider_inner" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;padding-right: 10px;padding-left: 10px;padding-top: 0px;padding-bottom: 0px;min-width: 100%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
-                                        <table class="divider_content" height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="98%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #BBBBBB;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
-                                          <tbody>
-                                            <tr style="vertical-align: top">
-                                              <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0px;line-height: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
-                                                <span>&#160;</span>
-                                              </td>
-                                            </tr>
-                                          </tbody>
-                                        </table>
-                                      </td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-
-                                <!--[if (!mso)&(!IE)]><!-->
-                              </div>
-                              <!--<![endif]-->
-                            </div>
-                          </div>
-                          <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
-                        </div>
-                      </div>
-                    </div>
-                    <div style="background-color:transparent;">
-                      <div style="Margin: 0 auto;min-width: 320px;max-width: 780px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;"
                         class="block-grid four-up ">
                         <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
                           <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
 
-                          <!--[if (mso)|(IE)]><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
                                         <span style="color: #000; font-size: 14px; line-height: 16px;">Employer:</span>
@@ -3398,17 +3318,17 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ data[ 'Employer\'s Name' ] }</p>
                                     </div>
@@ -3421,17 +3341,17 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
                                         <span style="color: #000; font-size: 14px; line-height: 16px;">Address:</span>
@@ -3446,17 +3366,17 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px;text-align: left">${ data[ 'Employer\'s Address' ] }</p>
                                     </div>
@@ -3479,17 +3399,17 @@ module.exports = {
                         <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
                           <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
 
-                          <!--[if (mso)|(IE)]><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
                                         <span style="color: #000; font-size: 14px; line-height: 16px;">Monthly Income:</span>
@@ -3507,17 +3427,17 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">$${ data[ 'Monthly Income' ].toLocaleString() }.00</p>
                                     </div>
@@ -3530,17 +3450,17 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
                                         <span style="font-size: 14px; line-height: 16px; color: #000;">Phone Number:</span>
@@ -3555,17 +3475,17 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ formatPhone(data[ 'Employer\'s Phone' ]) }</p>
                                     </div>
@@ -3588,17 +3508,17 @@ module.exports = {
                         <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
                           <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
 
-                          <!--[if (mso)|(IE)]><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
                                         <span style="color: #000; font-size: 14px; line-height: 16px;">Occupation:</span>
@@ -3613,17 +3533,17 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ data[ 'Job Title' ] }</p>
                                     </div>
@@ -3636,17 +3556,17 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
                                         <span style="color: #000; font-size: 14px; line-height: 16px;">Time on Job</span>
@@ -3661,17 +3581,17 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ data[ 'Employee Years' ] || 0 } years, ${ data[ 'Employee Months' ] || 0 } months</p>
                                     </div>
@@ -3694,17 +3614,17 @@ module.exports = {
                         <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
                           <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
 
-                          <!--[if (mso)|(IE)]><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
                                         <span style="color: #000; font-size: 14px; line-height: 16px;">Previous Employer:</span>
@@ -3722,17 +3642,17 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
                                 <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ data[ 'Previous Employer' ] }</p>
                                     </div>
@@ -3745,11 +3665,11 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
@@ -3760,11 +3680,11 @@ module.exports = {
                               <!--<![endif]-->
                             </div>
                           </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
@@ -3785,11 +3705,11 @@ module.exports = {
                         <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
                           <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
 
-                          <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num12" style="min-width: 320px;max-width: 780px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
 
@@ -3810,11 +3730,11 @@ module.exports = {
                         <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
                           <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
 
-                          <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num12" style="min-width: 320px;max-width: 780px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
                               <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                                 <!--<![endif]-->
 
                                 <!--[if (!mso)&(!IE)]><!-->
@@ -3834,11 +3754,11 @@ module.exports = {
                       <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
                         <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
 
-                        <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                        <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                         <div class="col num12" style="min-width: 320px;max-width: 780px;display: table-cell;vertical-align: top;">
                           <div style="background-color: transparent; width: 100% !important;">
                             <!--[if (!mso)&(!IE)]><!-->
-                            <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                            <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                               <!--<![endif]-->
 
 
@@ -3846,7 +3766,7 @@ module.exports = {
                               <table border="0" cellpadding="0" cellspacing="0" width="100%" class="divider " style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;min-width: 100%;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
                                 <tbody>
                                   <tr style="vertical-align: top">
-                                    <td class="divider_inner" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;padding-right: 10px;padding-left: 10px;padding-top: 10px;padding-bottom: 10px;min-width: 100%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                    <td class="divider_inner" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;padding-right: 10px;padding-left: 10px;padding-top: 2px;padding-bottom: 2px;min-width: 100%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
                                       <table class="divider_content" align="center" border="0" cellpadding="0" cellspacing="0" width="98%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #BBBBBB;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
                                         <tbody>
                                           <tr style="vertical-align: top">
@@ -3876,17 +3796,17 @@ module.exports = {
                       <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
                         <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
 
-                        <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                        <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                         <div class="col num12" style="min-width: 320px;max-width: 780px;display: table-cell;vertical-align: top;">
                           <div style="background-color: transparent; width: 100% !important;">
                             <!--[if (!mso)&(!IE)]><!-->
-                            <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                            <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                               <!--<![endif]-->
 
 
                               <div class="">
-                                <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 2px;"><![endif]-->
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 2px;">
                                   <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 14px;line-height: 17px">
                                       <span style="font-size: 14px; line-height: 16px;">
@@ -3923,11 +3843,11 @@ module.exports = {
                       <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
                         <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
 
-                        <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                        <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                         <div class="col num12" style="min-width: 320px;max-width: 780px;display: table-cell;vertical-align: top;">
                           <div style="background-color: transparent; width: 100% !important;">
                             <!--[if (!mso)&(!IE)]><!-->
-                            <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                            <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                               <!--<![endif]-->
 
 
@@ -3948,11 +3868,11 @@ module.exports = {
                       <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
                         <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
 
-                        <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                        <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                         <div class="col num12" style="min-width: 320px;max-width: 780px;display: table-cell;vertical-align: top;">
                           <div style="background-color: transparent; width: 100% !important;">
                             <!--[if (!mso)&(!IE)]><!-->
-                            <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                            <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
                               <!--<![endif]-->
 
 
@@ -3960,7 +3880,7 @@ module.exports = {
                               <table border="0" cellpadding="0" cellspacing="0" width="100%" class="divider " style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;min-width: 100%;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
                                 <tbody>
                                   <tr style="vertical-align: top">
-                                    <td class="divider_inner" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;padding-right: 10px;padding-left: 10px;padding-top: 10px;padding-bottom: 10px;min-width: 100%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                    <td class="divider_inner" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;padding-right: 10px;padding-left: 10px;padding-top: 2px;padding-bottom: 2px;min-width: 100%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
                                       <table class="divider_content" height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="98%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 3px solid #CB0000;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
                                         <tbody>
                                           <tr style="vertical-align: top">
@@ -3998,3 +3918,28 @@ module.exports = {
       `
   }
 }
+
+
+/*
+
+<div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
+                        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
+
+                        <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:2px; padding-bottom:2px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                        <div class="col num12" style="min-width: 320px;max-width: 780px;display: table-cell;vertical-align: top;">
+                          <div style="background-color: transparent; width: 100% !important;">
+                            <!--[if (!mso)&(!IE)]><!-->
+                            <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:2px; padding-bottom:2px; padding-right: 0px; padding-left: 0px;">
+                              <!--<![endif]-->
+
+
+                              &#160;
+
+                              <!--[if (!mso)&(!IE)]><!-->
+                            </div>
+                            <!--<![endif]-->
+                          </div>
+                        </div>
+                        <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+                      </div>
+*/
