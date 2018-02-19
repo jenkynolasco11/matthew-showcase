@@ -583,21 +583,13 @@ block main-body
                     | during transmission to ensure that personal and payment information is secure. Industry-standard data encryption
                     | techniques are used to protect personal information.
               .box-terms.agree-box
-                input#agree.text.agree(name="agree" type="checkbox" value="1")
+                input#agree.text.agree(name="agree" type="checkbox" value="1" required)
                 .details
                   b I agree
                   |  to give permission for the above applicant(s) Consumer Credit Report(s) be obtained, at no cost
                   |                 to me, in order to help determine the types and extent of financing which are available:
-              //
-                <div class="box-hs">
-                <div class="hfield">
-                <input required name="hskey" id="hskey" class="text honeyspot" hidden type="text">
-                <input required name="hsid" id="hsid" type="hidden" value="228503830.27173">
-                </div>
-                </div>
               .form-button
                 input.disabled(type="submit" value="Go" disabled)
-                // <button type="submit" class="btn custom-btn"><span>Go</span></button>
               .check-errors-block
                 span.check-errors-message.hide
                   | Please check errors

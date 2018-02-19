@@ -252,7 +252,7 @@ module.exports = {
           </style>
         </head>
 
-        <body class="clean-body" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;background-color: #EFEFEF">
+        <body class="clean-body" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;background-color: #FFF">
           <style type="text/css" id="media-query-bodytag">
             @media (max-width: 520px) {
               .block-grid {
@@ -310,12 +310,12 @@ module.exports = {
           </style>
           <!--[if IE]><div class="ie-browser"><![endif]-->
           <!--[if mso]><div class="mso-container"><![endif]-->
-          <table class="nl-container" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;min-width: 320px;Margin: 0 auto;background-color: #EFEFEF;width: 100%"
+          <table class="nl-container" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;min-width: 320px;Margin: 0 auto;background-color: #FFF;width: 100%"
             cellpadding="0" cellspacing="0">
             <tbody>
               <tr style="vertical-align: top">
                 <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
-                  <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background-color: #EFEFEF;"><![endif]-->
+                  <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background-color: #FFF;"><![endif]-->
 
                   <div style="background-color:transparent;">
                     <div style="Margin: 0 auto;min-width: 320px;max-width: 555px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;"
@@ -333,10 +333,10 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="line-height:14px;font-size:12px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="line-height:14px;font-size:12px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;line-height: 14px;text-align: center;font-size: 12px">
-                                      <span style="color:#434141; font-size: 12px; line-height: 14px;">
+                                      <span style="color:#000; font-size: 12px; line-height: 14px;">
                                         <span style="font-size: 22px; line-height: 26px;">Contact Us</span>
                                       </span>
                                     </p>
@@ -390,10 +390,10 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 14px;line-height: 17px;text-align: left">
-                                      <span style="color: rgb(0, 51, 102); font-size: 14px; line-height: 16px;">Name:</span>
+                                      <span style="color: #000; font-size: 14px; line-height: 16px;">Name:</span>
                                     </p>
                                   </div>
                                 </div>
@@ -415,8 +415,8 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 14px;line-height: 17px">${ name }</p>
                                   </div>
                                 </div>
@@ -448,10 +448,10 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 14px;line-height: 17px;text-align: left">
-                                      <span style="color: rgb(0, 51, 102); font-size: 14px; line-height: 16px;">
+                                      <span style="color: #000; font-size: 14px; line-height: 16px;">
                                         <span style="font-size: 14px; line-height: 16px;">﻿</span>Email:</span>
                                     </p>
                                   </div>
@@ -474,10 +474,10 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 14px;line-height: 17px">
-                                      <a style="color:#555555;text-decoration: none;" href="mailto:${ email }" target="_blank" title="mail-to-person"
+                                      <a style="color:#000;text-decoration: none;" href="mailto:${ email }" target="_blank" title="mail-to-person"
                                         data-mce-selected="1" rel="noopener">${ email }</a>
                                     </p>
                                   </div>
@@ -510,10 +510,10 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 12px;line-height: 14px;text-align: left">
-                                      <span style="font-size: 14px; line-height: 16px; color: rgb(0, 51, 102);">
+                                      <span style="font-size: 14px; line-height: 16px; color: #000;">
                                         <span style="font-size: 14px; line-height: 16px;">﻿</span>${ isSubject ? 'Subject' : 'Phone Number' }:</span>
                                     </p>
                                   </div>
@@ -536,8 +536,8 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 14px;line-height: 17px">${ subjectOrPhone }</p>
                                   </div>
                                 </div>
@@ -569,10 +569,10 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 14px;line-height: 17px;text-align: left">
-                                      <span style="font-size: 14px; line-height: 16px; color: rgb(0, 51, 102);">Message:</span>
+                                      <span style="font-size: 14px; line-height: 16px; color: #000;">Message:</span>
                                     </p>
                                   </div>
                                 </div>
@@ -594,8 +594,8 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 14px;line-height: 17px;text-align: left">${ message }</p>
                                   </div>
                                 </div>
@@ -977,7 +977,7 @@ module.exports = {
           </style>
         </head>
 
-        <body class="clean-body" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;background-color: #EFEFEF">
+        <body class="clean-body" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;background-color: #FFF">
           <style type="text/css" id="media-query-bodytag">
             @media (max-width: 520px) {
               .block-grid {
@@ -1035,12 +1035,12 @@ module.exports = {
           </style>
           <!--[if IE]><div class="ie-browser"><![endif]-->
           <!--[if mso]><div class="mso-container"><![endif]-->
-          <table class="nl-container" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;min-width: 320px;Margin: 0 auto;background-color: #EFEFEF;width: 100%"
+          <table class="nl-container" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;min-width: 320px;Margin: 0 auto;background-color: #FFF;width: 100%"
             cellpadding="0" cellspacing="0">
             <tbody>
               <tr style="vertical-align: top">
                 <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
-                  <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background-color: #EFEFEF;"><![endif]-->
+                  <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background-color: #FFF;"><![endif]-->
 
                   <div style="background-color:transparent;">
                     <div style="Margin: 0 auto;min-width: 320px;max-width: 555px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;"
@@ -1058,10 +1058,10 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="line-height:14px;font-size:12px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="line-height:14px;font-size:12px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;line-height: 14px;text-align: center;font-size: 12px">
-                                      <span style="color:#434141; font-size: 12px; line-height: 14px;">
+                                      <span style="color:#000; font-size: 12px; line-height: 14px;">
                                         <span style="font-size: 22px; line-height: 26px;">Sell Your Car</span>
                                       </span>
                                     </p>
@@ -1113,10 +1113,10 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 14px;line-height: 17px;text-align: left">
-                                      <span style="color: rgb(0, 51, 102); font-size: 14px; line-height: 16px;">Name:</span>
+                                      <span style="color: #000; font-size: 14px; line-height: 16px;">Name:</span>
                                     </p>
                                   </div>
                                 </div>
@@ -1138,8 +1138,8 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 14px;line-height: 17px">${ name }</p>
                                   </div>
                                 </div>
@@ -1171,10 +1171,10 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 14px;line-height: 17px;text-align: left">
-                                      <span style="color: rgb(0, 51, 102); font-size: 14px; line-height: 16px;">
+                                      <span style="color: #000; font-size: 14px; line-height: 16px;">
                                         <span style="font-size: 14px; line-height: 16px;">﻿</span>Email:</span>
                                     </p>
                                   </div>
@@ -1197,10 +1197,10 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 14px;line-height: 17px">
-                                      <a style="color:#555555;text-decoration: none;" href="mailto:${ email }" target="_blank" title="mail-to-person"
+                                      <a style="color:#000;text-decoration: none;" href="mailto:${ email }" target="_blank" title="mail-to-person"
                                         data-mce-selected="1" rel="noopener">${ email }</a>
                                     </p>
                                   </div>
@@ -1233,10 +1233,10 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 12px;line-height: 14px;text-align: left">
-                                      <span style="font-size: 14px; line-height: 16px; color: rgb(0, 51, 102);">
+                                      <span style="font-size: 14px; line-height: 16px; color: #000;">
                                         <span style="font-size: 14px; line-height: 16px;">﻿</span>Phone:</span>
                                     </p>
                                   </div>
@@ -1259,8 +1259,8 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 14px;line-height: 17px">${ phone }</p>
                                   </div>
                                 </div>
@@ -1334,10 +1334,10 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 14px;line-height: 17px;text-align: center">
-                                      <span style="font-size: 22px; line-height: 26px; color: rgb(89, 160, 111);">Vehicle Information</span>
+                                      <span style="font-size: 22px; line-height: 26px; color: #000;">Vehicle Information</span>
                                     </p>
                                   </div>
                                 </div>
@@ -1411,10 +1411,10 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 14px;line-height: 17px;text-align: left">
-                                      <span style="color: rgb(0, 51, 102); font-size: 14px; line-height: 16px;">Year</span>
+                                      <span style="color: #000; font-size: 14px; line-height: 16px;">Year</span>
                                     </p>
                                   </div>
                                 </div>
@@ -1436,8 +1436,8 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 14px;line-height: 17px;text-align: left">${ vYear }</p>
                                   </div>
                                 </div>
@@ -1469,10 +1469,10 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 14px;line-height: 17px;text-align: left">
-                                      <span style="color: rgb(0, 51, 102); font-size: 14px; line-height: 16px;">Make</span>
+                                      <span style="color: #000; font-size: 14px; line-height: 16px;">Make</span>
                                     </p>
                                   </div>
                                 </div>
@@ -1494,8 +1494,8 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 14px;line-height: 17px;text-align: left">${ vMake }</p>
                                   </div>
                                 </div>
@@ -1527,10 +1527,10 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 14px;line-height: 17px;text-align: left">
-                                      <span style="color: rgb(0, 51, 102); font-size: 14px; line-height: 16px;">Model</span>
+                                      <span style="color: #000; font-size: 14px; line-height: 16px;">Model</span>
                                     </p>
                                   </div>
                                 </div>
@@ -1552,8 +1552,8 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 14px;line-height: 17px;text-align: left">${ vModel }</p>
                                   </div>
                                 </div>
@@ -1585,10 +1585,10 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 14px;line-height: 17px;text-align: left">
-                                      <span style="color: rgb(0, 51, 102); font-size: 14px; line-height: 16px;">Mileage</span>
+                                      <span style="color: #000; font-size: 14px; line-height: 16px;">Mileage</span>
                                     </p>
                                   </div>
                                 </div>
@@ -1610,8 +1610,8 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 14px;line-height: 17px">${ vMileage }</p>
                                   </div>
                                 </div>
@@ -1643,10 +1643,10 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 14px;line-height: 17px;text-align: left">
-                                      <span style="font-size: 14px; line-height: 16px; color: rgb(0, 51, 102);">VIN</span>
+                                      <span style="font-size: 14px; line-height: 16px; color: #000;">VIN</span>
                                     </p>
                                   </div>
                                 </div>
@@ -1668,8 +1668,8 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 14px;line-height: 17px;text-align: left">${ VIN }</p>
                                   </div>
                                 </div>
@@ -1701,10 +1701,10 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 14px;line-height: 17px;text-align: left">
-                                      <span style="font-size: 14px; line-height: 16px; color: rgb(0, 51, 102);">Condition</span>
+                                      <span style="font-size: 14px; line-height: 16px; color: #000;">Condition</span>
                                     </p>
                                   </div>
                                 </div>
@@ -1726,8 +1726,8 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 14px;line-height: 17px;text-align: left">${ vCondition }</p>
                                   </div>
                                 </div>
@@ -2109,7 +2109,7 @@ module.exports = {
           </style>
         </head>
 
-        <body class="clean-body" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;background-color: #EFEFEF">
+        <body class="clean-body" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;background-color: #FFF">
           <style type="text/css" id="media-query-bodytag">
             @media (max-width: 520px) {
               .block-grid {
@@ -2167,12 +2167,12 @@ module.exports = {
           </style>
           <!--[if IE]><div class="ie-browser"><![endif]-->
           <!--[if mso]><div class="mso-container"><![endif]-->
-          <table class="nl-container" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;min-width: 320px;Margin: 0 auto;background-color: #EFEFEF;width: 100%"
+          <table class="nl-container" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;min-width: 320px;Margin: 0 auto;background-color: #FFF;width: 100%"
             cellpadding="0" cellspacing="0">
             <tbody>
               <tr style="vertical-align: top">
                 <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
-                  <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background-color: #EFEFEF;"><![endif]-->
+                  <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background-color: #FFF;"><![endif]-->
 
                   <div style="background-color:transparent;">
                     <div style="Margin: 0 auto;min-width: 320px;max-width: 780px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;"
@@ -2190,10 +2190,10 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="line-height:14px;font-size:12px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="line-height:14px;font-size:12px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;line-height: 14px;text-align: center;font-size: 12px">
-                                      <span style="color: rgb(0, 0, 0); font-size: 22px; line-height: 26px;">
+                                      <span style="color: #000; font-size: 22px; line-height: 26px;">
                                         <span style="line-height: 26px; font-size: 22px;">JYD Auto Leasing And Sales Credit Application</span>
                                       </span>
                                     </p>
@@ -2208,7 +2208,7 @@ module.exports = {
                                 <tbody>
                                   <tr style="vertical-align: top">
                                     <td class="divider_inner" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;padding-right: 10px;padding-left: 10px;padding-top: 10px;padding-bottom: 10px;min-width: 100%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
-                                      <table class="divider_content" height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #CB0000;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                      <table class="divider_content" height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="98%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #CB0000;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
                                         <tbody>
                                           <tr style="vertical-align: top">
                                             <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0px;line-height: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
@@ -2232,7 +2232,7 @@ module.exports = {
                     </div>
                   </div>
 <!--------------------- -->
-                  <div style="margin:10px;border:1px solid #9E9FC8;padding:4px;">
+                  <div style="margin:10px;border:1px solid #000;padding:4px;">
                     <div style="background-color:transparent;">
                       <div style="Margin: 0 auto;min-width: 320px;max-width: 780px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;"
                         class="block-grid ">
@@ -2249,12 +2249,12 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 0px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 0px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 0px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
                                         <span style="font-size: 18px; line-height: 21px;">
                                           <strong>
-                                            <span style="color: rgb(51, 51, 153); line-height: 21px; font-size: 18px;">Applicant Information</span>
+                                            <span style="color: #000; line-height: 21px; font-size: 18px;">Applicant Information</span>
                                           </strong>
                                         </span>
                                       </p>
@@ -2291,7 +2291,7 @@ module.exports = {
                                   <tbody>
                                     <tr style="vertical-align: top">
                                       <td class="divider_inner" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;padding-right: 10px;padding-left: 10px;padding-top: 0px;padding-bottom: 0px;min-width: 100%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
-                                        <table class="divider_content" height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #BBBBBB;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                        <table class="divider_content" height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="98%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #BBBBBB;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
                                           <tbody>
                                             <tr style="vertical-align: top">
                                               <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0px;line-height: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
@@ -2330,10 +2330,10 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
-                                        <span style="color: rgb(0, 51, 102); font-size: 14px; line-height: 16px;">Full Name:</span>
+                                        <span style="color: #000; font-size: 14px; line-height: 16px;">Full Name:</span>
                                       </p>
                                     </div>
                                   </div>
@@ -2355,8 +2355,8 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ data[ 'First Name' ] } ${ data[ 'Middle Name' ] } ${ data['Last Name' ] }</p>
                                     </div>
                                   </div>
@@ -2378,10 +2378,10 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
-                                        <span style="color: rgb(0, 51, 102); font-size: 14px; line-height: 16px;">Drivers License #:</span>
+                                        <span style="color: #000; font-size: 14px; line-height: 16px;">Drivers License #:</span>
                                       </p>
                                     </div>
                                   </div>
@@ -2403,8 +2403,8 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ data[ 'Driver\'s Licence Number' ] }</p>
                                     </div>
                                   </div>
@@ -2436,10 +2436,10 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
-                                        <span style="color: rgb(0, 51, 102); font-size: 14px; line-height: 16px;">Address:</span>
+                                        <span style="color: #000; font-size: 14px; line-height: 16px;">Address:</span>
                                       </p>
                                     </div>
                                   </div>
@@ -2461,8 +2461,8 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ data.Address }</p>
                                     </div>
                                   </div>
@@ -2484,10 +2484,10 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
-                                        <span style="color: rgb(0, 51, 102); font-size: 14px; line-height: 16px;">DL State/Exp Date:</span>
+                                        <span style="color: #000; font-size: 14px; line-height: 16px;">DL State/Exp Date:</span>
                                       </p>
                                     </div>
                                   </div>
@@ -2509,8 +2509,8 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ data[ 'Driver\'s State' ] } ${ ('00' + data[ 'Driver\'s License Expiration Date Month' ]).slice(-2) }/${ ('00'+data[ 'Driver\'s License Expiration Date Day' ]).slice(-2) }/${ (data[ 'Driver\'s License Expiration Date Year' ]).slice(-2) }</p>
                                     </div>
                                   </div>
@@ -2542,10 +2542,10 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
-                                        <span style="color: rgb(0, 51, 102); font-size: 14px; line-height: 16px;">City/State/ZIP:</span>
+                                        <span style="color: #000; font-size: 14px; line-height: 16px;">City/State/ZIP:</span>
                                       </p>
                                     </div>
                                   </div>
@@ -2567,8 +2567,8 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ data.City }, ${ data.State } ${ data[ 'ZIP Code' ] }</p>
                                     </div>
                                   </div>
@@ -2590,10 +2590,10 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
-                                        <span style="color: rgb(0, 51, 102); font-size: 14px; line-height: 16px;">Phone Number:</span>
+                                        <span style="color: #000; font-size: 14px; line-height: 16px;">Phone Number:</span>
                                       </p>
                                     </div>
                                   </div>
@@ -2615,8 +2615,8 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ formatPhone(data[ 'Day Time Phone' ]) }</p>
                                     </div>
                                   </div>
@@ -2648,10 +2648,10 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
-                                        <span style="color: rgb(0, 51, 102); font-size: 14px; line-height: 16px;">Social Security:</span>
+                                        <span style="color: #000; font-size: 14px; line-height: 16px;">Social Security:</span>
                                       </p>
                                     </div>
                                   </div>
@@ -2673,8 +2673,8 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ data.SSN }</p>
                                     </div>
                                   </div>
@@ -2696,10 +2696,10 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
-                                        <span style="color: rgb(0, 51, 102); font-size: 14px; line-height: 16px;">Email:</span>
+                                        <span style="color: #000; font-size: 14px; line-height: 16px;">Email:</span>
                                       </p>
                                     </div>
                                   </div>
@@ -2721,10 +2721,10 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
-                                        <a style="color:#0068A5;text-decoration: none;" href="mailto:${ data.email }" target="_blank" rel="noopener">${ data.email }</a>
+                                        <a style="color:#000;text-decoration: none;" href="mailto:${ data.email }" target="_blank" rel="noopener">${ data.email }</a>
                                       </p>
                                     </div>
                                   </div>
@@ -2756,10 +2756,10 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
-                                        <span style="color: rgb(0, 51, 102); font-size: 14px; line-height: 16px;">DOB:﻿</span>
+                                        <span style="color: #000; font-size: 14px; line-height: 16px;">DOB:﻿</span>
                                       </p>
                                     </div>
                                   </div>
@@ -2781,8 +2781,8 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ ('00'+data[ 'DOB Month' ]).slice(-2) }/${ ('00'+data[ 'DOB Day' ]).slice(-2) }/${ ('00'+data[ 'DOB Year' ]).slice(-2) }</p>
                                     </div>
                                   </div>
@@ -2804,10 +2804,10 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
-                                        <span style="color: rgb(0, 51, 102); font-size: 14px; line-height: 16px;">Time at Residency:</span>
+                                        <span style="color: #000; font-size: 14px; line-height: 16px;">Time at Residency:</span>
                                       </p>
                                     </div>
                                   </div>
@@ -2829,8 +2829,8 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ data[ 'Years Living There' ] || 0 } years, ${ data[ 'Months Living There' ] || 0 } months</p>
                                     </div>
                                   </div>
@@ -2862,10 +2862,10 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
-                                        <span style="color: rgb(0, 51, 102); line-height: 16px; font-size: 14px;">Residence Type:</span>
+                                        <span style="color: #000; line-height: 16px; font-size: 14px;">Residence Type:</span>
                                       </p>
                                     </div>
                                   </div>
@@ -2887,8 +2887,8 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ data[ 'Home Type'  ] }</p>
                                     </div>
                                   </div>
@@ -2910,10 +2910,10 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 12px;line-height: 14px">
-                                        <span style="font-size: 14px; line-height: 16px; color: rgb(0, 51, 102);">Rent/Morgage:&#160;</span>
+                                        <span style="font-size: 14px; line-height: 16px; color: #000;">Rent/Morgage:&#160;</span>
                                         <br>
                                       </p>
                                       <br>
@@ -2937,8 +2937,8 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">$${ data[ 'Monthly Payment' ].toLocaleString() }.00</p>
                                     </div>
                                   </div>
@@ -2968,17 +2968,22 @@ module.exports = {
                                 <!--<![endif]-->
 
 
-                                <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
-                                      <p style="margin: 0;font-size: 14px;line-height: 17px">
-                                        <span style="color: rgb(0, 0, 128); line-height: 16px; font-size: 14px;">Previous Residence:</span>
-                                      </p>
-                                    </div>
-                                  </div>
-                                  <!--[if mso]></td></tr></table><![endif]-->
-                                </div>
+                                
+
+                                <!--[if (!mso)&(!IE)]><!-->
+                              </div>
+                              <!--<![endif]-->
+                            </div>
+                          </div>
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
+                            <div style="background-color: transparent; width: 100% !important;">
+                              <!--[if (!mso)&(!IE)]><!-->
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                                <!--<![endif]-->
+
+
+                                
 
                                 <!--[if (!mso)&(!IE)]><!-->
                               </div>
@@ -2995,41 +3000,18 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
-                                      <p style="margin: 0;font-size: 14px;line-height: 17px">${ data[ 'Previous Address' ] }</p>
-                                    </div>
-                                  </div>
-                                  <!--[if mso]></td></tr></table><![endif]-->
-                                </div>
-
-                                <!--[if (!mso)&(!IE)]><!-->
-                              </div>
-                              <!--<![endif]-->
-                            </div>
-                          </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
-                          <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
-                            <div style="background-color: transparent; width: 100% !important;">
-                              <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
-                                <!--<![endif]-->
-
-
-                                <div class="">
-                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 12px;line-height: 14px;text-align: left">
                                         <span style="font-size: 14px; line-height: 16px;">
-                                          <span style="line-height: 16px; color: rgb(0, 51, 102); font-size: 14px;">
+                                          <span style="line-height: 16px; color: #000; font-size: 14px;">
                                             <span style="line-height: 16px; font-size: 14px;">Salesman Name:</span>
                                           </span>
                                         </span>
                                       </p>
                                       <p style="margin: 0;font-size: 12px;line-height: 14px;text-align: left">
                                         <span style="font-size: 10px; line-height: 12px;">
-                                          <span style="line-height: 12px; color: rgb(0, 51, 102); font-size: 10px;">
+                                          <span style="line-height: 12px; color: #000; font-size: 10px;">
                                             <span style="line-height: 12px; font-size: 10px;">(or Promo Code)</span>
                                           </span>
                                         </span>
@@ -3054,8 +3036,8 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ data[ 'Salesman\'s Name' ]}</p>
                                     </div>
                                   </div>
@@ -3098,9 +3080,10 @@ module.exports = {
                       </div>
                     </div>
                   </div>
-
 <!--------------------- -->
-                  <div style="margin:10px;border:1px solid #9E9FC8;padding:4px;">
+
+
+                  <div style="margin:10px;border:1px solid #000;padding:4px;">
                     <div style="background-color:transparent;">
                       <div style="Margin: 0 auto;min-width: 320px;max-width: 780px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;"
                         class="block-grid ">
@@ -3117,13 +3100,15 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 0px;"><![endif]-->
-                                  <div style="color:#59A06F;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 0px;">
-                                    <div style="font-size:12px;line-height:14px;color:#59A06F;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
-                                      <p style="margin: 0;font-size: 12px;line-height: 14px">
-                                        <span style="font-size: 18px; line-height: 21px; color: rgb(51, 51, 153);">Applicant Employment Information</span>
-                                        <br>
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 0px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                      <p style="margin: 0;font-size: 14px;line-height: 17px">
+                                        <span style="font-size: 18px; line-height: 21px;">
+                                          <strong>
+                                            <span style="color: #000; line-height: 21px; font-size: 18px;">Applicant Previous Residence</span>
+                                          </strong>
+                                        </span>
                                       </p>
-                                      <br>
                                     </div>
                                   </div>
                                   <!--[if mso]></td></tr></table><![endif]-->
@@ -3157,7 +3142,7 @@ module.exports = {
                                   <tbody>
                                     <tr style="vertical-align: top">
                                       <td class="divider_inner" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;padding-right: 10px;padding-left: 10px;padding-top: 0px;padding-bottom: 0px;min-width: 100%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
-                                        <table class="divider_content" height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #BBBBBB;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                        <table class="divider_content" height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="98%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #BBBBBB;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
                                           <tbody>
                                             <tr style="vertical-align: top">
                                               <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0px;line-height: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
@@ -3196,10 +3181,10 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
-                                        <span style="color: rgb(0, 51, 102); font-size: 14px; line-height: 16px;">Employer:</span>
+                                        <span style="color: #000; line-height: 16px; font-size: 14px;">Address:</span>
                                       </p>
                                     </div>
                                   </div>
@@ -3221,8 +3206,206 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                      <p style="margin: 0;font-size: 14px;line-height: 17px">${ data[ 'Previous Address' ] }</p>
+                                    </div>
+                                  </div>
+                                  <!--[if mso]></td></tr></table><![endif]-->
+                                </div>
+
+                                <!--[if (!mso)&(!IE)]><!-->
+                              </div>
+                              <!--<![endif]-->
+                            </div>
+                          </div>
+
+                          <!--[if (mso)|(IE)]><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
+                            <div style="background-color: transparent; width: 100% !important;">
+                              <!--[if (!mso)&(!IE)]><!-->
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                                <!--<![endif]-->
+
+
+                                
+
+                                <!--[if (!mso)&(!IE)]><!-->
+                              </div>
+                              <!--<![endif]-->
+                            </div>
+                          </div>
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
+                            <div style="background-color: transparent; width: 100% !important;">
+                              <!--[if (!mso)&(!IE)]><!-->
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                                <!--<![endif]-->
+
+
+                                
+
+                                <!--[if (!mso)&(!IE)]><!-->
+                              </div>
+                              <!--<![endif]-->
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+<!--------------------- -->
+                  <div style="background-color:transparent;">
+                    <div style="Margin: 0 auto;min-width: 320px;max-width: 780px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;"
+                      class="block-grid ">
+                      <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
+                        <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
+
+                        <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                        <div class="col num12" style="min-width: 320px;max-width: 780px;display: table-cell;vertical-align: top;">
+                          <div style="background-color: transparent; width: 100% !important;">
+                            <!--[if (!mso)&(!IE)]><!-->
+                            <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                              <!--<![endif]-->
+
+
+                              &#160;
+
+                              <!--[if (!mso)&(!IE)]><!-->
+                            </div>
+                            <!--<![endif]-->
+                          </div>
+                        </div>
+                        <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+                      </div>
+                    </div>
+                  </div>
+<!--------------------- -->
+                  <div style="margin:10px;border:1px solid #000;padding:4px;">
+                    <div style="background-color:transparent;">
+                      <div style="Margin: 0 auto;min-width: 320px;max-width: 780px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;"
+                        class="block-grid ">
+                        <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
+                          <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
+
+                          <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <div class="col num12" style="min-width: 320px;max-width: 780px;display: table-cell;vertical-align: top;">
+                            <div style="background-color: transparent; width: 100% !important;">
+                              <!--[if (!mso)&(!IE)]><!-->
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                                <!--<![endif]-->
+
+
+                                <div class="">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 0px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 0px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                      <p style="margin: 0;font-size: 12px;line-height: 14px">
+                                        <span style="font-size: 18px; line-height: 21px; color: #000;">Applicant Employment Information</span>
+                                        <br>
+                                      </p>
+                                      <br>
+                                    </div>
+                                  </div>
+                                  <!--[if mso]></td></tr></table><![endif]-->
+                                </div>
+
+                                <!--[if (!mso)&(!IE)]><!-->
+                              </div>
+                              <!--<![endif]-->
+                            </div>
+                          </div>
+                          <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+                        </div>
+                      </div>
+                    </div>
+                    <div style="background-color:transparent;">
+                      <div style="Margin: 0 auto;min-width: 320px;max-width: 780px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;"
+                        class="block-grid ">
+                        <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
+                          <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
+
+                          <!--[if (mso)|(IE)]><td align="center" width="780" style=" width:780px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <div class="col num12" style="min-width: 320px;max-width: 780px;display: table-cell;vertical-align: top;">
+                            <div style="background-color: transparent; width: 100% !important;">
+                              <!--[if (!mso)&(!IE)]><!-->
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                                <!--<![endif]-->
+
+
+
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" class="divider " style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;min-width: 100%;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                  <tbody>
+                                    <tr style="vertical-align: top">
+                                      <td class="divider_inner" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;padding-right: 10px;padding-left: 10px;padding-top: 0px;padding-bottom: 0px;min-width: 100%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                        <table class="divider_content" height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="98%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #BBBBBB;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                          <tbody>
+                                            <tr style="vertical-align: top">
+                                              <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0px;line-height: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                                <span>&#160;</span>
+                                              </td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+
+                                <!--[if (!mso)&(!IE)]><!-->
+                              </div>
+                              <!--<![endif]-->
+                            </div>
+                          </div>
+                          <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+                        </div>
+                      </div>
+                    </div>
+                    <div style="background-color:transparent;">
+                      <div style="Margin: 0 auto;min-width: 320px;max-width: 780px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;"
+                        class="block-grid four-up ">
+                        <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
+                          <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
+
+                          <!--[if (mso)|(IE)]><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
+                            <div style="background-color: transparent; width: 100% !important;">
+                              <!--[if (!mso)&(!IE)]><!-->
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                                <!--<![endif]-->
+
+
+                                <div class="">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                      <p style="margin: 0;font-size: 14px;line-height: 17px">
+                                        <span style="color: #000; font-size: 14px; line-height: 16px;">Employer:</span>
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <!--[if mso]></td></tr></table><![endif]-->
+                                </div>
+
+                                <!--[if (!mso)&(!IE)]><!-->
+                              </div>
+                              <!--<![endif]-->
+                            </div>
+                          </div>
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
+                            <div style="background-color: transparent; width: 100% !important;">
+                              <!--[if (!mso)&(!IE)]><!-->
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                                <!--<![endif]-->
+
+
+                                <div class="">
+                                  <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ data[ 'Employer\'s Name' ] }</p>
                                     </div>
                                   </div>
@@ -3244,10 +3427,10 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
-                                        <span style="color: rgb(0, 51, 102); font-size: 14px; line-height: 16px;">Address:</span>
+                                        <span style="color: #000; font-size: 14px; line-height: 16px;">Address:</span>
                                       </p>
                                     </div>
                                   </div>
@@ -3269,8 +3452,8 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px;text-align: left">${ data[ 'Employer\'s Address' ] }</p>
                                     </div>
                                   </div>
@@ -3302,13 +3485,13 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
-                                        <span style="color: rgb(0, 51, 102); font-size: 14px; line-height: 16px;">Monthly Income:</span>
+                                        <span style="color: #000; font-size: 14px; line-height: 16px;">Monthly Income:</span>
                                       </p>
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
-                                        <span style="font-size: 10px; line-height: 12px; color: rgb(0, 51, 102);">(before taxes)</span>
+                                        <span style="font-size: 10px; line-height: 12px; color: #000;">(before taxes)</span>
                                       </p>
                                     </div>
                                   </div>
@@ -3330,8 +3513,8 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">$${ data[ 'Monthly Income' ].toLocaleString() }.00</p>
                                     </div>
                                   </div>
@@ -3353,10 +3536,10 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
-                                        <span style="font-size: 14px; line-height: 16px; color: rgb(0, 51, 102);">Phone Number:</span>
+                                        <span style="font-size: 14px; line-height: 16px; color: #000;">Phone Number:</span>
                                       </p>
                                     </div>
                                   </div>
@@ -3378,9 +3561,9 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
-                                      <p style="margin: 0;font-size: 14px;line-height: 17px">${ data[ 'Employer\'s Phone' ] }</p>
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                      <p style="margin: 0;font-size: 14px;line-height: 17px">${ formatPhone(data[ 'Employer\'s Phone' ]) }</p>
                                     </div>
                                   </div>
                                   <!--[if mso]></td></tr></table><![endif]-->
@@ -3411,10 +3594,10 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
-                                        <span style="color: rgb(0, 51, 102); font-size: 14px; line-height: 16px;">Occupation:</span>
+                                        <span style="color: #000; font-size: 14px; line-height: 16px;">Occupation:</span>
                                       </p>
                                     </div>
                                   </div>
@@ -3436,8 +3619,8 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ data[ 'Job Title' ] }</p>
                                     </div>
                                   </div>
@@ -3459,10 +3642,10 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
-                                        <span style="color: rgb(0, 51, 102); font-size: 14px; line-height: 16px;">Time on Job</span>
+                                        <span style="color: #000; font-size: 14px; line-height: 16px;">Time on Job</span>
                                       </p>
                                     </div>
                                   </div>
@@ -3484,8 +3667,8 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ data[ 'Employee Years' ] || 0 } years, ${ data[ 'Employee Months' ] || 0 } months</p>
                                     </div>
                                   </div>
@@ -3517,13 +3700,13 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
-                                        <span style="color: rgb(0, 51, 102); font-size: 14px; line-height: 16px;">Previous Employer:</span>
+                                        <span style="color: #000; font-size: 14px; line-height: 16px;">Previous Employer:</span>
                                       </p>
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">
-                                        <span style="color: rgb(0, 51, 102); font-size: 10px; line-height: 12px;">(Less than 2 years)</span>
+                                        <span style="color: #000; font-size: 10px; line-height: 12px;">(Less than 2 years)</span>
                                       </p>
                                     </div>
                                   </div>
@@ -3545,8 +3728,8 @@ module.exports = {
 
                                 <div class="">
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                  <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                    <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                  <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                    <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                       <p style="margin: 0;font-size: 14px;line-height: 17px">${ data[ 'Previous Employer' ] }</p>
                                     </div>
                                   </div>
@@ -3660,7 +3843,7 @@ module.exports = {
                                 <tbody>
                                   <tr style="vertical-align: top">
                                     <td class="divider_inner" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;padding-right: 10px;padding-left: 10px;padding-top: 10px;padding-bottom: 10px;min-width: 100%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
-                                      <table class="divider_content" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #BBBBBB;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                      <table class="divider_content" align="center" border="0" cellpadding="0" cellspacing="0" width="98%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #BBBBBB;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
                                         <tbody>
                                           <tr style="vertical-align: top">
                                             <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
@@ -3699,8 +3882,8 @@ module.exports = {
 
                               <div class="">
                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
-                                <div style="color:#555555;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
-                                  <div style="font-size:12px;line-height:14px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                                  <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
                                     <p style="margin: 0;font-size: 14px;line-height: 17px">
                                       <span style="font-size: 14px; line-height: 16px;">
                                         <strong>Acknowledge and consent</strong>
@@ -3774,7 +3957,7 @@ module.exports = {
                                 <tbody>
                                   <tr style="vertical-align: top">
                                     <td class="divider_inner" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;padding-right: 10px;padding-left: 10px;padding-top: 10px;padding-bottom: 10px;min-width: 100%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
-                                      <table class="divider_content" height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 3px solid #CB0000;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+                                      <table class="divider_content" height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="98%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 3px solid #CB0000;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
                                         <tbody>
                                           <tr style="vertical-align: top">
                                             <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0px;line-height: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
