@@ -2960,36 +2960,6 @@ module.exports = {
                         <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
                           <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 780px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
 
-                          <!--[if (mso)|(IE)]><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
-                          <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
-                            <div style="background-color: transparent; width: 100% !important;">
-                              <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
-                                <!--<![endif]-->
-
-
-                                
-
-                                <!--[if (!mso)&(!IE)]><!-->
-                              </div>
-                              <!--<![endif]-->
-                            </div>
-                          </div>
-                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
-                          <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
-                            <div style="background-color: transparent; width: 100% !important;">
-                              <!--[if (!mso)&(!IE)]><!-->
-                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
-                                <!--<![endif]-->
-
-
-                                
-
-                                <!--[if (!mso)&(!IE)]><!-->
-                              </div>
-                              <!--<![endif]-->
-                            </div>
-                          </div>
                           <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
                           <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
                             <div style="background-color: transparent; width: 100% !important;">
@@ -3043,6 +3013,37 @@ module.exports = {
                                   </div>
                                   <!--[if mso]></td></tr></table><![endif]-->
                                 </div>
+
+                                <!--[if (!mso)&(!IE)]><!-->
+                              </div>
+                              <!--<![endif]-->
+                            </div>
+                          </div>
+
+                          <!--[if (mso)|(IE)]><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
+                            <div style="background-color: transparent; width: 100% !important;">
+                              <!--[if (!mso)&(!IE)]><!-->
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                                <!--<![endif]-->
+
+
+                                
+
+                                <!--[if (!mso)&(!IE)]><!-->
+                              </div>
+                              <!--<![endif]-->
+                            </div>
+                          </div>
+                          <!--[if (mso)|(IE)]></td><td align="center" width="164" style=" width:164px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+                          <div class="col num3" style="max-width: 320px;min-width: 163px;display: table-cell;vertical-align: top;">
+                            <div style="background-color: transparent; width: 100% !important;">
+                              <!--[if (!mso)&(!IE)]><!-->
+                              <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
+                                <!--<![endif]-->
+
+
+                                
 
                                 <!--[if (!mso)&(!IE)]><!-->
                               </div>
