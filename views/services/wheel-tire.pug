@@ -1,0 +1,40 @@
+extends ../partials/_pug-page.pug
+
+block main-body
+    main#page-content
+        .container.services-page
+            .row
+                .col-md-6.col-sm-12.img-services
+                    // <div class="container">
+                    .row.dealer-picture
+                        img(src="assets/images/wheels.gif")
+                    // </div>
+                .col-md-6.col-sm-12
+                    h2 Wheel and Tire Protection
+                    .small-separator
+                    .service-text
+                        p
+                            | Road hazards are the number one cause of flat tires and rim/wheel damage in the united States. Consumers have
+                            | spent hundred of millions of dollars of their own money to pay for repairs caused by hazards on the road.
+                            | Doesn't it make sense to have a protection plan against the high cost of an expensive inconvenient repair?
+                            | Absolute Automotive Tire & Rim Protection is the most comprehensive rim/ wheel and tire repair replacement
+                            | coverage in the industry. Protection includes curb damage, bent rims, scratches, scrapes, and gouges, and
+                            | so much more! All programs even include 24 hour roadside assistance for all road-hazard related emergencies!
+                    a.btn(href="/contact-us") Order Our Services
+                .col-xs-12(style="margin-top:60px; padding : 0;")
+                    .row
+                        .col-sm-4.col-xs-12.img-get-approved
+                            img.img-responsive(src="assets/images/get-approved.jpg")
+                            a(href="/sell-car")
+                                .overlay-hidden
+                                    span Get Approved
+                        .col-sm-4.col-xs-12.img-testimonials
+                            img.img-responsive(src="assets/images/testimonials.jpg")
+                            a(href="/service-others")
+                                .overlay-hidden
+                                    span Testimonials
+                        .col-sm-4.col-xs-12.img-contact-us
+                            img.img-responsive(src="assets/images/contact-us.jpg")
+                            a(href="/contact-us")
+                                .overlay-hidden
+                                    span Contact Us

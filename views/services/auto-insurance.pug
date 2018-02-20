@@ -1,0 +1,43 @@
+extends ../partials/_pug-page.pug
+
+block main-body
+    main#page-content
+        .container.services-page
+            .row
+                .col-md-6.col-sm-12.img-services
+                    // <div class="container">
+                    .row.dealer-picture
+                        img(src="assets/images/insurance.jpg")
+                    // </div>
+                .col-md-6.col-sm-12
+                    h2 Auto Insurance
+                    .small-separator
+                    .service-text
+                        p
+                            | As you know finding the right coverage for the right price could get stressful. We want to make sure our customers are fully
+                            | covered with the best price around. We are here to help you make the right choice, JYD Insurance will work
+                            | diligently to find what best fits your needs. Get insurance for coverage for liability, collision, medical,
+                            | or comprehensive. We can guarantee you're covered while on the road. Let us insure your needs first!
+                        p
+                            | Consumer Statement: To provide you with an accurate quote, we may obtain information from consumer reporting
+                            | agencies such as your claims history, driving record and credit based insurance score, where permitted by
+                            | law.
+                        p
+                    a.btn(href="/contact-us") Order Our Services
+                .col-xs-12(style="margin-top:60px; padding : 0;")
+                    .row
+                        .col-sm-4.col-xs-12.img-get-approved
+                            img.img-responsive(src="assets/images/get-approved.jpg")
+                            a(href="/sell-car")
+                                .overlay-hidden
+                                    span Get Approved
+                        .col-sm-4.col-xs-12.img-testimonials
+                            img.img-responsive(src="assets/images/testimonials.jpg")
+                            a(href="/service-others")
+                                .overlay-hidden
+                                    span Testimonials
+                        .col-sm-4.col-xs-12.img-contact-us
+                            img.img-responsive(src="assets/images/contact-us.jpg")
+                            a(href="/contact-us")
+                                .overlay-hidden
+                                    span Contact Us

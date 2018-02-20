@@ -1,0 +1,39 @@
+extends ../partials/_pug-page.pug
+
+block main-body
+    main#page-content
+        .container.services-page
+            .row
+                .col-md-6.col-sm-12.img-services
+                    // <div class="container">
+                    .row.dealer-picture
+                        img(src="assets/images/rental.jpg")
+                    // </div>
+                .col-md-6.col-sm-12
+                    h2 Car Rentals
+                    .small-separator
+                    .service-text
+                        p
+                            | Need a rental? We’ve got you covered with great rates and outstanding customer service! We direct bill with all major insurance
+                            | companies, with minimum or NO money out of pocket from customer. We can give you a convenient rental car
+                            | with more options. Let us give you reliable transportation when your vehicle is being repaired. Don’t sit
+                            | for hours and waste your valuable time trying to get a rental, come to JYD Auto Rentals for an in & out experience.
+                            | Please call us or stop in at anytime for a hassle free.
+                    a.btn(href="/contact-us") Order Our Services
+                .col-xs-12(style="margin-top:60px; padding : 0;")
+                    .row
+                        .col-sm-4.col-xs-12.img-get-approved
+                            img.img-responsive(src="assets/images/get-approved.jpg")
+                            a(href="/sell-car")
+                                .overlay-hidden
+                                    span Get Approved
+                        .col-sm-4.col-xs-12.img-testimonials
+                            img.img-responsive(src="assets/images/testimonials.jpg")
+                            a(href="/service-others")
+                                .overlay-hidden
+                                    span Testimonials
+                        .col-sm-4.col-xs-12.img-contact-us
+                            img.img-responsive(src="assets/images/contact-us.jpg")
+                            a(href="/contact-us")
+                                .overlay-hidden
+                                    span Contact Us

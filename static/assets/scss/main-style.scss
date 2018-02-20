@@ -369,14 +369,23 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	// background-color : red;
 	margin-top: 40px;
 	margin-bottom: 80px;
-	.dealer-picture {
-		@media screen and (max-width: 768px) {
-			display: flex;
-			justify-content: center;
-		}
-		img {
-			// margin: 0 !important;// auto 40px; // width: 80%;
-			// margin-bottom: 40px; // height : auto;
+	.img-services {
+		display : flex;
+		justify-content : center;
+		align-items : center;
+
+		.dealer-picture {
+			@media screen and (max-width: 768px) {
+				display: flex;
+				justify-content: center;
+			}
+			align-items : center;
+
+			img {
+	
+				// margin: 0 !important;// auto 40px; // width: 80%;
+				// margin-bottom: 40px; // height : auto;
+			}
 		}
 	}
 	.img-get-approved,
@@ -420,7 +429,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	.service-text {
 		font-size: .8rem;
 	}
-	.service-text~input {
+	.service-text ~ a {
+		line-height : 4px;
 		margin-top: 30px;
 		font-size: 10px;
 	}
@@ -540,6 +550,62 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 							color: black !important;
 						}
 					}
+
+					.has-submenu {
+						ul li a {
+							color : white !important;
+
+							&:hover {
+								color : black !important;
+								background-color : white !important;
+							}
+							// color: inherit;
+						}
+
+						&.collapse {
+							& > a {
+								color : black;
+							}
+						}
+					}
+				}
+
+				.has-submenu {
+					position : relative;
+					.wrap-inside-nav {
+						display : none;
+						border-top : none;
+						// top : 0;
+						background-color : #2b2b2b;
+						min-width : 180px;
+
+						&.collapse {
+							z-index : 1;
+							position : absolute;
+							display : inline-block;
+
+							ul {
+								float : none;
+								margin-right : 0;
+								li {
+									line-height : 30px;
+									display : block;
+									a {
+										display : flex;
+										justify-content : center;
+										font-size : 0.9em;
+										// text-align : center;
+										padding : 5px;
+
+										&:hover {
+											color : white ;
+											background-color : red;
+										}
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 		}
@@ -626,7 +692,26 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 						}
 					}
 				}
+
+				.has-submenu {
+					ul li a {
+						color : white !important;
+
+						&:hover {
+							color : green !important;
+							background-color : red !important;
+						}
+						// color: inherit;
+					}
+
+					// &.collapse {
+					// 	& > a {
+					// 		color : black;
+					// 	}
+					// }
+				}
 			}
+
 			&:last-child {
 				margin-top: 42px;
 			}
@@ -688,7 +773,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 }
 
 .mobile-menu-custom {
-	// z-index : 2;
+	// position : absolute;
 	transition: left .1s linear;
 	left: -400px;
 	&.open {
@@ -703,6 +788,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	flex-flow: column nowrap;
 	align-items: center;
 	justify-content: flex-start;
+	overflow-y : auto;
+
 	&>a {
 		height: 300px;
 		img {
@@ -710,15 +797,42 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		}
 	}
 	ul {
-		position: relative;
+		// position: absolute;
 		margin-top: 30px;
 		display: flex;
 		flex-flow: column nowrap;
 		li {
+			position : relative;
 			a {
 				color: white !important;
 				&:hover {
 					color: black !important;
+				}
+			}
+		}
+
+		.wrap-inside-nav {
+			z-index : 1;
+			position : absolute;
+			display : none;
+			background : black;
+			min-width : 180px;
+
+			&.collapse {
+				display : block;
+			}
+
+			ul {
+				margin-top : 10px;
+				li {
+					&:hover {
+						background-color : red;
+						color : white;
+					}
+					a {
+						font-size : 0.8rem;
+						padding : 10px;
+					}
 				}
 			}
 		}

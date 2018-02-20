@@ -1,0 +1,39 @@
+extends ../partials/_pug-page.pug
+
+block main-body
+    main#page-content
+        .container.services-page
+            .row
+                .col-md-6.col-sm-12.img-services
+                    // <div class="container">
+                    .row.dealer-picture
+                        img(src="assets/images/replacement.png")
+                    // </div>
+                .col-md-6.col-sm-12
+                    h2 Key Replacement
+                    .small-separator
+                    .service-text
+                        p
+                            | Your car keys are one of the most easiest things to lose but can be one of the most expensive to replace. Here
+                            | at JYD Auto Group we offer your PROTECTION FOR ALL LOST KEYS. IDG Key Replacement Protection provides you
+                            | with protection against the simplest error that could cost you a large amount of money. We offer 24 hour
+                            | Roadside Assistance as well as FREE LOCKOUT SERVICE. Don't hesitate to come into JYD Auto Group and ask about
+                            | our amazing key replacement program.
+                    a.btn(href="/contact-us") Order Our Services
+                .col-xs-12(style="margin-top:60px; padding : 0;")
+                    .row
+                        .col-sm-4.col-xs-12.img-get-approved
+                            img.img-responsive(src="assets/images/get-approved.jpg")
+                            a(href="/sell-car")
+                                .overlay-hidden
+                                    span Get Approved
+                        .col-sm-4.col-xs-12.img-testimonials
+                            img.img-responsive(src="assets/images/testimonials.jpg")
+                            a(href="/service-others")
+                                .overlay-hidden
+                                    span Testimonials
+                        .col-sm-4.col-xs-12.img-contact-us
+                            img.img-responsive(src="assets/images/contact-us.jpg")
+                            a(href="/contact-us")
+                                .overlay-hidden
+                                    span Contact Us

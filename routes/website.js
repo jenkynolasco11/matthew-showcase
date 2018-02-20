@@ -86,11 +86,18 @@ function filterCarData(car) {
 route.get('/:route', function(req, res, next) {
     var route = req.params.route
 
-    console.log(route)
     if(paths.includes(route)) {
         var title = titles[ route ]
 
         return res.render(route, { title : 'JYD - ' + title })
+    }
+
+    else if(route.match(/^service-/)) {
+        var view = route.slice(8)
+
+        console.log(view)
+
+        return res.render('services/'+view, { title : 'JYD - Services'})
     }
 
     return next()

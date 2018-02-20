@@ -1,0 +1,44 @@
+extends ../partials/_pug-page.pug
+
+block main-body
+    main#page-content
+        .container.services-page
+            .row
+                .col-md-6.col-sm-12.img-services
+                    // <div class="container">
+                    .row.dealer-picture
+                        img(src="assets/images/termination.jpg")
+                    // </div>
+                .col-md-6.col-sm-12
+                    h2 Lease Termination
+                    .small-separator
+                    .service-text
+                        p
+                            | Every leased vehicle must be returned to the manufacturer by the lease termination date stated on the contract. Your lease
+                            | return process will be seamless, whether you lease your vehicle from us or another dealership. We accept
+                            | all makes and models. As a lessee, you have various options when returning your lease. You may finance your
+                            | leased vehicle to ultimately own it outright, lease another vehicle, or simply return your lease with no
+                            | further action. JYD Auto is here to answer all of your end-of-lease inquiries. Leasing a vehicle can be a
+                            | big decision, we make leasing your vehicle simple, understandable, and straightforward, and we are here to
+                            | answer all of your questions and concerns. We will inform you on all aspects of leasing and alternative options.
+                            | If you decide leasing a vehicle is the right choice for you, JYD will search through a wide range of vehicles
+                            | from your favorite manufacturers to find the vehicle that best suits you at the best rates. Our agents work
+                            | with your budget, offering a range of flexible auto leasing plans. Leasing has never been easier!
+                    a.btn(href="/contact-us") Order Our Services
+                .col-xs-12(style="margin-top:60px; padding : 0;")
+                    .row
+                        .col-sm-4.col-xs-12.img-get-approved
+                            img.img-responsive(src="assets/images/get-approved.jpg")
+                            a(href="/sell-car")
+                                .overlay-hidden
+                                    span Get Approved
+                        .col-sm-4.col-xs-12.img-testimonials
+                            img.img-responsive(src="assets/images/testimonials.jpg")
+                            a(href="/service-others")
+                                .overlay-hidden
+                                    span Testimonials
+                        .col-sm-4.col-xs-12.img-contact-us
+                            img.img-responsive(src="assets/images/contact-us.jpg")
+                            a(href="/contact-us")
+                                .overlay-hidden
+                                    span Contact Us

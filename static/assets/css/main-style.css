@@ -10247,8 +10247,34 @@ body.color-turquoise #road {
   margin-bottom: 80px;
 }
 
+.services-page .img-services {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.services-page .img-services .dealer-picture {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 @media screen and (max-width: 768px) {
-  .services-page .dealer-picture {
+  .services-page .img-services .dealer-picture {
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -10334,7 +10360,8 @@ body.color-turquoise #road {
   font-size: .8rem;
 }
 
-.services-page .service-text ~ input {
+.services-page .service-text ~ a {
+  line-height: 4px;
   margin-top: 30px;
   font-size: 10px;
 }
@@ -10478,6 +10505,66 @@ body.color-turquoise #road {
   color: black !important;
 }
 
+.custom-header-menu .row .half .menu-items ul .has-submenu ul li a {
+  color: white !important;
+}
+
+.custom-header-menu .row .half .menu-items ul .has-submenu ul li a:hover {
+  color: black !important;
+  background-color: white !important;
+}
+
+.custom-header-menu .row .half .menu-items ul .has-submenu.collapse > a {
+  color: black;
+}
+
+.custom-header-menu .row .half .menu-items .has-submenu {
+  position: relative;
+}
+
+.custom-header-menu .row .half .menu-items .has-submenu .wrap-inside-nav {
+  display: none;
+  border-top: none;
+  background-color: #2b2b2b;
+  min-width: 180px;
+}
+
+.custom-header-menu .row .half .menu-items .has-submenu .wrap-inside-nav.collapse {
+  z-index: 1;
+  position: absolute;
+  display: inline-block;
+}
+
+.custom-header-menu .row .half .menu-items .has-submenu .wrap-inside-nav.collapse ul {
+  float: none;
+  margin-right: 0;
+}
+
+.custom-header-menu .row .half .menu-items .has-submenu .wrap-inside-nav.collapse ul li {
+  line-height: 30px;
+  display: block;
+}
+
+.custom-header-menu .row .half .menu-items .has-submenu .wrap-inside-nav.collapse ul li a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 0.9em;
+  padding: 5px;
+}
+
+.custom-header-menu .row .half .menu-items .has-submenu .wrap-inside-nav.collapse ul li a:hover {
+  color: white;
+  background-color: red;
+}
+
 .custom-header-menu .row .logo {
   display: -webkit-box;
   display: -webkit-flex;
@@ -10615,6 +10702,15 @@ body.color-turquoise #road {
   color: white !important;
 }
 
+.custom-header-menu.special .half .menu-items .has-submenu ul li a {
+  color: white !important;
+}
+
+.custom-header-menu.special .half .menu-items .has-submenu ul li a:hover {
+  color: green !important;
+  background-color: red !important;
+}
+
 .custom-header-menu.special .half:last-child {
   margin-top: 42px;
 }
@@ -10702,6 +10798,7 @@ body.color-turquoise #road {
      -moz-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  overflow-y: auto;
 }
 
 .mobile-menu-custom.open {
@@ -10717,7 +10814,6 @@ body.color-turquoise #road {
 }
 
 .mobile-menu-custom ul {
-  position: relative;
   margin-top: 30px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -10729,12 +10825,42 @@ body.color-turquoise #road {
           flex-flow: column nowrap;
 }
 
+.mobile-menu-custom ul li {
+  position: relative;
+}
+
 .mobile-menu-custom ul li a {
   color: white !important;
 }
 
 .mobile-menu-custom ul li a:hover {
   color: black !important;
+}
+
+.mobile-menu-custom ul .wrap-inside-nav {
+  z-index: 1;
+  position: absolute;
+  display: none;
+  background: black;
+  min-width: 180px;
+}
+
+.mobile-menu-custom ul .wrap-inside-nav.collapse {
+  display: block;
+}
+
+.mobile-menu-custom ul .wrap-inside-nav ul {
+  margin-top: 10px;
+}
+
+.mobile-menu-custom ul .wrap-inside-nav ul li:hover {
+  background-color: red;
+  color: white;
+}
+
+.mobile-menu-custom ul .wrap-inside-nav ul li a {
+  font-size: 0.8rem;
+  padding: 10px;
 }
 
 /***************/

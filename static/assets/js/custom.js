@@ -1,6 +1,6 @@
 /* Global variables */
 "use strict";
-
+// var somethingIsOpen = false
 var $document = $(document),
 	$window = $(window),
 	plugins = {
@@ -243,7 +243,37 @@ $document.ready(function () {
 		button.toggleClass('open')
 		$('.mobile-menu-custom').toggleClass('open')
 	})
+
+	var collapseSubMenu = $('.has-submenu')
+
+	console.log(collapseSubMenu)
+
+	if(collapseSubMenu) {
+		$(collapseSubMenu).each(function() {
+			var self = this
+			$(this).on('click', function() {
+				var collapsible = $(self).find('.wrap-inside-nav')
+				collapsible.toggleClass('collapse')
+
+				// somethingIsOpen = collapsible.hasClass('collapse')
+			})
+		})
+	}
 });
+
+
+// $(document).on('click', function() {
+// 	var collapseSubMenu = $('.has-submenu')
+
+// 	if(somethingIsOpen) {
+// 		if(collapseSubMenu) {
+// 			$(collapseSubMenu).each(function() {
+// 				var collapsible = $(this).find('.wrap-inside-nav')
+// 				if(collapsible.hasClass('collapse')) collapsible.removeClass('collapse')
+// 			})
+// 		}
+// 	}
+// })
 
 function undateMenu() {
 	var scrollTop = window.pageYOffset;
