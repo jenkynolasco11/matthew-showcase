@@ -4,12 +4,26 @@ block main-body
     main#page-content
         .container.services-page
             .row
-                .col-md-6.col-sm-12.img-services
+                .col-lg-6.col-sm-12.img-services(style="display:flex;flex-flow:column wrap;")
                     // <div class="container">
-                    .row.dealer-picture
+                    .dealer-picture
                         img(src="assets/images/carconcierge.jpg")
-                    // </div>
-                .col-md-6.col-sm-12
+                    .hidden-sm.hidden-xs(style="display:block;width:100%;")
+                        aside.l-sidebar.contact-form
+                            form#contact-form.b-filter-2.bg-grey(action="javascript:void(0)" novalidate="")
+                                h3.b-filter-2__title Contact Us
+                                .b-filter-2__inner
+                                    .b-filter-2__group
+                                        input.form-control(name="name" placeholder="Name" type="text" required="")
+                                    .b-filter-2__group
+                                        input.form-control(name="email" placeholder="Email" type="email" required="")
+                                    .b-filter-2__group
+                                        input.form-control(name="phone" placeholder="Phone" type="phone" required="")
+                                    .b-filter-2__group
+                                        textarea.form-control(name="message" cols="3" placeholder="Comment" required="")
+                                    .b-filter-2__group
+                                        input(type="submit" value="Submit")
+                .col-lg-6.col-sm-12
                     h2 Personal Concierge 
                     .small-separator
                     .service-text
@@ -20,8 +34,6 @@ block main-body
                             | numbers, and making reservations to driving directions and traffic conditions, we do it all! Once registered,
                             | simply call our toll-free number from your mobile phone and you will be personally greeted by your very own
                             | JYD Auto Personal Assistant.
-                .col-md-6.col-sm-12(style="margin-top:20px")
-                    .service-text
                         h5 Get Instant Access To Whatever You Need
                             ol(style="padding-left:10px;font-size:0.9rem;")
                                 li Directory Assistance
@@ -40,8 +52,6 @@ block main-body
                                 li Stock Market Information
                                 li Price Comparisons
                                 li Emergency Assistance
-                .col-md-6.col-sm-12(style="margin-top:20px")
-                    .service-text
                         h5 Daily Living
                         p
                             | Our Personal Assistants are eager to help you with your needs providing information or performing basic tasks.
@@ -56,8 +66,6 @@ block main-body
                             li Product Reviews
                             li Price Comparisons
                             li Online Shopping
-                .col-md-6.col-sm-12(style="margin-top:20px")
-                    .service-text
                         h5 City Guide
                         p
                             | Our Personal Assistants are available 24/7 and dedicated to giving up-to-date information on events and happenings.
@@ -68,8 +76,6 @@ block main-body
                             li Traffic Conditions
                             li Local Hot Spots
                             li Sightseeing Information
-                .col-md-6.col-sm-12(style="margin-top:20px")
-                    .service-text
                         h5 Entertainment
                         p
                             | Planning a casual evening or a special occasion? Whatever the need, our team of Personal Assistants will help
@@ -82,6 +88,21 @@ block main-body
                                 li Golf Course Tee Times and Bookings
                                 li Special Event Planning
                     a.btn(href="contact-us") Order Our Services
+                    .hidden-lg.hidden-md(style="display:block;width:100%;")
+                        aside.l-sidebar.contact-form
+                            form#contact-form.b-filter-2.bg-grey(action="javascript:void(0)" novalidate="")
+                                h3.b-filter-2__title Contact Us
+                                .b-filter-2__inner
+                                    .b-filter-2__group
+                                        input.form-control(name="name" placeholder="Name" type="text" required="")
+                                    .b-filter-2__group
+                                        input.form-control(name="email" placeholder="Email" type="email" required="")
+                                    .b-filter-2__group
+                                        input.form-control(name="phone" placeholder="Phone" type="phone" required="")
+                                    .b-filter-2__group
+                                        textarea.form-control(name="message" cols="3" placeholder="Comment" required="")
+                                    .b-filter-2__group
+                                        input(type="submit" value="Submit")
                 .col-xs-12(style="margin-top:60px; padding : 0;")
                     .row
                         .col-sm-4.col-xs-12.img-get-approved

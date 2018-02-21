@@ -4,9 +4,24 @@ block main-body
     main#page-content
       .container.services-page
         .row
-          .col-lg-6.col-md-12.col-sm-12.img-services
-            .row.dealer-picture
+          .col-lg-6.col-md-12.col-sm-12.img-services(style="display:flex;flex-flow:column wrap;")
+            .dealer-picture
               img(src="assets/images/theft.jpg")
+            .hidden-sm.hidden-xs(style="display:block;width:100%;")
+              aside.l-sidebar.contact-form
+                form#contact-form.b-filter-2.bg-grey(action="javascript:void(0)" novalidate="")
+                  h3.b-filter-2__title Contact Us
+                  .b-filter-2__inner
+                    .b-filter-2__group
+                      input.form-control(name="name" placeholder="Name" type="text" required="")
+                    .b-filter-2__group
+                      input.form-control(name="email" placeholder="Email" type="email" required="")
+                    .b-filter-2__group
+                      input.form-control(name="phone" placeholder="Phone" type="phone" required="")
+                    .b-filter-2__group
+                      textarea.form-control(name="message" cols="3" placeholder="Comment" required="")
+                    .b-filter-2__group
+                      input(type="submit" value="Submit")
           .col-lg-6.col-sm-12
             h2 Anti-Theft Protection
             .small-separator
@@ -18,8 +33,6 @@ block main-body
                 | The Theft Avert® vehicle marking system is a unique window etching product. This is an effective anti-theft
                 | program that gives customers a preferred theft deterrent system that helps identify vehicles if they have
                 | been stolen.
-          .col-lg-6.hidden-md
-            .service-text(style="margin-top:20px;")
               p
                 | Theft Avert® etches a unique number on all glass surfaces making it worthless to thieves. Protecting your investment
                 | with this anti-theft program will give you peace of mind as well as increase the likelihood of your vehicle
@@ -32,9 +45,6 @@ block main-body
               p
                 | Purchasing this anti-theft program of six point glass etching and traceable technology provides your vehicle
                 | with the ultimate anti-theft protection.
-        .row
-          .col-lg-6.col-sm-12
-            .service-text(style="margin-top:20px;")
               h5 Invisible Phantom Footprints
               p
                 | Exclusively designed by 3M for IAS, Invisible Phantom Footprints® protects vehicles on six different areas
@@ -45,8 +55,6 @@ block main-body
                 | IAS partners with the National Insurance Crime Bureau (NICB) to track stolen vehicles. Every month, IAS and
                 | NICB provide Invisible Phantom Footprints information to law enforcement agencies who in turn track the missing
                 | vehicles.
-          .col-lg-6.hidden-sm
-            .service-text(style="margin-top:20px;")
               p
                 | Theft Avert® etches a unique number on all glass surfaces making it worthless to thieves. Protecting your investment
                 | with this anti-theft program will give you peace of mind as well as increase the likelihood of your vehicle
@@ -59,9 +67,6 @@ block main-body
               p
                 | Purchasing this anti-theft program of six point glass etching and traceable technology provides your vehicle
                 | with the ultimate anti-theft protection.
-        .row
-          .col-lg-6.col-sm-12
-            .service-text(style="margin-top:20px;")
               h5 Theft Avert
               p
                 | The Theft Avert vehicle marking system is a unique window-etching product. This is yet another effective anti-theft
@@ -72,8 +77,6 @@ block main-body
                 li Greater likelihood of a stolen vehicle being recovered
                 li Possible insurance discounts
                 li Peace of mind
-          .col-lg-6.col-sm-12
-            .service-text(style="margin-top:20px;")
               h5 Key Benefits of Invisible Phantom Footprints & Theft Avert
               p
                 | No risk. These products are free for new dealer sign-ups to install on their original inventory.
@@ -82,6 +85,23 @@ block main-body
                 | More repeat customers. Programs are available to help drive customers back to the dealership.
                 | Fully insured. These products are fully insured by A rated Virginia Surety Company, Inc.
             a.btn(href="/contact-us") Order Our Services
+            .hidden-lg.hidden-md(style="display:block;width:100%;")
+              aside.l-sidebar.contact-form
+                form#contact-form.b-filter-2.bg-grey(action="javascript:void(0)" novalidate="")
+                  h3.b-filter-2__title Contact Us
+                  .b-filter-2__inner
+                    .b-filter-2__group
+                      input.form-control(name="name" placeholder="Name" type="text" required="")
+                    .b-filter-2__group
+                      input.form-control(name="email" placeholder="Email" type="email" required="")
+                    .b-filter-2__group
+                      input.form-control(name="phone" placeholder="Phone" type="phone" required="")
+                    .b-filter-2__group
+                      textarea.form-control(name="message" cols="3" placeholder="Comment" required="")
+                    .b-filter-2__group
+                      input(type="submit" value="Submit")
+          //- .col-md-6.col-sm-12
+            
         .row
           .col-xs-12(style="margin-top:60px; padding : 0;")
             .row

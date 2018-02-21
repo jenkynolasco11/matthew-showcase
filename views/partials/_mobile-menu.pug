@@ -1,19 +1,19 @@
 .mobile-menu-custom
     a.navbar-brand.scroll(href="/")
-        img.dealer-logo(src="/assets/images/dealer-logo.png" alt="dealer logo")
+        img.dealer-logo(src="assets/images/dealer-logo.png" alt="dealer logo")
     ul.nav.navbar-nav
         li
             a(href="/") Home
         li
-            a(href="/credit-app") Credit App
+            a(href="credit-app") Credit App
         li
-            a(href="/listing") Lease Specials
+            a(href="listing") Lease Specials
         li
-            a(href="/listing") Pre-Owned
+            a(href="listing") Pre-Owned
         li
-            a(href="/sell-car") Sell your Car
-        li
-            a(href="/#") Services
+            a(href="sell-car") Sell your Car
+        li.has-submenu
+            a(href="#") Services
                 span.caret
             .wrap-inside-nav
                 .inside-col
@@ -37,4 +37,4 @@
                         li
                             a(href="/service-others") Others
         li
-            a.contact-button(href="/contact-us") Contact
+            a.contact-button(href="contact-us") Contact

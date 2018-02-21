@@ -4,11 +4,24 @@ block main-body
     main#page-content
         .container.services-page
             .row
-                .col-md-6.col-sm-12.img-services
-                    // <div class="container">
+                .col-md-6.col-sm-12.img-services(style="display:flex;flex-flow:column wrap;")
                     .row.dealer-picture
                         img(src="assets/images/roadhaz.jpg")
-                    // </div>
+                    .hidden-sm.hidden-xs(style="display:block;width:100%;")
+                        aside.l-sidebar.contact-form
+                            form#contact-form.b-filter-2.bg-grey(action="javascript:void(0)" novalidate="")
+                                h3.b-filter-2__title Contact Us
+                                .b-filter-2__inner
+                                    .b-filter-2__group
+                                        input.form-control(name="name" placeholder="Name" type="text" required="")
+                                    .b-filter-2__group
+                                        input.form-control(name="email" placeholder="Email" type="email" required="")
+                                    .b-filter-2__group
+                                        input.form-control(name="phone" placeholder="Phone" type="phone" required="")
+                                    .b-filter-2__group
+                                        textarea.form-control(name="message" cols="3" placeholder="Comment" required="")
+                                    .b-filter-2__group
+                                        input(type="submit" value="Submit")
                 .col-md-6.col-sm-12
                     h2 Road Hazard Protection
                     .small-separator
@@ -23,8 +36,6 @@ block main-body
                             | would simply call the toll-free number for immediate service from anywhere nationwide. And, you're covered
                             | 24 hours a day, 7 days a week, 365 days a year.
                         p
-                .col-md-6.col-sm-12
-                    .service-text
                         h5 Coverage with No Deductible
                         p
                             | Benefits of the R.O.A.D. InTire protection include 100% repair or replacement reimbursement for a covered
@@ -36,14 +47,27 @@ block main-body
                             li Sales tax
                             li Balancing
                             li Customary labor charges
-                .col-md-6.col-sm-12
-                    .service-text
                         p
                             | When it's time to replace your tires, your new tires will have the same protection, at no additional charge,
                             | for the remainder of your contract term.
                         p
                             | Protect yourself and your vehicle now - because you never know what lies a
                     a.btn(href="/contact-us") Order Our Services
+                    .hidden-lg.hidden-md(style="display:block;width:100%;")
+                        aside.l-sidebar.contact-form
+                            form#contact-form.b-filter-2.bg-grey(action="javascript:void(0)" novalidate="")
+                                h3.b-filter-2__title Contact Us
+                                .b-filter-2__inner
+                                    .b-filter-2__group
+                                        input.form-control(name="name" placeholder="Name" type="text" required="")
+                                    .b-filter-2__group
+                                        input.form-control(name="email" placeholder="Email" type="email" required="")
+                                    .b-filter-2__group
+                                        input.form-control(name="phone" placeholder="Phone" type="phone" required="")
+                                    .b-filter-2__group
+                                        textarea.form-control(name="message" cols="3" placeholder="Comment" required="")
+                                    .b-filter-2__group
+                                        input(type="submit" value="Submit")
                 .col-xs-12(style="margin-top:60px; padding : 0;")
                     .row
                         .col-sm-4.col-xs-12.img-get-approved

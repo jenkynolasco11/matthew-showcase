@@ -280,15 +280,15 @@ function undateMenu() {
 	// var bg =
 	var menu = $('.custom-header-menu');
 
-	if (scrollTop => 140 || $(window).width() < 993) {
+	if (scrollTop => 150 || $(window).width() < 993) {
 
-		if (scrollTop > 140) {
+		if (scrollTop > 150) {
 			menu.addClass('active-scroll');
 		} else {
 			menu.removeClass('active-scroll');
 		}
 
-	} else if (scrollTop < 140 || $(window).width() > 993) {
+	} else if (scrollTop < 120 || $(window).width() > 993) {
 		menu.removeClass('active-scroll');
 	}
 
