@@ -2939,7 +2939,7 @@ module.exports = {
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
                                   <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
-                                      <p style="margin: 0;font-size: 14px;line-height: 17px">$${ data[ 'Monthly Payment' ].toLocaleString() }.00</p>
+                                      <p style="margin: 0;font-size: 14px;line-height: 17px">$${ data[ 'Monthly Payment' ].replace(/.00$/,'').toLocaleString() }.00</p>
                                     </div>
                                   </div>
                                   <!--[if mso]></td></tr></table><![endif]-->
@@ -3439,7 +3439,7 @@ module.exports = {
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
                                   <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
-                                      <p style="margin: 0;font-size: 14px;line-height: 17px">$${ data[ 'Monthly Income' ].toLocaleString() }.00</p>
+                                      <p style="margin: 0;font-size: 14px;line-height: 17px">$${ data[ 'Monthly Income' ].replace(/.00$/,'').toLocaleString() }.00</p>
                                     </div>
                                   </div>
                                   <!--[if mso]></td></tr></table><![endif]-->
