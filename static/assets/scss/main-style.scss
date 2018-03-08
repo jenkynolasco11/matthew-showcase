@@ -967,7 +967,67 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		flex-flow: column wrap;
 		align-items: center;
 		justify-content: space-around;
-	} // @media screen and (min-width: 768px) {
+
+		#build-car-app {
+			background-color : rgba(138,138,138,0.6);
+			width : 100vw;
+			max-width : 1280px;
+
+			margin-top : 280px;
+
+			// @media screen and (min-width : 620px) {
+			// 	margin-top : 180px;
+			// }
+
+			.title {
+				height : 56px;
+
+				p {
+					margin : 0;
+					padding : 16px;
+					text-align : center;
+					color : white;
+					font-size : 1.4rem;
+					font-weight : bold;
+					border-bottom : 1px solid black;
+				}
+			}
+
+			.inputs {
+				padding : 36px 0;
+				// width : 220px;
+				.select-input {
+					display : flex;
+					justify-content : center;
+					align-items : center;
+
+					select {
+						height : 60px;
+						width : 220px;
+						background-color : rgba(255, 255, 255, 0.446);
+						color : white;
+						border : 1px solid gray;
+						text-align : center;
+					}
+					select:last-child {
+						border-right : 1px solid black;
+					}
+				}
+			}
+
+			@media screen and (max-width : 768px ) {
+				margin-top : 190px;
+				select {
+					width : 80vw;
+					option {
+						text-align : center;
+					}
+				}
+			}
+		}
+	}
+	
+	// @media screen and (min-width: 768px) {
 	// 	.search-form, .text-intro {
 	// 		height: 60vh;
 	// 		width: 45vw;

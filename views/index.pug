@@ -17,7 +17,6 @@ html(lang="en")
     link(href="assets/css/plugins/swiper.min.css" rel="stylesheet")
     link(href="assets/css/plugins/animate.css" rel="stylesheet")
     link(href="assets/css/main-style.css" rel="stylesheet")
-    
     //if lt IE 9
       script(src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js")
       script(src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js")
@@ -71,14 +70,7 @@ html(lang="en")
             a.contact-button(href="contact-us") Contact
       section.landing-top
         .bg-overlay
-          // <img src="assets/images/img-bg-3.jpg" alt="backaground-image" />
           img(src="assets/images/home-screen.jpg" alt="backaground-image")
-          //
-            <div class="text-top-img">
-            <p>THE MOST COMPETITIVE PRICING</p>
-            <p>ON ALL MAKES AND MODELS</p>
-            <p>ALL OF THE TIME</p>
-            </div>
         .top-content.container-fluid
           .container.custom-header-menu
             .row
@@ -148,6 +140,24 @@ html(lang="en")
                         span
                         span
                         span
+          form.row#build-car-app
+            .col-xs-12.title
+              p START BUILDING THE VEHICLE OF YOUR DREAMS
+            .col-xs-12.inputs
+              .row
+                .col-md-3.col-xs-12.select-input
+                  select(name="year")#select-year
+                    option(value="none" selected) Select Year
+                    option(value="2019") 2019
+                    option(value="2018") 2018
+                .col-md-3.col-xs-12.select-input
+                  select(name="make" disabled)#select-make
+                    option(value="none" selected) Select Make
+                .col-md-3.col-xs-12.select-input
+                  select(name="model" disabled)#select-model
+                    option(value="none" selected) Select Model
+                .col-md-3.col-xs-12.text-center
+                  input(type="submit" disabled value="Build This Vehicle")#submit-car-build
       section.get-approved
         .container-fluid
           .row

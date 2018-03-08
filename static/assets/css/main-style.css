@@ -11013,6 +11013,74 @@ body.color-turquoise #road {
           justify-content: space-around;
 }
 
+.landing-top .top-content #build-car-app {
+  background-color: rgba(138, 138, 138, 0.6);
+  width: 100vw;
+  max-width: 1280px;
+  margin-top: 280px;
+}
+
+.landing-top .top-content #build-car-app .title {
+  height: 56px;
+}
+
+.landing-top .top-content #build-car-app .title p {
+  margin: 0;
+  padding: 16px;
+  text-align: center;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.landing-top .top-content #build-car-app .inputs {
+  padding: 36px 0;
+}
+
+.landing-top .top-content #build-car-app .inputs .select-input {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.landing-top .top-content #build-car-app .inputs .select-input select {
+  height: 60px;
+  width: 220px;
+  background-color: rgba(255, 255, 255, 0.446);
+  color: white;
+  border: 1px solid gray;
+  text-align: center;
+}
+
+.landing-top .top-content #build-car-app .inputs .select-input select:last-child {
+  border-right: 1px solid black;
+}
+
+@media screen and (max-width: 768px) {
+  .landing-top .top-content #build-car-app {
+    margin-top: 190px;
+  }
+  .landing-top .top-content #build-car-app select {
+    width: 80vw;
+  }
+  .landing-top .top-content #build-car-app select option {
+    text-align: center;
+  }
+}
+
 /***************/
 .get-approved {
   margin-bottom: 140px;

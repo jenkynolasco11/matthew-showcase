@@ -259,6 +259,61 @@ $document.ready(function () {
 			})
 		})
 	}
+
+	var selectYear = $('#select-year')
+	var selectMake = $('#select-make')
+	var selectModel = $('#select-model')
+	var submitCarBuild = $('#submit-car-build')
+	var buildCarAppFor = $('#build-car-app')
+
+	selectYear.on('change', function() {
+		if($(this).val() === 'none') {
+			selectMake.attr('disabled', true)
+			selectModel.attr('disabled', true)
+			submitCarBuild.attr('disabled', true)
+		} else {
+			selectMake.removeAttr('disabled')
+		}
+
+		$.get('/build-car?year=' + $(this).val(), function(data) {
+			selectMake.html('')
+			selectMake.append($('<option value="none">Select Make</option>'))
+
+			data.makes.forEach(function(make) {
+				selectMake.append($('<option value="' + make + '">' + make + '</option>'))
+			})
+		})
+	})
+
+	selectMake.on('change', function() {
+		if($(this).val() === 'none') selectModel.attr('disabled', true)
+		else selectModel.removeAttr('disabled')
+
+		$.get('/build-car?year=' + $(selectYear).val() + '&make=' + $(this).val(), function(data) {
+			selectModel.html('')
+			selectModel.append($('<option value="none">Select Model</option>'))
+
+			data.models.forEach(function(model) {
+				selectModel.append($('<option value="' + model + '">'+ model +'</option>'))
+			})
+		})
+	})
+
+	selectModel.on('change', function() {
+		if($(this).val() === 'none') return submitCarBuild.attr('disabled', true)
+		else return submitCarBuild.removeAttr('disabled')
+	})
+
+	buildCarAppFor.on('submit', function(e) {
+		e.preventDefault()
+
+		var year = $(selectYear).val()
+		var make = $(selectMake).val()
+		var model = $(selectModel).val()
+
+		window.location.href = '/build-car?year=' + year + '&make=' + make + '&model=' + model + '&build=' + (1000000000 * Math.random()).toString(16)
+		// $.get('/build-car?year=' + year + '&make=' + make + '&model=' + model)
+	})
 });
 
 

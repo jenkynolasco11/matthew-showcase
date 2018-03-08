@@ -4,6 +4,7 @@ var admin = require('./admin')
 var site = require('./website')
 var auth = require('./auth')
 var car = require('./car')
+var build = require('./buildCar')
 
 var route = Router()
 
@@ -11,7 +12,8 @@ const routes = [
     auth,
     admin,
     site,
-    car
+    car,
+    build
 ]
 
 routes.forEach(r => {
