@@ -1232,11 +1232,17 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 					select {
 						margin : 10px;
 						height : 60px;
-						width : 220px;
-						background-color : rgba(255, 255, 255, 0.446);
-						color : white;
+						width : 320px;
+						// text-indent : 80px;
+						background-color : rgba(255, 255, 255, 0.631);
 						border : 1px solid gray;
-						text-align : center;
+						color : white;
+
+						option {
+							// background-color : rgba(255, 255, 255, 0.446);
+							color : black;
+							text-align : center;
+						}
 					}
 					select:last-child {
 						border-right : 1px solid black;
