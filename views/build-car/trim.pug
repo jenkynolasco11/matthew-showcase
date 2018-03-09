@@ -1,0 +1,50 @@
+extends ../partials/_pug-page.pug
+
+block main-body
+    #build-car-preview.container
+        .row
+            .car-options-preview.col-md-4
+                .img-car
+                    img(src='/assets/images/car-not-available-placeholder.jpg' alt='model-preview')
+                .details
+                    .item
+                        p.title Current Trim:
+                        span#trim
+                    .item
+                        p.title MSRP:
+                        span#msrp
+                    .item
+                        p.title Destination:
+                        span#dest
+                    .item
+                        p.title Options:
+                        span#options
+                    .item
+                        p.title Invoice:
+                        span#invoice
+            .car-options-trim.col-md-7
+                p Select Trim
+                .trims
+                    - var first = true
+                    if trims
+                        each trim, key in trims
+                            p.title #{ make } #{ model } #{ key }
+                            .headers
+                                .name Trim
+                                .price Invoice
+                            each option, i in trim
+                                label.option
+                                    - var value = year+"|"+make+"|"+model+"|"+option.MSRP+"|"+option.Destination+"|"+option.Invoice+"|"+option.Trim
+                                    if first
+                                        input(type="radio" name="option-select" value=value checked)
+                                    else
+                                        input(type="radio" name="option-select" value=value)
+                                    span.trim-name #{ option.Trim }
+                                    span.trim-price $ #{ option.Invoice }
+                                    - first = false
+            .col-xs-12.navigation
+                span(data-option="back" data-page="index").nav-item << Back
+                span(data-option="next" data-page="option").nav-item Next >>
+
+block scripts
+    script(src="/assets/js/build-car.js" type="text/javascript")

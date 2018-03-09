@@ -9944,6 +9944,270 @@ body.color-turquoise #road {
           user-select: none;
 }
 
+#build-car-preview {
+  margin-top: 100px;
+  padding: 0;
+}
+
+#build-car-preview .row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+#build-car-preview .car-options-preview {
+  -webkit-align-self: flex-start;
+      -ms-flex-item-align: start;
+          align-self: flex-start;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  border: 2px solid gray;
+  -webkit-border-radius: 2px;
+     -moz-border-radius: 2px;
+          border-radius: 2px;
+}
+
+#build-car-preview .car-options-preview .img-car {
+  text-align: center;
+  width: 100%;
+  -webkit-border-radius: 2px;
+     -moz-border-radius: 2px;
+          border-radius: 2px;
+  margin: 10px 0 40px;
+}
+
+#build-car-preview .car-options-preview .details .item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  border-bottom: 1px solid #353535;
+}
+
+#build-car-preview .car-options-preview .details .item p {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px 0;
+  width: 30%;
+  font-weight: bold;
+}
+
+#build-car-preview .car-options-preview .details .item:last-child {
+  border: none;
+}
+
+@media screen and (min-width: 768px) {
+  #build-car-preview .car-options-preview {
+    margin-right: 30px;
+  }
+}
+
+#build-car-preview .car-options-trim {
+  padding-bottom: 40px;
+  outline: 1px solid gray;
+  background-color: rgba(184, 184, 184, 0.645);
+}
+
+#build-car-preview .car-options-trim > p {
+  background-color: black;
+  color: red;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+  min-height: 60px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#build-car-preview .car-options-trim .trims {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+#build-car-preview .car-options-trim .trims .title {
+  background-color: gray;
+  color: white;
+  padding: 10px 10px;
+}
+
+#build-car-preview .car-options-trim .trims .headers {
+  height: 45px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: red;
+  font-weight: bold;
+}
+
+#build-car-preview .car-options-trim .trims .headers .name {
+  margin-right: 50px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 10;
+  -webkit-flex: 10;
+     -moz-box-flex: 10;
+      -ms-flex: 10;
+          flex: 10;
+}
+
+#build-car-preview .car-options-trim .trims .headers .price {
+  -webkit-box-flex: 4;
+  -webkit-flex: 4;
+     -moz-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+}
+
+#build-car-preview .car-options-trim .trims .headers .name, #build-car-preview .car-options-trim .trims .headers .price {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#build-car-preview .car-options-trim .trims .option {
+  padding: 0 10px;
+  border-top: 1px solid white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 42px;
+  color: black;
+  font-weight: 400;
+}
+
+#build-car-preview .car-options-trim .trims .option input {
+  margin: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+     -moz-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+#build-car-preview .car-options-trim .trims .option .trim-name {
+  -webkit-box-flex: 10;
+  -webkit-flex: 10;
+     -moz-box-flex: 10;
+      -ms-flex: 10;
+          flex: 10;
+}
+
+#build-car-preview .car-options-trim .trims .option .trim-price {
+  -webkit-box-flex: 4;
+  -webkit-flex: 4;
+     -moz-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+}
+
+@media screen and (min-width: 768px) {
+  #build-car-preview .car-options-trim {
+    margin-left: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #build-car-preview .car-options-trim {
+    margin-top: 50px;
+    width: 80vw;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  #build-car-preview .car-options-trim {
+    width: 100vw;
+  }
+}
+
+#build-car-preview .navigation {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 80vw;
+  margin-top: 60px;
+  margin-bottom: 100px;
+  color: blue;
+  cursor: pointer;
+}
+
 #page-content {
   z-index: 2;
 }
@@ -10085,6 +10349,10 @@ body.color-turquoise #road {
 
 .l-theme > .bg-grey {
   margin-bottom: 40px;
+}
+
+.l-theme > .bg-grey.stay-top {
+  margin-top: 140px;
 }
 
 /*****************/
@@ -11057,6 +11325,7 @@ body.color-turquoise #road {
 }
 
 .landing-top .top-content #build-car-app .inputs .select-input select {
+  margin: 10px;
   height: 60px;
   width: 220px;
   background-color: rgba(255, 255, 255, 0.446);
@@ -11071,12 +11340,15 @@ body.color-turquoise #road {
 
 @media screen and (max-width: 768px) {
   .landing-top .top-content #build-car-app {
-    margin-top: 190px;
+    margin-top: 182px;
   }
-  .landing-top .top-content #build-car-app select {
+  .landing-top .top-content #build-car-app .inputs {
+    padding: 18px 0;
+  }
+  .landing-top .top-content #build-car-app .inputs select {
     width: 80vw;
   }
-  .landing-top .top-content #build-car-app select option {
+  .landing-top .top-content #build-car-app .inputs select option {
     text-align: center;
   }
 }

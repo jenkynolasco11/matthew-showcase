@@ -311,8 +311,13 @@ $document.ready(function () {
 		var make = $(selectMake).val()
 		var model = $(selectModel).val()
 
-		window.location.href = '/build-car?year=' + year + '&make=' + make + '&model=' + model + '&build=' + (1000000000 * Math.random()).toString(16)
-		// $.get('/build-car?year=' + year + '&make=' + make + '&model=' + model)
+		// window.location.href = '/build-car/trim?year=' + year + '&make=' + make + '&model=' + model + '&build=' + (100000000000000 * Math.random()).toString(16)
+		var link = '/build-car/trim?options=' + year + '|' + make + '|' + model + '&build=' + (100000000000000 * Math.random()).toString(16)
+
+		// window.history.pushState(null, null, link)
+		window.location.href = link
+		// $.get('/build-car?year=' + year + '&make=' + make + '&model=' + model, function(data) {})
+		// $.get('/trim', { year : year, make : make, model : model })
 	})
 });
 
@@ -336,11 +341,12 @@ function undateMenu() {
 	var menu = $('.custom-header-menu');
 
 	if (scrollTop => 150 || $(window).width() < 993) {
-
 		if (scrollTop > 150) {
 			menu.addClass('active-scroll');
-		} else {
+			$('.bg-grey').addClass('stay-top')
+		} else if(scrollTop < 100) {
 			menu.removeClass('active-scroll');
+			$('.bg-grey').removeClass('stay-top')
 		}
 
 	} else if (scrollTop < 120 || $(window).width() > 993) {

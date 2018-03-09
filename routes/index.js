@@ -9,11 +9,11 @@ var build = require('./buildCar')
 var route = Router()
 
 const routes = [
+    build,
     auth,
     admin,
     site,
     car,
-    build
 ]
 
 routes.forEach(r => {

@@ -122,6 +122,168 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 // 	}
 // }
 ///////////////////////
+
+#build-car-preview {
+	// .container {
+		// padding : 0 0 40px;
+		margin-top : 100px;
+		padding : 0;
+
+		.row {
+			display : flex;
+			justify-content : center;
+			flex-flow : row wrap;
+		}
+		// max-width : 1280px;
+
+		.car-options-preview {
+			align-self : flex-start;
+			display : flex;
+			flex-flow : column nowrap;
+			border : 2px solid gray;
+			border-radius : 2px;
+			// background-color : gray;
+
+			.img-car {
+				text-align : center;
+				width : 100%;
+				border-radius : 2px;
+				margin : 10px 0 40px;
+			}
+
+			.details {
+				.item {
+					display : flex;
+					align-items : center;
+					flex-wrap : wrap;
+
+					p {
+						display : flex;
+						align-items : center;
+						margin : 10px 0;
+						width : 30%;
+						font-weight : bold;
+					}
+
+					span {
+						// font-size : 0.9rem;
+					}
+					border-bottom : 1px solid #353535;
+
+					&:last-child {
+						border : none;
+					}
+				}
+			}
+			@media screen and (min-width : 768px) {
+				margin-right : 30px
+			}
+		}
+
+		.car-options {
+			&-trim {
+				padding-bottom : 40px;
+				outline : 1px solid gray;
+				background-color : rgba(184, 184, 184, 0.645);
+
+				& > p {
+					background-color : black;
+					color : rgb(255, 0, 0);
+					font-size : 1.2rem;
+					font-weight : bold;
+					// padding : 10px 0;
+					margin : 0;
+					// text-align : center;
+					min-height : 60px;
+					display : flex;
+					align-items : center;
+					justify-content : center;
+				}
+
+				.trims {
+					display : flex;
+					flex-flow : column nowrap;
+
+					.title {
+						background-color : gray;
+						color : white;
+						padding : 10px 10px;
+					}
+					.headers {
+						height : 45px;
+						display : flex;
+						// border-bottom : 1px solid white;
+						color : red;
+						font-weight : bold;
+
+						.name {
+							margin-right : 50px;
+							justify-content : center;
+							flex : 10;
+						}
+
+						.price {
+							flex : 4;
+						}
+
+						.name, .price {
+							display : flex;
+							align-items : center;
+						}
+					}
+
+					.option {
+						padding : 0 10px;
+						border-top : 1px solid white;
+						display : flex;
+						align-items : center;
+						min-height : 42px;
+						color : rgb(0, 0, 0);
+						font-weight : 400;
+
+						input {
+							margin : 0;
+							flex : 1;
+						}
+
+						.trim-name {
+							flex : 10;
+						}
+
+						.trim-price {
+							flex : 4;
+						}
+					}
+				}
+
+				@media screen and (min-width : 768px) {
+					margin-left : 30px
+				}
+
+				@media screen and (max-width : 768px) {
+					margin-top : 50px;
+					width : 80vw;
+				}
+				@media screen and (max-width : 560px) {
+					width : 100vw;
+				}
+			}
+		}
+
+
+		.navigation {
+			display : flex;
+			justify-content : space-between;
+			max-width : 80vw;
+			margin-top : 60px;
+			margin-bottom : 100px;
+
+			color : blue;
+			cursor : pointer;
+		}
+	// }
+}
+
 #page-content {
 	// padding-bottom: 60px;
 	z-index: 2;
@@ -229,8 +391,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	}
 }
 
-.l-theme>.bg-grey {
+.l-theme > .bg-grey {
 	margin-bottom: 40px;
+
+	&.stay-top {
+		margin-top : 140px;
+	}
 }
 
 /*****************/
@@ -830,7 +996,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				padding : 0;
 				// ul {
 
-					
+
 				// 	margin-top : 10px;
 				// 	li {
 				// 		&:hover {
@@ -1002,6 +1168,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 					align-items : center;
 
 					select {
+						margin : 10px;
 						height : 60px;
 						width : 220px;
 						background-color : rgba(255, 255, 255, 0.446);
@@ -1016,17 +1183,22 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			}
 
 			@media screen and (max-width : 768px ) {
-				margin-top : 190px;
-				select {
-					width : 80vw;
-					option {
-						text-align : center;
+				margin-top : 182px;
+
+				.inputs {
+					padding : 18px 0;
+
+					select {
+						width : 80vw;
+						option {
+							text-align : center;
+						}
 					}
 				}
 			}
 		}
 	}
-	
+
 	// @media screen and (min-width: 768px) {
 	// 	.search-form, .text-intro {
 	// 		height: 60vh;

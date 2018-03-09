@@ -1,0 +1,31 @@
+extends ../partials/_pug-page.pug
+
+block main-body
+    #build-car-preview.container
+        .row
+            .car-options-preview.col-md-4
+                .img-car
+                    img(src='/assets/images/car-not-available-placeholder.jpg' alt='model-preview')
+                .details
+                    .item
+                        p.title Current Trim:
+                        span#trim
+                    .item
+                        p.title MSRP:
+                        span#msrp
+                    .item
+                        p.title Destination:
+                        span#dest
+                    .item
+                        p.title Options:
+                        span#options
+                    .item
+                        p.title Invoice:
+                        span#invoice
+            .car-options-trim.col-md-7
+            .col-xs-12.navigation
+                span(data-option="back").nav-item << Back
+                span(data-option="next").nav-item Next >>
+
+block scripts
+    script(src="/assets/js/build-car.js" type="text/javascript")
