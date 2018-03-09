@@ -1,7 +1,12 @@
 extends ../partials/_pug-page.pug
 
+block crumbs
+    li Trim
+    li Options
+
 block main-body
     #build-car-preview.container
+        span#base-vars.hidden #{ hiddenOpt }
         .row
             .car-options-preview.col-md-4
                 .img-car
@@ -9,23 +14,44 @@ block main-body
                 .details
                     .item
                         p.title Current Trim:
-                        span#trim
+                        span#trim #{ trim }
                     .item
                         p.title MSRP:
-                        span#msrp
+                        span#msrp $ #{ msrp }
                     .item
                         p.title Destination:
-                        span#dest
+                        span#dest $ #{ dest }
                     .item
                         p.title Options:
-                        span#options
+                        span#options $ 0
                     .item
                         p.title Invoice:
-                        span#invoice
+                        span#invoice $ #{ invoice }
             .car-options-trim.col-md-7
+                p Select Options
+                .options
+                    if options
+                        - var first = true
+                        each selects, key in options
+                            - first = true
+                            - var keyName = key.split('_').join(' ')
+                            .options-group
+                                h5.options-group_label #{ keyName }
+                                .options-group_choices
+                                    each option in selects
+                                        label.option
+                                            - var value = year+"|"+make+"|"+model+"|"+msrp+"|"+dest+"|"+invoice.replace(/[$ ,]/g,'')+"|"+trim+"|"+option.Price.replace(/\$/,'')
+                                            if first
+                                                input(type="radio" name="option-"+key data-value=""+value checked data-name="{"+key+"}"+option["Option Name"]).selected-options
+                                            else
+                                                input(type="radio" name="option-"+key data-value=""+value data-name="{"+key+"}"+option["Option Name"]).selected-options
+                                            span.option-name !{ option["Option Name"].toLowerCase() }
+                                            span.option-price $ !{ option.Price.replace(/\$/, '') }
+                                            - first = false
+
             .col-xs-12.navigation
                 span(data-option="back").nav-item << Back
                 span(data-option="next").nav-item Next >>
 
 block scripts
-    script(src="/assets/js/build-car.js" type="text/javascript")
+    script(src="/assets/js/build-car-options.js" type="text/javascript")

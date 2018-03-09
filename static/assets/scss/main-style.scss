@@ -140,7 +140,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			align-self : flex-start;
 			display : flex;
 			flex-flow : column nowrap;
-			border : 2px solid gray;
+			border : 1px solid #eee;
 			border-radius : 2px;
 			// background-color : gray;
 
@@ -152,6 +152,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			}
 
 			.details {
+				margin-bottom : 40px;
+
 				.item {
 					display : flex;
 					align-items : center;
@@ -165,9 +167,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 						font-weight : bold;
 					}
 
-					span {
-						// font-size : 0.9rem;
-					}
+					// span {
+					// 	// font-size : 0.9rem;
+					// }
 					border-bottom : 1px solid #353535;
 
 					&:last-child {
@@ -253,6 +255,65 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 						.trim-price {
 							flex : 4;
 						}
+					}
+				}
+
+				.options-group {
+					&_label {
+						background : gray;
+						color : white;
+						padding : 6px;
+						margin-top : 10px;
+
+						&:not(.no-after):after {
+							content : '';
+							right : 30px;
+							margin-top : 8px;
+							position : absolute;
+							border-top : 10px solid black;
+							border-right : 5px solid transparent;
+							border-left : 5px solid transparent;
+							transition : all .2s linear;
+							height : 10px;
+							width : 10px;
+						}
+
+						&.open:not(.no-after):after {
+							transform : rotate(180deg);
+						}
+					}
+
+					&_choices {
+						height : 0;
+						overflow : hidden;
+
+						.option {
+							display : flex;
+							border-top : 1px solid #eee;
+							padding : 10px 0;
+
+							input {
+								min-width : 45px;
+								// margin-top : 0;
+							}
+
+							&-name {
+								margin-top : 4px;
+								text-transform : capitalize;
+								font-weight : 400;
+								flex : 5;
+							}
+
+							&-price {
+								flex : 1;
+								text-align : right;
+							}
+						}
+					}
+
+					&_label.open + .options-group_choices {
+						transition : all .2s linear;
+						height : auto;
 					}
 				}
 

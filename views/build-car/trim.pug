@@ -1,5 +1,8 @@
 extends ../partials/_pug-page.pug
 
+block crumbs
+    li Trim
+
 block main-body
     #build-car-preview.container
         .row
@@ -34,17 +37,17 @@ block main-body
                                 .price Invoice
                             each option, i in trim
                                 label.option
-                                    - var value = year+"|"+make+"|"+model+"|"+option.MSRP+"|"+option.Destination+"|"+option.Invoice+"|"+option.Trim
+                                    - var value = year+"|"+make+"|"+model+"|"+option.MSRP+"|"+option.Destination+"|"+option.Invoice.replace(/\$/,'')+"|"+option.Trim
                                     if first
                                         input(type="radio" name="option-select" value=value checked)
                                     else
                                         input(type="radio" name="option-select" value=value)
                                     span.trim-name #{ option.Trim }
-                                    span.trim-price $ #{ option.Invoice }
+                                    span.trim-price $ #{ option.Invoice.replace(/\$/,'') }
                                     - first = false
             .col-xs-12.navigation
                 span(data-option="back" data-page="index").nav-item << Back
                 span(data-option="next" data-page="option").nav-item Next >>
 
 block scripts
-    script(src="/assets/js/build-car.js" type="text/javascript")
+    script(src="/assets/js/build-car-trim.js" type="text/javascript")

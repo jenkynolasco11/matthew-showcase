@@ -16,6 +16,22 @@ function getCarsByModel(year, make, model) {
     })
 }
 
+function getOptions(options) {
+    var [ year, make, model, msrp, dest, invoice, trim, optionsPrice, ...selectedOptions ] = options
+
+    return {
+        year : year,
+        make : make,
+        model : model,
+        invoice : invoice,
+        dest : dest,
+        msrp : msrp,
+        trim : trim,
+        optionsPrice : optionsPrice,
+        selectedOptions : selectedOptions
+    }
+}
+
 route.get('/', function(req, res) {
     var query = req.query
     var year = query.year
@@ -55,10 +71,7 @@ route.get('/trim', function(req, res) {
     var query = req.query
     var options = query.options.split('|')
 
-    var [ year, make, model ] = options
-    // var year = options[0]
-    // var make = options[1]
-    // var model = options[2]
+    var { year, make, model } = getOptions(options)
 
     if(!query.build) return res.redirect('/')
 
@@ -72,10 +85,6 @@ route.get('/trim', function(req, res) {
         return { ...p, [ n.Trim ] : [ n ] }
     }, {})
 
-    // console.log(trims)
-
-    // console.log(JSON.stringify(modelsSelected, null, 1))
-
     return res.render('build-car/trim', { trims : trims, make : make, model : model, year : year })
 })
 
@@ -83,11 +92,33 @@ route.get('/options', function(req, res) {
     var query = req.query
     var options = query.options.split('|')
 
-    var [ year, make, model, invoice, dest, msrp, trim ] = options
+    var { year, make, model, msrp, dest, invoice, trim } = getOptions(options)
 
     var modelsSelected = getCarsByModel(year, make, model)
+    var modelSelected = modelsSelected.filter(function(model) { return model.Trim === trim }).pop()
 
-    return res.render('build-car/options', { year : year, make : make, model : model, invoice : invoice, dest : dest, msrp : msrp, trim : trim, options : options })
+    var data = {
+        year : year,
+        make : make,
+        model : model,
+        invoice : invoice,
+        dest : dest,
+        msrp : msrp,
+        trim : trim,
+        options : modelSelected.Options,
+        hiddenOpt : query.options
+    }
+
+    console.log(JSON.stringify(data, null, 2))
+
+    return res.render('build-car/options', data)
+})
+
+route.get('/review', function(req, res) {
+    var query = req.query
+    var options = getOptions(query.options.split('|'))
+
+    return res.render('build-car/review', options)
 })
 
 

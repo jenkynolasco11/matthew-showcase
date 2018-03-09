@@ -246,7 +246,7 @@ $document.ready(function () {
 
 	var collapseSubMenu = $('.has-submenu')
 
-	console.log(collapseSubMenu)
+	// console.log(collapseSubMenu)
 
 	if(collapseSubMenu) {
 		$(collapseSubMenu).each(function() {

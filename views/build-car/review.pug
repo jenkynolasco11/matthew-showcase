@@ -1,0 +1,45 @@
+extends ../partials/_pug-page.pug
+
+block crumbs
+    li Trim
+    li Options
+    li Review
+
+block main-body
+    #build-car-preview.container
+        span#base-vars.hidden #{ hiddenOpt }
+        .row
+            .car-options-preview.col-md-4
+                .img-car
+                    img(src='/assets/images/car-not-available-placeholder.jpg' alt='model-preview')
+                .details
+                    .item
+                        p.title Current Trim:
+                        span#trim #{ trim }
+                    .item
+                        p.title MSRP:
+                        span#msrp $ #{ msrp }
+                    .item
+                        p.title Destination:
+                        span#dest $ #{ dest }
+                    .item
+                        p.title Options:
+                        span#options $ #{ optionsPrice.replace(/(\d)(?=(\d{3})+$)/g, '$1,') }
+                    .item
+                        p.title Invoice:
+                        span#invoice $ #{ invoice.replace(/(\d)(?=(\d{3})+$)/g, '$1,') }
+            .car-options-trim.col-md-7
+                p Selected Options
+                .items-chosen
+                    each option in selectedOptions
+                        - var item = option.match(/\{(.*)\}(.*)/)
+                        - var key = item[ 1 ].replace(/_/g, '')
+                        - var desc = item[ 2 ]
+                        h5.options-group_label.no-after #{ key }
+                        p #{ desc }
+            .col-xs-12.navigation
+                span(data-option="back").nav-item << Back
+                span(data-option="next").nav-item Proceed >>
+
+block scripts
+    script(src="/assets/js/build-car-review.js" type="text/javascript")
