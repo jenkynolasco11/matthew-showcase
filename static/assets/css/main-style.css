@@ -10180,6 +10180,7 @@ body.color-turquoise #road {
   color: white;
   padding: 6px;
   margin-top: 10px;
+  text-transform: capitalize;
 }
 
 #build-car-preview .car-options-trim .options-group_label:not(.no-after):after {

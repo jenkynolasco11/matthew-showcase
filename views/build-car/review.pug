@@ -33,7 +33,7 @@ block main-body
                 .items-chosen
                     each option in selectedOptions
                         - var item = option.match(/\{(.*)\}(.*)/)
-                        - var key = item[ 1 ].replace(/_/g, '')
+                        - var key = item[ 1 ].replace(/_/g, ' ').
                         - var desc = item[ 2 ]
                         h5.options-group_label.no-after #{ key }
                         p #{ desc }
