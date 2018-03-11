@@ -29,17 +29,41 @@ block main-body
                         p.title Invoice:
                         span#invoice $ #{ invoice.replace(/(\d)(?=(\d{3})+$)/g, '$1,') }
             .car-options-trim.col-md-7
-                p Selected Options
-                .items-chosen
-                    each option in selectedOptions
-                        - var item = option.match(/\{(.*)\}(.*)/)
-                        - var key = item[ 1 ].replace(/_/g, ' ')
-                        - var desc = item[ 2 ]
-                        h5.options-group_label.no-after #{ key }
-                        p #{ desc }
+                .tab-tops
+                    span(data-content="chosen-items").selected Selected Options
+                    span(data-content="proceed-form") Process Application
+                .content
+                    #chosen-items.show
+                        each items, key in selectedOptions
+                            h5.options-group_label.no-after !{ key }
+                            each desc in items
+                                p !{ desc }
+                    #proceed-form
+                        form(method="POST" ).form-options
+                            //- h5 Process Application
+                            input(type="text" name="firstname" placeholder="First Name" required)
+                            input(type="text" name="lastname" placeholder="Last Name" required)
+                            input(type="text" name="phone" placeholder="Phone Number" required)
+                            input(type="email" name="email" placeholder="Email" required)
+                            label
+                                input(type="checkbox" name="hasLease" checked)
+                                span Do you currently have a lease?
+                            label
+                                input(type="checkbox" name="isVeteran")
+                                span Are you a Veteran?
+                            label
+                                input(type="checkbox" name="isGraduate")
+                                span Are you a recent College graduate?
+                            label
+                                input(type="checkbox" name="hasTradeIn")
+                                span Do you have a trade in?
+                            input(type="number" name="downPayment" placeholder="Down Payment Amount" required)
+                            input(type="submit" value="Submit")#submit-button
+                            input(type="text" name="options" value=""+hiddenOpt).hidden
+
             .col-xs-12.navigation
                 span(data-option="back").nav-item << Back
-                span(data-option="next").nav-item Proceed >>
+                //- span(data-option="next").nav-item Proceed >>
 
 block scripts
     script(src="/assets/js/build-car-review.js" type="text/javascript")

@@ -60,13 +60,12 @@ $(document).ready(function() {
                 optionsSelected.push($(this).data('name'))
             })
 
-            // console.log(optionsSelected)
-
             var selected = optionVars + '|' + optionsSelected.join('|')
 
-            var link = '/build-car/review?options='  + selected + '&build=' + (100000000000000 * Math.random()).toString(16)
+            var link = '/build-car/review?options='  + encodeURIComponent(selected) + '&build=' + (100000000000000 * Math.random()).toString(16)
 
             window.location.href = link
+            // console.log(selected)
         })
     })
 

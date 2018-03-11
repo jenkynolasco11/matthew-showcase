@@ -185,8 +185,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		.car-options {
 			&-trim {
 				padding-bottom : 40px;
-				outline : 1px solid gray;
-				background-color : rgba(184, 184, 184, 0.645);
+				outline : 1px solid rgb(244, 244, 244);
+				background-color : rgba(242, 242, 242, 0.645);
 
 				& > p {
 					background-color : black;
@@ -194,7 +194,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 					font-size : 1.2rem;
 					font-weight : bold;
 					// padding : 10px 0;
-					margin : 0;
+					margin : 0 0 10px;
 					// text-align : center;
 					min-height : 60px;
 					display : flex;
@@ -210,6 +210,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 						background-color : gray;
 						color : white;
 						padding : 10px 10px;
+						margin : 0;
 					}
 					.headers {
 						height : 45px;
@@ -317,6 +318,98 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 						height : auto;
 					}
 				}
+
+				.tab-tops {
+					display : flex;
+					background-color : black;
+					color : red;
+
+					span {
+						flex : 1;
+						height : 40px;
+						display : flex;
+						justify-content : center;
+						align-items : center;
+
+						&.selected {
+							background-color : rgb(51, 51, 51);
+							color : white;
+						}
+					}
+				}
+
+				.content {
+					& > div {
+						display : none;
+
+						&.show {
+							display : block;
+						}
+					}
+
+					.form-options {
+						display : flex;
+						flex-flow : column nowrap;
+						padding : 20px 0 0;
+
+						::placeholder,
+						:-ms-input-placeholder,
+						::-ms-input-placeholder {
+							color : rgb(116, 17, 17);
+						}
+
+						input {
+							margin : 10px 10px;
+						}
+					}
+				}
+
+				// &.tabs {
+				// 	position : relative;
+				// 	min-height : 200px;
+				// 	// clear : both;
+				// 	margin : 25px 0;
+				// 	display : flex;
+
+				// 	.tab {
+				// 		// position : relative;
+
+				// 		label {
+				// 			background: #eee;
+				// 			padding: 10px;
+				// 			border: 1px solid #ccc;
+				// 			margin-left: -1px;
+				// 			position: relative;
+				// 			left: 1px;
+				// 		}
+
+				// 		[type=radio] {
+				// 			display: none;
+				// 		}
+
+				// 		.content {
+				// 			display : none;
+				// 			// position: absolute;
+				// 			top: 28px;
+				// 			left: 0;
+				// 			// background: white;
+				// 			right: 0;
+				// 			bottom: 0;
+				// 			padding: 20px;
+				// 			// border: 1px solid #ccc;
+				// 		}
+
+				// 		[type=radio]:checked ~ label {
+				// 			background: white;
+				// 			border-bottom: 1px solid white;
+				// 			z-index: 2;
+				// 		}
+
+				// 		[type=radio]:checked ~ label ~ .content {
+				// 			display : block;
+				// 		}
+				// 	}
+				// }
 
 				@media screen and (min-width : 768px) {
 					margin-left : 30px
@@ -1202,10 +1295,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			max-width : 1280px;
 
 			margin-top : 280px;
-
-			// @media screen and (min-width : 620px) {
-			// 	margin-top : 180px;
-			// }
 
 			.title {
 				height : 56px;

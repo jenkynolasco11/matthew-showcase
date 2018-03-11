@@ -42,9 +42,9 @@ block main-body
                                         label.option
                                             - var value = year+"|"+make+"|"+model+"|"+msrp+"|"+dest+"|"+invoice.replace(/[$ ,]/g,'')+"|"+trim+"|"+option.Price.replace(/\$/,'')
                                             if first
-                                                input(type="radio" name="option-"+key data-value=""+value checked data-name="{"+key+"}"+option["Option Name"]).selected-options
+                                                input(type="checkbox" name="option-"+key data-value=""+value checked data-name="{"+key+"}"+option["Option Name"]).selected-options
                                             else
-                                                input(type="radio" name="option-"+key data-value=""+value data-name="{"+key+"}"+option["Option Name"]).selected-options
+                                                input(type="checkbox" name="option-"+key data-value=""+value data-name="{"+key+"}"+option["Option Name"]).selected-options
                                             span.option-name !{ option["Option Name"].toLowerCase() }
                                             span.option-price $ !{ option.Price.replace(/\$/, '') }
                                             - first = false

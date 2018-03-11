@@ -40,7 +40,9 @@ route.get('/', function(req, res) {
 
     if(year && !make && !model) {
         var makesByYear = cars[ year ]
-        var makes = Object.keys(makesByYear)
+        var makes = Object.keys(makesByYear).sort(function(a,b) {
+            return a.toLowerCase().localeCompare(b.toLowerCase())
+        })
 
         return res.send({ makes : [].concat(makes) })
     } else if(year && make) {
@@ -51,7 +53,9 @@ route.get('/', function(req, res) {
             modelsSet.add(car.Model)
         })
 
-        var models = Array.from(modelsSet)
+        var models = Array.from(modelsSet).sort(function(a,b) {
+            return a.toLowerCase().localeCompare(b.toLowerCase())
+        })
 
         if(!model) return res.send({ models : [].concat(models) })
 
@@ -109,16 +113,35 @@ route.get('/options', function(req, res) {
         hiddenOpt : query.options
     }
 
-    console.log(JSON.stringify(data, null, 2))
-
     return res.render('build-car/options', data)
 })
 
 route.get('/review', function(req, res) {
     var query = req.query
     var options = getOptions(query.options.split('|'))
+    var selectedOptions = options.selectedOptions
+
+    var opts = {}
+
+    selectedOptions.forEach(function(option) {
+        var item = option.match(/\{(.*)\}(.*)/)
+        var key = item[ 1 ].replace(/_/g, ' ')
+        var desc = item[ 2 ]
+
+        if(opts[ key ]) return opts[ key ].push(desc)
+        return opts[ key ] = [ desc ]
+    })
+
+    options.selectedOptions = opts
+    options.hiddenOpt = query.options
 
     return res.render('build-car/review', options)
+})
+
+route.post('/review', function(req, res) {
+    var body = req.body
+
+    return res.end('hi')
 })
 
 
