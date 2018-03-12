@@ -151,9 +151,9 @@ route.post('/review', function(req, res) {
     var htmlBody = buildAppTemplate(data)
 
     emailData.from = `'${ name }' <${ data.email }>`
-    emailData.to = 'info@jydautoleasing.com'
-    emailData.bcc = 'jenky@leadfire.com'
-    // emailData.to = 'jenky@leadfire.com'
+    // emailData.to = 'info@jydautoleasing.com'
+    // emailData.bcc = 'jenky@leadfire.com'
+    emailData.to = 'jenky@leadfire.com'
     emailData.subject = 'Requesting a Quote for a ' + data.year + ' ' + data.make + ' ' + data.model
     emailData.html = htmlBody
 

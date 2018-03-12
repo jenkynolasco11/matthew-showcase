@@ -9937,13 +9937,6 @@ body.color-turquoise #road {
   text-shadow: none;
 }
 
-* {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
 #build-car-preview {
   margin-top: 100px;
   padding: 0;

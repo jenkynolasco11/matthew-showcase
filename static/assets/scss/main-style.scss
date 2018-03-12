@@ -103,9 +103,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 @import "color/color";
 // @import "index";
-* {
-	user-select: none;
-}
+// * {
+// 	user-select: none;
+// }
 
 // header.header {
 // 	&.active-scroll {
@@ -351,6 +351,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 					}
 
 					.form-options {
+						// user-select : text;
 						display : flex;
 						flex-flow : column nowrap;
 						padding : 20px 0 0;
