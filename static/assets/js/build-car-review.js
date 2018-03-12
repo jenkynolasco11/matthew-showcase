@@ -5,8 +5,24 @@ $(document).ready(function() {
 
     $(form).on('submit', function(e){
         e.preventDefault()
+        var data = {}
 
-        console.log('submitted')
+        var items = $(this).serializeArray()
+
+        $.ajax({
+            type : 'POST',
+            url : '/build-car/review',
+            data : items,
+            success : function(d) {
+                if(d) {
+                    function returnToIndex() { window.location.href = '/' }
+
+                    var tmout = setTimeout(returnToIndex, 3400)
+
+                    openModal(returnToIndex)
+                }
+            }
+        })
     })
 
     $(navItems).each(function(nav) {
@@ -14,12 +30,6 @@ $(document).ready(function() {
             var navOption = $(this).data('option')
 
             if(navOption === 'back') return window.history.go(-1)
-
-            $(form)[ 0 ].submit(function(e) {
-                console.log(e)
-                e.preventDefault()
-                // $()
-            })
         })
     })
 

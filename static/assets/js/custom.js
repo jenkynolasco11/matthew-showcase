@@ -406,19 +406,27 @@ function submitForm(form, formData) {
 	openModal();
 }
 
-if($('#modal-close')) {
-	$('#modal-close').click(function(){
-		var modal = $('#myModal')
-		modal.fadeOut()
-	});
-}
+// if($('#modal-close')) {
+// 	// $('#modal-close').click(function(){
+// 	// 	var modal = $('#myModal')
+// 	// 	modal.fadeOut()
+// 	// });
+// }
 
-function openModal() {
+function openModal(fn) {
 	var modal = $('#myModal')
 	modal.fadeIn()
 
+	$('#modal-close').click(function(){
+		var modal = $('#myModal')
+		modal.fadeOut()
+
+		if(fn) return fn()
+	});
+
 	setTimeout(function(){
 		modal.fadeOut();
+		if(fn) return fn()
 	}, 2400)
 }
 

@@ -331,6 +331,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 						justify-content : center;
 						align-items : center;
 						transition : all .1s linear;
+						cursor : pointer;
 
 						&.selected {
 							// height : 50px;

@@ -30,7 +30,7 @@ const sendEmail = exports.sendEmail = (mailOptions, callback) => {
       if(err) return callback('Error => ' + err);  //
       return callback(null, res);
     };
-    console.log('About to send => \n' + JSON.stringify(mailOptions, null, 3))
+    // console.log('About to send => \n' + JSON.stringify(mailOptions, null, 3))
     transporter.sendMail(mailOptions, send);
   };
 

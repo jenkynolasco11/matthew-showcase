@@ -10290,6 +10290,7 @@ body.color-turquoise #road {
      -moz-transition: all .1s linear;
        -o-transition: all .1s linear;
           transition: all .1s linear;
+  cursor: pointer;
 }
 
 #build-car-preview .car-options-trim .tab-tops span.selected {

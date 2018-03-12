@@ -1,4 +1,6 @@
 var Router = require('express').Router
+var buildAppTemplate = require('../email-templates').buildApp
+var sendEmail = require('../mailer').sendEmail
 var fs = require('fs')
 var path = require('path')
 
@@ -140,8 +142,41 @@ route.get('/review', function(req, res) {
 
 route.post('/review', function(req, res) {
     var body = req.body
+    var emailData = {}
 
-    return res.end('hi')
+    var options = getOptions(body.options.split('|'))
+    var data = Object.assign({}, body, options)
+
+    var name = data.firstname + ' ' + data.lastname
+    var htmlBody = buildAppTemplate(data)
+
+    emailData.from = `'${ name }' <${ data.email }>`
+    emailData.to = 'info@jydautoleasing.com'
+    emailData.bcc = 'jenky@leadfire.com'
+    // emailData.to = 'jenky@leadfire.com'
+    emailData.subject = 'Requesting a Quote for a ' + data.year + ' ' + data.make + ' ' + data.model
+    emailData.html = htmlBody
+
+    sendEmail(emailData, function(err) {
+        if(err) return console.log(err)
+        console.log('Email sent!')
+    })
+    /**
+{ firstname: 'Jenky',
+  lastname: 'Nolasco',
+  phone: '3479742990',
+  email: 'jenky_nolasco@hotmail.com',
+  hasLease: 'no',
+  isVeteran: 'yes',
+  isGraduate: 'no',
+  hasTradeIn: 'no',
+  downPayment: '1',
+  options: '2018|BMW|X3|42,650|995|41565|xDrive30i Sports Activity Vehicle|1400|{Wheels}WHEELS: 18" X 7.0" Y-SPOKE (STYLE 688)|{Additional_equipment}DYNAMIC HANDLING PACKAGE Dynamic Damper Control, M Sport Brakes, Variable Sport Steering (DISC), Performance Control|{Seat_trim}CANBERRA BEIGE/BLACK, SENSATEC UPHOLSTERY' }
+     */
+
+    // var htmlTemplate = buildAppTemplate(data)
+
+    return res.end('ok')
 })
 
 
