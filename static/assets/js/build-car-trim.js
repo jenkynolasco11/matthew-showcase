@@ -6,8 +6,8 @@ $(document).ready(function() {
     var invc = $('#invoice')
     var navItems = $('.nav-item')
 
-    var options = $('[name=option-select')
-    var selected = $('[name="option-select"]:checked').val()
+    var options = $('[name=option-select]')
+    var selected = $('[name=option-select]:checked').val()
 
     function appendData(item) {
         var data = item.split('|').slice(3)
