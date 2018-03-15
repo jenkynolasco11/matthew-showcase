@@ -60,6 +60,10 @@ $(document).ready(function() {
                 optionsSelected.push($(this).data('name'))
             })
 
+            optionsSelected.push('{Color}' + ($('#desired-color').val().toLowerCase() || 'Any'))
+
+            console.log(!!$('#desired-color').val())
+
             var selected = optionVars + '|' + optionsSelected.join('|')
 
             var link = '/build-car/review?options='  + encodeURIComponent(selected) + '&build=' + (100000000000000 * Math.random()).toString(16)

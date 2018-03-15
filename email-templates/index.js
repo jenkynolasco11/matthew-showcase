@@ -1,3 +1,5 @@
+var pdf = require('html-pdf')
+
 function formatPhone(s) {
   var s2 = ('' + s).replace(/\D/g, '');
   var m = s2.match(/^(\d{3})(\d{3})(\d{4})$/);
@@ -2231,7 +2233,7 @@ module.exports = {
                       </div>
                     </div>
                   </div>
-<!--------------------- -->
+      <!--------------------- -->
                   <div style="margin:10px;border:1px solid #000;padding:4px;">
                     <div style="background-color:transparent;">
                       <div style="Margin: 0 auto;min-width: 320px;max-width: 780px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;"
@@ -2939,7 +2941,7 @@ module.exports = {
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
                                   <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
-                                      <p style="margin: 0;font-size: 14px;line-height: 17px">$${ data[ 'Monthly Payment' ].replace(/.00$/,'').toLocaleString() }.00</p>
+                                      <p style="margin: 0;font-size: 14px;line-height: 17px">$${ data[ 'Monthly Payment' ].match(/\$? ?([\d,]*)(\.\d*)?/)[ 1 ].replace(/,/g,'') || 0 }.00</p>
                                     </div>
                                   </div>
                                   <!--[if mso]></td></tr></table><![endif]-->
@@ -3053,14 +3055,14 @@ module.exports = {
                       </div>
                     </div>
                   </div>
-<!--------------------- -->
+        <!--------------------- -->
                   <div style="background-color:transparent;">
                     <div style="Margin: 0 auto;min-width: 320px;max-width: 780px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;"
                       class="block-grid ">
                       <!---------- IT GOES HERE ---------->
                     </div>
                   </div>
-<!--------------------- -->
+        <!--------------------- -->
 
 
                   <div style="margin:10px;border:1px solid #000;padding:4px;">
@@ -3236,14 +3238,14 @@ module.exports = {
                   </div>
 
 
-<!--------------------- -->
+        <!--------------------- -->
                   <div style="background-color:transparent;">
                     <div style="Margin: 0 auto;min-width: 320px;max-width: 780px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;"
                       class="block-grid ">
                       <!---------- IT GOES HERE ---------->
                     </div>
                   </div>
-<!--------------------- -->
+        <!--------------------- -->
                   <div style="margin:10px;border:1px solid #000;padding:4px;">
                     <div style="background-color:transparent;">
                       <div style="Margin: 0 auto;min-width: 320px;max-width: 780px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;"
@@ -3437,7 +3439,7 @@ module.exports = {
                                   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;"><![endif]-->
                                   <div style="color:#000;line-height:120%;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif; padding-right: 10px; padding-left: 10px; padding-top: 2px; padding-bottom: 2px;">
                                     <div style="font-size:12px;line-height:14px;color:#000;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
-                                      <p style="margin: 0;font-size: 14px;line-height: 17px">$${ data[ 'Monthly Income' ].replace(/.00$/,'').toLocaleString() }.00</p>
+                                      <p style="margin: 0;font-size: 14px;line-height: 17px">$${ data[ 'Monthly Income' ].match(/\$? ?([\d,]*)(\.\d*)?/)[ 1 ].replace(/,/g,'') || 0 }.00</p>
                                     </div>
                                   </div>
                                   <!--[if mso]></td></tr></table><![endif]-->
@@ -3745,7 +3747,7 @@ module.exports = {
                       </div>
                     </div>
                   </div>
-<!--------------------- -->
+        <!--------------------- -->
                   <div style="background-color:transparent;">
                     <div style="Margin: 0 auto;min-width: 320px;max-width: 780px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;"
                       class="block-grid ">
@@ -3914,7 +3916,7 @@ module.exports = {
 
         </html>
       `
-// ---------------
+      // ---------------
   },
   buildApp : function(data) {
     var options = data.selectedOptions.reduce(function(p, n) {
@@ -4741,7 +4743,7 @@ module.exports = {
                             <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 5px; padding-left: 5px; padding-top: 5px; padding-bottom: 5px;"><![endif]-->
                             <div style="color:#555555;line-height:120%;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; padding-right: 5px; padding-left: 5px; padding-top: 5px; padding-bottom: 5px;">
                               <div style="font-size:12px;line-height:14px;color:#555555;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif;text-align:left;">
-                                <p style="margin: 0;font-size: 14px;line-height: 17px">$${ data.downPayment.replace(/\$/g,'').toLocaleString() }.00</p>
+                                <p style="margin: 0;font-size: 14px;line-height: 17px">$${ data.downPayment.match(/\$? ?([\d,]*)(\.\d*)?/)[ 1 ].replace(/,/g,'') || 0 }.00</p>
                               </div>
                             </div>
                             <!--[if mso]></td></tr></table><![endif]-->
@@ -4989,7 +4991,7 @@ module.exports = {
                             <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 5px; padding-left: 5px; padding-top: 5px; padding-bottom: 5px;"><![endif]-->
                             <div style="color:#555555;line-height:120%;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; padding-right: 5px; padding-left: 5px; padding-top: 5px; padding-bottom: 5px;">
                               <div style="font-size:12px;line-height:14px;color:#555555;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif;text-align:left;">
-                                <p style="margin: 0;font-size: 14px;line-height: 17px">$${ data.msrp.replace(/,/g, '').toLocaleString() }.00</p>
+                                <p style="margin: 0;font-size: 14px;line-height: 17px">$${ data.msrp.match(/\$? ?([\d,]*)(\.\d*)?/)[ 1 ].replace(/,/g,'') || 0 }.00</p>
                               </div>
                             </div>
                             <!--[if mso]></td></tr></table><![endif]-->
@@ -5091,7 +5093,7 @@ module.exports = {
                             <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 5px; padding-left: 5px; padding-top: 5px; padding-bottom: 5px;"><![endif]-->
                             <div style="color:#555555;line-height:120%;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; padding-right: 5px; padding-left: 5px; padding-top: 5px; padding-bottom: 5px;">
                               <div style="font-size:12px;line-height:14px;color:#555555;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif;text-align:left;">
-                                <p style="margin: 0;font-size: 14px;line-height: 17px">$${ data.optionsPrice.replace(/,/g, '').toLocaleString() }.00</p>
+                                <p style="margin: 0;font-size: 14px;line-height: 17px">$${ data.optionsPrice.match(/\$? ?([\d,]*)(\.\d*)?/)[ 1 ].replace(/,/g,'') || 0 }.00</p>
                               </div>
                             </div>
                             <!--[if mso]></td></tr></table><![endif]-->
@@ -5193,7 +5195,7 @@ module.exports = {
                             <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 5px; padding-left: 5px; padding-top: 5px; padding-bottom: 5px;"><![endif]-->
                             <div style="color:#555555;line-height:120%;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; padding-right: 5px; padding-left: 5px; padding-top: 5px; padding-bottom: 5px;">
                               <div style="font-size:12px;line-height:14px;color:#555555;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif;text-align:left;">
-                                <p style="margin: 0;font-size: 14px;line-height: 17px">$${ data.invoice.replace(/,/g, '').toLocaleString() }.00</p>
+                                <p style="margin: 0;font-size: 14px;line-height: 17px">$${ data.invoice.match(/\$? ?([\d,]*)(\.\d*)?/)[ 1 ].replace(/,/g,'') || 0 }.00</p>
                               </div>
                             </div>
                             <!--[if mso]></td></tr></table><![endif]-->
@@ -5425,8 +5427,14 @@ module.exports = {
     </html>
 
     `
-  }
+  },
+  convertToPDFBuffer : function(html, cb, isStream) {
+    var content = pdf.create(html, { height : '1280px', width : '768px' })
 
+    if(isStream) return content.toStream(cb)
+
+    return content.toBuffer(cb)
+  }
   // {Wheels}WHEELS: 18" X 7.0" Y-SPOKE (STYLE 688)
 }
 

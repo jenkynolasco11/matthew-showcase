@@ -8,25 +8,7 @@ block main-body
     #build-car-preview.container
         span#base-vars.hidden #{ hiddenOpt }
         .row
-            .car-options-preview.col-md-4
-                .img-car
-                    img(src='/assets/images/car-not-available-placeholder.jpg' alt='model-preview')
-                .details
-                    .item
-                        p.title Current Trim:
-                        span#trim #{ trim }
-                    .item
-                        p.title MSRP:
-                        span#msrp $ #{ msrp }
-                    .item
-                        p.title Destination:
-                        span#dest $ #{ dest }
-                    .item
-                        p.title Options:
-                        span#options $ 0
-                    .item
-                        p.title Invoice:
-                        span#invoice $ #{ invoice }
+            include details_box.pug
             .car-options-trim.col-md-7
                 p Select Options
                 .options
@@ -48,6 +30,9 @@ block main-body
                                             span.option-name !{ option["Option Name"].toLowerCase() }
                                             span.option-price $ !{ option.Price.replace(/\$/, '') }
                                             - first = false
+                    .options-group
+                        h5(style="margin-top:10px;border-top:1px solid #eee;padding-top:40px;") Desired Color
+                            input(type="text" placeholder="Input your color" style="margin-left:40px;")#desired-color
 
             .col-xs-12.navigation
                 span(data-option="back").nav-item << Back

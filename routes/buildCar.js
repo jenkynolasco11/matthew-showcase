@@ -1,5 +1,7 @@
 var Router = require('express').Router
-var buildAppTemplate = require('../email-templates').buildApp
+var templates = require('../email-templates')
+var convertToPDF = templates.convertToPDFBuffer
+var buildAppTemplate = templates.buildApp
 var sendEmail = require('../mailer').sendEmail
 var fs = require('fs')
 var path = require('path')
@@ -9,6 +11,17 @@ var buildCar = Router()
 var file = fs.readFileSync(path.resolve(__dirname, '../cars-file.json'), 'utf8')
 
 var cars = JSON.parse(file)
+
+function getCurrentDate() {
+    var today = new Date()
+    var dd = today.getDate()
+    var mm = today.getMonth()+1 //January is 0!
+    var yyyy = today.getFullYear()
+
+    today = ('0'+mm).slice(-2) + '-' + ('0'+dd).slice(-2) + '-' + yyyy
+
+    return today
+}
 
 function getCarsByModel(year, make, model) {
     var modelsByMake = cars[ year ][ make ]
@@ -157,10 +170,23 @@ route.post('/review', function(req, res) {
     emailData.subject = 'Requesting a Quote for a ' + data.year + ' ' + data.make + ' ' + data.model
     emailData.html = htmlBody
 
-    sendEmail(emailData, function(err) {
-        if(err) return console.log(err)
-        console.log('Email sent!')
-    })
+    // convertToPDF(htmlBody, function(err, stream) {
+    //     if(!err) emailData.attachments = [{
+    //         filename : 'Quote Request - ' + name + ' ' + getCurrentDate(),
+    //         content : stream
+    //     }]
+
+        sendEmail(emailData, function(err) {
+            if(err) return console.log(err)
+
+            return console.log('Email sent!')
+        })
+    // }, true)
+
+    // sendEmail(emailData, function(err) {
+    //     if(err) return console.log(err)
+    //     console.log('Email sent!')
+    // })
     /**
 { firstname: 'Jenky',
   lastname: 'Nolasco',
