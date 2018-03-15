@@ -48,9 +48,9 @@ function stripData(data, cb) {
     else if (data.name) name = data.name
 
     emailData.from = `'${ name }' <${ data.email }>`
-    // emailData.to = 'info@jydautoleasing.com'
-    // emailData.bcc = 'jenky@leadfire.com'
-    emailData.to = 'jenky@leadfire.com'
+    emailData.to = 'info@jydautoleasing.com'
+    emailData.bcc = 'jenky@leadfire.com'
+    // emailData.to = 'jenky@leadfire.com'
     emailData.subject = data.type + ' - ' + name
 
     var body =
