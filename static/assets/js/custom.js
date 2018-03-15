@@ -324,7 +324,9 @@ $document.ready(function () {
 		var feedPics = response.data.reduce(function(prev, next) {
 			var tag = ' \
 			<div class="car col-xm-3"> \
-				<img class="img-responsive" src="'+ next.images.standard_resolution.url +'" alt="car-prop"> \
+				<a href="' + next.link + '" target="_blank">\
+					<img class="img-responsive" src="'+ next.images.standard_resolution.url +'" alt="car-prop"> \
+				</a> \
 			</div>'
 
 			return prev + tag

@@ -12320,11 +12320,22 @@ footer .top-footer .car-demo .car {
 }
 
 footer .top-footer .car-demo .car img {
+  -webkit-transform: scale(1.5);
+     -moz-transform: scale(1.5);
+       -o-transform: scale(1.5);
+          transform: scale(1.5);
+  width: 200%;
+  -webkit-transition: -webkit-transform .1s linear;
+     -moz-transition: -moz-transform .1s linear;
+       -o-transition: -o-transform .1s linear;
+          transition: transform .1s linear;
+}
+
+footer .top-footer .car-demo .car img:hover {
   -webkit-transform: scale(2);
      -moz-transform: scale(2);
        -o-transform: scale(2);
           transform: scale(2);
-  width: 200%;
 }
 
 footer .lower-footer {
