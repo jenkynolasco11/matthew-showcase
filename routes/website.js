@@ -177,21 +177,14 @@ route.get('/', function (req, res) {
     Car.find({
         isFeatured: true
     }, function (err, docs) {
-        // console.log(docs)
         if (err) return res.render('index', {
             cars: []
         })
 
         var cars = docs.map(filterCarData)
 
-        // getFeed(function(err, data) {
-            // console.log(data.data)
-
-            // var feed = data.data.slice(0,4)
-
         return res.render('index', {
             cars: cars,
-            // feed : feed
         })
         // }, '')
 

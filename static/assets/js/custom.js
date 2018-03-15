@@ -319,6 +319,19 @@ $document.ready(function () {
 		// $.get('/build-car?year=' + year + '&make=' + make + '&model=' + model, function(data) {})
 		// $.get('/trim', { year : year, make : make, model : model })
 	})
+
+	$.get('/instagram/photos', function(response) {
+		var feedPics = response.data.reduce(function(prev, next) {
+			var tag = ' \
+			<div class="car col-xm-3"> \
+				<img class="img-responsive" src="'+ next.images.standard_resolution.url +'" alt="car-prop"> \
+			</div>'
+
+			return prev + tag
+		}, '')
+
+		$('#instagram-feed').html($(feedPics))
+	})
 });
 
 
