@@ -3,6 +3,7 @@ var sendEmail = require('../mailer').sendEmail
 var templates = require('../email-templates')
 var Car = require('../models').Car
 var path = require('path')
+var instagram = require('./instagram').getFeed
 
 var route = Router()
 var web = Router()
@@ -60,19 +61,19 @@ function stripData(data, cb) {
         templates.contactUs(name, data.email, data.message, ('subject' in data), ('subject' in data) ? data.subject : data.phone) :
         templates.sellCar(name, data.email, data.phone, data.vYear, data.vMake, data.vModel, data.vMileage, data.VIN, data.vCondition)
 
-    convertToPDF(body, function(err, stream) {
-        if(err) return null
+    // convertToPDF(body, function(err, stream) {
+        // if(err) return null
 
-        emailData.html = body
-        emailData.attachments = [
-            {
-                filename : data.type + ' - ' + name + ' ' + getCurrentDate(),
-                content : stream
-            }
-        ]
+    emailData.html = body
+        // emailData.attachments = [
+            // {
+                // filename : data.type + ' - ' + name + ' ' + getCurrentDate(),
+                // content : stream
+            // }
+        // ]
 
-        return cb(emailData)
-    }, true)
+    return cb(emailData)
+    // }, true)
 }
 
 function filterCarData(car) {
@@ -116,9 +117,10 @@ route.get('/:route', function (req, res, next) {
 
 route.post('/data', function (req, res) {
     var body = req.body
+    // var data = body
 
-    // stripData(body, function(data) {
-        // if (!data) return res.send('ok')
+    stripData(body, function(data) {
+        if (!data) return res.send('ok')
 
         sendEmail(data, function (err, c) {
             if (err) return console.log(err)
@@ -126,7 +128,7 @@ route.post('/data', function (req, res) {
         })
 
         return res.send('ok')
-    // })
+    })
 
 })
 
@@ -182,9 +184,17 @@ route.get('/', function (req, res) {
 
         var cars = docs.map(filterCarData)
 
+        // getFeed(function(err, data) {
+            // console.log(data.data)
+
+            // var feed = data.data.slice(0,4)
+
         return res.render('index', {
-            cars: cars
+            cars: cars,
+            // feed : feed
         })
+        // }, '')
+
     })
 })
 
