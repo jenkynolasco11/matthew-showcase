@@ -401,7 +401,7 @@ function submitForm(form, formData) {
 
 	$.post('/data', data)
 
-	// form.each(function(){ this.reset(); });
+	form.each(function(){ this.reset(); });
 
 	openModal();
 }
