@@ -3,7 +3,7 @@ var sendEmail = require('../mailer').sendEmail
 var templates = require('../email-templates')
 var Car = require('../models').Car
 var path = require('path')
-var instagram = require('./instagram').getFeed
+// var instagram = require('./instagram').getFeed
 
 var route = Router()
 var web = Router()
