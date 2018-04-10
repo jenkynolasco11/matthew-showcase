@@ -15,7 +15,7 @@ var CarSchema = new Schema({
     outColor: String,
     fuel: String,
     drivetrain : String,
-    price: String,
+    price: Number,
     msrp: Number,
     status: String,
     vin: { type : String, max : 17, unique : { index : true }},

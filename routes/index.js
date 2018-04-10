@@ -6,10 +6,12 @@ var auth = require('./auth')
 var car = require('./car')
 var build = require('./buildCar')
 var instagram = require('./instagram')
+var filter = require('./filter')
 
 var route = Router()
 
 const routes = [
+    filter,
     build,
     auth,
     admin,
@@ -18,9 +20,6 @@ const routes = [
     instagram
 ]
 
-routes.forEach(r => {
-    route.use('/', r)
-})
-
+routes.forEach(r => route.use('/', r))
 
 module.exports = route

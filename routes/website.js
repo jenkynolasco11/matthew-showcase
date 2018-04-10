@@ -14,7 +14,7 @@ var paths = [
     'admin',
     'details',
     'sell-car',
-    'listing',
+    // 'listing',
     'services'
 ]
 var titles = {
@@ -96,28 +96,42 @@ function filterCarData(car) {
 route.get('/:route', function (req, res, next) {
     var route = req.params.route
 
-    if (paths.includes(route)) {
+    if (route.match(/^service-/)) {
+        var view = route.slice(8)
+
+        return res.render('services/' + view, {
+            title: 'JYD - Services'
+        })
+    } else if (route === 'listing') {
+        var data = {}
+
+        Car.distinct('make').then(function(makes) {
+            data.makes = makes
+
+            return Car.distinct('transmission')
+        }).then(function(trans) {
+            data.trans = trans
+
+            return Car.distinct('fuel')
+        }).then(function(fuels) {
+            data.fuels = fuels
+
+            return res.render('listing', data)
+        }).catch(console.log)
+
+    } else if (paths.includes(route)) {
         var title = titles[route]
 
         return res.render(route, {
             title: 'JYD - ' + title
         })
-    } else if (route.match(/^service-/)) {
-        var view = route.slice(8)
-
-        console.log(view)
-
-        return res.render('services/' + view, {
-            title: 'JYD - Services'
-        })
     }
 
-    return next()
+    else return next()
 })
 
 route.post('/data', function (req, res) {
     var body = req.body
-    // var data = body
 
     stripData(body, function(data) {
         if (!data) return res.send('ok')

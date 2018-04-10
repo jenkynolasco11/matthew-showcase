@@ -123,6 +123,47 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 // }
 ///////////////////////
 
+
+.dropdown-menu.inner {
+    max-height: 435px;
+    overflow-y:  scroll;
+}
+
+.ui-filter-slider__current:before {
+	display : none;
+}
+
+#pagination-section {
+	display : flex;
+	justify-content : center;
+}
+
+#pagination-section .paginate-item {
+	background-color : rgb(248, 248, 248);
+	padding: 10px;
+    margin: 2px;
+    border-radius: 2px;
+    border: 1px solid #ddd;
+}
+
+#pagination-section .paginate-item a {
+	font-size : 14px;
+}
+
+#pagination-section .paginate-item:hover {
+	background-color : rgb(211, 211, 211);
+}
+
+#pagination-section .paginate-item.active {
+	background-color : rgb(177, 177, 177);
+
+}
+
+#pagination-section .paginate-item.active a {
+	color : white;
+}
+
+/******************/
 #build-car-preview {
 	// .container {
 		// padding : 0 0 40px;

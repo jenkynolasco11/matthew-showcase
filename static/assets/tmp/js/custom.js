@@ -480,7 +480,6 @@ $(document).ready(function () {
   }
 
 
-
   /////////////////////////////////////
   // Datepicker
   /////////////////////////////////////
@@ -786,24 +785,55 @@ $(document).ready(function () {
     var slider = document.getElementById('slider-price');
 
     noUiSlider.create(slider, {
-      start: [5000, 15000],
+      start: [0, 150000],
       range: {
         'min': [0],
-        'max': [20000]
+        'max': [150000]
       },
-      step: 100,
+      step: 1000,
       connect: true,
       format: wNumb({
-        decimals: 0
+        decimals: 0,
+        prefix : '$'
       }),
     });
-    var snapValues = [
+    var snapValues1 = [
       document.getElementById('slider-snap-value-lower'),
       document.getElementById('slider-snap-value-upper')
     ];
 
     slider.noUiSlider.on('update', function (values, handle) {
-      snapValues[handle].innerHTML = values[handle];
+      snapValues1[handle].innerHTML = values[handle];
+    });
+  }
+
+  if ($('#slider-year').length > 0) {
+    var slider = document.getElementById('slider-year');
+
+    var currYear = new Date().getFullYear() + 1
+    var minYear = currYear - 50
+
+    noUiSlider.create(slider, {
+      start: [minYear, currYear],
+      range: {
+        'min': [minYear],
+        'max': [currYear]
+      },
+      step: 1,
+      connect: true,
+      format: wNumb({
+        decimals: 0,
+        prefix : ' ',
+        suffix : ' '
+      }),
+    });
+    var snapValues2 = [
+      document.getElementById('slider-snap-value-min-year'),
+      document.getElementById('slider-snap-value-max-year')
+    ];
+
+    slider.noUiSlider.on('update', function (values, handle) {
+      snapValues2[handle].innerHTML = values[handle];
     });
   }
 

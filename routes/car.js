@@ -163,9 +163,8 @@ route.post('/new', function(req, res) {
     var imgs = extractImages(body.imgs)
     var features = body.extraFeatures.split('\n')
     var description = body.description.split('\n')
-    var newCar = Object.assign({}, body, { imgs : imgs }, { extraFeatures : features })
-
-    console.log('Right here.... 0')
+    var price = body.price.replace(/\D/g,'')
+    var newCar = Object.assign({}, body, { price : +price }, { imgs : imgs }, { extraFeatures : features })
 
     try {
         createNewID(function(err, id) {
@@ -176,7 +175,7 @@ route.post('/new', function(req, res) {
             }
 
             newCar.id = id
-            console.log('Right here.... 1')
+            // console.log('Right here.... 1')
             // console.log(newCar)
 
             new Car(newCar)
@@ -187,8 +186,8 @@ route.post('/new', function(req, res) {
                     return res.status(200).send({ ok : false, car : [] })
                 }
 
-                console.log('Right here.... 2')
-                console.log(doc)
+                // console.log('Right here.... 2')
+                // console.log(doc)
 
                 getAllCars(function(_, cars) {
                     return res.status(200).send({ ok : !!err, cars : [].concat(cars) })

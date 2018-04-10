@@ -16,129 +16,151 @@ block main-body
                   strong  3
                 .filter-goods__select
                   span.hidden-xs Sort
-                  select.selectpicker(data-width="172")
-                    option Most Revelant
-                    option A-Z
-                    option Z-A
+                  select.selectpicker(data-width="172")#sort-item
+                    option(value="1") A-Z
+                    option(value="-1") Z-A
                   .btns-switch
                     i.btns-switch__item.js-view-th.icon.fa.fa-th-large
                     i.btns-switch__item.js-view-list.active.icon.fa.fa-th-list
               // end .filter-goods
               #listing-section.goods-group-2.list-goods
               // end .goods-group-2
-              //- ul.pagination.text-center
-              //-   li
-              //-     a(href="#")
-              //-       i.icon.fa.fa-angle-double-left
-              //-   li.active
-              //-     a(href="#") 1
-              //-   li
-              //-     a(href="#")
-              //-       i.icon.fa.fa-angle-double-right
+              ul.pagination-sm.text-center#pagination-section
+                //- li
+                //-   a(href="#")
+                //-     i.icon.fa.fa-angle-double-left
+                //- //- li.active
+                //- //-   a(href="#")
+                //- //-     | 1
+                //- li
+                //-   a(href="#")
+                //-     i.icon.fa.fa-angle-double-right
+              // end pagination
           .col-md-3.col-xs-12
             .col-xs-12
               aside.l-sidebar
                 form.b-filter-2.bg-grey(onsubmit="")
+                  - var maxYear = new Date().getFullYear()
+                  - var y = maxYear - 1
                   h3.b-filter-2__title search options
                   .b-filter-2__inner
-                    //- .b-filter-2__group
-                      .b-filter-2__group-title keyword
-                      input.form-control(type="text" placeholder="Keyword...")
-                    .b-filter-2__group
-                      .b-filter-2__group-title Vehicle Type
-                      select.selectpicker(data-width="100%")
-                        option All Types
-                        option Type 1
-                        option Type 2
-                        option Type 3
                     .b-filter-2__group
                       .b-filter-2__group-title Make
-                      select.selectpicker(data-width="100%")
+                      select.selectpicker(data-width="100%")#filter-make
                         option All Makes
-                        option Make 1
-                        option Make 2
+                        each make,i in makes
+                          option #{ make }
                     .b-filter-2__group
                       .b-filter-2__group-title Model
-                      select.selectpicker(data-width="100%")
+                      select.selectpicker(data-width="100%")#filter-model
                         option All Models
-                        option Model 1
-                        option Model 2
-                        option Model 3
+                        //- option Model 1
+                        //- option Model 2
+                        //- option Model 3
                     .b-filter-2__group
-                      .b-filter-2__group-title Model Year
-                      select.selectpicker(data-width="100%")
-                        option Min Year
-                        option Year 1
-                        option Year 2
-                      select.selectpicker(data-width="100%")
-                        option Max Year
-                        option Year 1
-                        option Year 2
-                    .b-filter-2__group
+                      .b-filter-2__group-title Filter Year
+                      .ui-filter-slider
+                        #slider-year
+                        .ui-filter-slider__info
+                          .ui-filter-slider__label Year Range:
+                          span#slider-snap-value-min-year
+                          //- .ui-filter-slider__current
+                          | -
+                          span#slider-snap-value-max-year
+                          //- .ui-filter-slider__current
+                    //- .b-filter-2__group
+                    //-   .b-filter-2__group-title Model Year
+                    //-   select.selectpicker(data-width="100%")#filter-year-min
+                    //-     while y > maxYear - 50
+                    //-       option(value=''+y) #{ y-- }
+                    //-     //- option Min Year
+                    //-     //- option Year 2
+                    //-     //- option Year 1
+                    //-   select.selectpicker(data-width="100%")#filter-year-max
+                    //-     - y = maxYear
+                    //-     while y > maxYear - 50
+                    //-       option(value=''+y) #{ y-- }
+
+                    //-     //- option Max Year
+                    //-     //- option Year 1
+                    //-     //- option Year 2
+                    //- .b-filter-2__group
                       .b-filter-2__group-title fuel type
-                      select.selectpicker(data-width="100%")
+                      select.selectpicker(data-width="100%")#filter-fuel-type
                         option All Fuel Types
-                        option Type 1
-                        option Type 2
-                        option Type 3
+                        //- option Type 1
+                        //- option Type 2
+                        //- option Type 3
                     .b-filter-2__group
                       .b-filter-2__group-title Filter Price
                       .ui-filter-slider
                         #slider-price
                         .ui-filter-slider__info
                           .ui-filter-slider__label Price Range:
-                          span#slider-snap-value-lower.ui-filter-slider__current
+                          span#slider-snap-value-lower
+                          //- .ui-filter-slider__current
                           | -
-                          span#slider-snap-value-upper.ui-filter-slider__current
+                          span#slider-snap-value-upper
+                          //- .ui-filter-slider__current
                     .b-filter-2__group
                       .b-filter-2__group-title Body style
-                      .b-filter-type-2
+                      .b-filter-type-2#types-opts
                         .b-filter-type-2__item
-                          input#typePickup.b-filter-type-2__input(type="checkbox")
+                          input#typePickup.b-filter-type-2__input(type="radio" name="car-type" value="Pickup")
                           label.b-filter-type-2__label(for="typePickup")
                             i.b-filter-type-2__icon.flaticon-pick-up
                             span.b-filter-type-2__title PICKUP
                         .b-filter-type-2__item
-                          input#typeSuv.b-filter-type-2__input(type="checkbox")
+                          input#typeSuv.b-filter-type-2__input(type="radio" name="car-type" value="SUV")
                           label.b-filter-type-2__label(for="typeSuv")
                             i.b-filter-type-2__icon.flaticon-car-of-hatchback-model
                             span.b-filter-type-2__title SUV
                         .b-filter-type-2__item
-                          input#typeCoupe.b-filter-type-2__input(type="checkbox")
+                          input#typeCoupe.b-filter-type-2__input(type="radio" name="car-type" value="Coupe")
                           label.b-filter-type-2__label(for="typeCoupe")
                             i.b-filter-type-2__icon.flaticon-coupe-car
                             span.b-filter-type-2__title coupe
                         .b-filter-type-2__item
-                          input#typeConvertible.b-filter-type-2__input(type="checkbox" checked="checked")
+                          input#typeConvertible.b-filter-type-2__input(type="radio" name="car-type" value="Convertible")
                           label.b-filter-type-2__label(for="typeConvertible")
                             i.b-filter-type-2__icon.flaticon-cabrio-car
                             span.b-filter-type-2__title CONVERTIBLE
                         .b-filter-type-2__item
-                          input#typeSedan.b-filter-type-2__input(type="checkbox")
+                          input#typeSedan.b-filter-type-2__input(type="radio" name="car-type" value="Sedan")
                           label.b-filter-type-2__label(for="typeSedan")
                             i.b-filter-type-2__icon.flaticon-sedan-car-model
                             span.b-filter-type-2__title sedan
                         .b-filter-type-2__item
-                          input#typeMinicar.b-filter-type-2__input(type="checkbox")
+                          input#typeMinicar.b-filter-type-2__input(type="radio" name="car-type" value="All Types" checked="checked")
                           label.b-filter-type-2__label(for="typeMinicar")
                             i.b-filter-type-2__icon.flaticon-car-1
-                            span.b-filter-type-2__title MINICAR
+                            span.b-filter-type-2__title ALL TYPES
                     .b-filter-2__group
                       .b-filter-2__group-title TRANSMISSION
-                      .checkbox-group
-                        input#check-1.forms__check.hidden(type="checkbox")
-                        label.forms__label.forms__label-check.forms__label-check-1(for="check-1") 4 Speed Auto
-                        input#check-2.forms__check.hidden(type="checkbox")
-                        label.forms__label.forms__label-check.forms__label-check-1(for="check-2") 4 Speed Manual
-                        input#check-3.forms__check.hidden(type="checkbox" checked="checked")
-                        label.forms__label.forms__label-check.forms__label-check-1(for="check-3") 5 Speed Auto
-                        input#check-4.forms__check.hidden(type="checkbox")
-                        label.forms__label.forms__label-check.forms__label-check-1(for="check-4") 5 Speed Manual
-                        input#check-5.forms__check.hidden(type="checkbox" checked="checked")
-                        label.forms__label.forms__label-check.forms__label-check-1(for="check-5") 6 Speed Semi
-                        input#check-6.forms__check.hidden(type="checkbox")
-                        label.forms__label.forms__label-check.forms__label-check-1(for="check-6") 6 Speed Manual
-            .col-xs-12
+                      .checkbox-group#transmission-opts
+                        //- span #{ trans[ 0 ] }
+                        each tran,i in trans
+                          input.forms__check.hidden(type="checkbox" id="check-"+(i+1) value=""+tran)
+                          label(class="forms__label forms__label-check forms__label-check-1" for="check-"+(i+1)) #{ tran }
+                        //- input#check-1.forms__check.hidden(type="checkbox")
+                        //- label.forms__label.forms__label-check.forms__label-check-1(for="check-1") 4 Speed Auto
+                        //- input#check-2.forms__check.hidden(type="checkbox")
+                        //- label.forms__label.forms__label-check.forms__label-check-1(for="check-2") 4 Speed Manual
+                        //- input#check-3.forms__check.hidden(type="checkbox" checked="checked")
+                        //- label.forms__label.forms__label-check.forms__label-check-1(for="check-3") 5 Speed Auto
+                        //- input#check-4.forms__check.hidden(type="checkbox")
+                        //- label.forms__label.forms__label-check.forms__label-check-1(for="check-4") 5 Speed Manual
+                        //- input#check-5.forms__check.hidden(type="checkbox" checked="checked")
+                        //- label.forms__label.forms__label-check.forms__label-check-1(for="check-5") 6 Speed Semi
+                        //- input#check-6.forms__check.hidden(type="checkbox")
+                        //- label.forms__label.forms__label-check.forms__label-check-1(for="check-6") 6 Speed Manual
+                    .b-filter-2__group
+                      .b-filter-2__group-title Fuel Type
+                      select.selectpicker(data-width="100%")#filter-fuel
+                        option All Types
+                        each fuel in fuels
+                          option #{ fuel }
+            .col-xs-12(style="z-index:-1")
               aside.l-sidebar.contact-form
                 form#contact-form.b-filter-2.bg-grey(action="javascript:void(0)" novalidate="")
                   h3.b-filter-2__title Contact Us
@@ -155,4 +177,6 @@ block main-body
                       input(type="submit" value="Submit")
 
 block scripts
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.1/jquery.twbsPagination.min.js")
+  //- script(src="")
   script(src="assets/js/listing.js")
