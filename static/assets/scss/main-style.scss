@@ -124,6 +124,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 ///////////////////////
 
 
+// ::-webkit-input-placeholder,
+// ::-moz-placeholder,
+// :-ms-input-placeholder,
+// :-moz-placeholder {
+// 	color : red !important;
+// }
+
 .dropdown-menu.inner {
     max-height: 435px;
     overflow-y:  scroll;
@@ -136,6 +143,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 #pagination-section {
 	display : flex;
 	justify-content : center;
+	
+    position: absolute;
+	bottom: 0;
+    width: 100%;
 }
 
 #pagination-section .paginate-item {
@@ -605,6 +616,403 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	}
 }
 
+.newsletter-overlay {
+	width : 100vw;
+	height : 100vh;
+	position : fixed;
+	top : 0;
+	z-index : 120;
+	justify-content : center;
+	align-items : center;
+	background-color : rgba(0,0,0,0.4);
+	transition : all .3s linear;
+	display : none;
+	// display : flex;
+
+	#subscribe-form {
+		background-image : url('../images/newsletter_bg_4.jpg');
+		background-size : cover;
+		background-repeat : no-repeat;
+		background-position : center;
+		position : relative;
+
+		&:after {
+			content: '';
+			position: absolute;
+			top : 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.3);
+		}
+
+		#subscribe-newsletter {
+			max-width : 600px;
+			position : relative;
+			display : flex;
+			justify-content : space-around;
+			align-items : center;
+			flex-flow : column;
+			padding : 40px 15px 10px;
+			border-radius : 2px;
+			// background-color : rgb(73, 73, 73);
+			color : white;
+			z-index : 1;
+
+			// * {
+			// 	z-index : 1;
+			// }
+
+			// .background-image {
+			// 	display : none;
+				// background-size : 100%;
+			// 	left : 0;
+			// 	// position : absolute;
+			// 	top : 0;
+			// 	// display : block;
+			// 	width : 100%;
+			// 	height : 100%;
+
+			// 	-webkit-filter: blur(5px);
+			// 	-moz-filter: blur(5px);
+			// 	-o-filter: blur(5px);
+			// 	-ms-filter: blur(5px);
+			// 	filter: blur(5px);
+
+			// 	// max-width : 768px;
+			// 	// min-height : 456px;
+			// }
+
+			.close-newsletter {
+				position : absolute;
+				// background-color : #222;
+				top : 0;
+				left : 0;
+				width : 50px;
+				height : 50px;
+
+				span.close-item {
+					position : absolute;
+					background-color : rgba(255, 255, 255, 0.549);
+					height : 2px;
+					width : 40px;
+					margin : 25px 5px;
+					transition : all .1s linear;
+
+					&.before {
+						transform : rotate(45deg);
+					}
+
+					&.after {
+						transform : rotate(-45deg);
+					}
+				}
+
+				&:hover .close-item {
+					background-color : white;
+				}
+
+				// &:before {
+				// 	@extend %placeholder;
+				// }
+
+				// &:after {
+				// 	@extend %placeholder;
+				// }
+			}
+
+			@media screen and (max-width: 560px) {
+				width : 100vw;
+				height : 100vh;
+			}
+
+			h2 {
+				color : white;
+				font-size : 46px;
+				// margin-bottom : 20px;
+				font-weight : bold;
+				text-shadow : 0 -5px 5px black, 0 5px 5px black, -5px 0px 5px black, 5px 0px 5px black;
+				text-align : center;
+
+				@media screen and (max-width: 560px) {
+					margin-bottom : 0;
+				}
+			}
+
+			h3 {
+				color : red;
+				text-shadow : 0 -2px 2px black, 0 2px 2px black, -2px 0px 2px black, 2px 0px 2px black;
+
+				&.white {
+					color : white;
+					margin-top : -20px;
+					text-align : center;
+				}
+			}
+
+			p {
+				// margin-top : 30px;
+				font-size : 20px;
+				line-height : 30px;
+				letter-spacing : 1px;
+				margin-bottom : 10px;
+				max-width : 700px;
+				padding : 10px 20px;
+
+				@media screen and (max-width: 560px) {
+					font-size : 18px;
+				}
+			}
+
+			.inputs {
+				margin-top : 10px;
+				display : flex;
+				width : 100%;
+				// flex : 1;
+
+				input {
+					margin : 3px 8px;
+					width : 200px;
+					padding : 6px;
+					border-radius : 3px;
+				}
+
+				[type=submit] {
+					max-width : 160px;
+					// flex : 0.5;
+				}
+
+				@media screen and (max-width: 560px) {
+					display : block;
+					text-align : center;
+
+					input {
+						width : 100%;
+						margin-right : 0;
+						margin-left : 0;
+						max-width : 360px;
+					}
+
+					[type=submit] {
+						margin-top : 10px;
+					}
+				}
+
+				@media screen and (max-width: 482px) {
+					flex-flow : column;
+
+					input {
+						// margin : 10px 5px;
+						width : 100%;
+					}
+
+					[type=submit] {
+						align-self : center;
+					}
+				}
+
+
+			}
+
+			small {
+				margin-top : 30px;
+				margin-bottom : 10px;
+			}
+		}
+	}
+
+	.thanks-section {
+		background-image : url('../images/newsletter_bg_4.jpg');
+		background-size : cover;
+		background-repeat : no-repeat;
+		background-position : center;
+		position : relative;
+		// position : relative;
+		// display : flex;
+		justify-content : space-around;
+		align-items : center;
+		flex-flow : column;
+		padding : 120px 80px;
+		border-radius : 2px;
+		// background-color : rgb(73, 73, 73);
+		color : white;
+		z-index : 1;
+		display : none;
+
+		&:after {
+			content: '';
+			position: absolute;
+			top : 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.3);
+		}
+
+		h2 {
+			color : white;
+			margin-bottom : 40px;
+		}
+
+		h2, p {
+			z-index : 1;
+		}
+	}
+
+	&.hidden {
+		display : none;
+	}
+}
+
+.popup-overlay {
+	width : 100vw;
+	height : 100vh;
+	background-color : rgba(0, 0, 0, 0.3);
+	position : fixed;
+	top : 0;
+	left : 0;
+	// display : flex;
+	display : none;
+	justify-content : center;
+	align-items : center;
+	z-index : 1120;
+
+	.form-attrs {
+		.close-form {
+			position : absolute;
+			top : 0;
+			left : 0;
+			z-index : 1;
+			width : 50px;
+			height : 50px;
+			transition : all .05s linear;
+
+			.close-before,
+			.close-after {
+				transition : all .05s linear;
+				height : 2px;
+				width : 40px;
+				position : absolute;
+				background-color : rgba(255, 255, 255, 0.618);
+				margin : 25px 5px;
+			}
+
+			&:hover {
+				[class^=close] {
+					background-color : white;
+				}
+			}
+
+			.close-before {
+				transform : rotate(-45deg);
+			}
+			.close-after {
+				transform : rotate(45deg);
+			}
+		}
+
+		position : relative;
+		background-color : rgb(0, 0, 0);
+		padding : 100px 40px 40px;
+
+		@media screen and (max-width : 420px) {
+			height : 100vh;
+		}
+
+		figure {
+			top : calc(-9% + -100px);
+			right : -150px;
+			position : absolute;
+			width : 600px;
+
+			@media screen and (max-width : 798px) {
+				top : -7%;
+				right : -120px;
+				width : 400px;
+			}
+
+			@media screen and (max-width : 420px) {
+				top : 0;
+				margin : 0 20% 0 0;
+			}
+
+			img {
+				width : 100%;
+			}
+		}
+
+		.text-box {
+			margin-left : 20px;
+
+			@media screen and (max-width : 420px) {
+				margin-top : 120px;
+			}
+
+			h2 {
+				font-weight : bold;
+				position : relative;
+				text-shadow : 0 -5px 5px black, 0 5px 5px black, -5px 0px 5px black, 5px 0px 5px black;
+				color : white;
+				margin-top : -60px;
+				z-index : 1;
+			}
+
+			h3 {
+				font-size : 39px;
+				margin-top : -20px;
+				position : relative;
+				text-shadow : 0 -5px 5px black, 0 5px 5px black, -5px 0px 5px black, 5px 0px 5px black;
+				z-index : 1;
+				color : red;
+				font-weight : bold;
+			}
+			h5 {
+				font-size : 46px;
+				font-weight : bold;
+				margin-top : -20px;
+				position : relative;
+				color : white;
+			}
+		}
+
+		.inputs {
+			margin-top : 16px;
+			position : relative;
+			z-index : 1;
+
+			[type=text] {
+				margin : 0px 4px;
+				height : 35px;
+				width : 180px;
+				border : none;
+				border-radius : 3px;
+			}
+
+			[type=submit] {
+				padding : 8px 40px;
+				margin-left : 4px;
+				margin-top : -1px;
+				border-radius : 4px;
+			}
+
+			@media screen and (max-width : 798px) {
+				display : flex;
+				align-items : center;
+				flex-flow : column nowrap;
+
+				[type=text] {
+					width : 100%;
+					margin-top : 4px;
+					border-radius : 2px;
+				}
+
+				[type=submit] {
+					margin-top : 40px;
+					width : 80%;
+				}
+			}
+		}
+
+	}
+}
 /*****************/
 
 .custom-modal {
@@ -807,6 +1215,53 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		font-size: 10px;
 	}
 }
+
+#refer-content {
+	.small-separator {
+		width: 40px;
+		height: 2px;
+		background: red;
+		margin-bottom: 30px;
+	}
+
+	.refer-friend-text {
+		margin-bottom : 40px;
+	}
+
+	#refer-form {
+		display : flex;
+		align-items : center;
+		flex-flow : column;
+		height : 100%;
+		background-color : #eee;
+		padding : 10px;
+		border-radius : 2px;
+
+		input[type=email] {
+			width : 100%;
+			height : 30px;
+			margin-top : 10px;
+			font-size : 0.8rem;
+		}
+
+		[type=submit] {
+			padding : 11px 25px 11px;
+			margin-bottom : 30px;
+			position : relative;
+
+			i {
+				vertical-align : inherit;
+			}
+		}
+
+		textarea {
+			margin : 10px 0 40px;
+			font-size : 0.8rem;
+		}
+	}
+
+}
+
 
 /***************/
 

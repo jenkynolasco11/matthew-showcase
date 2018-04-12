@@ -153,7 +153,7 @@ block main-body
                   each c in related
                     .b-goods-feat
                       .b-goods-feat__img
-                        img.img-responsive(src=''+c.imgs[0].src alt="foto")
+                        img.img-responsive(src=''+c.imgs[0].src alt="featured car")
                         span.b-goods-feat__label
                           | $#{ c.price }
                           span.b-goods-feat__label_msrp MSRP $#{c.msrp}
@@ -166,9 +166,30 @@ block main-body
                         a(href="/details/"+c.id) #{c.make} #{c.model}
                       .b-goods-feat__info
                         | #{c.overview}
-
+        .popup-overlay
+          form#stay-in-touch-form(method="POST")
+            .form-attrs
+              .close-form
+                span.close-before
+                span.close-after
+              //- - var featImg = c.imgs.filter(function(item) { return item.main })[0]
+              figure.floating-image.hide-sm
+                img(src=""+featImg.src alt="featured image")
+              .text-box
+                h2
+                  em LOCK IN THIS
+                h3 #{ car.year } #{ car.make } #{ car.model }
+                h5
+                  em DEAL NOW.
+              //- p "Catchy phrase. Catchy phrase 2." ~ JYD
+              .inputs
+                input(name="name" type="text" placeholder="Name")
+                input(name="number" type="text" placeholder="Phone Number")
+                input(name="email" type="text" placeholder="Email")
+                input(type="submit" value="Submit")
 block scripts
     script(src="/assets/tmp/plugins/headers/slidebar.js")
     script(src="/assets/tmp/plugins/headers/header.js")
     script(src="/assets/tmp/plugins/rendro-easy-pie-chart/jquery.easypiechart.min.js")
     script(src="/assets/tmp/plugins/slider-pro/jquery.sliderPro.min.js")
+    script(src="/assets/js/details.js")

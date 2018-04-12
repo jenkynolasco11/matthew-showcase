@@ -1,5 +1,5 @@
 var skipHandler = 0
-var limit = 10
+var limit = 9
 
 var carListingTemplate = function(i, src, price, msrp, make, model, overview, mileage, year, trans, hp, engine, features, id) {
     return (
@@ -212,6 +212,7 @@ var handleMakeChange = function() {
             // var minYear = $('#filter-year-min')
             // var maxYear = $('#filter-year-max')
             var models = $('#filter-model')
+            // console.log(data)
 
             var options = generateOptions(data)
 
@@ -232,7 +233,11 @@ var formOnChange = function(e) {
         var options = []
         var promise = null
 
-        if(elType === 'make') handleMakeChange()
+        if(elType === 'make') {
+            handleMakeChange()
+
+            skipHandler = 0
+        }
         // if(/^year-/.test(elType)) {
         //     // console.log('year moved')
         // }

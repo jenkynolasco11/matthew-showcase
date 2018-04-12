@@ -38,7 +38,7 @@ html(lang="en")
             a(href="credit-app") Credit App
           li
             a(href="listing") Lease Specials
-          li
+          //- li
             a(href="listing") Pre-Owned
           li
             a(href="sell-car") Sell your Car
@@ -104,7 +104,7 @@ html(lang="en")
                         a(href="credit-app") Credit App
                       li
                         a(href="listing") Lease Specials
-                      li
+                      //- li
                         a(href="listing") Pre-Owned
                       li
                         a(href="sell-car") Sell your Car
@@ -163,13 +163,13 @@ html(lang="en")
           .row
             .col-md-12
               .section-advantages
-                a(href="#testimonials")
+                a(href="/refer-a-friend")
                   section.b-advantages
-                    img.b-advantages__icon(src="testimonial.svg" alt="steering-wheel")
-                    h3.b-advantages__title View Testimonials
+                    //- img.b-advantages__icon(src="testimonial.svg" alt="steering-wheel")
+                    img.b-advantages__icon(src="friend.svg" alt="steering-wheel")
+                    h3.b-advantages__title Refer a friend
                     .b-advantages__info
-                      | Our reviews and testimonials will paint you a full picture of the way we do business here at JYD Auto Group. See
-                      | for yourself what a great place we are to buy or lease a car.
+                      | Refer us to a friend, and earn 10% in promo codes for you and your friends.
                     span.ui-decor
                 a(href="credit-app")
                   section.b-advantages
@@ -305,21 +305,6 @@ html(lang="en")
             a(href="https://plus.google.com/113146897266709706626" target="_blank")
               i.fa.fa-google-plus
         #instagram-feed.car-demo
-        //
-          <div class="car-demo">
-          <div class="car col-xm-3">
-          <img class="img-responsive" src="assets/images/img-1.jpg" alt="car-prop">
-          </div>
-          <div class="car col-xm-3">
-          <img class="img-responsive" src="assets/images/img-2.jpg" alt="car-prop">
-          </div>
-          <div class="car col-xm-3">
-          <img class="img-responsive" src="assets/images/img-3.jpg" alt="car-prop">
-          </div>
-          <div class="car col-xm-3">
-          <img class="img-responsive" src="assets/images/img-4.jpg" alt="car-prop">
-          </div>
-          </div>
       .lower-footer
         .container
           .row
@@ -354,17 +339,17 @@ html(lang="en")
                     a(href="/") Home
                   li
                     a(href="listing") Lease Specials
-                  li
+                  //- li
                     a(href="listing") Pre-Owned
                   li
                     a(href="sell-car") Sell your Car
                   li
-                    a(href="services" tabindex="-1") Services
+                    a(href="service-others" tabindex="-1") Services
                   li
                     a.contact-button(href="contact-us") Contact
             .col-md-4.col-sm-6.padd-lr0
               .wheel-footer-item
-                h3 Trending Vehicles
+                h3 Trending Builds
                 ul
                   li
                     a(href="") Exotic Cars
@@ -380,54 +365,27 @@ html(lang="en")
                     a(href="") Vans
                   li
                     a(href="") RVs
-            //
-              <div class="col-md-4 col-sm-6 padd-lr0">
-              <div class="wheel-footer-gallery">
-              <h3>Photo Gallery</h3>
-              <div class="  clearfix">
-              <div class="wheel-footer-galery-item">
-              <a href="">
-              <img src="images/i11.jpg" alt="">
-              </a>
-              </div>
-              <div class="wheel-footer-galery-item">
-              <a href="">
-              <img src="images/i12.jpg" alt="">
-              </a>
-              </div>
-              <div class="wheel-footer-galery-item">
-              <a href="">
-              <img src="images/i13.jpg" alt="">
-              </a>
-              </div>
-              <div class="wheel-footer-galery-item">
-              <a href="">
-              <img src="images/i14.jpg" alt="">
-              </a>
-              </div>
-              <div class="wheel-footer-galery-item">
-              <a href="">
-              <img src="images/i15.jpg" alt="">
-              </a>
-              </div>
-              <div class="wheel-footer-galery-item">
-              <a href="">
-              <img src="images/i16.jpg" alt="">
-              </a>
-              </div>
-              <div class="wheel-footer-galery-item">
-              <a href="">
-              <img src="images/i17.jpg" alt="">
-              </a>
-              </div>
-              <div class="wheel-footer-galery-item">
-              <a href="">
-              <img src="images/i18.jpg" alt="">
-              </a>
-              </div>
-              </div>
-              </div>
-              </div>
+    .newsletter-overlay
+      form(method="POST")#subscribe-form
+        #subscribe-newsletter
+          //- .background-image
+          .close-newsletter
+            span.close-item.before
+            span.close-item.after
+          h2
+            em DEALS ON DEMAND!
+          h3 SIGN UP
+          h3.white For weekly specials
+          //- | Some text, this is in case we have something to say in here. Say, we want you to subscribe with us. This is a good opportunity for you to do it. Please, do it!
+          .inputs
+            input(type="text" name="name" placeholder="NAME" required)
+            input(type="email" name="email" placeholder="EMAIL" required)
+            input(type="submit" value="Submit")
+          small We respect your privacy
+      .thanks-section
+        h2 WE'LL BE IN TOUCH!
+        p Thanks for subscribing.
+        p We will be in touch with amazing deals in your inbox.
     script(src="assets/js/jquery.1.12.4.min.js")
     script(src="assets/js/plugins/bootstrap.min.js")
     script(src="assets/js/plugins/jquery.nivo.slider.js")

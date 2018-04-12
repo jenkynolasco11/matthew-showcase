@@ -785,12 +785,12 @@ $(document).ready(function () {
     var slider = document.getElementById('slider-price');
 
     noUiSlider.create(slider, {
-      start: [0, 150000],
+      start: [0, 2000],
       range: {
         'min': [0],
-        'max': [150000]
+        'max': [2000]
       },
-      step: 1000,
+      step: 50,
       connect: true,
       format: wNumb({
         decimals: 0,
@@ -811,7 +811,7 @@ $(document).ready(function () {
     var slider = document.getElementById('slider-year');
 
     var currYear = new Date().getFullYear() + 1
-    var minYear = currYear - 50
+    var minYear = currYear - 15
 
     noUiSlider.create(slider, {
       start: [minYear, currYear],

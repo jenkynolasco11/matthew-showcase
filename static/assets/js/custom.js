@@ -320,6 +320,63 @@ $document.ready(function () {
 		// $.get('/trim', { year : year, make : make, model : model })
 	})
 
+	var closeNewsletter = $('#subscribe-newsletter .close-newsletter')[ 0 ]
+
+	function fadeNewsletter() {
+		$('.newsletter-overlay').fadeOut(500, function() {
+			setTimeout(function(self) {
+				$(self).remove()
+			}, 1000, this)
+		})
+	}
+
+	if(closeNewsletter) $(closeNewsletter).on('click', fadeNewsletter)
+
+	var subscribeForm = $('#subscribe-form')
+
+	if(subscribeForm) {
+		subscribeForm.submit(function(e) {
+			e.preventDefault()
+
+			var data = $(this).serializeArray().reduce(function(p, n) {
+				var x = $.extend({}, p)
+
+				x[ n.name ] = n.value
+
+				return x
+			}, {})
+
+			$.post('/newsletter/new-subscriber', data, function(res) {
+				if(res.ok) window.localStorage.setItem('subscribed', 'yes')
+
+				$('#subscribe-form').fadeOut(500, function() {
+					$('.thanks-section').css('display', 'flex').hide().fadeIn(500, function() {
+						setTimeout(fadeNewsletter, 3000)
+					})
+				})
+				// if(res.ok) {
+
+				// }
+			})
+
+			console.log(data)
+		})
+	}
+
+	var itAppeared = false
+
+	$(window).on('scroll', function(e) {
+		if(window.pageYOffset > $(document).height() * 0.4) {
+			if(!itAppeared) {
+				itAppeared = true
+
+				var isSubscribed = window.localStorage.getItem('subscribed')
+
+				if(isSubscribed !== 'yes') $('.newsletter-overlay').delay(2000).css('display', 'flex').hide().fadeIn(500)
+			}
+		}
+	})
+
 	$.get('/instagram/photos', function(response) {
 		var feedPics = response.data.reduce(function(prev, next) {
 			var tag = ' \
@@ -399,7 +456,7 @@ function submitInformation(e, type, form) {
 	var formData = {}
 	formData.type = type
 
-	submitForm(form, formData);
+	submitForm(form, formData)
 }
 
 function submitForm(form, formData) {
@@ -412,7 +469,7 @@ function submitForm(form, formData) {
 		return x
 	}, formData);
 
-	console.log('Before sending...')
+	// console.log('Before sending...')
 
 	$.post('/data', data)
 

@@ -5,6 +5,6 @@ var MessageSchema = new Schema({
 
 })
 
-var model = mongoose.model('message',MessageSchema, 'message')
+var model = mongoose.model('message', MessageSchema, 'message')
 
 module.exports = model

@@ -141,7 +141,7 @@ block main-body
                         //- span #{ trans[ 0 ] }
                         each tran,i in trans
                           input.forms__check.hidden(type="checkbox" id="check-"+(i+1) value=""+tran)
-                          label(class="forms__label forms__label-check forms__label-check-1" for="check-"+(i+1)) #{ tran }
+                          label(class="forms__label forms__label-check forms__label-check-1" for="check-"+(i+1)) #{ tran ? tran : "no specified" }
                         //- input#check-1.forms__check.hidden(type="checkbox")
                         //- label.forms__label.forms__label-check.forms__label-check-1(for="check-1") 4 Speed Auto
                         //- input#check-2.forms__check.hidden(type="checkbox")

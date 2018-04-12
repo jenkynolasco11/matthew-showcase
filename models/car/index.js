@@ -28,9 +28,10 @@ var CarSchema = new Schema({
         src : String,
         name : String,
         main : Boolean,
-    }]
+    }],
+    createdBy : { type : Date, default : Date.now }
 })
 
-var model = mongoose.model('car',CarSchema, 'car')
+var model = mongoose.model('car', CarSchema, 'car')
 
 module.exports = model

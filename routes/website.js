@@ -15,7 +15,8 @@ var paths = [
     'details',
     'sell-car',
     // 'listing',
-    'services'
+    'services',
+    'refer-a-friend'
 ]
 var titles = {
     'contact-us': 'Contact Us',
@@ -24,7 +25,8 @@ var titles = {
     'details': 'Car Details',
     'sell-car': 'Sell Us Your Car',
     'listing': 'Search',
-    'services': 'Services'
+    'services': 'Services',
+    'refer-a-friend' : 'Refer a Friend'
 }
 
 function getCurrentDate() {
@@ -106,7 +108,7 @@ route.get('/:route', function (req, res, next) {
         var data = {}
 
         Car.distinct('make').then(function(makes) {
-            data.makes = makes
+            data.makes = makes.sort((a,b) => a.localeCompare(b))
 
             return Car.distinct('transmission')
         }).then(function(trans) {
@@ -148,6 +150,7 @@ route.post('/data', function (req, res) {
 
 route.get('/details/(:id?)', function (req, res) {
     var id = req.params.id
+
     if (!id) return res.render('listing', {
         title: 'JYD - Search'
     })
@@ -155,11 +158,9 @@ route.get('/details/(:id?)', function (req, res) {
     Car.findOne({
         id: id
     }, function (err, car) {
-        // console.log(err)
         if (err) return res.status(200).send({
             ok: false
         })
-        // console.log(car._doc)
 
         Car.aggregate([
             // { $match : { bodyType : car.bodyType }},
@@ -178,10 +179,15 @@ route.get('/details/(:id?)', function (req, res) {
             var cars = related.map(filterCarData)
             var featured = filterCarData(car._doc)
 
+            var featImg = featured.imgs.filter(function(img) { return img.main })
+
+            // console.log(JSON.stringify(featImg, null, 3))
+
             return res.render('details', {
                 ok: true,
                 car: featured,
-                related: cars
+                related: cars,
+                featImg : featImg[ 0 ]
             })
         })
     })

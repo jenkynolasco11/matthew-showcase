@@ -1,0 +1,26 @@
+extends partials/_pug-page.pug
+
+block crumbs
+    li Refer a Friend
+
+block main-body
+    main.l-main-content#refer-content
+        .container
+            .row
+                .col-md-6.col-sm-12
+                    section.refer-friend-text
+                        h1 EARN 10% ON PROMO CODES FOR EACH REFERRAL
+                        .small-separator
+                        h4 You get 10%, they get 10%. Everybody wins!
+                        p
+                        | It's true! We want to reward you. Our business continues to grow thanks to your
+                        | enthusiastic referrals and passionate reviews. We are thrilled to offer this way
+                        | for you to share in the success of our mission.
+                .col-md-6.col-sm-12
+                    form#refer-form(method="POST")
+                        input(name="from" placeholder="FROM (mine@email.com)" type="email")
+                        input(name="to" placeholder="TO (friend@email.com)" type="email")
+                        textarea(name="message" cols="30" rows="10" placeholder="> YOU'VE GOT TO CHECK THIS OUT! THE BEST CAR PRICES! THE BEST CUSTOMER SERVICE YOU CAN GET! IF YOU FOLLOW THIS LINK, YOU CAN GET A 10% DISCOUNT ON EVERY SERVICE")
+                        button(type="submit" value="Send Reference" form="refer-form")
+                            i(class="fa fa-envelope")
+                            span &nbsp;&nbsp;Send Reference

@@ -163,7 +163,7 @@ route.post('/new', function(req, res) {
     var imgs = extractImages(body.imgs)
     var features = body.extraFeatures.split('\n')
     var description = body.description.split('\n')
-    var price = body.price.replace(/\D/g,'')
+    var price = Number(body.price.replace(/\D/g,'')) || 0
     var newCar = Object.assign({}, body, { price : +price }, { imgs : imgs }, { extraFeatures : features })
 
     try {

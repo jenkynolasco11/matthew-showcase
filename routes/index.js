@@ -7,6 +7,8 @@ var car = require('./car')
 var build = require('./buildCar')
 var instagram = require('./instagram')
 var filter = require('./filter')
+var newsletter = require('./newsletter')
+// var dealSub = require('./deal-sub')
 
 var route = Router()
 
@@ -17,7 +19,9 @@ const routes = [
     admin,
     site,
     car,
-    instagram
+    instagram,
+    newsletter,
+    // dealSub
 ]
 
 routes.forEach(r => route.use('/', r))

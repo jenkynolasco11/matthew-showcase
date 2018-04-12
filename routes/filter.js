@@ -10,6 +10,8 @@ var filter = Router()
 filter.get('/desc', function(req, res) {
     var make = req.query.make || null
 
+    console.log('HEY, COGNIO!')
+
     if(make) {
         // Car.find({ make : make }, console.log)
         Car.aggregate([
@@ -20,13 +22,14 @@ filter.get('/desc', function(req, res) {
                     maxYear : { $max : '$year' },
                     minYear : { $min : '$year' }
                 }
-            }
+            },
         ], function(err, data) {
 
             // Comment this line to return models and years
-            var models = data.map(function(item) { return item._id })
+            var models = data.map(function(item) { return item._id }).sort((a,b) => a.localeCompare(b))
 
-            console.log(models)
+            console.log('Strings sorted => ', models)
+
             return res.send(models)
 
             // return res.send( data )
@@ -36,16 +39,16 @@ filter.get('/desc', function(req, res) {
 
 filter.get('/request', function(req, res) {
     const { sortBy, limit, skip, make, model, years, prices, fuel, transmission = '', bodyType } = req.query
-    const [ year1, year2 ] = years.split(',').sort()
-    const [ price1, price2 ] = prices.split(',').sort()
+    const [ year1, year2 ] = years.split(',')//.sort()
+    const [ price1, price2 ] = prices.split(',')//.sort()
 
     function testItem(item) {
         return /^all/i.test(item)
     }
 
     const conditions = {
-        year : { $gte : year1, $lte : year2 },
-        price : { $gte : price1, $lte : price2 }
+        year : { $gte : Number(year1), $lte : Number(year2) },
+        price : { $gte : Number(price1), $lte : Number(price2) }
     }
 
     if(!testItem(fuel)) conditions.fuel = fuel
@@ -55,14 +58,14 @@ filter.get('/request', function(req, res) {
     if(transmission) conditions.transmission = { $in : transmission.split(',') }
 
     console.log(JSON.stringify(conditions, null, 3))
-    console.log(limit)
-    console.log(skip)
-    console.log(sortBy)
+    // console.log(limit)
+    // console.log(skip)
+    // console.log(sortBy)
 
     Car.find(conditions)
-        .skip(+skip || 0)
+        .skip(+skip * limit || 0)
         .limit(+limit || 10)
-        .sort({ make : sortBy || '-1' })
+        .sort({ make : sortBy || '-1', model : sortBy || '-1' })
         .exec()
         .then(function(docs) {
             return Promise.all([ docs, Car.count(conditions) ])
