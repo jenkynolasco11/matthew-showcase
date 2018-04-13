@@ -36,10 +36,10 @@ dealsubs.use('/deal-subs', route)
 module.exports = dealsubs
 /**
  * { name: 'Jenky',
-  phoneNumber: '3479742990',
-  email: 'jenky_nolasco@hotmail.com',
-  make: 'Acura',
-  model: 'TLX',
-  year: '2018',
-  id: 'JYD-01151800007' }
+    phoneNumber: '3479742990',
+    email: 'jenky_nolasco@hotmail.com',
+    make: 'Acura',
+    model: 'TLX',
+    year: '2018',
+    id: 'JYD-01151800007' }
  */

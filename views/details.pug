@@ -153,7 +153,8 @@ block main-body
                   each c in related
                     .b-goods-feat
                       .b-goods-feat__img
-                        img.img-responsive(src=''+c.imgs[0].src alt="featured car")
+                        a(href="/details/"+c.id)
+                          img.img-responsive(src=""+c.imgs[0].src alt="featured car")
                         span.b-goods-feat__label
                           | $#{ c.price }
                           span.b-goods-feat__label_msrp MSRP $#{c.msrp}
