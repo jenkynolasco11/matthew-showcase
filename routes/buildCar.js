@@ -4,6 +4,8 @@ var templates = require('../email-templates')
 var convertToPDF = templates.convertToPDFBuffer
 var buildAppTemplate = templates.buildApp
 var sendEmail = require('../mailer').sendEmail
+var BuiltCar = require('../models').BuiltCar
+var Car = require('../models').Car
 var fs = require('fs')
 var path = require('path')
 
@@ -154,14 +156,50 @@ route.get('/review', function(req, res) {
     return res.render('build-car/review', options)
 })
 
+function saveBuiltInDB(data) {
+    var { firstname, lastname, phone, email, hasLease, hasTradeIn, isVeteran, isGraduate, downPayment, url, ...options } = data
+
+    new BuiltCar({
+        firstname,
+        lastname,
+        phone,
+        email,
+        hasLease,
+        hasTradeIn,
+        isGraduate,
+        isVeteran,
+        downPayment,
+        options,
+        url,
+    }).save(function(err, doc) {
+        if(err) return console.log(err)
+
+        console.log(doc)
+    })
+}
+
+function extractPath(req) {
+    // Escaping user input to be treated as a literal 
+    // string within a regular expression accomplished by 
+    // simple replacement
+    function escapeRegExp(str) {
+        return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, '\\$1');
+    }
+    // Replace utility function
+    function replaceAll(str, find, replace) {
+        return str.replace(new RegExp(escapeRegExp(find), 'g'), replace); 
+    }
+    return replaceAll(req.get('referer'), req.get('origin'), '');
+}
+
 route.post('/review', function(req, res) {
     var body = req.body
+    var url = extractPath(req)
+
     var emailData = {}
 
-    // console.log(body)
-
     var options = getOptions(body.options.split('|'))
-    var data = Object.assign({}, body, options)
+    var data = Object.assign({}, body, options, { url })
 
     var name = data.firstname + ' ' + data.lastname
     var htmlBody = buildAppTemplate(data)
@@ -172,6 +210,8 @@ route.post('/review', function(req, res) {
     emailData.subject = 'Requesting a Quote for a ' + data.year + ' ' + data.make + ' ' + data.model
     emailData.html = htmlBody
 
+
+    saveBuiltInDB(data)
     // convertToPDF(htmlBody, function(err, stream) {
     //     if(!err) emailData.attachments = [{
     //         filename : 'Quote Request - ' + name + ' ' + getCurrentDate(),
@@ -207,7 +247,23 @@ route.post('/review', function(req, res) {
     return res.end('ok')
 })
 
+route.get('/trending', function(req, res) {
+    // Car.aggregate([
+    BuiltCar.aggregate([
+        { $sample : { size : 1 }}
+    ]).then(function(docs) {
+        var cars = docs.map(car => car.options )
 
+        console.log(cars)
+
+        return res.send({ ok : true, builts : cars })
+
+    }).catch(function(err) {
+        console.log(err)
+
+        return res.send({ ok : false })
+    })
+})
 
 buildCar.use('/build-car', route)
 

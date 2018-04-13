@@ -13,10 +13,11 @@ var SellSchema = new Schema({
     model : String,
     mileage : Number,
     condition : String,
-    vin : { type : String, max : 17, unique : { index : true }},
+    vin : { type : String, max : 17 },
+    reminded : { type : Boolean, default : () => 0 },
     createdBy : { type : Date, default : Date.now }
 })
 
-var model = mongoose.model('sell', CarSchema, 'sell')
+var model = mongoose.model('sell', SellSchema, 'sell')
 
 module.exports = model

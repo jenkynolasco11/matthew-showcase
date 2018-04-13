@@ -4,7 +4,7 @@ var sendEmail = require('../mailer').sendEmail
 var templates = require('../email-templates')
 var models = require('../models')
 var Car = models.Car
-var CreditApp = models.CreditApp
+
 var path = require('path')
 // var instagram = require('./instagram').getFeed
 
@@ -47,9 +47,11 @@ function getCurrentDate() {
 }
 
 function saveToDatabase(body) {
+    var data = {}
+
     switch(body.type) {
         case 'Credit App':
-            var data = {}
+            var CreditApp = models.CreditApp
 
             data.code = body['Salesman\'s Name']
             data.firstname = body['First Name']
@@ -84,10 +86,45 @@ function saveToDatabase(body) {
             data.agreed = body['agree'] !== '0'
             data.reachedOut = false
 
+            var credit = new CreditApp({ ...data }).save(function(err, doc) {
+                if(err) return console.log(err)
+
+                return console.log(doc)
+            })
+
             break
         case 'Contact Us':
+            var Message = models.Message
+
+            console.log(body)
+
+            var message = new Message({ ...body, read : false }).save(function(err, doc) {
+                if(err) return console.log(err)
+
+                return console.log(doc)
+            })
+
             break
         case 'Cash For Cars':
+            var SellCar = models.SellCar
+
+            data.firstname = body['First Name']
+            data.lastname = body['Last Name']
+            data.phoneNumber = body.phone
+            data.email = body.email
+            data.condition = body.vCondition
+            data.mileage = body.vMileage
+            data.model = body.vModel
+            data.make = body.vMake
+            data.year = body.vYear
+            data.vin = body.VIN
+
+            var sellcar = new SellCar({ ...data }).save(function(err, doc) {
+                if(err) return console.log(err)
+
+                return console.log(doc)
+            })
+
             break
     }
 }

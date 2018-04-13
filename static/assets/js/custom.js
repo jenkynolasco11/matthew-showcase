@@ -391,6 +391,24 @@ $document.ready(function () {
 
 		$('#instagram-feed').html($(feedPics))
 	})
+
+	$.get('/build-car/trending', function(data) {
+		var trending = $('#trending-builds')
+
+		if(trending && data.ok) {
+			var items = ''
+
+			data.builts.forEach(function(car) {
+				items += `
+					<li>
+						<a href="${ car.url || '#' }">${ car.year } ${ car.make } ${ car.model }</a>
+					</li>
+				`
+			})
+
+			trending.html(items)
+		}
+	})
 });
 
 
@@ -439,10 +457,19 @@ $(window).on('load resize', undateMenu)
 var contactForm = $('#contact-form')
 var sellingForm = $('#selling-form')
 var creditAppForm = $('#credit-app-form')
+var contactForm2 = $('#contact-form-2')
 
-contactForm.submit(function(e){
-	return submitInformation(e, 'Contact Us', contactForm)
+console.log(contactForm, contactForm2)
+
+$.each([ contactForm2, contactForm ], function() {
+	console.log(this)
+	if(this) {
+		$(this).submit(function(e) {
+			return submitInformation(e, 'Contact Us', $(this))
+		})
+	}
 })
+
 sellingForm.submit(function(e){
 	return submitInformation(e, 'Cash For Cars', sellingForm)
 })

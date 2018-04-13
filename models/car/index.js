@@ -32,6 +32,31 @@ var CarSchema = new Schema({
     createdBy : { type : Date, default : Date.now }
 })
 
-var model = mongoose.model('car', CarSchema, 'car')
+var BuiltCarSchema = new Schema({
+    firstname : String,
+    lastname : String,
+    phone : { type : String, index : true },
+    email : { type : String, index : true },
+    hasLease : String,
+    isVeteran : String,
+    isGraduate : String,
+    hasTradeIn : String,
+    downPayment : String,
+    options : {
+        year : Number,
+        make : String,
+        model : String,
+        invoice : String,
+        dest : String,
+        msrp : String,
+        trim : String,
+        optionsPrice : String,
+        selectedOptions : []
+    },
+    url : String
+})
 
-module.exports = model
+var Car = mongoose.model('car', CarSchema, 'car')
+var BuiltCar = mongoose.model('builtCar', BuiltCarSchema, 'builtCar')
+
+module.exports = { Car, BuiltCar }

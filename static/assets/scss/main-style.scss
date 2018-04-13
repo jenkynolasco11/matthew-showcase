@@ -312,7 +312,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				}
 
 				.options-group {
+					max-height : 500px;
+					overflow-y : scroll;
+					padding : 0 10px;
+
 					&_label {
+						position : relative;
 						background : gray;
 						color : white;
 						padding : 6px;
@@ -386,9 +391,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 						cursor : pointer;
 
 						&.selected {
-							// height : 50px;
 							background-color : rgb(51, 51, 51);
 							color : white;
+						}
+
+						&.flash {
+							animation : flashTab 2s linear infinite;
 						}
 					}
 				}
@@ -499,6 +507,18 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			cursor : pointer;
 		}
 	// }
+}
+
+@keyframes flashTab {
+	50% {
+		background-color : rgb(104, 104, 104);
+		color : rgb(220, 220, 220);
+	}
+
+	100% {
+		background-color : black;
+		color : red;
+	}
 }
 
 #page-content {
@@ -1303,6 +1323,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 					}
 				}
 			}
+		}
+
+		button {
+			font-size : 14px;
 		}
 	}
 }

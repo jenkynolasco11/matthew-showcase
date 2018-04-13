@@ -3,6 +3,12 @@ $(document).ready(function() {
     var tabs = $('.tab-tops span')
     var form = $('form.form-options')
 
+    setTimeout(function() {
+        var flashyTab = $('[data-content=proceed-form]')
+
+        if(!flashyTab.attr('class')) flashyTab.addClass('flash')
+    }, 5000)
+
     $(form).on('submit', function(e){
         e.preventDefault()
         var data = {}
@@ -40,6 +46,7 @@ $(document).ready(function() {
             })
 
             $(this).addClass('selected')
+            $(this).removeClass('flash')
 
             var contents = $('.content > div')
             var contentToShow = $(this).data('content')
