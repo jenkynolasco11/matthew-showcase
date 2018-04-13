@@ -120,6 +120,8 @@ function stripData(data, cb) {
     emailData.html = body
 
     saveToDatabase(data)
+
+    // console.log(data)
     // console.log(JSON.stringify(emailData, null, 5))
         // emailData.attachments = [
             // {
