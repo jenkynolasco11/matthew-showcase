@@ -7,13 +7,20 @@ var newsletter = Router()
 route.post('/new-subscriber', function(req, res) {
     var body = req.body
 
-    var newsletter = new Newsletter({ ...body }).save(function(err, doc) {
+    Newsletter.update({ email : body.email }, { ...body }, { upsert : true, setDefaultsOnInsert : true }, function(err, doc) {
         if(err) return res.send({ ok : false })
 
         console.log(doc)
 
         return res.send({ ok : true })
     })
+    // var newsletter = new Newsletter({ ...body }).save(function(err, doc) {
+    //     if(err) return res.send({ ok : false })
+
+    //     console.log(doc)
+
+    //     return res.send({ ok : true })
+    // })
 })
 
 newsletter.use('/newsletter', route)

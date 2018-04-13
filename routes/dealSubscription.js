@@ -20,11 +20,15 @@ route.post('/new-subscription', function(req, res) {
         id : body.id
     }
 
-    var dealsubs = new DealSubscription({ ...data }, function(err, doc) {
+    DealSubscription.update({ email : data.email, phoneNumber : data.phoneNumber }, { ...data }, { upsert : true, setDefaultsOnInsert : true }, function(err, doc) {
         if(err) return res.send({ ok : false })
 
         return res.send({ ok : true })
     })
+
+    // Use upsert instead of new
+    // var dealsubs = new DealSubscription({ ...data }, function(err, doc) {
+    // })
 })
 
 dealsubs.use('/deal-subs', route)

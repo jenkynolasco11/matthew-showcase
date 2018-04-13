@@ -10703,7 +10703,7 @@ body.color-turquoise #road {
 }
 
 .newsletter-overlay #subscribe-form #subscribe-newsletter .inputs {
-  margin-top: 30px;
+  margin-top: 8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -10715,7 +10715,7 @@ body.color-turquoise #road {
 .newsletter-overlay #subscribe-form #subscribe-newsletter .inputs input {
   margin: 3px 8px;
   width: 200px;
-  padding: 6px;
+  padding: 14px 6px;
   -webkit-border-radius: 3px;
      -moz-border-radius: 3px;
           border-radius: 3px;
@@ -10758,7 +10758,7 @@ body.color-turquoise #road {
 }
 
 .newsletter-overlay #subscribe-form #subscribe-newsletter small {
-  margin-top: 30px;
+  margin-top: 8px;
   margin-bottom: 10px;
 }
 
