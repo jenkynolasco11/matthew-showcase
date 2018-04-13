@@ -7,6 +7,12 @@ var DealSubscriptionSchema = new Schema({
     name : { type : String, required : true, index : true },
     email : { type : String, required : true, index : true },
     reminded : { type : Boolean, default : () => false },
+    vehicle : {
+        make : String,
+        year : Number,
+        model : String,
+        id : String,
+    },
     createdBy : { type : Date, default : Date.now }
 })
 

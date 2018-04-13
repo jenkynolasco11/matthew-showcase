@@ -732,39 +732,49 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				font-weight : bold;
 				text-shadow : 0 -5px 5px black, 0 5px 5px black, -5px 0px 5px black, 5px 0px 5px black;
 				text-align : center;
+				margin-bottom : 6px;
+
+				&.red {
+					color : red;
+					text-shadow : 0 -2px 2px black, 0 2px 2px black, -2px 0px 2px black, 2px 0px 2px black;
+				}
+
+				// &:last-child(2) {
+				// 	margin-bottom : 20px;
+				// }
 
 				@media screen and (max-width: 560px) {
 					margin-bottom : 0;
 				}
 			}
 
-			h3 {
-				color : red;
-				text-shadow : 0 -2px 2px black, 0 2px 2px black, -2px 0px 2px black, 2px 0px 2px black;
+			// h3 {
+			// 	color : red;
+			// 	text-shadow : 0 -2px 2px black, 0 2px 2px black, -2px 0px 2px black, 2px 0px 2px black;
 
-				&.white {
-					color : white;
-					margin-top : -20px;
-					text-align : center;
-				}
-			}
+			// 	&.white {
+			// 		color : white;
+			// 		margin-top : -20px;
+			// 		text-align : center;
+			// 	}
+			// }
 
-			p {
-				// margin-top : 30px;
-				font-size : 20px;
-				line-height : 30px;
-				letter-spacing : 1px;
-				margin-bottom : 10px;
-				max-width : 700px;
-				padding : 10px 20px;
+			// p {
+			// 	// margin-top : 30px;
+			// 	font-size : 20px;
+			// 	line-height : 30px;
+			// 	letter-spacing : 1px;
+			// 	margin-bottom : 10px;
+			// 	max-width : 700px;
+			// 	padding : 10px 20px;
 
-				@media screen and (max-width: 560px) {
-					font-size : 18px;
-				}
-			}
+			// 	@media screen and (max-width: 560px) {
+			// 		font-size : 18px;
+			// 	}
+			// }
 
 			.inputs {
-				margin-top : 10px;
+				margin-top : 30px;
 				display : flex;
 				width : 100%;
 				// flex : 1;
@@ -1306,7 +1316,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	width: 100%;
 	top: 40px;
 	height: 140px;
+	// z-index : 120;
 	transition: height .1s linear, width .1s linear, background .1s linear;
+	@media screen and (max-width : 768px) {
+		top : 0;
+	}
 	.row {
 		height: 100%;
 		.right {
@@ -1457,7 +1471,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		.details {
 			position: relative;
 			background-color: rgb(51, 51, 51);
-			padding-left: 100px;
+			padding-left: 85px;
+
 			&:before {
 				// background-color : rgb(31,31,31);
 				position: absolute;
@@ -1471,6 +1486,30 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				border-width: 75px 0 0 70px;
 				border-color: transparent transparent transparent rgb(31, 31, 31); // transition : all .1s linear;
 			}
+
+			display : flex;
+			justify-content : center;
+			align-items : center;
+
+			.text-deals {
+				text-transform : uppercase;
+				color : white;
+				font-size : 26px;
+				font-weight : bold;
+				letter-spacing : 2px;
+				text-shadow : 0 -2px 2px black, 0 2px 2px black, -2px 0px 2px black, 2px 0px 2px black;
+
+				@media screen and (max-width : 1170px) {
+					font-size : 24px;
+				}
+				@media screen and (max-width : 1072px) {
+					font-size : 20px;
+				}
+				@media screen and (max-width : 940px) {
+					font-size : 16px;
+				}
+			}
+
 			ul {
 				height: 100%;
 				display: flex;
@@ -1546,7 +1585,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	}
 	&.active-scroll {
 		background-color: rgb(31, 31, 31);
-		z-index: 3;
+		z-index: 101;
 		position: fixed;
 		top: 0;
 		width: 100%;

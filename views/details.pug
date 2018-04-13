@@ -184,8 +184,12 @@ block main-body
               //- p "Catchy phrase. Catchy phrase 2." ~ JYD
               .inputs
                 input(name="name" type="text" placeholder="Name")
-                input(name="number" type="text" placeholder="Phone Number")
+                input(name="phoneNumber" type="text" placeholder="Phone Number")
                 input(name="email" type="text" placeholder="Email")
+                input(name="make" value=""+car.make hidden)
+                input(name="model" value=""+car.model hidden)
+                input(name="year" value=""+car.year hidden)
+                input(name="id" value=""+car.id hidden)
                 input(type="submit" value="Submit")
 block scripts
     script(src="/assets/tmp/plugins/headers/slidebar.js")

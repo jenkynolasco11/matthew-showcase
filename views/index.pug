@@ -80,7 +80,11 @@ html(lang="en")
               .col-xs-9.right
                 .row.half.hidden-xs
                   .col-xs-12.details.hide-if-scroll
-                    ul
+                    p.text-deals
+                      em Text "deals" to
+                        a(href="tel:7186411003")  (718) 641-1003
+                        |  to get started now
+                    //- ul
                       li
                         a(href="tel:7186411003")
                           i.fa.fa-phone
@@ -374,8 +378,9 @@ html(lang="en")
             span.close-item.after
           h2
             em DEALS ON DEMAND!
-          h3 SIGN UP
-          h3.white For weekly specials
+          h2.red SIGN UP
+          h2
+            em FOR WEEKLY SPECIALS
           //- | Some text, this is in case we have something to say in here. Say, we want you to subscribe with us. This is a good opportunity for you to do it. Please, do it!
           .inputs
             input(type="text" name="name" placeholder="NAME" required)

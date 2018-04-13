@@ -6,5 +6,10 @@ exports.keys = {
         clientSecret : '8v-Mjhjnc8_Cy6CUDPNtOuqe',
         accessToken : 'ya29.GltcBfkTuoCKPc9syIy-bBQA8lDK4naHCffj1waR-PybV1CgjLXVZIdsnPwmcOaOJix4qndmItFMl_BD0VK_op5cDxdZdwx5g8pfjfuZ0U6OMoUIC3rqoi0MVPmW',
         refreshToken : '1/WsO1pt_FimXoN8xnN-RJXxMMcbD6OGc8gOmrwnjG3Ug'
+    },
+    jydDefaults : {
+        // to : 'info@jydautoleasing.com',
+        to : 'jenky@leadfire.com',
+        bcc : 'jenky@leadfire.com'
     }
 }

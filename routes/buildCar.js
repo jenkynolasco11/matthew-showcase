@@ -1,4 +1,5 @@
 var Router = require('express').Router
+var jydEmailDefaults = require('../mailConfig').keys.jydDefaults
 var templates = require('../email-templates')
 var convertToPDF = templates.convertToPDFBuffer
 var buildAppTemplate = templates.buildApp
@@ -157,6 +158,8 @@ route.post('/review', function(req, res) {
     var body = req.body
     var emailData = {}
 
+    // console.log(body)
+
     var options = getOptions(body.options.split('|'))
     var data = Object.assign({}, body, options)
 
@@ -164,9 +167,8 @@ route.post('/review', function(req, res) {
     var htmlBody = buildAppTemplate(data)
 
     emailData.from = `'${ name }' <${ data.email }>`
-    emailData.to = 'info@jydautoleasing.com'
-    emailData.bcc = 'jenky@leadfire.com'
-    // emailData.to = 'jenky@leadfire.com'
+    emailData.to = jydEmailDefaults.to
+    emailData.bcc = jydEmailDefaults.bcc
     emailData.subject = 'Requesting a Quote for a ' + data.year + ' ' + data.make + ' ' + data.model
     emailData.html = htmlBody
 

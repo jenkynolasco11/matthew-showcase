@@ -467,7 +467,7 @@ function submitForm(form, formData) {
 		x[n.name] = n.value
 
 		return x
-	}, formData);
+	}, {});
 
 	// console.log('Before sending...')
 

@@ -1,0 +1,77 @@
+extends partials/_pug-page.pug
+
+block crumbs
+    li Contact Us
+
+block main-body
+  main#page-content
+        .container.contact-page
+          .container
+            .row
+              .col-sm-3.col-xs-6
+                .wheel-contact-info.text-center.marg-lg-t150.marg-lg-b50.marg-xs-t50.marg-xs-b50
+                  .wheel-contact-logo
+                    i.fa.fa-map-marker
+                  h4 Address
+                  a(href="https://www.google.com/maps/place/JYD+Auto+Leasing+%26+Sales+LLC/@40.6529097,-73.8400466,17.18z/data=!4m5!3m4!1s0x89c26781a9a2ed21:0x7a0bf6c6afd4fff0!8m2!3d40.6531069!4d-73.8387157" target="_blank")
+                    | 16238 Crossbay Boulevard
+                    br
+                    |  Queens, NY 11414
+              .col-sm-3.col-xs-6
+                .wheel-contact-info.text-center.marg-lg-t150.marg-lg-b50.marg-xs-t50.marg-xs-b50
+                  .wheel-contact-logo
+                    i.fa.fa-phone
+                  h4 Phone
+                  a(href="tel:7186411003")
+                    span
+                      | (718) 641-1003
+              .col-sm-3.col-xs-6
+                .wheel-contact-info.text-center.marg-lg-t150.marg-lg-b50.marg-xs-t50.marg-xs-b50
+                  .wheel-contact-logo
+                    i.fa.fa-mobile
+                  h4 Fax
+                  a(href="tel:7186411003")
+                    span
+                      | (718) 641-1003
+              .col-sm-3.col-xs-6
+                .wheel-contact-info.text-center.marg-lg-t150.marg-lg-b50.marg-xs-t50.marg-xs-b50
+                  .wheel-contact-logo
+                    i.fa.fa-envelope
+                  h4 Email
+                  a(href="mailto:info@jydautoleasing.com")
+                    span info@jydautoleasing.com
+          // //////////////////////////////////
+          .container
+            .row
+              .col-xs-12
+                .wheel-header.text-center.marg-lg-t85.marg-lg-b90.marg-md-t50
+                  h5 Say Hello!
+                  h3
+                    | Send Us a
+                    span Message
+            .row
+              .col-xs-12.padd-lr0
+                .wheel-contact-form.text-center.marg-lg-b145
+                  form#contact-form(action="javascript:void(0)" method="post")
+                    .form
+                      .row
+                        .col-md-6.col-xs-12.mr-1.spacer-org
+                          input.form-control(name="name" type="text" placeholder="Your Name *" required="" value="Jenky")
+                        .col-md-6.col-xs-12.ml-1.spacer-org
+                          input.form-control(name="email" type="text" placeholder="Your Email *" required="" value="jenky_nolasco@hotmail.com")
+                      .row
+                        .col-xs-12
+                          input.form-control(name="subject" type="text" placeholder="Subject*" required="" value="Test")
+                      .row
+                        .col-xs-12
+                          textarea.form-control(name="message" placeholder="Message *" required="") This is for testing purposes
+                      .row
+                        button.col-md-offset-4.col-md-4.col-xs-offset-3.col-xs-6(type="submit") Submit message
+                        // <input type="submit" name="submit" value="Submit Message" class="col-md-offset-4 col-md-4 col-xs-offset-3 col-xs-6" class="wheel-btn" />
+          .container-fluid.padd-lr0
+            .row
+              .col-xs-12.padd-lr0
+                .wheel-map(data-lat="40.6530941" data-lng="-73.8387110" data-zoom="13" data-style="style-1")
+
+block scripts
+  script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt5tJTim4lOO3ojbGARhPd1Z3O3CnE-C8" type="text/javascript")

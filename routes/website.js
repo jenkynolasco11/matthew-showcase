@@ -1,7 +1,10 @@
 var Router = require('express').Router
+var jydEmailDefaults = require('../mailConfig').keys.jydDefaults
 var sendEmail = require('../mailer').sendEmail
 var templates = require('../email-templates')
-var Car = require('../models').Car
+var models = require('../models')
+var Car = models.Car
+var CreditApp = models.CreditApp
 var path = require('path')
 // var instagram = require('./instagram').getFeed
 
@@ -9,11 +12,14 @@ var route = Router()
 var web = Router()
 
 var paths = [
-    'contact-us',
+    'sell-car',
     'credit-app',
+    'contact-us',
+    'sell-car-test',
+    'contact-us-test',
+    'credit-app-test',
     'admin',
     'details',
-    'sell-car',
     // 'listing',
     'services',
     'refer-a-friend'
@@ -40,10 +46,56 @@ function getCurrentDate() {
     return today
 }
 
+function saveToDatabase(body) {
+    switch(body.type) {
+        case 'Credit App':
+            var data = {}
+
+            data.code = body['Salesman\'s Name']
+            data.firstname = body['First Name']
+            data.lastname = body['Last Name']
+            data.middlename = body['Middle Name']
+            data.phoneNumber = body['Day Time Phone']
+            data.dob = new Date(+body['DOB Year'], +body['DOB Month'] - 1, +body['DOB Day'])
+            data.ssn = body['SSN']
+            data.email = body['email']
+            data.street = body['Address']
+            data.city = body['City']
+            data.state = body['State']
+            data.zip = body['ZIP Code']
+            data.homeOwnership = body['Home Type']
+            data.yearsLivingInPlace = body['Years Living There']
+            data.monthsLivingInPlace = body['Months Living There']
+            data.monthlyRent = body['Monthly Payment']
+            data.previousAddress = body['Previous Address']
+            data.driverLicense = {
+                number : body['Driver\'s Licence Number'],
+                stateIssued : body['Driver\'s State'],
+                expirationDate : new Date(body['Driver\'s License Expiration Date Year'], body['Driver\'s License Expiration Date Month']-1, body['Driver\'s License Expiration Date Day']),
+            }
+            data.employement = {
+                employerName : body['Employer\'s Name'],
+                employerAddress : body['Employer\'s Address'],
+                employerYearsAtWork : body['Employee Years'],
+                employerMonthsAtWork : body['Employee Months'],
+                montlyIncome : body['Monthly Income'],
+            }
+            data.previousEmployer = body['Previous Employer']
+            data.agreed = body['agree'] !== '0'
+            data.reachedOut = false
+
+            break
+        case 'Contact Us':
+            break
+        case 'Cash For Cars':
+            break
+    }
+}
+
 function stripData(data, cb) {
     var name = ''
     var emailData = {}
-    var convertToPDF = templates.convertToPDFBuffer
+    // var convertToPDF = templates.convertToPDFBuffer
 
     if (!data.email) return null
 
@@ -51,9 +103,8 @@ function stripData(data, cb) {
     else if (data.name) name = data.name
 
     emailData.from = `'${ name }' <${ data.email }>`
-    emailData.to = 'info@jydautoleasing.com'
-    emailData.bcc = 'jenky@leadfire.com'
-    // emailData.to = 'jenky@leadfire.com'
+    emailData.to = jydEmailDefaults.to
+    emailData.bcc = jydEmailDefaults.bcc
     emailData.subject = data.type + ' - ' + name
 
     var body =
@@ -67,6 +118,9 @@ function stripData(data, cb) {
         // if(err) return null
 
     emailData.html = body
+
+    saveToDatabase(data)
+    // console.log(JSON.stringify(emailData, null, 5))
         // emailData.attachments = [
             // {
                 // filename : data.type + ' - ' + name + ' ' + getCurrentDate(),
@@ -132,6 +186,7 @@ route.get('/:route', function (req, res, next) {
     else return next()
 })
 
+// TODO: Check this one out!
 route.post('/data', function (req, res) {
     var body = req.body
 
@@ -140,6 +195,8 @@ route.post('/data', function (req, res) {
 
         sendEmail(data, function (err, c) {
             if (err) return console.log(err)
+
+            // TODO: Save in database
             console.log('Email sent!')
         })
 

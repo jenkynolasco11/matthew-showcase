@@ -3,8 +3,10 @@ var Schema = mongoose.Schema
 
 var Car = require('./car')
 var User = require('./user')
-var Subscription = require('./subscription')
+var Newsletter = require('./newsletter')
 var Refer = require('./refer')
+var DealSubsription = require('./deal-sub')
+var CreditApp = require('./credit-app')
 
 var MetaSchema = new Schema({
     lastCarId : { type : Number, default : 0 }
@@ -16,6 +18,8 @@ module.exports = {
     Car,
     User,
     Meta,
-    Subscription,
+    Newsletter,
     Refer,
+    CreditApp,
+    DealSubsription
 }
