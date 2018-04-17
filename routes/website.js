@@ -1,24 +1,25 @@
-var Router = require('express').Router
-var jydEmailDefaults = require('../mailConfig').keys.jydDefaults
-var sendEmail = require('../mailer').sendEmail
-var templates = require('../email-templates')
-var models = require('../models')
-var Car = models.Car
-var BuiltCar = models.BuiltCar
-var SellCar = models.SellCar
-var Message = models.Message
-var CreditApp = models.CreditApp
-var DealSubscription = models.DealSubsription
-var Refer = models.Refer
-var Newsletter = models.Newsletter
+const Router = require('express').Router
+const jydEmailDefaults = require('../mailConfig').keys.jydDefaults
+const sendEmail = require('../mailer').sendEmail
+const templates = require('../email-templates')
+const models = require('../models')
 
-var path = require('path')
-// var instagram = require('./instagram').getFeed
+const Car = models.Car
+const BuiltCar = models.BuiltCar
+const SellCar = models.SellCar
+const Message = models.Message
+const CreditApp = models.CreditApp
+const DealSubscription = models.DealSubsription
+const Refer = models.Refer
+const Newsletter = models.Newsletter
 
-var route = Router()
-var web = Router()
+const path = require('path')
+// const instagram = require('./instagram').getFeed
 
-var paths = [
+const route = Router()
+const web = Router()
+
+const paths = [
     'sell-car',
     'credit-app',
     'contact-us',
@@ -31,7 +32,7 @@ var paths = [
     'services',
     'refer-a-friend'
 ]
-var titles = {
+const titles = {
     'contact-us': 'Contact Us',
     'credit-app': 'Credit App',
     'admin': 'Admin Panel',
@@ -42,17 +43,17 @@ var titles = {
     'refer-a-friend' : 'Refer a Friend'
 }
 
-var checkIfAuth = function(req, res, next) {
+const checkIfAuth = (req, res, next) => {
     if(req.isAuthenticated()) return next()
 
     else return res.send({ ok : false, msg : 'You arent not authorized to access this route' })
 }
 
 function getCurrentDate() {
-    var today = new Date()
-    var dd = today.getDate()
-    var mm = today.getMonth()+1 //January is 0!
-    var yyyy = today.getFullYear()
+    const today = new Date()
+    const dd = today.getDate()
+    const mm = today.getMonth()+1 //January is 0!
+    const yyyy = today.getFullYear()
 
     today = ('0'+mm).slice(-2) + '-' + ('0'+dd).slice(-2) + '-' + yyyy
 
@@ -60,11 +61,11 @@ function getCurrentDate() {
 }
 
 function saveToDatabase(body) {
-    var data = {}
+    const data = {}
 
     switch(body.type) {
         case 'Credit App':
-            var CreditApp = models.CreditApp
+            const CreditApp = models.CreditApp
 
             data.code = body['Salesman\'s Name']
             data.firstname = body['First Name']
@@ -99,7 +100,7 @@ function saveToDatabase(body) {
             data.agreed = body['agree'] !== '0'
             data.reachedOut = false
 
-            var credit = new CreditApp({ ...data }).save(function(err, doc) {
+            const credit = new CreditApp({ ...data }).save((err, doc) => {
                 if(err) return console.log(err)
 
                 return console.log(doc)
@@ -107,11 +108,11 @@ function saveToDatabase(body) {
 
             break
         case 'Contact Us':
-            var Message = models.Message
+            const Message = models.Message
 
             // console.log(body)
 
-            var message = new Message({ ...body, read : false }).save(function(err, doc) {
+            const message = new Message({ ...body, read : false }).save((err, doc) => {
                 if(err) return console.log(err)
 
                 return console.log(doc)
@@ -119,7 +120,7 @@ function saveToDatabase(body) {
 
             break
         case 'Cash For Cars':
-            var SellCar = models.SellCar
+            const SellCar = models.SellCar
 
             data.firstname = body['First Name']
             data.lastname = body['Last Name']
@@ -132,7 +133,7 @@ function saveToDatabase(body) {
             data.year = body.vYear
             data.vin = body.VIN
 
-            var sellcar = new SellCar({ ...data }).save(function(err, doc) {
+            const sellcar = new SellCar({ ...data }).save((err, doc) => {
                 if(err) return console.log(err)
 
                 return console.log(doc)
@@ -143,21 +144,20 @@ function saveToDatabase(body) {
 }
 
 function stripData(data, cb) {
-    var name = ''
-    var emailData = {}
-    // var convertToPDF = templates.convertToPDFBuffer
+    const name = ''
+    const emailData = {}
 
     if (!data.email) return null
 
-    if (data['First Name'] && data['Last Name']) name = data['First Name'] + ' ' + data['Last Name']
+    if (data['First Name'] && data['Last Name']) name = `${ data['First Name'] } ${ data['Last Name'] }`
     else if (data.name) name = data.name
 
     emailData.from = `'${ name }' <${ data.email }>`
     emailData.to = jydEmailDefaults.to
     emailData.bcc = jydEmailDefaults.bcc
-    emailData.subject = data.type + ' - ' + name
+    emailData.subject = `${ data.type } - ${ name }`
 
-    var body =
+    const body =
         data.type === 'Credit App' ?
         templates.creditApp(data) :
         data.type === 'Contact Us' ?
@@ -185,8 +185,8 @@ function stripData(data, cb) {
 }
 
 function filterCarData(car) {
-    var mainImg = ''
-    var imgs = car.imgs.forEach(function (img) {
+    const mainImg = ''
+    const imgs = car.imgs.forEach( img => {
         if (img.main) {
             mainImg = img
             return
@@ -201,51 +201,47 @@ function filterCarData(car) {
     return car
 }
 
-route.get('/:route', function (req, res, next) {
-    var route = req.params.route
+route.get('/:route', (req, res, next) => {
+    const route = req.params.route
 
     if (route.match(/^service-/)) {
-        var view = route.slice(8)
+        const view = route.slice(8)
 
-        return res.render('services/' + view, {
-            title: 'JYD - Services'
-        })
+        return res.render('services/' + view, { title: 'JYD - Services' })
     } else if (route === 'listing') {
-        var data = {}
+        const data = {}
 
-        Car.distinct('make').then(function(makes) {
+        Car.distinct('make').then(makes => {
             data.makes = makes.sort((a,b) => a.localeCompare(b))
 
             return Car.distinct('transmission')
-        }).then(function(trans) {
+        }).then(trans => {
             data.trans = trans
 
             return Car.distinct('fuel')
-        }).then(function(fuels) {
+        }).then(fuels => {
             data.fuels = fuels
 
             return res.render('listing', data)
         }).catch(console.log)
 
     } else if (paths.includes(route)) {
-        var title = titles[route]
+        const title = titles[route]
 
-        return res.render(route, {
-            title: 'JYD - ' + title
-        })
+        return res.render(route, { title: 'JYD - ' + title })
     }
 
     else return next()
 })
 
 // TODO: Check this one out!
-route.post('/data', function (req, res) {
-    var body = req.body
+route.post('/data', (req, res) => {
+    const body = req.body
 
-    stripData(body, function(data) {
+    stripData(body, data => {
         if (!data) return res.send('ok')
 
-        sendEmail(data, function (err, c) {
+        sendEmail(data, (err, c) => {
             if (err) return console.log(err)
 
             // TODO: Save in database
@@ -257,19 +253,13 @@ route.post('/data', function (req, res) {
 
 })
 
-route.get('/details/(:id?)', function (req, res) {
-    var id = req.params.id
+route.get('/details/(:id?)', (req, res) => {
+    const { id } = req.params
 
-    if (!id) return res.render('listing', {
-        title: 'JYD - Search'
-    })
+    if (!id) return res.render('listing', { title: 'JYD - Search' })
 
-    Car.findOne({
-        id: id
-    }, function (err, car) {
-        if (err) return res.status(200).send({
-            ok: false
-        })
+    Car.findOne({ id }, (err, car) => {
+        if (err) return res.status(200).send({ ok: false })
 
         Car.aggregate([
             // { $match : { bodyType : car.bodyType }},
@@ -278,19 +268,13 @@ route.get('/details/(:id?)', function (req, res) {
                     size: 3
                 }
             },
-        ]).exec(function (err, related) {
-            if (err) return res.status(200).send({
-                ok: false,
-                car: {},
-                related: []
-            })
+        ]).exec((err, related) => {
+            if (err) return res.status(200).send({ ok: false, car: {}, related: [] })
 
-            var cars = related.map(filterCarData)
-            var featured = filterCarData(car._doc)
+            const cars = related.map(filterCarData)
+            const featured = filterCarData(car._doc)
 
-            var featImg = featured.imgs.filter(function(img) { return img.main })
-
-            // console.log(JSON.stringify(featImg, null, 3))
+            const featImg = featured.imgs.filter(img => img.main )
 
             return res.render('details', {
                 ok: true,
@@ -303,51 +287,36 @@ route.get('/details/(:id?)', function (req, res) {
 })
 
 route.get('/', function (req, res) {
-    Car.find({
-        isFeatured: true
-    }, function (err, docs) {
-        if (err) return res.render('index', {
-            cars: []
-        })
+    Car.find({ isFeatured: true }, (err, docs) => {
+        if (err) return res.render('index', { cars: [] })
 
-        var cars = docs.map(filterCarData)
+        const cars = docs.map(filterCarData)
 
-        return res.render('index', {
-            cars: cars,
-        })
-        // }, '')
-
+        return res.render('index', { cars: cars })
     })
 })
 
-// route.get('/stats', checkIfAuth, function(req, res) {
-route.get('/stats', function(req, res) {
-    console.log('hey, listen!!\n\n\n\n')
-    Car.count({}).then(function(cars) {
-        return Promise.all([ cars, BuiltCar.count({ $or : [ { reviewed : false }, { reviewed : { $exists : false }} ]}) ])
-    }).then(function([ cars, builds ]) {
-        return Promise.all([ cars, builds, SellCar.count({ $or : [ { reviewed : false }, { reviewed : { $exists : false }} ]})])
-    }).then(function([ cars, builds, toSell ]) {
-        return Promise.all([ cars, builds, toSell, Message.count({ read : false }) ])
-    }).then(function([ cars, builds, toSell, messages ]) {
-        return Promise.all([ cars, builds, toSell, messages, CreditApp.count({ $or : [ { reviewed : false }, { reviewed : { $exists : false }} ]}) ])
-    }).then(function([ cars, builds, toSell, messages, credApp ]) {
-        return Promise.all([ cars, builds, toSell, messages + credApp, DealSubscription.count({ $or : [ { reviewed : false }, { reviewed : { $exists : false }} ]}) ])
-    }).then(function([ cars, builds, toSell, inbox, interested ]) {
-        var data = { cars, builds, toSell, inbox, interested }
+// route.get('/stats', checkIfAuth, (req, res) => {
+// route.get('/stats', async (req, res) => {
+//     console.log('hey, listen!!\n\n\n\n')
 
-        console.log(JSON.stringify(data, null, 2))
+//     try {
+//         const cars = await Car.count({})
+//         const builds = await BuiltCar.count({ $or : [ { reviewed : false }, { reviewed : { $exists : false }} ]})
+//         const toSell = await SellCar.count({ $or : [ { reviewed : false }, { reviewed : { $exists : false }} ]})
+//         const credAppMsgs = await CreditApp.count({ $or : [ { reviewed : false }, { reviewed : { $exists : false }} ]})
+//         const regMsgs = await Message.count({ read : false })
+//         const interested = await DealSubscription.count({ $or : [ { reviewed : false }, { reviewed : { $exists : false }} ]})
 
-        return res.send({ ok : true, data })
-    })
-    .catch(function(err) {
-        console.log(err)
+//         var data = { cars, builds, toSell, inbox : credAppMsgs + regMsgs, interested }
 
-        return res.send({ ok : false })
-    })
+//         return res.send({ ok : true, data })
+//     } catch (e) {
+//         console.log(e)
+//     }
 
-    // return res.send({ ok : true })
-})
+//     return res.send({ ok : false })
+// })
 
 web.use('/', route)
 

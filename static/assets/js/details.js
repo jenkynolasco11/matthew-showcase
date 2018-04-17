@@ -28,7 +28,7 @@ $(document).ready(function() {
                     return x
                 }, {})
 
-                $.post('/deal-subs/new-subscription', data, function(data) {
+                $.post('/subscription/deal/new', data, function(data) {
                     if(data.ok) window.localStorage.setItem(id, 'true')
                 })
 

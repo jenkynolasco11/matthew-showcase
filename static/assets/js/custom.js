@@ -275,7 +275,7 @@ $document.ready(function () {
 			selectMake.removeAttr('disabled')
 		}
 
-		$.get('/build-car?year=' + $(this).val(), function(data) {
+		$.get('/car/build?year=' + $(this).val(), function(data) {
 			selectMake.html('')
 			selectMake.append($('<option value="none">Select Make</option>'))
 
@@ -289,7 +289,7 @@ $document.ready(function () {
 		if($(this).val() === 'none') selectModel.attr('disabled', true)
 		else selectModel.removeAttr('disabled')
 
-		$.get('/build-car?year=' + $(selectYear).val() + '&make=' + $(this).val(), function(data) {
+		$.get('/car/build?year=' + $(selectYear).val() + '&make=' + $(this).val(), function(data) {
 			selectModel.html('')
 			selectModel.append($('<option value="none">Select Model</option>'))
 
@@ -312,7 +312,7 @@ $document.ready(function () {
 		var model = $(selectModel).val()
 
 		// window.location.href = '/build-car/trim?year=' + year + '&make=' + make + '&model=' + model + '&build=' + (100000000000000 * Math.random()).toString(16)
-		var link = '/build-car/trim?options=' + year + '|' + make + '|' + model + '&build=' + (100000000000000 * Math.random()).toString(16)
+		var link = '/car/build/trim?options=' + year + '|' + make + '|' + model + '&build=' + (100000000000000 * Math.random()).toString(16)
 
 		// window.history.pushState(null, null, link)
 		window.location.href = link
@@ -346,7 +346,7 @@ $document.ready(function () {
 				return x
 			}, {})
 
-			$.post('/newsletter/new-subscriber', data, function(res) {
+			$.post('/subscription/newsletter/new', data, function(res) {
 				if(res.ok) window.localStorage.setItem('subscribed', 'yes')
 
 				$('#subscribe-form').fadeOut(500, function() {
@@ -392,7 +392,7 @@ $document.ready(function () {
 		$('#instagram-feed').html($(feedPics))
 	})
 
-	$.get('/build-car/trending', function(data) {
+	$.get('/car/build/trending', function(data) {
 		var trending = $('#trending-builds')
 
 		if(trending && data.ok) {

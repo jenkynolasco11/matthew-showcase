@@ -1,21 +1,22 @@
-var passport = require('passport')
-var Router = require('express').Router
-var User = require('../models').User
+const passport = require('passport')
+const Router = require('express').Router
+const User = require('../models').User
 
-var route = Router()
-var auth = Router()
+const route = Router()
+const auth = Router()
 
-route.get('/success', function(req, res) {
-    var user = req.user || null
+route.get('/success', (req, res) => {
+    const user = req.user || null
 
-    req.login(user, function(err) {
+    req.login(user, err => {
         if(!err) {
-            console.log('About to log ' + JSON.stringify(user))
+            console.log(`About to log ${ JSON.stringify(user) }`)
             try {
                 return res.status(200).send({ ok : true, user : user.username })
             } catch(e)  {}
         }
-        console.log('Error...' + err)
+        console.log(`Error... ${ err }`)
+
         return res.status(200).send({ ok : false })
     })
 })
@@ -32,20 +33,20 @@ route.post('/login', passport.authenticate('login', {
     })
 )
 
-route.get('/logout', function(req,res) {
-    console.log('signing out')
+route.get('/logout', (req,res) => {
+    // console.log('signing out')
 
     req.logout() // Logs out from passport. Desserializes user
     res.redirect('/admin')
 })
 
-route.get('/is-auth', function(req,res) {
-    var isAuth = req.isAuthenticated()
-    var user = isAuth ? req.user.username : null
+route.get('/is-auth', (req,res) => {
+    const isAuth = req.isAuthenticated()
+    const user = isAuth ? req.user.username : null
 
-    console.log('User is ' + (isAuth ? '' : 'not ') + 'authenticated...' + (isAuth ? '\n User --> ' + user : ''))
+    console.log(`User is ${ isAuth ? '' : 'not ' }authenticated... ${ isAuth ? '\n User --> ' + user : '' }`)
 
-    return res.status(200).send({ ok : isAuth, user : user })
+    return res.status(200).send({ ok : isAuth, user })
 })
 
 auth.use('/auth', route)

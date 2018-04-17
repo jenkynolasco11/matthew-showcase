@@ -17,7 +17,7 @@ $(document).ready(function() {
 
         $.ajax({
             type : 'POST',
-            url : '/build-car/review',
+            url : '/car/build/new',
             data : items,
             success : function(d) {
                 if(d) {

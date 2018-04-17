@@ -1,13 +1,13 @@
-var Router = require('express').Router
-var DealSubscription = require('../models').DealSubsription
+const Router = require('express').Router
+const DealSubscription = require('../../models').DealSubsription
 
-var route = Router()
-var dealsubs = Router()
+const route = Router()
+const dealsubs = Router()
 
-route.post('/new-subscription', function(req, res) {
-    var body = req.body
+route.post('/new', (req, res) => {
+    const { body } = req
 
-    var data = {}
+    const data = {}
 
     data.phoneNumber = body.phoneNumber
     data.name = body.name
@@ -20,7 +20,7 @@ route.post('/new-subscription', function(req, res) {
         id : body.id
     }
 
-    DealSubscription.update({ email : data.email, phoneNumber : data.phoneNumber }, { ...data }, { upsert : true, setDefaultsOnInsert : true }, function(err, doc) {
+    DealSubscription.update({ email : data.email, phoneNumber : data.phoneNumber }, { ...data }, { upsert : true, setDefaultsOnInsert : true }, (err, doc) => {
         if(err) return res.send({ ok : false })
 
         return res.send({ ok : true })
@@ -31,19 +31,19 @@ route.post('/new-subscription', function(req, res) {
     // })
 })
 
-route.get('/all', function(req, res) {
+route.get('/all', (req, res) => {
     DealSubscription.find({
         // TODO: Add query criteria in here
-    }).then(function(deals) {
+    }).then(deals => {
         return res.send({ ok : true, deals })
-    }).catch(function(err) {
+    }).catch(err => {
         console.log(err)
 
         return res.send({ ok : false })
     })
 })
 
-dealsubs.use('/deal-subs', route)
+dealsubs.use('/deal', route)
 
 module.exports = dealsubs
 /**

@@ -66,7 +66,7 @@ $(document).ready(function() {
 
             var selected = optionVars + '|' + optionsSelected.join('|')
 
-            var link = '/build-car/review?options='  + encodeURIComponent(selected) + '&build=' + (100000000000000 * Math.random()).toString(16)
+            var link = '/car/build/review?options='  + encodeURIComponent(selected) + '&build=' + (100000000000000 * Math.random()).toString(16)
 
             window.location.href = link
             // console.log(selected)

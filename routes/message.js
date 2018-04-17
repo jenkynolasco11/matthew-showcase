@@ -1,33 +1,30 @@
-var Router = require('express').Router
+const Router = require('express').Router
 
-var route = Router()
-var message = Router()
+const route = Router()
+const message = Router()
 
-var models = require('../models')
-var Message = models.Message
+const models = require('../models')
+const Message = models.Message
 // var DealSubs = models.DealSubsription
 // var SellCar = models.SellCar
 // var CreditApp = models.CreditApp
 // var BuiltCar = models.BuiltCar
 
-route.get('/all', function(req, res) {
+route.get('/all', (req, res) => {
     Message.find({
         // TODO: Add search criteria in here
-    }).then(function(messages) {
+    }).then(messages => {
         return res.send({ ok : true, messages })
-    }).catch(function(err) {
+    }).catch(err => {
         console.log(err)
 
         return res.send({ ok : false })
     })
 })
-// route.post('/auth/login', function(req, res) {
 
-// })
-// route.post('/upload-car', upload.single('car-image'), function(req, res) {
-//     var file = req.file
-//     var body = req.body
-// })
+route.post('/new', (req,res) => {
+    
+})
 
 message.use('/message', route)
 

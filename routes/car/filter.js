@@ -1,19 +1,14 @@
-var Router = require('express').Router
-var models = require('../models')
-var Car = models.Car
-// var fs = require('fs')
-// var path = require('path')
+const Router = require('express').Router
 
-var route = Router()
-var filter = Router()
+const Car = require('../../models').Car
 
-filter.get('/desc', function(req, res) {
-    var make = req.query.make || null
+const route = Router()
+const filter = Router()
 
-    console.log('HEY, COGNIO!')
+filter.get('/make/models', (req, res) => {
+    const make = req.query.make || null
 
     if(make) {
-        // Car.find({ make : make }, console.log)
         Car.aggregate([
             { $match : { make : make }},
             { $group :
@@ -23,26 +18,24 @@ filter.get('/desc', function(req, res) {
                     minYear : { $min : '$year' }
                 }
             },
-        ], function(err, data) {
+        ], (err, data) => {
 
             // Comment this line to return models and years
-            var models = data.map(function(item) { return item._id }).sort((a,b) => a.localeCompare(b))
+            const models = data.map(item => item._id).sort((a,b) => a.localeCompare(b))
 
-            console.log('Strings sorted => ', models)
+            // console.log('Strings sorted => ', models)
 
             return res.send(models)
-
-            // return res.send( data )
         })
     }
 })
 
-filter.get('/request', function(req, res) {
+filter.get('/all', (req, res) => {
     const { sortBy, limit, skip, make, model, years, prices, fuel, transmission = '', bodyType } = req.query
     const [ year1, year2 ] = years.split(',')//.sort()
     const [ price1, price2 ] = prices.split(',')//.sort()
 
-    function testItem(item) {
+    const testItem = item => {
         return /^all/i.test(item)
     }
 
@@ -57,25 +50,25 @@ filter.get('/request', function(req, res) {
     if(!testItem(model)) conditions.model = model
     if(transmission) conditions.transmission = { $in : transmission.split(',') }
 
-    console.log(JSON.stringify(conditions, null, 3))
-    // console.log(limit)
-    // console.log(skip)
-    // console.log(sortBy)
+    // console.log(JSON.stringify(conditions, null, 3))
+    // // console.log(limit)
+    // // console.log(skip)
+    // // console.log(sortBy)
 
     Car.find(conditions)
         .skip(+skip * limit || 0)
         .limit(+limit || 10)
         .sort({ make : sortBy || '-1', model : sortBy || '-1' })
         .exec()
-        .then(function(docs) {
+        .then(docs => {
             return Promise.all([ docs, Car.count(conditions) ])
         })
-        .then(function(vals) {
-            var [ cars, count ] = vals
+        .then(vals => {
+            const [ cars, count ] = vals
 
-            return res.send({ ok : true, cars : cars, count : count })
+            return res.send({ ok : true, cars, count })
         })
-        .catch(function(err){
+        .catch(err => {
             console.log(err)
 
             return res.send('error')

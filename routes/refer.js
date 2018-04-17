@@ -1,15 +1,14 @@
-var Router = require('express').Router
-var Refer = require('../models').Refer
+const Router = require('express').Router
+const Refer = require('../models').Refer
 
-var route = Router()
-var refer = Router()
+const route = Router()
+const refer = Router()
 
 route.post('/new-refer', function(req, res) {
-    var body = req.body
+    const { body } = req
 
     // ADD REFER HERE IN DATABASE.
     // TODO: CREATE MAIL FUNCTION THAT CREATES REFERAL CODE AND SENDS IT TO FRIEND
-
     return res.send({ ok : true })
 })
 

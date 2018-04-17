@@ -197,18 +197,22 @@ var getSelectedOptions = function() {
         // console.log(make, model, years[0], years[1], prices[0], prices[1], fuel, transOptions)
 
         // console.log('Something changed...')
-        retrieveAllCars(`/filter/request?make=${ make }&model=${ model }&years=${ years.join(',') }&prices=${ prices.join(',') }&fuel=${ fuel }&transmission=${ transOptions.join(',') }&bodyType=${ carOption }&limit=${ limit }&skip=${ skipHandler }&sortBy=${ sortOption }`)
+        retrieveAllCars(`/car/filter/all?make=${ make }&model=${ model }&years=${ years.join(',') }&prices=${ prices.join(',') }&fuel=${ fuel }&transmission=${ transOptions.join(',') }&bodyType=${ carOption }&limit=${ limit }&skip=${ skipHandler }&sortBy=${ sortOption }`)
     }, 50)
 }
 
-var rerender = function() { $('.selectpicker').selectpicker('refresh') }
+var rerender = function() {
+    $('.selectpicker').selectpicker('refresh')
+
+    retrieveAllCars()
+}
 
 var handleMakeChange = function() {
     setTimeout(function() {
         var make = $('[data-id=filter-make]').attr('title')
         skipHandler = 0
 
-        $.get('/filter/desc?make=' + make, function(data) {
+        $.get('/car/filter/make/models/?make=' + make, function(data) {
             // var minYear = $('#filter-year-min')
             // var maxYear = $('#filter-year-max')
             var models = $('#filter-model')

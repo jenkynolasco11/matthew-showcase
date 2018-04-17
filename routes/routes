@@ -1,0 +1,6 @@
+/car/filter/request              = get
+/car/filter/desc                 = get
+
+/subscription/deal/new           = post
+/subscription/deal/all           = get
+/subscription/newsletter/new     = post

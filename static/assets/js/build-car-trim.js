@@ -28,7 +28,7 @@ $(document).ready(function() {
             console.log(selected)
 
             // $.get('/build-car/options', { options : selected }, function(data) {
-            var link = '/build-car/options?options=' + selected + '&build=' + (100000000000000 * Math.random()).toString(16)
+            var link = '/car/build/options?options=' + selected + '&build=' + (100000000000000 * Math.random()).toString(16)
 
             // window.history.pushState(null, null, link)
             window.location.href = link

@@ -1,31 +1,29 @@
-var Router = require('express').Router
+const Router = require('express').Router
 
-var admin = require('./admin')
-var site = require('./website')
-var auth = require('./auth')
-var car = require('./car')
-var build = require('./buildCar')
-var instagram = require('./instagram')
-var filter = require('./filter')
-var newsletter = require('./newsletter')
-var dealSubs = require('./dealSubscription')
-var messages = require('./message')
-var sellCar = require('./sellCar')
+const car = require('./car')
+const subs = require('./subscription')
 
-var route = Router()
+const admin = require('./admin')
+const site = require('./website')
+const auth = require('./auth')
+
+const instagram = require('./instagram')
+
+const messages = require('./message')
+
+const route = Router()
 
 const routes = [
-    filter,
-    build,
-    auth,
     admin,
-    site,
+    auth,
+
     car,
     instagram,
-    newsletter,
-    dealSubs,
+
     messages,
-    sellCar
+    site,
+
+    subs,
 ]
 
 routes.forEach(r => route.use('/', r))
