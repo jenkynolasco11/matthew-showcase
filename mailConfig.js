@@ -13,3 +13,5 @@ exports.keys = {
         bcc : 'jenky@leadfire.com'
     }
 }
+
+// TODO: Check the built trendings. randomness is not working properly

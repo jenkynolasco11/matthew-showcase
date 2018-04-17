@@ -53,7 +53,8 @@ var BuiltCarSchema = new Schema({
         optionsPrice : String,
         selectedOptions : []
     },
-    url : String
+    url : String,
+    reviewed : { type : Boolean, default : () => false, index : true }
 })
 
 var Car = mongoose.model('car', CarSchema, 'car')

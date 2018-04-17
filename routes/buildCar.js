@@ -265,6 +265,22 @@ route.get('/trending', function(req, res) {
     })
 })
 
+route.get('/all', function(req, res) {
+    BuiltCar.find({
+        $or : [  {reviewed : false }, { reviewed : { $exists : false }} ]
+    }).then(function(builds) {
+        return res.send({ ok : true, builds })
+    })
+    .catch(function(err) {
+        console.log(err)
+
+        return res.send({ ok : false })
+    })
+})
+
 buildCar.use('/build-car', route)
 
 module.exports = buildCar
+
+
+//

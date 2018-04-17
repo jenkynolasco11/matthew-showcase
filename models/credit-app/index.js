@@ -2,7 +2,6 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
 var CreditSchema = new Schema({
-    //
     code : { type : String, required : true },
     firstname : String,
     lastname : String,
@@ -33,8 +32,9 @@ var CreditSchema = new Schema({
         montlyIncome : Number,
     },
     previousEmployer : String,
-    agreedToTerms : Boolean,
-    reachedOut : { type : Boolean, default : () => false },
+    agreedToTerms : { type : Boolean, index : true },
+    reachedOut : { type : Boolean, default : () => false, index : true },
+    reviewed : { type : Boolean, default : () => false, index : true },
     createdBy : { type : Date, default : Date.now }
 })
 

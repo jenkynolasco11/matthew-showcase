@@ -14,7 +14,8 @@ var SellSchema = new Schema({
     mileage : Number,
     condition : String,
     vin : { type : String, max : 17 },
-    reminded : { type : Boolean, default : () => 0 },
+    // reminded : { type : Boolean, default : () => 0, index : true },
+    reviewed : { type : Boolean, default : () => 0, index : true },
     createdBy : { type : Date, default : Date.now }
 })
 

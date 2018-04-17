@@ -4,6 +4,13 @@ var sendEmail = require('../mailer').sendEmail
 var templates = require('../email-templates')
 var models = require('../models')
 var Car = models.Car
+var BuiltCar = models.BuiltCar
+var SellCar = models.SellCar
+var Message = models.Message
+var CreditApp = models.CreditApp
+var DealSubscription = models.DealSubsription
+var Refer = models.Refer
+var Newsletter = models.Newsletter
 
 var path = require('path')
 // var instagram = require('./instagram').getFeed
@@ -33,6 +40,12 @@ var titles = {
     'listing': 'Search',
     'services': 'Services',
     'refer-a-friend' : 'Refer a Friend'
+}
+
+var checkIfAuth = function(req, res, next) {
+    if(req.isAuthenticated()) return next()
+
+    else return res.send({ ok : false, msg : 'You arent not authorized to access this route' })
 }
 
 function getCurrentDate() {
@@ -96,7 +109,7 @@ function saveToDatabase(body) {
         case 'Contact Us':
             var Message = models.Message
 
-            console.log(body)
+            // console.log(body)
 
             var message = new Message({ ...body, read : false }).save(function(err, doc) {
                 if(err) return console.log(err)
@@ -305,6 +318,35 @@ route.get('/', function (req, res) {
         // }, '')
 
     })
+})
+
+// route.get('/stats', checkIfAuth, function(req, res) {
+route.get('/stats', function(req, res) {
+    console.log('hey, listen!!\n\n\n\n')
+    Car.count({}).then(function(cars) {
+        return Promise.all([ cars, BuiltCar.count({ $or : [ { reviewed : false }, { reviewed : { $exists : false }} ]}) ])
+    }).then(function([ cars, builds ]) {
+        return Promise.all([ cars, builds, SellCar.count({ $or : [ { reviewed : false }, { reviewed : { $exists : false }} ]})])
+    }).then(function([ cars, builds, toSell ]) {
+        return Promise.all([ cars, builds, toSell, Message.count({ read : false }) ])
+    }).then(function([ cars, builds, toSell, messages ]) {
+        return Promise.all([ cars, builds, toSell, messages, CreditApp.count({ $or : [ { reviewed : false }, { reviewed : { $exists : false }} ]}) ])
+    }).then(function([ cars, builds, toSell, messages, credApp ]) {
+        return Promise.all([ cars, builds, toSell, messages + credApp, DealSubscription.count({ $or : [ { reviewed : false }, { reviewed : { $exists : false }} ]}) ])
+    }).then(function([ cars, builds, toSell, inbox, interested ]) {
+        var data = { cars, builds, toSell, inbox, interested }
+
+        console.log(JSON.stringify(data, null, 2))
+
+        return res.send({ ok : true, data })
+    })
+    .catch(function(err) {
+        console.log(err)
+
+        return res.send({ ok : false })
+    })
+
+    // return res.send({ ok : true })
 })
 
 web.use('/', route)

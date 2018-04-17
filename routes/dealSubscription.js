@@ -31,6 +31,18 @@ route.post('/new-subscription', function(req, res) {
     // })
 })
 
+route.get('/all', function(req, res) {
+    DealSubscription.find({
+        // TODO: Add query criteria in here
+    }).then(function(deals) {
+        return res.send({ ok : true, deals })
+    }).catch(function(err) {
+        console.log(err)
+
+        return res.send({ ok : false })
+    })
+})
+
 dealsubs.use('/deal-subs', route)
 
 module.exports = dealsubs
