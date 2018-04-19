@@ -115,7 +115,7 @@ function saveToDatabase(body) {
 
             // console.log(body)
 
-            const message = new Message({ ...body, read : false }).save((err, doc) => {
+            const message = new Message({ ...body, type : 'message', read : false }).save((err, doc) => {
                 if(err) return console.log(err)
 
                 return console.log(doc)
@@ -136,7 +136,7 @@ function saveToDatabase(body) {
             data.year = body.vYear
             data.vin = body.VIN
 
-            const sellcar = new SellCar({ ...data }).save((err, doc) => {
+            const sellcar = new SellCar({ ...data, type : 'sell' }).save((err, doc) => {
                 if(err) return console.log(err)
 
                 return console.log(doc)

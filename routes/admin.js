@@ -29,7 +29,7 @@ route.get('/stats', async (req, res) => {
         const regMsgs = await Message.count({ read : false })
         const interested = await DealSubscription.count({ $or : [ { reviewed : false }, { reviewed : { $exists : false }} ]})
 
-        const data = { cars, builds, toSell, inbox : credAppMsgs + regMsgs, interested }
+        const data = { cars, builds, toSell, inbox : credAppMsgs + regMsgs + toSell, interested }
 
         return res.send({ ok : true, data })
     } catch (e) {
