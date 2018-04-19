@@ -35,7 +35,9 @@ var CreditSchema = new Schema({
     agreedToTerms : { type : Boolean, index : true },
     reachedOut : { type : Boolean, default : () => false, index : true },
     reviewed : { type : Boolean, default : () => false, index : true },
-    createdBy : { type : Date, default : Date.now }
+    createdBy : { type : Date, default : Date.now },
+    type : { type : String, default : () => 'credit' },
+    deleted : { type : Boolean, default : () => false, index : true },
 })
 
 var model = mongoose.model('credit', CreditSchema, 'credit')

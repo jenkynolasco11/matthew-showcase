@@ -14,7 +14,9 @@ var DealSubscriptionSchema = new Schema({
         id : String,
     },
     reviewed : { type : Boolean, default : () => false, index : true },
-    createdBy : { type : Date, default : Date.now }
+    createdBy : { type : Date, default : Date.now },
+    type : { type : String, default : () => 'subscription' },
+    deleted : { type : Boolean, default : () => false, index : true },
 })
 
 var model = mongoose.model('dealSubscription', DealSubscriptionSchema, 'dealSubscription')

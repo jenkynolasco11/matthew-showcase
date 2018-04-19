@@ -1,5 +1,20 @@
 /car/filter/request              = get
 /car/filter/desc                 = get
+/car/build/                      = get
+/car/build/all                   = get
+/car/build/trim                  = get
+/car/build/trending              = get
+/car/build/review                = get
+/car/build/new                   = post
+/car/build/options               = get
+/car/sell/all                    = get
+/car/sell/new-submission         = post
+/car/all                         = get
+/car/featured                    = get
+/car/edit/:id                    = get
+/car/edit/:id                    = put
+/car/new                         = post
+/car/delete/:id                  = delete
 
 /subscription/deal/new           = post
 /subscription/deal/all           = get

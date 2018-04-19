@@ -1,6 +1,7 @@
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
+
 var CarSchema = new Schema({
     id : { type : String, required : true, unique : { index : true }},
     year: Number,
@@ -29,7 +30,8 @@ var CarSchema = new Schema({
         name : String,
         main : Boolean,
     }],
-    createdBy : { type : Date, default : Date.now }
+    createdBy : { type : Date, default : Date.now },
+    deleted : { type : Boolean, default : () => false }
 })
 
 var BuiltCarSchema = new Schema({
@@ -54,7 +56,9 @@ var BuiltCarSchema = new Schema({
         selectedOptions : []
     },
     url : String,
-    reviewed : { type : Boolean, default : () => false, index : true }
+    reviewed : { type : Boolean, default : () => false, index : true },
+    type : { type : String, default : () => 'build' },
+    deleted : { type : Boolean, default : () => false, index : true },
 })
 
 var Car = mongoose.model('car', CarSchema, 'car')

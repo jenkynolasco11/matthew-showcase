@@ -1,5 +1,9 @@
 const Router = require('express').Router
+
+const sendEmail = require('../../mailer').sendEmail
 const DealSubscription = require('../../models').DealSubsription
+const jydEmailDefaults = require('../../mailConfig').keys.jydDefaults
+const emailTemplate = require('../../email-templates').dealSubscription
 
 const route = Router()
 const dealsubs = Router()
@@ -20,15 +24,29 @@ route.post('/new', (req, res) => {
         id : body.id
     }
 
-    DealSubscription.update({ email : data.email, phoneNumber : data.phoneNumber }, { ...data }, { upsert : true, setDefaultsOnInsert : true }, (err, doc) => {
-        if(err) return res.send({ ok : false })
+    DealSubscription.update(
+        { email : data.email, phoneNumber : data.phoneNumber },
+        { ...data },
+        { upsert : true, setDefaultsOnInsert : true },
+        (err, doc) => {
+            if(err) return res.send({ ok : false })
 
-        return res.send({ ok : true })
-    })
+            const htmlBody = emailTemplate(data)
+            const emailData = {}
 
-    // Use upsert instead of new
-    // var dealsubs = new DealSubscription({ ...data }, function(err, doc) {
-    // })
+            emailData.from = `'${ data.name }' <${ data.email }>`
+            emailData.to = jydEmailDefaults.to
+            emailData.bcc = jydEmailDefaults.bcc
+            emailData.subject = `New Deal Interest - ${ data.name }`
+            emailData.html = htmlBody
+
+            sendEmail(emailData, err => {
+                if(err) return res.send({ ok : false })
+
+                return res.send({ ok : true })
+            })
+        }
+    )
 })
 
 route.get('/all', (req, res) => {

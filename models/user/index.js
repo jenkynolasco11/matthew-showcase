@@ -6,7 +6,8 @@ var Schema = mongoose.Schema
 var UserSchema = new Schema({
     username : { type : String, index : { unique : true }},
     password : { type : String, required : true },
-    createdBy : { type : Date, default : Date.now }
+    createdBy : { type : Date, default : Date.now },
+    deleted : { type : Boolean, default : () => false, index : true },
 })
 
 UserSchema.methods.generateHash = function(pass) {

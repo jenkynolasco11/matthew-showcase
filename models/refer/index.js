@@ -8,7 +8,9 @@ var ReferSchema = new Schema({
     message : String,
     reminded : { type : Boolean, default : () => false },
     referCode : { type : String, index : true, required : true },
-    createdBy : { type : Date, default : Date.now }
+    createdBy : { type : Date, default : Date.now },
+    type : { type : String, default : () => 'refer' },
+    deleted : { type : Boolean, default : () => false, index : true },
 })
 
 var model = mongoose.model('refer', ReferSchema, 'refer')

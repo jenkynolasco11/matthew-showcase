@@ -4,6 +4,9 @@ const sendEmail = require('../mailer').sendEmail
 const templates = require('../email-templates')
 const models = require('../models')
 
+const sockets = require('../socket.io').sockets
+const IO = require('socket.io')
+
 const Car = models.Car
 const BuiltCar = models.BuiltCar
 const SellCar = models.SellCar
@@ -79,7 +82,7 @@ function saveToDatabase(body) {
             data.city = body['City']
             data.state = body['State']
             data.zip = body['ZIP Code']
-            data.homeOwnership = body['Home Type']
+            data.homeOwnership = body['Home Type'].toUpperCase()
             data.yearsLivingInPlace = body['Years Living There']
             data.monthsLivingInPlace = body['Months Living There']
             data.monthlyRent = body['Monthly Payment']
@@ -141,10 +144,14 @@ function saveToDatabase(body) {
 
             break
     }
+
+    for(let [key, socket] of sockets) {
+        socket.emit('new message')
+    }
 }
 
 function stripData(data, cb) {
-    const name = ''
+    let name = ''
     const emailData = {}
 
     if (!data.email) return null
@@ -185,7 +192,7 @@ function stripData(data, cb) {
 }
 
 function filterCarData(car) {
-    const mainImg = ''
+    let mainImg = ''
     const imgs = car.imgs.forEach( img => {
         if (img.main) {
             mainImg = img

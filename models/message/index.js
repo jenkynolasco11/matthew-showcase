@@ -7,8 +7,10 @@ var MessageSchema = new Schema({
     phoneNumber : { type : String, index : true },
     subject : String,
     message : String,
-    read : { type : Boolean, default : () => false, index : true },
+    reviewed : { type : Boolean, default : () => false, index : true },
     createdBy : { type : Date, default : Date.now },
+    type : { type : String, default : () => 'message' },
+    deleted : { type : Boolean, default : () => false, index : true },
 })
 
 var model = mongoose.model('message', MessageSchema, 'message')

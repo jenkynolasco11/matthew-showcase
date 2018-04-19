@@ -1,29 +1,29 @@
-'use strict'
+const http = require('http')
+const body = require('body-parser')
+const nodemailer = require('nodemailer')
+const express = require('express')
+// const session = require('cookie-session')
+const session = require('express-session')
+const cookie = require('cookie-parser')
+// const MongoStore = require('connect-mongo')(session)
+const passport = require('passport')
+const logger = require('morgan')
+const cors = require('cors')
+const bluebird = require('bluebird')
+const mongoose = require('mongoose')
 
-var body = require('body-parser')
-var nodemailer = require('nodemailer')
-var express = require('express')
-// var session = require('cookie-session')
-var session = require('express-session')
-var cookie = require('cookie-parser')
-// var MongoStore = require('connect-mongo')(session)
-var passport = require('passport')
-var logger = require('morgan')
-var cors = require('cors')
-var bluebird = require('bluebird')
-var mongoose = require('mongoose')
-
-var routes = require('./routes')
+const routes = require('./routes')
+const socketServer = require('./socket.io').server
 
 mongoose.Promise = bluebird.Promise
-mongoose.connect('mongodb://127.0.0.1/jydautoleasing', function(err) {
+mongoose.connect('mongodb://127.0.0.1/jydautoleasing', err => {
   if(err) process.exit(0)
 
   // generate default meta
   require('./generate-defaults')
 
 
-  var app = express()
+  const app = express()
 
   app.set('views', process.cwd() + '/views')
   app.set('view engine', 'pug')
@@ -56,6 +56,12 @@ mongoose.connect('mongodb://127.0.0.1/jydautoleasing', function(err) {
     .use('', express.static('./static'))
     .use('/', routes)
 
-  app.listen(process.env.PORT || 8000)
-  console.log('Listening on port ' + (process.env.PORT || 8000) + '...')
+
+  const server = http.createServer(app)
+
+  socketServer(server)
+
+  server.listen(process.env.PORT || 8000, () => {
+    console.log('Listening on port ' + (process.env.PORT || 8000) + '...')
+  })
 })

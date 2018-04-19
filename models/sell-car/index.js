@@ -16,7 +16,9 @@ var SellSchema = new Schema({
     vin : { type : String, max : 17 },
     // reminded : { type : Boolean, default : () => 0, index : true },
     reviewed : { type : Boolean, default : () => 0, index : true },
-    createdBy : { type : Date, default : Date.now }
+    createdBy : { type : Date, default : Date.now },
+    type : { type : String, default : () => 'sell' },
+    deleted : { type : Boolean, default : () => false, index : true },
 })
 
 var model = mongoose.model('sell', SellSchema, 'sell')
