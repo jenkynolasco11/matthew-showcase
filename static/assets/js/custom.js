@@ -359,7 +359,7 @@ $document.ready(function () {
 				// }
 			})
 
-			console.log(data)
+			// console.log(data)
 		})
 	}
 
@@ -459,10 +459,10 @@ var sellingForm = $('#selling-form')
 var creditAppForm = $('#credit-app-form')
 var contactForm2 = $('#contact-form-2')
 
-console.log(contactForm, contactForm2)
+// console.log(contactForm, contactForm2)
 
 $.each([ contactForm2, contactForm ], function() {
-	console.log(this)
+	// console.log(this)
 	if(this) {
 		$(this).submit(function(e) {
 			return submitInformation(e, 'Contact Us', $(this))
@@ -496,7 +496,7 @@ function submitForm(form, formData) {
 		return x
 	}, formData);
 
-	console.log(data)
+	// console.log(data)
 
 	// console.log('Before sending...')
 

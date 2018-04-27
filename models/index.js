@@ -11,6 +11,7 @@ var DealSubsription = require('./deal-sub')
 var CreditApp = require('./credit-app')
 var Message = require('./message')
 var SellCar = require('./sell-car')
+var ChatMessage = require('./chat')
 
 var MetaSchema = new Schema({
     lastCarId : { type : Number, default : 0 }
@@ -28,5 +29,6 @@ module.exports = {
     CreditApp,
     DealSubsription,
     Message,
-    SellCar
+    SellCar,
+    ChatMessage
 }

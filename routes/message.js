@@ -2,6 +2,8 @@ const Router = require('express').Router
 
 const models = require('../models')
 const sockets = require('../socket.io').sockets
+const sendEmail = require('../mailer').sendEmail
+const jydEmailDefaults = require('../mailConfig').keys.jydDefaults
 
 const route = Router()
 const message = Router()
@@ -60,7 +62,7 @@ route.put('/:type/read/:id', async (req, res) => {
             model = Message
     }
 
-    model.findByIdAndUpdate(id, { reviewed : true }, err => {
+    model.findByIdAndUpdate(id, { reviewed : true, reviewedBy : Date.now() }, err => {
         if(err) {
             console.log(err)
 
@@ -75,8 +77,67 @@ route.put('/:type/read/:id', async (req, res) => {
     })
 })
 
+route.post('/reply', async (req, res) => {
+    const { id, type, reply : text } = req.body
+
+    let model = null
+
+    switch(type) {
+        case 'credit':
+            model = CreditApp
+            break
+        case 'sell':
+            model = SellCar
+            break
+        default:
+            model = Message
+    }
+
+    const createdBy = new Date()
+
+    const reply = { text, createdBy }
+
+    model.findByIdAndUpdate(id, { $push : { reply }}, { new : true }, (err, doc) => {
+        if(err) {
+            console.log(err)
+
+            return res.send({ ok : false })
+        }
+
+        const { email, reply, name, type } = doc
+        const subject = type === 'credit'
+            ? 'Reply on a Credit Application'
+            : type === 'sell'
+            ? 'Reply to a Selling Application'
+            : 'Reply to a Message'
+
+        // TODO: Add a format of how to send the email text in the reply
+        const emailData = {
+            from : `"JYD Auto Services" <${ jydEmailDefaults.to }>`,
+            to : email,
+            bcc : jydEmailDefaults.bcc,
+            subject : subject,
+            text : reply[ 0 ].text
+        }
+
+        sendEmail(emailData, function(err) {
+            if(err) {
+                console.log(err)
+
+                return res.send({ ok : false })
+            }
+
+            for(let socketId in sockets) {
+                sockets[ socketId ].emit('new message')
+            }
+
+            return res.send({ ok : true })
+        })
+    })
+})
+
+// TODO: Move creation of new messages here
 route.post('/new', (req,res) => {
-    // TODO: Move creation of new messages here
 })
 
 message.use('/message', route)

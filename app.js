@@ -22,7 +22,6 @@ mongoose.connect('mongodb://127.0.0.1/jydautoleasing', err => {
   // generate default meta
   require('./generate-defaults')
 
-
   const app = express()
 
   app.set('views', process.cwd() + '/views')
@@ -45,7 +44,7 @@ mongoose.connect('mongodb://127.0.0.1/jydautoleasing', err => {
 
     }))
     .use(cors({ origin : ['http://localhost:3000'], credentials : true }))
-    .use(logger('dev'))
+    // .use(logger('dev'))
 
   // configure passport
   require('./passport-init')(passport)

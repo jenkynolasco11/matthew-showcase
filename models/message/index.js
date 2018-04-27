@@ -7,6 +7,11 @@ var MessageSchema = new Schema({
     phoneNumber : { type : String, index : true },
     subject : String,
     message : String,
+    reply : [{
+        text : { type : String, default : () => [] },
+        createdBy : { type : Date, default : Date.now }
+    }],
+    reviewedBy : Date,
     reviewed : { type : Boolean, default : () => false, index : true },
     createdBy : { type : Date, default : Date.now },
     type : { type : String, default : () => 'message' },

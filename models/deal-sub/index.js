@@ -13,8 +13,14 @@ var DealSubscriptionSchema = new Schema({
         model : String,
         id : String,
     },
-    reviewed : { type : Boolean, default : () => false, index : true },
     createdBy : { type : Date, default : Date.now },
+
+    reviewed : { type : Boolean, default : () => false, index : true },
+    reply : [{
+        text : { type : String, default : () => [] },
+        createdBy : { type : Date, default : Date.now }
+    }],
+    reviewedBy : Date,
     type : { type : String, default : () => 'subscription' },
     deleted : { type : Boolean, default : () => false, index : true },
 })

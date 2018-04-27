@@ -215,7 +215,7 @@ route.get('/trending', (req, res) => {
     ]).then(docs => {
         const builts = docs.map(car => car.options )
 
-        console.log(cars)
+        // console.log(cars)
 
         return res.send({ ok : true, builts })
 

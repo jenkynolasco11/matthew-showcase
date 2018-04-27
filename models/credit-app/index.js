@@ -33,10 +33,15 @@ var CreditSchema = new Schema({
     },
     previousEmployer : String,
     agreedToTerms : { type : Boolean, index : true },
-    reachedOut : { type : Boolean, default : () => false, index : true },
+    // reachedOut : { type : Boolean, default : () => false, index : true },
     reviewed : { type : Boolean, default : () => false, index : true },
     createdBy : { type : Date, default : Date.now },
     type : { type : String, default : () => 'credit' },
+    reply : [{
+        text : { type : String, default : () => [] },
+        createdBy : { type : Date, default : Date.now }
+    }],
+    reviewedBy : Date,
     deleted : { type : Boolean, default : () => false, index : true },
 })
 

@@ -26,8 +26,10 @@ route.get('/stats', async (req, res) => {
         const builds = await BuiltCar.count({ $or : [ { reviewed : false }, { reviewed : { $exists : false }} ]})
         const toSell = await SellCar.count({ $or : [ { reviewed : false }, { reviewed : { $exists : false }} ]})
         const credAppMsgs = await CreditApp.count({ $or : [ { reviewed : false }, { reviewed : { $exists : false }} ]})
-        const regMsgs = await Message.count({ read : false })
+        const regMsgs = await Message.count({ reviewed : false })
         const interested = await DealSubscription.count({ $or : [ { reviewed : false }, { reviewed : { $exists : false }} ]})
+
+        // console.log(toSell, credAppMsgs, regMsgs)
 
         const data = { cars, builds, toSell, inbox : credAppMsgs + regMsgs + toSell, interested }
 

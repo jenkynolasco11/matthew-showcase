@@ -56,6 +56,11 @@ var BuiltCarSchema = new Schema({
         selectedOptions : []
     },
     url : String,
+    reply : [{
+        text : { type : String, default : () => [] },
+        createdBy : { type : Date, default : Date.now }
+    }],
+    reviewedBy : Date,
     reviewed : { type : Boolean, default : () => false, index : true },
     type : { type : String, default : () => 'build' },
     deleted : { type : Boolean, default : () => false, index : true },

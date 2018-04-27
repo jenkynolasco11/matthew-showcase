@@ -5,7 +5,7 @@ const templates = require('../email-templates')
 const models = require('../models')
 
 const sockets = require('../socket.io').sockets
-const IO = require('socket.io')
+// const IO = require('socket.io')
 
 const Car = models.Car
 const BuiltCar = models.BuiltCar
@@ -145,10 +145,8 @@ function saveToDatabase(body) {
             break
     }
 
-    for(let [key, socket] of sockets) {
-        socket.emit('new message')
-    }
-}
+    // Let sockets know that there is a new message
+    for(let [key, socket] of sockets) socket.emit('server:new email')}
 
 function stripData(data, cb) {
     let name = ''
