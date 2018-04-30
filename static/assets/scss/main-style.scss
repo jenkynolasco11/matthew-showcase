@@ -222,6 +222,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			padding-bottom: 40px;
 			outline: 1px solid rgb(244, 244, 244);
 			background-color: rgba(242, 242, 242, 0.645);
+			max-height : 550px;
+			overflow-y : scroll;
 			&>p {
 				background-color: black;
 				color: rgb(255, 0, 0);
@@ -234,6 +236,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				justify-content: center;
 			}
 			.trims {
+				overflow-y : scroll;
+				max-height : 500px;
 				display: flex;
 				flex-flow: column nowrap;
 				.title {
@@ -282,8 +286,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				}
 			}
 			.options-group {
-				max-height: 500px;
-				overflow-y: scroll;
 				padding: 0 10px;
 				&_label {
 					position: relative;
@@ -310,7 +312,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				}
 				&_choices {
 					height: 0;
-					overflow: hidden;
+					max-height: 500px;
+					overflow-y: scroll;
+					// overflow: hidden;
 					.option {
 						display: flex;
 						border-top: 1px solid #eee;

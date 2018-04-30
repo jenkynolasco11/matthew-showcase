@@ -1,6 +1,7 @@
 .car-options-preview.col-md-4
     .img-car
-        img(src='/assets/images/car-not-available-placeholder.jpg' alt='model-preview')
+        - var placeholder = img || '/assets/images/car-not-available-placeholder.jpg'
+        img(src=placeholder alt='model-preview')
     .details
         .item
             p.title Current Trim:

@@ -14,7 +14,7 @@ const Car = models.Car
 
 const route = Router()
 const buildCar = Router()
-const file = fs.readFileSync(path.resolve(__dirname, './cars-file.json'), 'utf8')
+const file = fs.readFileSync(path.resolve(__dirname, './cars-file-2.json'), 'utf8')
 
 const cars = JSON.parse(file)
 
@@ -96,6 +96,8 @@ route.get('/trim', (req, res) => {
         return { ...p, [ n.Trim ] : [ n ] }
     }, {})
 
+    // console.log(trims)
+
     return res.render('build-car/trim', { trims, make, model, year })
 })
 
@@ -116,6 +118,7 @@ route.get('/options', (req, res) => {
         dest,
         msrp,
         trim,
+        img : modelSelected.Photo,
         options : modelSelected.Options,
         hiddenOpt : query.options
     }
@@ -127,6 +130,10 @@ route.get('/review', (req, res) => {
     const query = req.query
     const options = getOptions(query.options.split('|'))
     const selectedOptions = options.selectedOptions
+
+    const { year, make, model } = options
+
+    const img = getCarsByModel(year, make, model).filter(c => c.Model === model)[ 0 ].Photo
 
     const opts = {}
 
@@ -141,6 +148,7 @@ route.get('/review', (req, res) => {
 
     options.selectedOptions = opts
     options.hiddenOpt = query.options
+    options.img = img
 
     return res.render('build-car/review', options)
 })

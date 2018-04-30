@@ -62,14 +62,16 @@ $(document).ready(function() {
 
             optionsSelected.push('{Color}' + ($('#desired-color').val().toLowerCase() || 'Any'))
 
-            console.log(!!$('#desired-color').val())
+            // console.log(!!$('#desired-color').val())
 
             var selected = optionVars + '|' + optionsSelected.join('|')
 
+            // console.log(selected)
+
             var link = '/car/build/review?options='  + encodeURIComponent(selected) + '&build=' + (100000000000000 * Math.random()).toString(16)
 
+            console.log('If you see a lot of console.log\'s, developers here don\'t even have time to breathe... why you complain for a simple comment')
             window.location.href = link
-            // console.log(selected)
         })
     })
 

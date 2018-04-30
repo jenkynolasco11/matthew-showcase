@@ -13,20 +13,21 @@ block main-body
                     - var first = true
                     if trims
                         each trim, key in trims
-                            p.title #{ make } #{ model } #{ key }
-                            .headers
-                                .name Trim
-                                .price Invoice
-                            each option, i in trim
-                                label.option
-                                    - var value = year+"|"+make+"|"+model+"|"+option.MSRP+"|"+option.Destination+"|"+option.Invoice.replace(/\$/,'')+"|"+option.Trim
-                                    if first
-                                        input(type="radio" name="option-select" value=value checked)
-                                    else
-                                        input(type="radio" name="option-select" value=value)
-                                    span.trim-name #{ option.Trim }
-                                    span.trim-price $ #{ option.Invoice.replace(/\$/,'') }
-                                    - first = false
+                            .trim-item
+                                p.title #{ make } #{ model } #{ key }
+                                .headers
+                                    .name Trim
+                                    .price Invoice
+                                each option, i in trim
+                                    label.option
+                                        - var value = year+"|"+make+"|"+model+"|"+option.MSRP+"|"+option.Destination+"|"+option.Invoice.replace(/\$/,'')+"|"+option.Trim+"|"+option.Photo
+                                        if first
+                                            input(type="radio" name="option-select" value=value checked)
+                                        else
+                                            input(type="radio" name="option-select" value=value)
+                                        span.trim-name #{ option.Trim }
+                                        span.trim-price $ #{ option.Invoice.replace(/\$/,'') }
+                                        - first = false
             .col-xs-12.navigation
                 span(data-option="back" data-page="index").nav-item << Back
                 span(data-option="next" data-page="option").nav-item Next >>

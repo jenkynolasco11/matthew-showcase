@@ -10100,6 +10100,8 @@ body.color-turquoise #road {
   padding-bottom: 40px;
   outline: 1px solid #f4f4f4;
   background-color: rgba(242, 242, 242, 0.645);
+  max-height: 550px;
+  overflow-y: scroll;
 }
 
 #build-car-preview .car-options-trim > p {
@@ -10127,6 +10129,8 @@ body.color-turquoise #road {
 }
 
 #build-car-preview .car-options-trim .trims {
+  overflow-y: scroll;
+  max-height: 500px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -10235,8 +10239,6 @@ body.color-turquoise #road {
 }
 
 #build-car-preview .car-options-trim .options-group {
-  max-height: 500px;
-  overflow-y: scroll;
   padding: 0 10px;
 }
 
@@ -10274,7 +10276,8 @@ body.color-turquoise #road {
 
 #build-car-preview .car-options-trim .options-group_choices {
   height: 0;
-  overflow: hidden;
+  max-height: 500px;
+  overflow-y: scroll;
 }
 
 #build-car-preview .car-options-trim .options-group_choices .option {
