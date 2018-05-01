@@ -327,6 +327,8 @@ $document.ready(function () {
 	var closeNewsletter = $('#subscribe-newsletter .close-newsletter')[ 0 ]
 
 	function fadeNewsletter() {
+		window.sessionStorage.setItem('temp-closed', 'yes')
+
 		$('.newsletter-overlay').fadeOut(500, function() {
 			setTimeout(function(self) {
 				$(self).remove()
@@ -373,10 +375,11 @@ $document.ready(function () {
 		if(window.pageYOffset > $(document).height() * 0.4) {
 			if(!itAppeared) {
 				itAppeared = true
-
+				
+				var prevClosed = window.sessionStorage.getItem('temp-closed')
 				var isSubscribed = window.localStorage.getItem('subscribed')
 
-				if(isSubscribed !== 'yes') $('.newsletter-overlay').delay(2000).css('display', 'flex').hide().fadeIn(500)
+				if(isSubscribed !== 'yes' && prevClosed !== 'yes') $('.newsletter-overlay').delay(2000).css('display', 'flex').hide().fadeIn(500)
 			}
 		}
 	})

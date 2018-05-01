@@ -127,7 +127,7 @@ function submitChatInfo(e) {
 
     hideOverlay()
 
-    socket.emit('chat:get old messages', { name : name, email : email })
+    socketIO.emit('chat:get old messages', { name : name, email : email })
     return startSocketInterval()
 }
 
