@@ -122,6 +122,8 @@ function submitChatInfo(e) {
     var name = inputName.val()
     var email = inputEmail.val()
 
+    console.log(name, email)
+
     window.sessionStorage.setItem('chat:name', name)
     window.sessionStorage.setItem('chat:email', email)
 
