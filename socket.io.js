@@ -72,6 +72,7 @@ function adminSocketFunctions(socket) {
 
 function clientSocketFunctions(socket) {
     const { id } = socket
+    let isFirstMessageSent = false
 
     clientSockets[ id ] = { socket, userData : { name : '', email : '' }}
 
@@ -108,11 +109,23 @@ function clientSocketFunctions(socket) {
         new ChatMessage( dbMsg ).save()
     }
 
-    function onSetSocketData({ name, email, isFocus }) {
-        clientSockets[ id ].userData = { email, name, isFocus }
+    // function onSetSocketData({ name, email, isFocus }) {
+    //     clientSockets[ id ].userData = { email, name, isFocus }
 
-        emitMessageToSockets(adminSockets, 'server:new connection', { id, email, name, isFocus })
-    }
+    //     console.log('here')
+
+    //     setTimeout(() => {
+    //         const msg = {
+    //             text : `Welcome to JYD, ${ name }! How can we help you out today?`,
+    //             timestamp : Date.now(),
+    //             type : 'company'
+    //         }
+
+    //         socket.emit('new message', newMsg)
+    //     }, 1000)
+
+    //     emitMessageToSockets(adminSockets, 'server:new connection', { id, email, name, isFocus })
+    // }
 
     async function onSetSocketStats({ isFocus, email, name, isTyping }) {
         const { userData : ud } = clientSockets[ id ]
@@ -148,7 +161,7 @@ function clientSocketFunctions(socket) {
 
     socket.on('disconnect', onDisconnect)
     socket.on('new message', onNewMessage)
-    socket.on('chat:set data', onSetSocketData)
+    // socket.on('chat:set data', onSetSocketData)
     socket.on('chat:chat stats', onSetSocketStats)
     socket.on('chat:get old messages', onGetRecentMessages)
 }

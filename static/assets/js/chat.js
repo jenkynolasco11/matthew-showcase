@@ -93,7 +93,6 @@ function socketFuncs(socket) {
         var isFocus = /open/.test(chatBox.attr('class'))
 
         return startSocketInterval()
-        // return socketIO.emit('chat:set data', { name : name, email : email, isFocus : isFocus })
     })
 }
 
@@ -195,5 +194,4 @@ $(document).ready(function() {
 
     socketIO.emit('chat:get old messages', { name : name, email : email })
     return startSocketInterval()
-    // return socketIO.emit('chat:set data', { name : name, email : email, isFocus : isFocus })
 })
