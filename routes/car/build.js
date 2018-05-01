@@ -175,21 +175,22 @@ const saveBuiltInDB = data => {
     })
 }
 
-const extractPath = req => {
-    // Escaping user input to be treated as a literal
-    // string within a regular expression accomplished by
-    // simple replacement
-    const escapeRegExp = str => str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, '\\$1')
+// const extractPath = req => {
+//     // Escaping user input to be treated as a literal
+//     // string within a regular expression accomplished by
+//     // simple replacement
+//     const escapeRegExp = str => str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, '\\$1')
 
-    // Replace utility function
-    const replaceAll = (str, find, replace) => str.replace(new RegExp(escapeRegExp(find), 'g'), replace)
+//     // Replace utility function
+//     const replaceAll = (str, find, replace) => str.replace(new RegExp(escapeRegExp(find), 'g'), replace)
 
-    return replaceAll(req.get('referer'), req.get('origin'), '');
-}
+//     return replaceAll(req.get('referer'), req.get('origin'), '');
+// }
 
 route.post('/new', (req, res) => {
     const body = req.body
-    const url = extractPath(req)
+    const url = '/car/build/review?options=' + body.options
+    // const url = extractPath(req)
 
     const emailData = {}
 
