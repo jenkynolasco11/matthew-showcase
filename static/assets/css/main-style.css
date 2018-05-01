@@ -15105,6 +15105,9 @@ table.icons tr td:first-child {
 }
 
 #chat-box #chat {
+  -webkit-box-shadow: 4px 4px 4px black;
+     -moz-box-shadow: 4px 4px 4px black;
+          box-shadow: 4px 4px 4px black;
   position: absolute;
   margin-top: 0;
   width: 500px;
@@ -15198,6 +15201,9 @@ table.icons tr td:first-child {
 }
 
 #chat-box #chat .messages {
+  -webkit-box-shadow: inset 2px 2px 2px black;
+     -moz-box-shadow: inset 2px 2px 2px black;
+          box-shadow: inset 2px 2px 2px black;
   background-color: white;
   height: 400px;
   border: 10px solid black;
