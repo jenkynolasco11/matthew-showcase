@@ -220,7 +220,7 @@ route.post('/new', (req, res) => {
 route.get('/trending', (req, res) => {
     // Car.aggregate([
     BuiltCar.find({}).limit(6).then(docs => {
-        const builts = docs.map(car => { ...car.options, url : car.url })
+        const builts = docs.map(car => ({ ...car.options, url : car.url }))
 
         // console.log(cars)
 
