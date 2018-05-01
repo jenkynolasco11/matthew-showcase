@@ -122,12 +122,16 @@ function submitChatInfo(e) {
     var name = inputName.val()
     var email = inputEmail.val()
 
-    console.log(name, email)
-
     window.sessionStorage.setItem('chat:name', name)
     window.sessionStorage.setItem('chat:email', email)
 
     hideOverlay()
+
+    var isFocus = /open/.test(chatBox.attr('class'))
+
+    chatStatsOnClient.name = name
+    chatStatsOnClient.email = email
+    chatStatsOnClient.isFocus = isFocus
 
     socketIO.emit('chat:get old messages', { name : name, email : email })
     return startSocketInterval()
