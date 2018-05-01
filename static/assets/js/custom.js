@@ -405,6 +405,8 @@ $document.ready(function () {
 		if(trending && data.ok) {
 			var items = ''
 
+			console.log(data.builts)
+
 			data.builts.forEach(function(car) {
 				items += `
 					<li>
