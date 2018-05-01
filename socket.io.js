@@ -25,9 +25,9 @@ const objBase = {
 const adminSockets = { ...objBase }
 const clientSockets = { ...objBase }
 
-function emitMessageToSockets(sockets, msg, data) {
+function emitMessageToSockets(sockets, event, data = {}) {
     for(const [id, { socket }] of sockets) {
-        socket.emit(msg, data)
+        socket.emit(event, data)
     }
 }
 
@@ -40,34 +40,32 @@ function constructMessage(type, text) {
 }
 
 function adminSocketFunctions(socket) {
-    // console.log('New Connection on Admin => ' + socket.id)
     adminSockets[ socket.id ] = { socket }
 
     socket.on('disconnect', () => {
         delete adminSockets[ socket.id ]
     })
 
-    socket.on('admin:get list connected', () => {
-        const entries = Object.keys(clientSockets).map(id => {
-            const { userData } = clientSockets[ id ]
-
-            console.log(userData)
-
-            return { id, ...userData }
-        })
-
-        socket.emit('server:list connected clients', [ ...entries ])
-    })
-
-    // TODO: Save the messages into the DB
     socket.on('admin:new message', ({ id, text }) => {
-        const socketClient = clientSockets[ id ].socket
+        const { socket : socketClient, userData } = clientSockets[ id ]
+        const { name, email } = userData
 
         if(socketClient) {
             const message = constructMessage('company', text)
 
             socketClient.emit('new message', message)
             socket.emit('server:new message', { id, message : { ...message, type : 'client' } })
+
+            const dbMsg = {
+                from : 'company',
+                to : 'client',
+                timestamp : Date.now(),
+                msg : text,
+                name,
+                email,
+            }
+
+            new ChatMessage( dbMsg ).save()
         }
     })
 }
@@ -75,7 +73,7 @@ function adminSocketFunctions(socket) {
 function clientSocketFunctions(socket) {
     const { id } = socket
 
-    clientSockets[ id ] = { socket, /*messages : []*/ }
+    clientSockets[ id ] = { socket, userData : { name : '', email : '' }}
 
     //#region functions
     function onDisconnect() {
@@ -84,7 +82,6 @@ function clientSocketFunctions(socket) {
         emitMessageToSockets(adminSockets, 'server:client disconnect', id)
     }
 
-    // TODO: Save the messages into the DB
     function onNewMessage({ msg }) {
         const newMsg = constructMessage('client', msg)
 
@@ -94,32 +91,67 @@ function clientSocketFunctions(socket) {
 
         emitMessageToSockets(adminSockets, 'server:new message',  { id, message })
         socket.emit('new message', newMsg)
+
+        const { userData } = clientSockets[ id ]
+
+        const { name, email } = userData
+
+        const dbMsg = {
+            from : 'client',
+            to : 'company',
+            timestamp : Date.now(),
+            name,
+            email,
+            msg,
+        }
+
+        new ChatMessage( dbMsg ).save()
     }
 
-    function setSocketData({ name, email, isFocus }) {
+    function onSetSocketData({ name, email, isFocus }) {
         clientSockets[ id ].userData = { email, name, isFocus }
 
         emitMessageToSockets(adminSockets, 'server:new connection', { id, email, name, isFocus })
     }
 
-    function chatStat(name, val){
-        clientSockets[ id ][ name ] = val
+    async function onSetSocketStats({ isFocus, email, name, isTyping }) {
+        const { userData : ud } = clientSockets[ id ]
 
-        emitMessageToSockets(adminSockets, 'server:chat stat', { id, [ name ] : val })
+        const userData = { ...ud, isFocus, email, name, isTyping }
+
+        clientSockets[ id ].userData = { ...userData }
+
+        try {
+            const msgs = await ChatMessage.find({ name, email }).limit(100)
+
+            const messages = msgs.map(({ msg : text, to : type, timestamp }) => ({ timestamp, type, text }))
+
+            emitMessageToSockets(adminSockets, 'server:chat stats', { id, ...userData, messages })
+        } catch (err) {
+            console.log(err)
+        }
+
+    }
+
+    async function onGetRecentMessages({ name, email }) {
+        try {
+            const messages = await ChatMessage.find({ name, email }).limit(25).exec()
+
+            const oldMessages = messages.map(({ msg : text, to : type, timestamp }) => ({ timestamp, type, text }))
+
+            socket.emit('server:old messages', oldMessages)
+        } catch (err) {
+            console.log(err)
+        }
     }
     //#endregion functions
 
     socket.on('disconnect', onDisconnect)
     socket.on('new message', onNewMessage)
-    socket.on('chat:set data', setSocketData)
-    socket.on('chat:chat focus', ({ focus }) => chatStat('isFocus', focus))
-    socket.on('chat:chat typing', ({ typing }) => chatStat('isTyping', typing))
+    socket.on('chat:set data', onSetSocketData)
+    socket.on('chat:chat stats', onSetSocketStats)
+    socket.on('chat:get old messages', onGetRecentMessages)
 }
-
-// setInterval(() => {
-//     console.log('sending...')
-//     for([_, s] of chatSockets) s.emit('new message', { timestamp : Date.now(), text : 'this is a test' , type : 'company' })
-// }, 1000)
 
 exports.sockets = adminSockets
 exports.chatSockets = clientSockets

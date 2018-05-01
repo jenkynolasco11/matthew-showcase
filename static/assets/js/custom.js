@@ -266,6 +266,10 @@ $document.ready(function () {
 	var submitCarBuild = $('#submit-car-build')
 	var buildCarAppFor = $('#build-car-app')
 
+	selectYear.val('none')
+	selectMake.val('none')
+	selectModel.val('none')
+
 	selectYear.on('change', function() {
 		if($(this).val() === 'none') {
 			selectMake.attr('disabled', true)

@@ -70,7 +70,7 @@ route.put('/:type/read/:id', async (req, res) => {
         }
 
         for(let socketId in sockets) {
-            sockets[ socketId ].emit('new message')
+            sockets[ socketId ].socket.emit('new message')
         }
 
         return res.send({ ok : true })
@@ -128,7 +128,7 @@ route.post('/reply', async (req, res) => {
             }
 
             for(let socketId in sockets) {
-                sockets[ socketId ].emit('new message')
+                sockets[ socketId ].socket.emit('new message')
             }
 
             return res.send({ ok : true })
