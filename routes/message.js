@@ -8,35 +8,33 @@ const jydEmailDefaults = require('../mailConfig').keys.jydDefaults
 const route = Router()
 const message = Router()
 
-const Message = models.Message
-const SellCar = models.SellCar
-const CreditApp = models.CreditApp
+const Submission = models.Submission;
 
 route.get('/all', async (req, res) => {
     const { skip = 0, limit = 10 } = req.query
 
     try {
         // TODO: Add search criteria in here
-        const msgs = await Message.find({ $or : [ { deleted : { $exists : false}}, { deleted : false }]}).sort({ createBy : 1 })
-        const sells = await SellCar.find({ $or : [ { deleted : { $exists : false}}, { deleted : false }]}).sort({ createBy : 1 })
-        const credits = await CreditApp.find({ $or : [ { deleted : { $exists : false}}, { deleted : false }]}).sort({ createBy : 1 })
+        let submissions = await Submission.find({}).sort({ createBy : 1 })
+        submissions = submissions.map(message => {
+            message = message.toObject();
+            message = {
+                ...message,
+                ...message.body
+            }
+            if (!message.name) {
+                message.name = message.firstname;
+            }
+            console.log(message.name)
+            return message;
+        });
 
-        const allMsgs = [
-            ...msgs,
-            ...sells,
-            ...credits
-        ].sort((a,b) => {
-            if(new Date(a.createdBy) > new Date(b.createdBy)) return -1
-            if(new Date(b.createdBy) > new Date(a.createdBy)) return 1
 
-            return 0
-        })
-
-        const count = allMsgs.length
+        const count = submissions.length
         const startIndex = Number(skip)
         const lastIndex = startIndex + Number(limit)
 
-        const messages = allMsgs.slice(startIndex, lastIndex)
+        const messages = submissions.slice(startIndex, lastIndex)
 
         return res.send({ ok : true, messages, count })
     } catch (e) {
@@ -80,31 +78,19 @@ route.put('/:type/read/:id', async (req, res) => {
 route.post('/reply', async (req, res) => {
     const { id, type, reply : text } = req.body
 
-    let model = null
-
-    switch(type) {
-        case 'credit':
-            model = CreditApp
-            break
-        case 'sell':
-            model = SellCar
-            break
-        default:
-            model = Message
-    }
-
     const createdBy = new Date()
 
     const reply = { text, createdBy }
 
-    model.findByIdAndUpdate(id, { $push : { reply }}, { new : true }, (err, doc) => {
-        if(err) {
+    Submission.findByIdAndUpdate(id, { $push : { reply }}, { new : true }, (err, doc) => {
+        if (err) {
             console.log(err)
 
             return res.send({ ok : false })
         }
 
-        const { email, reply, name, type } = doc
+        const { email, reply, name, type } = doc;
+
         const subject = type === 'credit'
             ? 'Reply on a Credit Application'
             : type === 'sell'

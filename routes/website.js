@@ -15,6 +15,7 @@ const CreditApp = models.CreditApp
 const DealSubscription = models.DealSubsription
 const Refer = models.Refer
 const Newsletter = models.Newsletter
+const Submission = models.Submission;
 
 const path = require('path')
 // const instagram = require('./instagram').getFeed
@@ -65,45 +66,46 @@ function getCurrentDate() {
 
 function saveToDatabase(body) {
     const data = {}
+    data.body = {}
 
     switch(body.type) {
         case 'Credit App':
-            const CreditApp = models.CreditApp
 
-            data.code = body['Salesman\'s Name']
-            data.firstname = body['First Name']
-            data.lastname = body['Last Name']
-            data.middlename = body['Middle Name']
+            data.body.code = body['Salesman\'s Name']
+            data.body.firstname = body['First Name']
+            data.body.lastname = body['Last Name']
+            data.body.middlename = body['Middle Name']
             data.phoneNumber = body['Day Time Phone']
-            data.dob = new Date(+body['DOB Year'], +body['DOB Month'] - 1, +body['DOB Day'])
-            data.ssn = body['SSN']
+            data.body.dob = new Date(+body['DOB Year'], +body['DOB Month'] - 1, +body['DOB Day'])
+            data.body.ssn = body['SSN']
             data.email = body['email']
-            data.street = body['Address']
-            data.city = body['City']
-            data.state = body['State']
-            data.zip = body['ZIP Code']
-            data.homeOwnership = body['Home Type'].toUpperCase()
-            data.yearsLivingInPlace = body['Years Living There']
-            data.monthsLivingInPlace = body['Months Living There']
-            data.monthlyRent = body['Monthly Payment']
-            data.previousAddress = body['Previous Address']
-            data.driverLicense = {
+            data.body.street = body['Address']
+            data.body.city = body['City']
+            data.body.state = body['State']
+            data.body.zip = body['ZIP Code']
+            data.body.homeOwnership = body['Home Type'].toUpperCase()
+            data.body.yearsLivingInPlace = body['Years Living There']
+            data.body.monthsLivingInPlace = body['Months Living There']
+            data.body.monthlyRent = body['Monthly Payment']
+            data.body.previousAddress = body['Previous Address']
+            data.body.driverLicense = {
                 number : body['Driver\'s Licence Number'],
                 stateIssued : body['Driver\'s State'],
                 expirationDate : new Date(body['Driver\'s License Expiration Date Year'], body['Driver\'s License Expiration Date Month']-1, body['Driver\'s License Expiration Date Day']),
             }
-            data.employement = {
+            data.body.employement = {
                 employerName : body['Employer\'s Name'],
                 employerAddress : body['Employer\'s Address'],
                 employerYearsAtWork : body['Employee Years'],
                 employerMonthsAtWork : body['Employee Months'],
+                jobTitle: body['Job Title'],
                 montlyIncome : body['Monthly Income'],
             }
-            data.previousEmployer = body['Previous Employer']
-            data.agreed = body['agree'] !== '0'
-            data.reachedOut = false
+            data.body.previousEmployer = body['Previous Employer']
+            data.body.agreed = body['agree'] !== '0'
+            data.body.reachedOut = false
 
-            const credit = new CreditApp({ ...data }).save((err, doc) => {
+            const credit = new Submission({ ...data, type: 'credit' }).save((err, doc) => {
                 if(err) return console.log(err)
 
                 return console.log(doc)
@@ -111,11 +113,14 @@ function saveToDatabase(body) {
 
             break
         case 'Contact Us':
-            const Message = models.Message
 
-            // console.log(body)
+            
+            let messageData = body;
+            messageData.body = {};
+            messageData.body.subject = body['subject'];
+            messageData.body.message = body['message'];
 
-            const message = new Message({ ...body, type : 'message', read : false }).save((err, doc) => {
+            const message = new Submission({ ...messageData, type : 'message', read : false }).save((err, doc) => {
                 if(err) return console.log(err)
 
                 return console.log(doc)
@@ -123,20 +128,19 @@ function saveToDatabase(body) {
 
             break
         case 'Cash For Cars':
-            const SellCar = models.SellCar
 
-            data.firstname = body['First Name']
-            data.lastname = body['Last Name']
+            data.body.firstname = body['First Name']
+            data.body.lastname = body['Last Name']
             data.phoneNumber = body.phone
             data.email = body.email
-            data.condition = body.vCondition
-            data.mileage = body.vMileage
-            data.model = body.vModel
-            data.make = body.vMake
-            data.year = body.vYear
-            data.vin = body.VIN
+            data.body.condition = body.vCondition
+            data.body.mileage = body.vMileage
+            data.body.model = body.vModel
+            data.body.make = body.vMake
+            data.body.year = body.vYear
+            data.body.vin = body.VIN
 
-            const sellcar = new SellCar({ ...data, type : 'sell' }).save((err, doc) => {
+            const sellcar = new Submission({ ...data, type : 'sell' }).save((err, doc) => {
                 if(err) return console.log(err)
 
                 return console.log(doc)
