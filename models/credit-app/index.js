@@ -27,9 +27,11 @@ var CreditSchema = new Schema({
     employement : {
         employerName : String,
         employerAddress : String,
+        employerContact : String,
         employerYearsAtWork : Number,
         employerMonthsAtWork : Number,
         montlyIncome : Number,
+        jobTitle : String
     },
     previousEmployer : String,
     agreedToTerms : { type : Boolean, index : true },

@@ -1,0 +1,21 @@
+//- .auth-overlay
+    .auth
+        .nav
+            input(id="auth-login" type="radio" name="auth-nav" value="login" checked)
+            label(for="auth-login") Login
+            input(id="auth-signup" type="radio" name="auth-nav" value="signup")
+            label(for="auth-signup") Signup
+        .content
+            .login
+                input(type="text" name="email"  placeholder="Email" required)
+                input(type="password" name="password"  placeholder="Password" required)
+                input(type="submit" value="Login")
+            .signup.hidden
+                input(type="text" placeholder="Name" name="name" required)
+                input(type="text" placeholder="Email" name="email" required)
+                input(type="text" placeholder="Phone Number" name="phoneNumber" required)
+                input(type="password" placeholder="Password" name="password" required).not-match
+                input(type="password" placeholder="Confirm Password" name="passwordConfirm" required).not-match
+                input(type="submit" value="Submit")
+        .cancel
+            span Cancel

@@ -392,8 +392,13 @@ html(lang="en")
         h2 WE'LL BE IN TOUCH!
         p Thanks for subscribing.
         p We will be in touch with amazing deals in your inbox.
+    include partials/_chat.pug
+    include partials/_auth.pug
     script(src="assets/js/jquery.1.12.4.min.js")
     script(src="assets/js/plugins/bootstrap.min.js")
     script(src="assets/js/plugins/jquery.nivo.slider.js")
     script(src="assets/js/plugins/swiper.min.js")
     script(src="assets/js/custom.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.js")
+    script(src="/assets/js/chat.js")
+    script(src="/assets/js/auth.js")

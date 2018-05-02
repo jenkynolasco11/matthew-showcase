@@ -24,11 +24,11 @@ const web = Router()
 
 const paths = [
     'sell-car',
-    'credit-app',
-    'contact-us',
     'sell-car-test',
-    'contact-us-test',
+    'credit-app',
     'credit-app-test',
+    'contact-us',
+    'contact-us-test',
     'admin',
     'details',
     // 'listing',
@@ -70,6 +70,7 @@ function saveToDatabase(body) {
         case 'Credit App':
             const CreditApp = models.CreditApp
 
+            data.ocupation = body['Ocuppation']
             data.code = body['Salesman\'s Name']
             data.firstname = body['First Name']
             data.lastname = body['Last Name']
@@ -95,8 +96,10 @@ function saveToDatabase(body) {
             data.employement = {
                 employerName : body['Employer\'s Name'],
                 employerAddress : body['Employer\'s Address'],
+                employerContact : body['Employer\'s Phone'],
                 employerYearsAtWork : body['Employee Years'],
                 employerMonthsAtWork : body['Employee Months'],
+                jobTitle : body['Job Title'],
                 montlyIncome : body['Monthly Income'],
             }
             data.previousEmployer = body['Previous Employer']
@@ -146,7 +149,10 @@ function saveToDatabase(body) {
     }
 
     // Let sockets know that there is a new message
-    for(let [key, socket] of sockets) socket.emit('server:new email')}
+    for(let [key, socket] of sockets) {
+        socket.emit('server:new email')
+    }
+}
 
 function stripData(data, cb) {
     let name = ''

@@ -218,9 +218,7 @@ route.post('/new', (req, res) => {
 
 route.get('/trending', (req, res) => {
     // Car.aggregate([
-    BuiltCar.aggregate([
-        { $sample : { size : 1 }}
-    ]).then(docs => {
+    BuiltCar.find({}).sort({ createdBy : -1 }).limit(6).then(docs => {
         const builts = docs.map(car => car.options )
 
         // console.log(cars)

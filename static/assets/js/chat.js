@@ -134,6 +134,7 @@ function submitChatInfo(e) {
     chatStatsOnClient.isFocus = isFocus
 
     socketIO.emit('chat:get old messages', { name : name, email : email })
+
     return startSocketInterval()
 }
 
@@ -186,6 +187,10 @@ $(document).ready(function() {
     // Mount socket handlers
     socketFuncs(socketIO)
 
+    setTimeout(function() {
+        $(chatBox).addClass('open')
+    }, 5000)
+
     if(!checkIfCached()) return
 
     var name = window.sessionStorage.getItem('chat:name')
@@ -199,5 +204,6 @@ $(document).ready(function() {
     $('#overlay-data').addClass('is-cached')
 
     socketIO.emit('chat:get old messages', { name : name, email : email })
+
     return startSocketInterval()
 })

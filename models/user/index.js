@@ -6,6 +6,9 @@ var Schema = mongoose.Schema
 var UserSchema = new Schema({
     username : { type : String, index : { unique : true }},
     password : { type : String, required : true },
+    type : { type : String, required : true, index : true, enum : [ 'admin', 'user' ] },
+    name : { type : String, required : true },
+    email : { type : String, required : true, unique : { index : true }},
     createdBy : { type : Date, default : Date.now },
     deleted : { type : Boolean, default : () => false, index : true },
 })
