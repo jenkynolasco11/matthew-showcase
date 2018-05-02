@@ -4063,9 +4063,12 @@ table.icons {
 
 				input {
 					margin-top: 10px;
-					width: 80%;
+					width: 80% !important;
 					text-align: center;
 					padding: 10px;
+					height : 42px;
+					border: none;
+
 					&:first-child {
 						margin-top: 40px;
 					}
@@ -4102,7 +4105,7 @@ table.icons {
 			cursor : pointer;
 			justify-self : flex-end;
 			text-align : center;
-			
+
 			span {
 				transition : all .1s linear;
 				&:hover {
@@ -4116,6 +4119,8 @@ table.icons {
 			width : 100vw;
 		}
 	}
+
+	display : none;
 }
 
 // .auth {

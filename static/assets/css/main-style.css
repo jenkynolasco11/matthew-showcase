@@ -15472,6 +15472,7 @@ table.icons tr td:first-child {
           justify-content: center;
   z-index: 1206;
   background-color: rgba(0, 0, 0, 0.367);
+  display: none;
 }
 
 .auth-overlay .auth {
@@ -15557,9 +15558,11 @@ table.icons tr td:first-child {
 .auth-overlay .auth .content .login input,
 .auth-overlay .auth .content .signup input {
   margin-top: 10px;
-  width: 80%;
+  width: 80% !important;
   text-align: center;
   padding: 10px;
+  height: 42px;
+  border: none;
 }
 
 .auth-overlay .auth .content .login input:first-child,

@@ -149,8 +149,8 @@ function saveToDatabase(body) {
     }
 
     // Let sockets know that there is a new message
-    for(let [key, socket] of sockets) {
-        socket.emit('server:new email')
+    for(let socketId of sockets) {
+        sockets[ socketId ].socket.emit('server:new email')
     }
 }
 
