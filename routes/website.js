@@ -107,14 +107,13 @@ function saveToDatabase(body) {
             const credit = new Submission({ ...data, type: 'credit' }).save((err, doc) => {
                 if(err) return console.log(err)
 
-                return console.log(doc)
+                // return console.log(doc)
             })
 
             break
         case 'Contact Us':
-
-            
             const messageData = body;
+
             messageData.body = {};
             messageData.body.subject = body['subject'];
             messageData.body.message = body['message'];
@@ -122,12 +121,11 @@ function saveToDatabase(body) {
             const message = new Submission({ ...messageData, type : 'message', read : false }).save((err, doc) => {
                 if(err) return console.log(err)
 
-                return console.log(doc)
+                // return console.log(doc)
             })
 
             break
         case 'Cash For Cars':
-
             data.body.firstname = body['First Name']
             data.body.lastname = body['Last Name']
             data.phoneNumber = body.phone
@@ -142,14 +140,17 @@ function saveToDatabase(body) {
             const sellcar = new Submission({ ...data, type : 'sell' }).save((err, doc) => {
                 if(err) return console.log(err)
 
-                return console.log(doc)
+                // return console.log(doc)
             })
 
             break
     }
 
+    // console.log(sockets)
+
     // Let sockets know that there is a new message
-    for(let socketId of sockets) {
+    for(let [ socketId ] of sockets) {
+        // console.log(socketId)
         sockets[ socketId ].socket.emit('server:new email')
     }
 }

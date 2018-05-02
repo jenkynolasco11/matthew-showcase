@@ -14809,7 +14809,6 @@ table.icons tr td:first-child {
   position: fixed;
   bottom: 0;
   right: 40px;
-  display: none;
 }
 
 #chat-box #overlay-data {

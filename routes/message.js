@@ -15,28 +15,30 @@ route.get('/all', async (req, res) => {
 
     try {
         // TODO: Add search criteria in here
-        let submissions = await Submission.find({}).sort({ createBy : 1 })
+        let submissions = await Submission.find({}).sort({ createdBy : -1 }).skip(+skip).limit(+limit)
+        const count = await Submission.count()
+
         submissions = submissions.map(message => {
             message = message.toObject();
-            message = {
-                ...message,
-                ...message.body
-            }
+
+            message = { ...message, ...message.body }
+
             if (!message.name) {
-                message.name = message.firstname;
+                message.name = message.firstname + ' ' + message.lastname;
             }
-            console.log(message.name)
+
             return message;
         });
 
+        console.log(submissions)
 
-        const count = submissions.length
-        const startIndex = Number(skip)
-        const lastIndex = startIndex + Number(limit)
+        // const count = submissions.length
+        // const startIndex = Number(skip)
+        // const lastIndex = startIndex + Number(limit)
 
-        const messages = submissions.slice(startIndex, lastIndex)
+        // const messages = submissions.slice(startIndex, lastIndex)
 
-        return res.send({ ok : true, messages, count })
+        return res.send({ ok : true, messages : submissions, count })
     } catch (e) {
         console.log(e)
     }
