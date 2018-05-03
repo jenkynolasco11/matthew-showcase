@@ -2,15 +2,15 @@ var LocalStrategy = require('passport-local').Strategy
 var bCrypt = require('bcrypt')
 var mongoose = require('mongoose')
 
-module.exports = function (passport) {
-    var User = mongoose.model('user')
+module.exports = (passport) => {
+    const User = mongoose.model('user')
 
-    passport.serializeUser(function (user, done) {
-        console.log(user)
+    passport.serializeUser((user, done) => {
+        // console.log(user)
         return done(null, user._id)
     })
 
-    passport.deserializeUser(function (id, done) {
+    passport.deserializeUser((id, done) => {
         return User.findById(id, done)
     })
 
@@ -18,21 +18,67 @@ module.exports = function (passport) {
         usernameField: 'user',
         passwordField: 'pass',
         passReqToCallback: true
-    }, function (req, user, pass, done) {
-        // console.log('here...')
-        User.findOne({ username : user }, function (err, usr) {
-            if (err) return done(err)
-            if (!usr) {
-                console.log('Username not found by name: ' + user)
+    }, async (req, username, pass, done) => {
+        try {
+            const user = await User.findOne({ username })
+
+            if(!user) {
+                console.log('Username not found by name: ' + username)
                 return done(null, false)
             }
-            if (!usr.validPassword(pass)) {
+            else if (!user.validPassword(pass)) {
                 console.log('Password incorrect')
                 return done(null, false)
             }
 
-            return done(null, usr)
-        })
+            return done(null, user)
+        } catch (e) {
+            return done(e)
+        }
+    }))
+
+    passport.use('signup', new LocalStrategy({
+        usernameField : 'email',
+        passwordField : 'pass',
+        passReqToCallback : true
+    }, async (req, email, pass, done) => {
+        try {
+            //
+            const { name, email, pass, phoneNumber } = req.body
+
+            const user = await User.findOne({ $or : [{ email }, { username : email }]})
+
+            // console.log(user)
+
+            if(user) {
+                console.log(`User ${ email } already exists...`)
+                console.log(`Password does${ user.validPassword(pass) ? '' : 'n\'t' } match`)
+
+                if(user.validPassword(pass)) return done(null, user)
+
+                return done('User and password doesn\'t match', null, 'dnt match')
+            }
+
+            const newUser = new User({
+                email,
+                name,
+                phoneNumber,
+                type : 'customer',
+                username : email,
+            })
+
+            newUser.password = newUser.generateHash(pass)
+
+            await newUser.save()
+
+            console.log(`New User ${ email } has registered!`)
+
+            return done(null, newUser)
+            //
+        } catch (e) {
+            console.log('got here...')
+            return done(e)
+        }
     }))
 /*
     // passport.use('signup', new LocalStrategy({

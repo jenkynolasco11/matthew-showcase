@@ -21,13 +21,23 @@ route.get('/success', (req, res) => {
     })
 })
 
-route.get('/failure', function(req, res) {
+route.get('/failure', (req, res) => {
     console.log('something happened...')
 
     return res.status(200).send({ ok : false, user : null })
 })
 
-route.post('/login', passport.authenticate('login', {
+route.post('/login', (req, res, next) => {
+    if(req.body.email) req.body.user = req.body.email
+
+    return next()
+}, passport.authenticate('login', {
+        successRedirect : '/auth/success',
+        failureRedirect : '/auth/failure'
+    })
+)
+
+route.post('/signup', passport.authenticate('signup', {
         successRedirect : '/auth/success',
         failureRedirect : '/auth/failure'
     })

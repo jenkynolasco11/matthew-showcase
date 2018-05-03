@@ -1,7 +1,8 @@
 const sendEmail = require('./mailer').sendEmail
 const template = require('./email-templates').creditApp
 
-const items = [{
+const items = [
+    {
         "driverLicense": {
             "number": "213202411",
             "stateIssued": "NY",

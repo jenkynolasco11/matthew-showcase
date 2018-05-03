@@ -6,16 +6,19 @@
             input(id="auth-signup" type="radio" name="auth-nav" value="signup")
             label(for="auth-signup") Signup
         .content
-            .login
+            form.login
+
                 input(type="text" name="email"  placeholder="Email" required)
-                input(type="password" name="password"  placeholder="Password" required)
+                input(type="password" name="pass"  placeholder="Password" required)
+                input(type="hidden" name="type" value="login")
                 input(type="submit" value="Login")
-            .signup.hidden
-                input(type="text" placeholder="Name" name="name" required)
-                input(type="text" placeholder="Email" name="email" required)
-                input(type="text" placeholder="Phone Number" name="phoneNumber" required)
-                input(type="password" placeholder="Password" name="password" required).not-match
-                input(type="password" placeholder="Confirm Password" name="passwordConfirm" required).not-match
+            form.signup.hidden
+                input(type="text" name="name" placeholder="Name" required)
+                input(type="text" name="email"  placeholder="Email" required)
+                input(type="text" name="phoneNumber" placeholder="Phone Number" required)
+                input(type="password" name="pass" placeholder="Password" min=8 required).not-match
+                input(type="password" name="passwordConfirm" placeholder="Confirm Password" min=8 required).not-match
+                input(type="hidden" name="type" value="signup")
                 input(type="submit" value="Submit")
         .cancel
             span Cancel

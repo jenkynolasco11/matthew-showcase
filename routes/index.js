@@ -6,6 +6,7 @@ const subs = require('./subscription')
 const admin = require('./admin')
 const site = require('./website')
 const auth = require('./auth')
+const user = require('./user')
 
 const instagram = require('./instagram')
 
@@ -24,6 +25,7 @@ const routes = [
     site,
 
     subs,
+    user,
 ]
 
 routes.forEach(r => route.use('/', r))

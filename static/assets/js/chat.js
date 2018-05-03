@@ -25,6 +25,7 @@ var chatStatsOnClient = {
 }
 var socketInterval = null
 var isTypingPromise = null
+var autoOpenChat = null;
 
 function sendStats() {
     var isTyping = chatStatsOnClient.isTyping
@@ -172,6 +173,7 @@ handle.on('click', function () {
         newMessagesCount = 0
     }
 
+    clearTimeout(autoOpenChat)
     //TODO: send a message through socket saying person is typing
 })
 
@@ -187,7 +189,7 @@ $(document).ready(function() {
     // Mount socket handlers
     socketFuncs(socketIO)
 
-    setTimeout(function() {
+    autoOpenChat = setTimeout(function() {
         $(chatBox).addClass('open')
     }, 5000)
 

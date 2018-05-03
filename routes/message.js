@@ -15,8 +15,8 @@ route.get('/all', async (req, res) => {
 
     try {
         // TODO: Add search criteria in here
-        let submissions = await Submission.find({}).sort({ createdBy : -1 }).skip(+skip).limit(+limit)
-        const count = await Submission.count()
+        let submissions = await Submission.find({ deleted : false }).sort({ createdBy : -1 }).skip(+skip).limit(+limit)
+        const count = await Submission.count({ deleted : false })
 
         submissions = submissions.map(message => {
             message = message.toObject();
@@ -28,15 +28,7 @@ route.get('/all', async (req, res) => {
             }
 
             return message;
-        });
-
-        console.log(submissions)
-
-        // const count = submissions.length
-        // const startIndex = Number(skip)
-        // const lastIndex = startIndex + Number(limit)
-
-        // const messages = submissions.slice(startIndex, lastIndex)
+        })
 
         return res.send({ ok : true, messages : submissions, count })
     } catch (e) {
@@ -49,20 +41,7 @@ route.get('/all', async (req, res) => {
 route.put('/:type/read/:id', async (req, res) => {
     const { id, type } = req.params
 
-    let model = null
-
-    switch(type) {
-        case 'credit':
-            model = CreditApp
-            break
-        case 'sell':
-            model = SellCar
-            break
-        default:
-            model = Message
-    }
-
-    model.findByIdAndUpdate(id, { reviewed : true, reviewedBy : Date.now() }, err => {
+    Submission.findByIdAndUpdate(id, { reviewed : true, reviewedBy : Date.now() }, err => {
         if(err) {
             console.log(err)
 
@@ -122,6 +101,20 @@ route.post('/reply', async (req, res) => {
             return res.send({ ok : true })
         })
     })
+})
+
+route.put('/delete', async (req, res) => {
+    const { id } = req.body
+
+    try {
+        await Submission.findByIdAndUpdate(id, { deleted : true })
+
+        return res.send({ ok : true })
+    } catch (e) {
+        console.log(e)
+    }
+
+    return res.send({ ok : false })
 })
 
 // TODO: Move creation of new messages here
