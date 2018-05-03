@@ -12,7 +12,7 @@ var CreditApp = require('./credit-app')
 var Message = require('./message')
 var SellCar = require('./sell-car')
 var ChatMessage = require('./chat')
-var Submission = require('./submissions')
+var Submission = require('./submissions').submission;
 
 var MetaSchema = new Schema({
     lastCarId : { type : Number, default : 0 }

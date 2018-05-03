@@ -25,4 +25,7 @@ var SubmissionSchema = new Schema({
 var submission = mongoose.model('submission', SubmissionSchema)
 
 
-module.exports = submission
+module.exports = {
+    submission,
+    SubmissionSchema
+}
