@@ -25,6 +25,7 @@ var chatStatsOnClient = {
 }
 var socketInterval = null
 var isTypingPromise = null
+var autoOpenChat = null;
 
 function sendStats() {
     var isTyping = chatStatsOnClient.isTyping
@@ -134,6 +135,7 @@ function submitChatInfo(e) {
     chatStatsOnClient.isFocus = isFocus
 
     socketIO.emit('chat:get old messages', { name : name, email : email })
+
     return startSocketInterval()
 }
 
@@ -171,6 +173,7 @@ handle.on('click', function () {
         newMessagesCount = 0
     }
 
+    clearTimeout(autoOpenChat)
     //TODO: send a message through socket saying person is typing
 })
 
@@ -186,6 +189,10 @@ $(document).ready(function() {
     // Mount socket handlers
     socketFuncs(socketIO)
 
+    autoOpenChat = setTimeout(function() {
+        $(chatBox).addClass('open')
+    }, 5000)
+
     if(!checkIfCached()) return
 
     var name = window.sessionStorage.getItem('chat:name')
@@ -199,5 +206,6 @@ $(document).ready(function() {
     $('#overlay-data').addClass('is-cached')
 
     socketIO.emit('chat:get old messages', { name : name, email : email })
+
     return startSocketInterval()
 })

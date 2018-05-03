@@ -222,8 +222,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			padding-bottom: 40px;
 			outline: 1px solid rgb(244, 244, 244);
 			background-color: rgba(242, 242, 242, 0.645);
-			max-height : 550px;
-			overflow-y : scroll;
+			max-height: 550px;
+			overflow-y: scroll;
 			&>p {
 				background-color: black;
 				color: rgb(255, 0, 0);
@@ -236,8 +236,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				justify-content: center;
 			}
 			.trims {
-				overflow-y : scroll;
-				max-height : 500px;
+				overflow-y: scroll;
+				max-height: 500px;
 				display: flex;
 				flex-flow: column nowrap;
 				.title {
@@ -313,8 +313,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				&_choices {
 					height: 0;
 					max-height: 500px;
-					overflow-y: scroll;
-					// overflow: hidden;
+					overflow-y: scroll; // overflow: hidden;
 					.option {
 						display: flex;
 						border-top: 1px solid #eee;
@@ -3660,63 +3659,53 @@ table.icons {
 	$messageBoxClr: white;
 	$messageBoxSendBtn: #E41313;
 	$messageBoxTextClr: #222;
-
-
 	transition: all .4s ease-in-out;
 	z-index: 777;
 	position: fixed;
 	bottom: 0;
 	right: 40px;
-
 	#overlay-data {
-		display : flex;
-		flex-flow : column wrap;
-		justify-content : center;
-
-		transition : all .1s linear;
-		position : absolute;
-		// top : 0;
-		width : 100%;
-		z-index : 1000;
-		background-color : black;
-		padding : 0 40px;
-		height : 478px;
-		margin : 50px 10px 0;
-		border-radius : 4px;
-		margin-top : 50px;
-
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: center;
+		transition: all .1s linear;
+		position: absolute; // top : 0;
+		width: 100%;
+		z-index: 1000;
+		background-color: black;
+		padding: 0 40px;
+		height: 478px;
+		margin: 50px 10px 0;
+		border-radius: 4px;
+		margin-top: 50px;
 		h2 {
 			// margin-top : -40px;
-			color : white;
+			color: white;
 		}
-
 		p {
-			color : rgb(226, 226, 226);
-			margin-top : 20px;
+			color: rgb(226, 226, 226);
+			margin-top: 20px;
 		}
-
 		input {
-			width : 100%;
-			margin-top : 10px;
-			border-radius : 2px;
-			border : none;
-			padding : 16px 20px 17px;
-			width : 100% !important;
-			height : auto;
-
+			width: 100%;
+			margin-top: 10px;
+			border-radius: 2px;
+			border: none;
+			padding: 16px 20px 17px;
+			width: 100% !important;
+			height: auto;
 			::-moz-placeholder {
-				color : gray;
+				color: gray;
 			}
 			::-webkit-placeholder {
-				color : gray;
+				color: gray;
 			}
 			::placeholder {
-				color : gray;
+				color: gray;
 			}
 		}
-
 		&.is-cached {
-			display : none;
+			display: none;
 		}
 	}
 	#chat-handle {
@@ -3731,7 +3720,6 @@ table.icons {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-
 		&:hover {
 			.inner-arrow {
 				border-color: transparent transparent $arrowHoverClr transparent;
@@ -3773,10 +3761,9 @@ table.icons {
 			position: absolute;
 			margin-top: -20px;
 			margin-left: -20px;
-			display : none;
-
+			display: none;
 			&.show-count {
-				display : flex;
+				display: flex;
 			}
 		}
 		&.wiggle {
@@ -3806,7 +3793,7 @@ table.icons {
 		}
 	}
 	#chat {
-		box-shadow : 4px 4px 4px black;
+		box-shadow: 4px 4px 4px black;
 		position: absolute;
 		margin-top: 0;
 		width: 500px;
@@ -3814,12 +3801,11 @@ table.icons {
 		border-radius: 4px;
 		overflow: hidden;
 		transition: all .1s ease-in;
-		z-index : 800;
-
+		z-index: 800;
 		.close-chat {
-			transition : all .5s linear;
-			z-index : 10;
-			opacity : 0;
+			transition: all .5s linear;
+			z-index: 10;
+			opacity: 0;
 			display: flex;
 			justify-content: flex-end;
 			align-items: center;
@@ -3833,8 +3819,7 @@ table.icons {
 				cursor: pointer;
 				position: absolute;
 				&:hover {
-					opacity : 1;
-
+					opacity: 1;
 					&:before,
 					&:after {
 						background-color: red;
@@ -3863,7 +3848,7 @@ table.icons {
 			}
 		}
 		.messages {
-			box-shadow : inset 2px 2px 2px black;
+			box-shadow: inset 2px 2px 2px black;
 			background-color: white;
 			height: 400px;
 			border: 10px solid $chatColor;
@@ -3882,10 +3867,10 @@ table.icons {
 				.timestamp {
 					font-size: 10px;
 					color: #444;
-					letter-spacing : 0.5px;
+					letter-spacing: 0.5px;
 				}
 				.text {
-					letter-spacing : 0.3px;
+					letter-spacing: 0.3px;
 					color: white;
 				}
 				&.client {
@@ -3905,9 +3890,8 @@ table.icons {
 						content: '';
 						position: absolute;
 					}
-
 					.timestamp {
-						color : rgb(255, 244, 244);
+						color: rgb(255, 244, 244);
 					}
 				}
 				&.company {
@@ -3924,9 +3908,8 @@ table.icons {
 						content: '';
 						position: absolute;
 					}
-
 					.timestamp {
-						color : white;
+						color: white;
 					}
 				}
 			}
@@ -3967,9 +3950,9 @@ table.icons {
 				}
 			}
 			.send-button {
-				display : flex;
-				justify-content : center;
-				align-items : center;
+				display: flex;
+				justify-content: center;
+				align-items: center;
 				transition: all .2s linear;
 				background-color: $messageBoxSendBtn;
 				padding: 10px;
@@ -3989,52 +3972,176 @@ table.icons {
 			}
 		}
 	}
-
 	&.open {
 		bottom: 530px;
-
 		#chat-handle {
-			margin-bottom: -50px;
-			// .inner-arrow {
-				// transform: rotate(180deg);
+			margin-bottom: -50px; // .inner-arrow {
+			// transform: rotate(180deg);
 			// }
 		}
-
 		#chat {
 			.close-chat {
-				opacity : 1;
+				opacity: 1;
 			}
 		}
 	}
-
 	@media screen and (max-width:540px) {
 		width: 100vw;
-		height : 100vh;
-		right : 0;
-		top : calc(95vh - 4px);
-
+		height: 100vh;
+		right: 0;
+		top: calc(95vh - 4px);
 		#overlay-data {
-			height : 90vh;
+			height: 90vh;
 		}
-
 		#chat-handle {
-			margin-left : 20px;
+			margin-left: 20px;
 		}
-
 		#chat {
-			width : 100vw;
-
+			width: 100vw;
 			.messages {
-				height : 82vh;
+				height: 82vh;
 			}
-
 			.message-box {
 				// height : 10vh;
 			}
 		}
-
 		&.open {
-			top : 1.5vh;
+			top: 1.5vh;
 		}
 	}
 }
+
+.auth-overlay {
+	position : fixed;
+	top : 0;
+	left : 0;
+	height : 100vh;
+	width : 100vw;
+	display : flex;
+	align-items : center;
+	justify-content : center;
+	z-index : 1206;
+	background-color : rgba(0, 0, 0, 0.367);
+
+	.auth {
+		background-color: #1f1f1f;
+		height: 500px;
+		width: 400px;
+		border-radius: 4px;
+		box-shadow: 0px 0px 20px -5px black;
+		position : relative;
+
+		.nav {
+			display: flex;
+			label {
+				flex: 1;
+				background-color: #333;
+				height: 50px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: #222;
+				cursor: pointer;
+				font-size: 24px;
+			}
+			input {
+				display: none;
+			}
+			[type=radio]:checked+label {
+				background-color: #888;
+				color: #eee;
+			}
+		}
+		.content {
+			.login,
+			.signup {
+				display: flex;
+				flex-flow: column nowrap;
+				align-items: center;
+				justify-content: center;
+
+				input {
+					margin-top: 10px;
+					width: 80% !important;
+					text-align: center;
+					padding: 10px;
+					height : 42px;
+					border: none;
+
+					&:first-child {
+						margin-top: 40px;
+					}
+					&:last-child {
+						margin-top: 40px;
+					}
+				}
+				[type=submit] {
+					width: 50%;
+				}
+				&.hidden {
+					display: none;
+				}
+			}
+			.login {
+				input:first-child {
+					margin-top: 100px;
+				}
+
+				input:last-child {
+					margin-top : 80px;
+				}
+			}
+		}
+
+		.cancel {
+			padding-bottom : 40px;
+			position : absolute;
+			bottom : 0;
+			color : #71717d;
+			// color : rgb(109, 109, 255);
+			// text-decoration : underline;
+			width : 100%;
+			cursor : pointer;
+			justify-self : flex-end;
+			text-align : center;
+
+			span {
+				transition : all .1s linear;
+				&:hover {
+					color : #f0f0f0;
+				}
+			}
+		}
+
+		@media screen and (max-width : 768px) {
+			height : 100vh;
+			width : 100vw;
+		}
+	}
+
+	display : none;
+}
+
+// .auth {
+// 	position : fixed;
+// 	height : 100vh;
+// 	width : 100vw;
+// 	background-color : rgba(0, 0, 0, 0.398);
+// 	top : 0;
+// 	left : 0;
+// 	display : flex;
+// 	align-items : center;
+// 	justify-content : center;
+// 	display : none;
+// 	#login {
+// 		background-color : #1F1F1F;
+// 		height : 400px;
+// 		width : 400px;
+// 		.title h2 {
+// 			color : white !important;
+// 			text-align : center;
+// 		}
+// 	}
+// 	@media screen and (max-width : 768px) {
+// 	}
+// }

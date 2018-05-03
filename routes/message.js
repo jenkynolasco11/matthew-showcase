@@ -8,37 +8,29 @@ const jydEmailDefaults = require('../mailConfig').keys.jydDefaults
 const route = Router()
 const message = Router()
 
-const Message = models.Message
-const SellCar = models.SellCar
-const CreditApp = models.CreditApp
+const Submission = models.Submission;
 
 route.get('/all', async (req, res) => {
     const { skip = 0, limit = 10 } = req.query
 
     try {
         // TODO: Add search criteria in here
-        const msgs = await Message.find({ $or : [ { deleted : { $exists : false}}, { deleted : false }]}).sort({ createBy : 1 })
-        const sells = await SellCar.find({ $or : [ { deleted : { $exists : false}}, { deleted : false }]}).sort({ createBy : 1 })
-        const credits = await CreditApp.find({ $or : [ { deleted : { $exists : false}}, { deleted : false }]}).sort({ createBy : 1 })
+        let submissions = await Submission.find({ deleted : false }).sort({ createdBy : -1 }).skip(+skip).limit(+limit)
+        const count = await Submission.count({ deleted : false })
 
-        const allMsgs = [
-            ...msgs,
-            ...sells,
-            ...credits
-        ].sort((a,b) => {
-            if(new Date(a.createdBy) > new Date(b.createdBy)) return -1
-            if(new Date(b.createdBy) > new Date(a.createdBy)) return 1
+        submissions = submissions.map(message => {
+            message = message.toObject();
 
-            return 0
+            message = { ...message, ...message.body }
+
+            if (!message.name) {
+                message.name = message.firstname + ' ' + message.lastname;
+            }
+
+            return message;
         })
 
-        const count = allMsgs.length
-        const startIndex = Number(skip)
-        const lastIndex = startIndex + Number(limit)
-
-        const messages = allMsgs.slice(startIndex, lastIndex)
-
-        return res.send({ ok : true, messages, count })
+        return res.send({ ok : true, messages : submissions, count })
     } catch (e) {
         console.log(e)
     }
@@ -49,20 +41,7 @@ route.get('/all', async (req, res) => {
 route.put('/:type/read/:id', async (req, res) => {
     const { id, type } = req.params
 
-    let model = null
-
-    switch(type) {
-        case 'credit':
-            model = CreditApp
-            break
-        case 'sell':
-            model = SellCar
-            break
-        default:
-            model = Message
-    }
-
-    model.findByIdAndUpdate(id, { reviewed : true, reviewedBy : Date.now() }, err => {
+    Submission.findByIdAndUpdate(id, { reviewed : true, reviewedBy : Date.now() }, err => {
         if(err) {
             console.log(err)
 
@@ -80,31 +59,19 @@ route.put('/:type/read/:id', async (req, res) => {
 route.post('/reply', async (req, res) => {
     const { id, type, reply : text } = req.body
 
-    let model = null
-
-    switch(type) {
-        case 'credit':
-            model = CreditApp
-            break
-        case 'sell':
-            model = SellCar
-            break
-        default:
-            model = Message
-    }
-
     const createdBy = new Date()
 
     const reply = { text, createdBy }
 
-    model.findByIdAndUpdate(id, { $push : { reply }}, { new : true }, (err, doc) => {
-        if(err) {
+    Submission.findByIdAndUpdate(id, { $push : { reply }}, { new : true }, (err, doc) => {
+        if (err) {
             console.log(err)
 
             return res.send({ ok : false })
         }
 
-        const { email, reply, name, type } = doc
+        const { email, reply, name, type } = doc;
+
         const subject = type === 'credit'
             ? 'Reply on a Credit Application'
             : type === 'sell'
@@ -134,6 +101,20 @@ route.post('/reply', async (req, res) => {
             return res.send({ ok : true })
         })
     })
+})
+
+route.put('/delete', async (req, res) => {
+    const { id } = req.body
+
+    try {
+        await Submission.findByIdAndUpdate(id, { deleted : true })
+
+        return res.send({ ok : true })
+    } catch (e) {
+        console.log(e)
+    }
+
+    return res.send({ ok : false })
 })
 
 // TODO: Move creation of new messages here

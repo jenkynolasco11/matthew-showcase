@@ -91,7 +91,7 @@ fieldset {
   line-height: normal;
   white-space: normal
 }
-
+/*
 ::-webkit-input-placeholder {
   opacity: 1;
   color: #fff;
@@ -119,7 +119,7 @@ fieldset {
   font-weight: normal;
   font-style: italic
 }
-
+*/
 .custom-placeholder {
   color: #fff!important;
   font-style: italic
