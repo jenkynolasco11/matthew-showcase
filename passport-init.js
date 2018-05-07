@@ -20,16 +20,22 @@ module.exports = (passport) => {
         passReqToCallback: true
     }, async (req, username, pass, done) => {
         try {
+            console.log(req.body)
             const user = await User.findOne({ username })
+
+            console.log(username)
 
             if(!user) {
                 console.log('Username not found by name: ' + username)
                 return done(null, false)
             }
+
             else if (!user.validPassword(pass)) {
                 console.log('Password incorrect')
                 return done(null, false)
             }
+
+            user.updateLastLogin()
 
             return done(null, user)
         } catch (e) {
@@ -46,15 +52,21 @@ module.exports = (passport) => {
             //
             const { name, email, pass, phoneNumber } = req.body
 
-            const user = await User.findOne({ $or : [{ email }, { username : email }]})
+            // console.log(email, phoneNumber)
+
+            const user = await User.findOne({ $or : [{ email }, { username : email }, { phoneNumber } ]})
 
             // console.log(user)
 
             if(user) {
                 console.log(`User ${ email } already exists...`)
-                console.log(`Password does${ user.validPassword(pass) ? '' : 'n\'t' } match`)
+                // console.log(`Password does${ user.validPassword(pass) ? '' : 'n\'t' } match`)
 
-                if(user.validPassword(pass)) return done(null, user)
+                if(user.validPassword(pass)) {
+                    user.updateLastLogin()
+
+                    return done(null, user)
+                }
 
                 return done('User and password doesn\'t match', null, 'dnt match')
             }

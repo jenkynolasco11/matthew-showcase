@@ -215,11 +215,15 @@ function filterCarData(car) {
 
 route.get('/:route', (req, res, next) => {
     const route = req.params.route
+    const user = req.isAuthenticated() ? req.user : ''
+
+    // console.log(req.isAuthenticated())
+    // console.log(req.user)
 
     if (route.match(/^service-/)) {
         const view = route.slice(8)
 
-        return res.render('services/' + view, { title: 'JYD - Services' })
+        return res.render('services/' + view, { title: 'JYD - Services', user, isAuth : req.isAuthenticated() })
     } else if (route === 'listing') {
         const data = {}
 
@@ -234,13 +238,14 @@ route.get('/:route', (req, res, next) => {
         }).then(fuels => {
             data.fuels = fuels
 
-            return res.render('listing', data)
+            return res.render('listing', { ...data, title: 'JYD - Listings', user, isAuth : req.isAuthenticated() })
+            // return res.render('listing', data)
         }).catch(console.log)
 
     } else if (paths.includes(route)) {
         const title = titles[route]
 
-        return res.render(route, { title: 'JYD - ' + title })
+        return res.render(route, { title: 'JYD - ' + title, user, isAuth : req.isAuthenticated() })
     }
 
     else return next()
@@ -267,8 +272,9 @@ route.post('/data', (req, res) => {
 
 route.get('/details/(:id?)', (req, res) => {
     const { id } = req.params
+    const user = req.isAuthenticated() ? req.user : ''
 
-    if (!id) return res.render('listing', { title: 'JYD - Search' })
+    if (!id) return res.render('listing', { ...data, title: 'JYD - Listings', user, isAuth : req.isAuthenticated() })
 
     Car.findOne({ id }, (err, car) => {
         if (err) return res.status(200).send({ ok: false })
@@ -288,23 +294,29 @@ route.get('/details/(:id?)', (req, res) => {
 
             const featImg = featured.imgs.filter(img => img.main )
 
-            return res.render('details', {
+            const detailsData = {
                 ok: true,
                 car: featured,
                 related: cars,
                 featImg : featImg[ 0 ]
-            })
+            }
+
+            return res.render('details', { ...detailsData, user, isAuth : req.isAuthenticated() })
         })
     })
 })
 
 route.get('/', function (req, res) {
-    Car.find({ isFeatured: true }, (err, docs) => {
-        if (err) return res.render('index', { cars: [] })
+    const user = req.isAuthenticated() ? req.user : ''
+
+    Car.find({ isFeatured : true }, (err, docs) => {
+        const authInfo = { user, isAuth : req.isAuthenticated() }
+
+        if (err) return res.render('index', { cars: [], ...authInfo })
 
         const cars = docs.map(filterCarData)
 
-        return res.render('index', { cars: cars })
+        return res.render('index', { cars, ...authInfo })
     })
 })
 

@@ -5,6 +5,12 @@ const User = require('../models').User
 const route = Router()
 const auth = Router()
 
+const setEmailToUser = (req, res, next) => {
+    if(req.body.email) req.body.user = req.body.email
+
+    return next()
+}
+
 route.get('/success', (req, res) => {
     const user = req.user || null
 
@@ -12,7 +18,7 @@ route.get('/success', (req, res) => {
         if(!err) {
             console.log(`About to log ${ JSON.stringify(user) }`)
             try {
-                return res.status(200).send({ ok : true, user : user.username })
+                return res.status(200).send({ ok : true, user : user.username, name : user.name, email : user.email })
             } catch(e)  {}
         }
         console.log(`Error... ${ err }`)
@@ -27,11 +33,7 @@ route.get('/failure', (req, res) => {
     return res.status(200).send({ ok : false, user : null })
 })
 
-route.post('/login', (req, res, next) => {
-    if(req.body.email) req.body.user = req.body.email
-
-    return next()
-}, passport.authenticate('login', {
+route.post('/login', setEmailToUser, passport.authenticate('login', {
         successRedirect : '/auth/success',
         failureRedirect : '/auth/failure'
     })
@@ -44,15 +46,28 @@ route.post('/signup', passport.authenticate('signup', {
 )
 
 route.get('/logout', (req,res) => {
-    // console.log('signing out')
+    console.log('...signing out')
+    console.log(req.user)
 
-    req.logout() // Logs out from passport. Desserializes user
-    res.redirect('/admin')
+    req.logout() // Logs out from passport. Deserializes user
+    // res.redirect('/admin')
+    return res.send({ ok : true})
 })
 
 route.get('/is-auth', (req,res) => {
     const isAuth = req.isAuthenticated()
-    const user = isAuth ? req.user.username : null
+
+    let usr = null
+
+    if(isAuth) {
+        const { name, email, username, phoneNumber } = req.user
+
+        usr = { name, email, username, phoneNumber }
+    }
+
+    const user = isAuth ? { ...usr } : null
+
+    console.log(req.user)
 
     console.log(`User is ${ isAuth ? '' : 'not ' }authenticated... ${ isAuth ? '\n User --> ' + user : '' }`)
 

@@ -11792,7 +11792,7 @@ body.color-turquoise #road {
 
 @media screen and (max-width: 998px) {
   .custom-header-menu.special .half .menu-items ul li a {
-    font-size: .8rem;
+    font-size: .75rem;
   }
 }
 
@@ -11909,6 +11909,57 @@ body.color-turquoise #road {
 
 .mobile-menu-custom > a img {
   width: 100%;
+}
+
+.mobile-menu-custom .close-menu {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.mobile-menu-custom .close-menu .close {
+  height: 50px;
+  width: 50px;
+  margin-top: 20px;
+  position: absolute;
+}
+
+.mobile-menu-custom .close-menu .close:before {
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 40px;
+  -webkit-transform: rotate(-45deg);
+     -moz-transform: rotate(-45deg);
+       -o-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  z-index: 1;
+  background-color: white;
+  -webkit-transition: all .2s linear;
+     -moz-transition: all .2s linear;
+       -o-transition: all .2s linear;
+          transition: all .2s linear;
+}
+
+.mobile-menu-custom .close-menu .close:after {
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 40px;
+  -webkit-transform: rotate(45deg);
+     -moz-transform: rotate(45deg);
+       -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+  z-index: 1;
+  background-color: white;
+  -webkit-transition: all .2s linear;
+     -moz-transition: all .2s linear;
+       -o-transition: all .2s linear;
+          transition: all .2s linear;
+}
+
+.mobile-menu-custom .close-menu .close:hover:after, .mobile-menu-custom .close-menu .close:hover::before {
+  background-color: #b3b3b3;
 }
 
 .mobile-menu-custom ul {

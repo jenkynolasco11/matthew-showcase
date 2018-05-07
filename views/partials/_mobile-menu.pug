@@ -1,4 +1,6 @@
 .mobile-menu-custom
+    .close-menu
+        span.close
     a.navbar-brand.scroll(href="/")
         img.dealer-logo(src="assets/images/dealer-logo.png" alt="dealer logo")
     ul.nav.navbar-nav
@@ -38,5 +40,16 @@
                             a(href="/service-others") Others
         li
             a.contact-button(href="contact-us") Contact
-        //- li.login-button
-        //-     a(href="#") Login
+
+        if isAuth
+            li.login-button.has-submenu
+                a(href="#") Welcome, #{ user.name }
+                    span.caret
+                .wrap-inside-nav
+                    .inside-col
+                        ul.inside-nav
+                            li
+                                a(href="#") Logout
+        else
+            li.login-button
+                a(href="#") Login

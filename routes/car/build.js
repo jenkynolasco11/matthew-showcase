@@ -234,6 +234,7 @@ route.get('/trending', (req, res) => {
 })
 
 route.get('/all', (req, res) => {
+    console.log('right here....')
     BuiltCar.find({
         $or : [  {reviewed : false }, { reviewed : { $exists : false }} ]
     }).then(builds => {

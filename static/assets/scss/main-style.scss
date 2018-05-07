@@ -1404,7 +1404,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 							color: white !important;
 							font-size: .9rem;
 							@media screen and (max-width: 998px) {
-								font-size: .8rem;
+								font-size: .75rem;
 							}
 						}
 						&:hover a {
@@ -1510,6 +1510,47 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			width: 100%;
 		}
 	}
+	.close-menu {
+		position : absolute;
+		top : 10px;
+		left : 10px;
+
+		.close {
+			height : 50px;
+			width : 50px;
+			margin-top : 20px;
+			position : absolute;
+
+			&:before {
+				content : '';
+				position : absolute;
+				height : 3px;
+				width : 40px;
+				transform : rotate(-45deg);
+				z-index : 1;
+				background-color : white;
+				transition : all .2s linear;
+			}
+
+			&:after {
+				content : '';
+				position : absolute;
+				height : 3px;
+				width : 40px;
+				transform : rotate(45deg);
+				z-index : 1;
+				background-color : white;
+				transition : all .2s linear;
+			}
+
+			&:hover {
+				&:after, &::before {
+					background-color : rgb(179, 179, 179);
+				}
+			}
+		}
+	}
+
 	ul {
 		// position: absolute;
 		margin-top: 30px;

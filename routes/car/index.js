@@ -16,6 +16,4 @@ const routes = [
 
 routes.forEach(r => route.use('/car', r))
 
-// console.log`${ route.stack }`
-
 module.exports = route

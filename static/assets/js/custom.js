@@ -244,6 +244,11 @@ $document.ready(function () {
 		$('.mobile-menu-custom').toggleClass('open')
 	})
 
+	$('.mobile-menu-custom .close-menu .close').on('click', function() {
+		$('.mobile-menu-custom').removeClass('open')
+		$('.toggle-menu-button').removeClass('open')
+	})
+
 	var collapseSubMenu = $('.has-submenu')
 
 	// console.log(collapseSubMenu)
