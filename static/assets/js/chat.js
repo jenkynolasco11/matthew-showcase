@@ -156,6 +156,7 @@ function setTypingStat() {
 
 closeChat.on('click', function() {
     $(chatBox).removeClass('open')
+    $(handle).removeClass('wiggle')
     chatStatsOnClient.isFocus = false
 
     if(checkIfCached()) socketIO.emit('chat:chat focus', { focus : false })
@@ -188,9 +189,9 @@ chatForm.on('submit', submitChatInfo)
 $(document).ready(function() {
     // Mount socket handlers
     socketFuncs(socketIO)
-
+    // add class wiggle to chat instead of open.
     autoOpenChat = setTimeout(function() {
-        $(chatBox).addClass('open')
+        $(handle).addClass('wiggle')
     }, 5000)
 
     if(!checkIfCached()) return

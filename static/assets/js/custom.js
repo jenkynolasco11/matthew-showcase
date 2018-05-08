@@ -330,13 +330,14 @@ $document.ready(function () {
 	})
 
 	var closeNewsletter = $('#subscribe-newsletter .close-newsletter')[ 0 ]
+	var chatBox = $('#chat-box')[0]
 
 	function fadeNewsletter() {
 		window.sessionStorage.setItem('temp-closed', 'yes')
-
 		$('.newsletter-overlay').fadeOut(500, function() {
 			setTimeout(function(self) {
 				$(self).remove()
+				$(chatBox).addClass('open')
 			}, 1000, this)
 		})
 	}
@@ -380,7 +381,7 @@ $document.ready(function () {
 		if(window.pageYOffset > $(document).height() * 0.4) {
 			if(!itAppeared) {
 				itAppeared = true
-				
+
 				var prevClosed = window.sessionStorage.getItem('temp-closed')
 				var isSubscribed = window.localStorage.getItem('subscribed')
 
