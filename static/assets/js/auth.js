@@ -60,6 +60,8 @@ function onLogOut() {
             $('li.login-button').each(function() {
                 $(this).on('click', openAuth)
             })
+
+            window.location.href = '/'
         }
     })
 }

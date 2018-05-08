@@ -8,19 +8,19 @@ block main-body
         .row
             .col-md-3.col-sm-12.remove-padding
                 ul.user-nav
-                    li(data-for="nav-item-1").selected
+                    li(data-for="user-builds").selected
                         a(href="#") Builds
-                    li(data-for="nav-item-2")
+                    li(data-for="user-interests")
                         a(href="#") Interests
-                    li(data-for="nav-item-3")
+                    li(data-for="user-social")
                         a(href="#") Social
-                    li(data-for="nav-item-4")
+                    li(data-for="user-settings")
                         a(href="#") Settings
             .col-md-9.col-sm-12
-                .selected-item-content#nav-item-1.selected
-                .selected-item-content#nav-item-2
-                .selected-item-content#nav-item-3
-                .selected-item-content#nav-item-4
+                .selected-item-content#user-builds.selected
+                .selected-item-content#user-interests
+                .selected-item-content#user-social
+                .selected-item-content#user-settings
 
 block scripts
     script(src="/assets/js/dashboard.js")
