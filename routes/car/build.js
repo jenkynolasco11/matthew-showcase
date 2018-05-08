@@ -187,6 +187,29 @@ const saveBuiltInDB = data => {
 //     return replaceAll(req.get('referer'), req.get('origin'), '');
 // }
 
+route.get('/user', async (req, res) => {
+    const { email } = req.user
+    const { skip = 0, limit = 10 } = req.query
+
+    // const user = req.user
+
+    try {
+        const blds = await BuiltCar.find({ email }).skip(skip).limit(limit).exec()
+
+        const builds = blds.map(b => ({...b, imgurl : cars[ b.options.year ][ b.options.make ].filter(n => ((n.Trim === b.options.trim) && n.Model === b.options.model))[ 0 ].Photo }))
+
+        console.log(JSON.stringify(builds, null, 2))
+
+        // console.log(builds)
+
+        return res.send({ ok : true, builds })
+    } catch (e) {
+        console.log(e)
+    }
+
+    return res.send({ ok : false })
+})
+
 route.post('/new', (req, res) => {
     const body = req.body
     const url = '/car/build/review?options=' + body.options
