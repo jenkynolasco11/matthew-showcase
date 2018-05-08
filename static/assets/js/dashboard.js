@@ -15,32 +15,63 @@ function buildTemplate(year, make, model) {
         </figure>
         <div class="car-information col-md-8 col-sm-12">
             <h5>${ year } ${ make } ${ model }</h5>
+
         </div>
     </div>
     `
 }
 
-function getBuildsFromUser() {
-    var usr = JSON.parse(window.sessionStorage.getItem('user'))
+function interestTemplate(year, make, model, source, id) {
+  return `
+  <a class='interest-list' href='/details/${id}'>
+    <div class="build-car col-xs-12">
+      <div class="car-information col-sm-12">
+        <div class='flex-container'>
+          <div class='flex-item'><img src='${source}' alt="car" /></div>
+          <div class='flex-item'>${year}</div>
+          <div class='flex-item'>${make}</div>
+          <div class='flex-item'>${model}</div>
+        </div>
+      </div>
+    </div>
+  </a>
+  `
+}
 
-    if(usr) {
-        var userId = usr._id
-        $.get(`/car/build/user/${ usr.email }`, function(data) {
-            if(data.ok) {
-                var container = $('#user-builds')
-
-                var content = data.builds.map(function(build) {
-                    return $(buildTemplate(
-                        build.options.year,
-                        build.options.make,
-                        build.options.model
-                    ))
-                })
-
-                container.append(content)
-            }
-        })
+function getInterestFromUser() {
+  $.get(`/car/build/user/`, (data) => {
+    if(data.ok) {
+      let container = $('#user-interests')
+      let content = data.likedCars.map(function(interest) {
+        return $(interestTemplate(
+          interest.year,
+          interest.make,
+          interest.model,
+          interest.imgs[0].src,
+          interest.id
+        ))
+      })
+      container.append(content)
     }
+  })
+}
+
+function getBuildsFromUser() {
+  $.get(`/car/build/user/`, function(data) {
+
+    if(data.ok) {
+      console.log(data.likedCars[0].imgs[0].src)
+      var container = $('#user-builds')
+      var content = data.builds.map(function(build) {
+        return $(buildTemplate(
+          build.options.year,
+          build.options.make,
+          build.options.model
+        ))
+      })
+      container.append(content)
+    }
+  })
 }
 
 selectors.each(function(){
@@ -57,3 +88,4 @@ selectors.each(function(){
 })
 
 getBuildsFromUser()
+getInterestFromUser()

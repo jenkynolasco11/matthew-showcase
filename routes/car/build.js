@@ -191,18 +191,24 @@ route.get('/user', async (req, res) => {
     const { email } = req.user
     const { skip = 0, limit = 10 } = req.query
 
-    // const user = req.user
+    /*
+    get the ids stored inside the car model likedBy Array
+    then check if the req.user.id is  == to queried id
+
+    */
+
 
     try {
         const blds = await BuiltCar.find({ email }).skip(skip).limit(limit).exec()
+        const likedCars = await Car.find({ likedBy: req.user._id }).exec()
 
         const builds = blds.map(b => ({...b, imgurl : cars[ b.options.year ][ b.options.make ].filter(n => ((n.Trim === b.options.trim) && n.Model === b.options.model))[ 0 ].Photo }))
 
         console.log(JSON.stringify(builds, null, 2))
 
-        // console.log(builds)
+        //console.log(likedCars)
 
-        return res.send({ ok : true, builds })
+        return res.send({ ok : true, builds, likedCars })
     } catch (e) {
         console.log(e)
     }
@@ -269,6 +275,7 @@ route.get('/all', (req, res) => {
         return res.send({ ok : false })
     })
 })
+
 
 buildCar.use('/build', route)
 
