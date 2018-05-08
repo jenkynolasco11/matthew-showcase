@@ -32,6 +32,7 @@ const paths = [
     'contact-us-test',
     'admin',
     'details',
+    // 'dashboard',
     // 'listing',
     'services',
     'refer-a-friend'
@@ -245,7 +246,16 @@ route.get('/:route', (req, res, next) => {
     } else if (paths.includes(route)) {
         const title = titles[route]
 
-        return res.render(route, { title: 'JYD - ' + title, user, isAuth : req.isAuthenticated() })
+        return res.render(route, { title: `JYD - ${ title }`, user, isAuth : req.isAuthenticated() })
+    } else if(route === 'dashboard') {
+        console.log(`So this is the Route=> ${route}`)
+        // const title = titles[route]
+
+        // console.log(res.isAuthenticated())
+
+        if(!req.isAuthenticated()) return res.redirect('/')
+
+        return res.render('user-dashboard', { title : `Dashboard - ${ user.name }`, user, isAuth : req.isAuthenticated() })
     }
 
     else return next()

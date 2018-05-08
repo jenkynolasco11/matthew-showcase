@@ -4,7 +4,7 @@ var login = $('.auth .content .login')
 var signup = $('.auth .content .signup')
 var radioVal = $('[name=auth-nav]')
 var loginLogout = $('li.login-button:not(.has-submenu)')
-var likeButton = $('.list-goods .b-goods-1__choose')
+// var likeButton = $('.list-goods .b-goods-1__choose')
 
 var formLogin = $('form.login')
 var formSignup = $('form.signup')
@@ -30,7 +30,7 @@ var loggedInButtonTemplate = function(name) {
             <div class="inside-col">
                 <ul class="inside-nav">
                     <li class="user-settings">
-                        <a href="#">Settings</a>
+                        <a href="/dashboard">Settings</a>
                     </li>
                     <li class="logout-button">
                         <a href="#">Logout</a>
@@ -45,9 +45,9 @@ var loggedInButtonTemplate = function(name) {
 var logInButtonTemplate = function() { return '<li class="login-button"><a href="#"> Login </a></li>' }
 
 function onLogOut() {
-    console.log('sup...')
+    // console.log('sup...')
     $.get('/auth/logout', function(data) {
-        console.log(data)
+        // console.log(data)
         if(data.ok) {
             $('.main-menu li.login-button').remove()
             $('.nav.navbar-nav li.login-button').remove()
@@ -72,10 +72,11 @@ function addEventToLogout() {
 
 function checkAuthentication() {
     $.get('/auth/is-auth', function(data) {
-        console.log(data)
+        // console.log(data)
+        // console.log(data)
 
         if(data.ok) {
-            console.log(data.user)
+            // console.log(data.user)
 
             window.sessionStorage.setItem('user', JSON.stringify(data.user))
         }
@@ -100,7 +101,9 @@ function onSubmitAuthInfo(e) {
             $('.main-menu li.login-button').remove()
             $('.nav.navbar-nav li.login-button').remove()
 
-            var loggedIn = $(loggedInButtonTemplate(res.name))
+            window.sessionStorage.setItem('user', JSON.stringify(res.user))
+
+            var loggedIn = $(loggedInButtonTemplate(res.user.name))
 
             $(loggedIn).on('click', function() {
                 $('li.login-button .wrap-inside-nav').toggleClass('collapse')
@@ -114,24 +117,11 @@ function onSubmitAuthInfo(e) {
     })
 }
 
-function onLikeItem() {
-    // console.log('hey...')
-    // console.log(this)
-}
-
 $(document).ready(function(){
     cancel.on('click', closeAuth)
 
     loginLogout.each(function(){
         $(this).on('click', openAuth)
-    })
-
-    // console.log(likeButton)
-
-    likeButton.each(function(){
-        console.log(this)
-
-        $(this).on('click', onLikeItem)
     })
 
     formLogin.submit(onSubmitAuthInfo)

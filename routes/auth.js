@@ -17,8 +17,10 @@ route.get('/success', (req, res) => {
     req.login(user, err => {
         if(!err) {
             console.log(`About to log ${ JSON.stringify(user) }`)
+
+            const { _id, email, name, phoneNumber, username } = user
             try {
-                return res.status(200).send({ ok : true, user : user.username, name : user.name, email : user.email })
+                return res.status(200).send({ ok : true, user : { _id, email, name, phoneNumber, username }})
             } catch(e)  {}
         }
         console.log(`Error... ${ err }`)
@@ -60,9 +62,9 @@ route.get('/is-auth', (req,res) => {
     let usr = null
 
     if(isAuth) {
-        const { name, email, username, phoneNumber } = req.user
+        const { _id, name, email, username, phoneNumber } = req.user
 
-        usr = { name, email, username, phoneNumber }
+        usr = { _id, name, email, username, phoneNumber }
     }
 
     const user = isAuth ? { ...usr } : null

@@ -4163,6 +4163,75 @@ table.icons {
 	display : none;
 }
 
+#user-dashboard {
+	.col-md-3 {
+		@media screen and (min-width : 768px) {
+			border-right : 1px solid rgb(221, 221, 221);
+		}
+	}
+
+	.user-nav {
+		li {
+			padding : 10px 40px;
+			position : relative;
+			// transition : all .2s linear;
+
+			&:after {
+				transition : all .2s linear;
+			}
+
+			a {
+				color : black;
+			}
+
+			&.selected {
+				background-color : #eee;
+
+				a {
+					color : red;
+				}
+
+				@media screen and (min-width : 768px){
+					&:after {
+						content : '';
+						// background-color : green;
+						position : absolute;
+						border-left : 20px solid #eee;
+						border-top : 22px solid transparent;
+						border-bottom : 22px solid transparent;
+						right : -20px;
+						top : 0;
+						z-index : 1;
+					}
+				}
+			}
+		}
+	}
+
+	.selected-item-content {
+		opacity : 0;
+		position : absolute;
+		top : 0;
+		left : 0;
+		transition : all .4s linear;
+
+		height : 100%;
+		width : 100%;
+
+		&:nth-child(1) { background-color : red }
+		&:nth-child(2) { background-color : pink }
+		&:nth-child(3) { background-color : green }
+		&:nth-child(4) { background-color : blue }
+
+		&.selected {
+			opacity : 1;
+		}
+	}
+}
+
+.remove-padding {
+	padding : 0;
+}
 // .auth {
 // 	position : fixed;
 // 	height : 100vh;

@@ -249,6 +249,30 @@ route.delete('/delete/:id', (req, res) => {
         return res.status(200).send({ ok : false, cars : [] })
     }
 })
+
+route.put('/:id/like/:user', async (req, res) => {
+    const { id, user } = req.params
+
+    try {
+        const car = await Car.findById(id)
+
+        if(!car.likedBy) {
+            await Car.findByIdAndUpdate(id, { likedBy : [ user ] })
+
+        } else {
+            const pullOrPush = car.likedBy.includes(user) ? '$pull' : '$push'
+
+            await Car.findByIdAndUpdate(id, { [ pullOrPush ] : { likedBy : user }})
+        }
+
+
+        return res.send({ ok : true })
+    } catch (e) {
+        console.log(e)
+    }
+
+    return res.send({ ok : false })
+})
 //#endregion
 
 car.use('/', route)

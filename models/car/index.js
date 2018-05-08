@@ -30,6 +30,7 @@ var CarSchema = new Schema({
         name : String,
         main : Boolean,
     }],
+    likedBy : [ String ],
     createdBy : { type : Date, default : Date.now },
     deleted : { type : Boolean, default : () => false }
 })

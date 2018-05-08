@@ -1,0 +1,26 @@
+extends partials/_pug-page.pug
+
+block crumbs
+    li Dashboard
+
+block main-body
+    .container#user-dashboard
+        .row
+            .col-md-3.col-sm-12.remove-padding
+                ul.user-nav
+                    li(data-for="nav-item-1").selected
+                        a(href="#") Builds
+                    li(data-for="nav-item-2")
+                        a(href="#") Interests
+                    li(data-for="nav-item-3")
+                        a(href="#") Social
+                    li(data-for="nav-item-4")
+                        a(href="#") Settings
+            .col-md-9.col-sm-12
+                .selected-item-content#nav-item-1.selected
+                .selected-item-content#nav-item-2
+                .selected-item-content#nav-item-3
+                .selected-item-content#nav-item-4
+
+block scripts
+    script(src="/assets/js/dashboard.js")

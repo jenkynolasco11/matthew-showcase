@@ -1,7 +1,8 @@
 var skipHandler = 0
 var limit = 9
 
-var carListingTemplate = function(i, src, price, msrp, make, model, overview, mileage, year, trans, hp, engine, features, id) {
+var carListingTemplate = function(i, src, price, msrp, make, model, overview, mileage, year, trans, hp, engine, features, id, likedBy, userId, carId) {
+    console.log(likedBy, userId)
     return (
         `
         <section class="b-goods-1">
@@ -17,7 +18,7 @@ var carListingTemplate = function(i, src, price, msrp, make, model, overview, mi
                             <span class="b-goods-1__price-msrp">MSRP $${msrp}</span>
                         </span>
                         <a class="b-goods-1__choose hidden-th" href="#">
-                            <i class="icon fa fa-heart-o"></i>
+                            <i data-car-id="${ carId }" class="icon fa fa-heart${ likedBy.includes(userId) ? '' : '-o' }"></i>
                         </a>
                         <h2 class="b-goods-1__name">
                             <a href="details/${id}">${year} ${make} ${model}</a>
@@ -122,7 +123,36 @@ var createPagination = function(total) {
 }
 /* ************ */
 
+var addEventsToLikeButton = function() {
+    var likeButton = $('.b-goods-1__inner .b-goods-1__header .b-goods-1__choose i')
+
+    likeButton.on('click', function(e) {
+        e.preventDefault()
+
+        var userAuth = JSON.parse(window.sessionStorage.getItem('user'))
+
+        if(!userAuth) return openAuth()
+
+        var carId = $(this).data('car-id')
+        var userId = userAuth._id
+
+        $.ajax({
+            url : `/car/${ carId }/like/${ userId }`,
+            type : 'PUT',
+            success : function(data) {
+                console.log(data)
+
+                if(data.ok) return getSelectedOptions()
+            }
+        })
+    })
+}
+
 var retrieveAllCars = function(url) {
+    var auth = JSON.parse(window.sessionStorage.getItem('user'))
+
+    var userId = auth ? auth._id : null
+
     $.get(url, function(data) {
         if(data.ok) {
             var listingSection = $('#listing-section')
@@ -146,13 +176,17 @@ var retrieveAllCars = function(url) {
                     car.hp,
                     car.engine,
                     car.extraFeatures,
-                    car.id
+                    car.id,
+                    car.likedBy,
+                    userId,
+                    car._id
                 ))
             })
 
             listingSection.html(carItems)
 
             createPagination(data.count)
+            addEventsToLikeButton()
         }
     })
 }
