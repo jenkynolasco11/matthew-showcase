@@ -3761,33 +3761,40 @@ table.icons {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		color : white;
+
 		&:hover {
-			.inner-arrow {
-				border-color: transparent transparent $arrowHoverClr transparent;
-				cursor: pointer;
-				transition: all .1s linear;
-			}
+			color : red;
+			// .inner-arrow {
+			// 	border-color: transparent transparent $arrowHoverClr transparent;
+			// 	cursor: pointer;
+			// 	transition: all .1s linear;
+			// }
 		}
 		.inner-arrow {
 			transition: all .2s linear;
 			position: relative;
-			margin-top: -2px; // background-color : black;
+			// margin-top: -2px; // background-color : black;
 			// height : 30px;
 			// width : 30px;
-			border-top: 0;
-			border-bottom: 30px solid $arrowClr;
-			border-right: 15px solid transparent;
-			border-left: 15px solid transparent;
+			// border-top: 0;
+			// border-bottom: 30px solid $arrowClr;
+			// border-right: 15px solid transparent;
+			// border-left: 15px solid transparent;
 			&:after {
-				margin-top: 10px;
-				margin-left: -15px;
-				content: '';
+				margin-top: -12px;
+				margin-left: -18px;
+				// margin-top: 10px;
+				// margin-left: -15px;
+				content: 'Chat';
 				position: absolute;
-				border-top: 0;
-				border-bottom: 30px solid $handleBg;
-				border-right: 15px solid transparent;
-				border-left: 15px solid transparent;
+				// border-top: 0;
+				// border-bottom: 30px solid $handleBg;
+				// border-right: 15px solid transparent;
+				// border-left: 15px solid transparent;
 			}
+
+			// display : none;
 		}
 		.messages-count {
 			color: white;
@@ -3825,7 +3832,7 @@ table.icons {
 			50%,
 			70% {
 				transform: translate3d(-4px, 0, 0);
-				border-color: transparent transparent $arrowHoverClr transparent;
+				color : red;
 			}
 			40%,
 			60% {

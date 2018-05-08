@@ -3259,7 +3259,6 @@ ol.list__numeric li:before {
   }
 }
 
-
 /*--------------------------------------------------------------
 ## ToTop button
 --------------------------------------------------------------*/
@@ -14976,15 +14975,11 @@ table.icons tr td:first-child {
      -moz-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: white;
 }
 
-#chat-box #chat-handle:hover .inner-arrow {
-  border-color: transparent transparent red transparent;
-  cursor: pointer;
-  -webkit-transition: all .1s linear;
-     -moz-transition: all .1s linear;
-       -o-transition: all .1s linear;
-          transition: all .1s linear;
+#chat-box #chat-handle:hover {
+  color: red;
 }
 
 #chat-box #chat-handle .inner-arrow {
@@ -14993,22 +14988,13 @@ table.icons tr td:first-child {
        -o-transition: all .2s linear;
           transition: all .2s linear;
   position: relative;
-  margin-top: -2px;
-  border-top: 0;
-  border-bottom: 30px solid white;
-  border-right: 15px solid transparent;
-  border-left: 15px solid transparent;
 }
 
 #chat-box #chat-handle .inner-arrow:after {
-  margin-top: 10px;
-  margin-left: -15px;
-  content: '';
+  margin-top: -12px;
+  margin-left: -18px;
+  content: 'Chat';
   position: absolute;
-  border-top: 0;
-  border-bottom: 30px solid black;
-  border-right: 15px solid transparent;
-  border-left: 15px solid transparent;
 }
 
 #chat-box #chat-handle .messages-count {
@@ -15072,7 +15058,7 @@ table.icons tr td:first-child {
   70% {
     -webkit-transform: translate3d(-4px, 0, 0);
             transform: translate3d(-4px, 0, 0);
-    border-color: transparent transparent red transparent;
+    color: red;
   }
   40%,
   60% {
@@ -15097,7 +15083,7 @@ table.icons tr td:first-child {
   70% {
     -moz-transform: translate3d(-4px, 0, 0);
          transform: translate3d(-4px, 0, 0);
-    border-color: transparent transparent red transparent;
+    color: red;
   }
   40%,
   60% {
@@ -15119,7 +15105,7 @@ table.icons tr td:first-child {
   50%,
   70% {
     transform: translate3d(-4px, 0, 0);
-    border-color: transparent transparent red transparent;
+    color: red;
   }
   40%,
   60% {
@@ -15146,7 +15132,7 @@ table.icons tr td:first-child {
     -webkit-transform: translate3d(-4px, 0, 0);
        -moz-transform: translate3d(-4px, 0, 0);
             transform: translate3d(-4px, 0, 0);
-    border-color: transparent transparent red transparent;
+    color: red;
   }
   40%,
   60% {
