@@ -4,6 +4,7 @@ var Schema = mongoose.Schema
 var CarSchemas = require('./car')
 var Car = CarSchemas.Car
 var BuiltCar = CarSchemas.BuiltCar
+var ReferenceCar = CarSchemas.ReferenceCar
 var { user : User, userDetails : UserDetails } = require('./user')
 var Newsletter = require('./newsletter')
 var Refer = require('./refer')
@@ -24,12 +25,13 @@ var Meta = mongoose.model('meta', MetaSchema, 'meta')
 
 module.exports = {
     Car,
+    ReferenceCar,
+    BuiltCar,
     User,
     Meta,
     Refer,
     SellCar,
     Message,
-    BuiltCar,
     CreditApp,
     ChatStats,
     Submission,

@@ -2,6 +2,49 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
 
+
+var referenceCarSchema = new Schema({
+    modelId: String,
+    modelMakeId: String,
+    model: String,
+    modelTrim: String,
+    modelYear: String,
+    modelBody: String,
+    modelEnginePosition: String,
+    modelEngineCC: String,
+    modelEngineCyl: String,
+    modelEngineType: String,
+    modelEngineValvesPerCyl: String,
+    modelEnginePowerPs: String,
+    modelEnginePowerRPM: String,
+    modelEngineTorqueNm: String,
+    modelEngineTorqueRPM: String,
+    modelEngineBoreMM: String,
+    modelEngineStroke_mm: String,
+    modelEngineCompression: String,
+    modelEngineFuel: String,
+    modelTopSpeedKPH: String,
+    modelTopSpeedMPH: String,
+    modelCeroToOneHundred: String,
+    modelDrive: String,
+    modelTransmission_type: String,
+    modelSeats: String,
+    modelDoors: String,
+    modelWeightKG: String,
+    modelLengthMM: String,
+    modelWidthMM: String,
+    modelHeightMM: String,
+    modelWheelbaseMM: String,
+    modelLkmHwy: String,
+    modelLkmMixed: String,
+    modelLkmCity: String,
+    modelFuelCapL: String,
+    modelSoldInUS: Boolean,
+    modelCO2: String,
+    modelMakeDisplay: String
+});
+
+
 var CarSchema = new Schema({
     id : { type : String, required : true, unique : { index : true }},
     year: Number,
@@ -68,7 +111,8 @@ var BuiltCarSchema = new Schema({
     deleted : { type : Boolean, default : () => false, index : true },
 })
 
+var ReferenceCar = mongoose.model('referenceCar', referenceCarSchema)
 var Car = mongoose.model('car', CarSchema, 'car')
 var BuiltCar = mongoose.model('builtCar', BuiltCarSchema, 'builtCar')
 
-module.exports = { Car, BuiltCar }
+module.exports = { Car, BuiltCar, ReferenceCar }
