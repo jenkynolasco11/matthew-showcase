@@ -23,18 +23,18 @@ function buildTemplate(year, make, model) {
 
 function interestTemplate(year, make, model, source, id) {
   return `
-  <a class='interest-list' href='/details/${id}'>
     <div class="build-car col-xs-12">
-      <div class="car-information col-sm-12">
-        <div class='flex-container'>
-          <div class='flex-item'><img src='${source}' alt="car" /></div>
-          <div class='flex-item'>${year}</div>
-          <div class='flex-item'>${make}</div>
-          <div class='flex-item'>${model}</div>
+      <a class='interest-list' href='/details/${id}'>
+        <div class="car-information col-sm-12">
+          <div class='flex-container'>
+            <div class='flex-item'><img src='${source}' alt="car" /></div>
+            <div class='flex-item'>${year}</div>
+            <div class='flex-item'>${make}</div>
+            <div class='flex-item'>${model}</div>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
-  </a>
   `
 }
 
