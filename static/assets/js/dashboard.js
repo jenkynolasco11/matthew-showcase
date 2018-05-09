@@ -1,11 +1,33 @@
 var selectors = $('.user-nav li')
 var sections = $('.selected-item-content')
+var socialButton = $('#social-button')
+var socialMessage = $('#message-social')
+var socialMessageText = $('#message-social-text')
 
 function removeClassTo(cls, items) {
     $(items).each(function() {
         $(this).removeClass(cls)
     })
 }
+
+$(socialButton).click(function(e){
+  e.preventDefault();
+  console.log('clicked')
+  $(socialButton)[0].disabled = true;
+  setTimeout(function() {
+    $(socialButton)[0].disabled = false;
+    $('#message-social p').remove();
+  }, 5000)
+  $.post('/user/social', ({ fbHandle: facebook.value, igHandle: Instagram.value, twHandle: Twitter.value }), function(data) {
+    console.log(data)
+    if (data.ok) {
+      $(socialMessage).append(`<p id="message-social-text">${data.message}</p>`)
+    }
+    if (!data.ok) {
+      $(socialMessage).append(`<p id="message-social-text">${data.message}</p>`)
+    }
+  })
+})
 
 function buildTemplate(year, make, model) {
     return `
@@ -15,7 +37,6 @@ function buildTemplate(year, make, model) {
         </figure>
         <div class="car-information col-md-8 col-sm-12">
             <h5>${ year } ${ make } ${ model }</h5>
-
         </div>
     </div>
     `
@@ -38,24 +59,6 @@ function interestTemplate(year, make, model, source, id) {
   `
 }
 
-function getInterestFromUser() {
-  $.get(`/car/build/user/`, (data) => {
-    if(data.ok) {
-      let container = $('#user-interests')
-      let content = data.likedCars.map(function(interest) {
-        return $(interestTemplate(
-          interest.year,
-          interest.make,
-          interest.model,
-          interest.imgs[0].src,
-          interest.id
-        ))
-      })
-      container.append(content)
-    }
-  })
-}
-
 function getBuildsFromUser() {
   $.get(`/car/build/user/`, function(data) {
 
@@ -67,6 +70,24 @@ function getBuildsFromUser() {
           build.options.year,
           build.options.make,
           build.options.model
+        ))
+      })
+      container.append(content)
+    }
+  })
+}
+
+function getInterestFromUser() {
+  $.get(`/car/build/user/`, (data) => {
+    if(data.ok) {
+      let container = $('#user-interests')
+      let content = data.likedCars.map(function(interest) {
+        return $(interestTemplate(
+          interest.year,
+          interest.make,
+          interest.model,
+          interest.imgs[0].src,
+          interest.id
         ))
       })
       container.append(content)

@@ -208,7 +208,7 @@ route.get('/user', async (req, res) => {
 
         //console.log(likedCars)
 
-        return res.send({ ok : true, builds, likedCars })
+        return res.send({ ok : true, builds, likedCars, user: req.user })
     } catch (e) {
         console.log(e)
     }

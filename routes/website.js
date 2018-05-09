@@ -250,12 +250,18 @@ route.get('/:route', (req, res, next) => {
     } else if(route === 'dashboard') {
         console.log(`So this is the Route=> ${route}`)
         // const title = titles[route]
-
-        // console.log(res.isAuthenticated())
-
         if(!req.isAuthenticated()) return res.redirect('/')
+        // console.log(res.isAuthenticated())
+        const UserDetails = models.UserDetails
+        const currentDetails = UserDetails.findOne({user : user._id}, function(err, data){
+          console.log(user._id)
+          console.log(`data is here: ${data}`)
 
-        return res.render('user-dashboard', { title : `Dashboard - ${ user.name }`, user, isAuth : req.isAuthenticated() })
+          return res.render('user-dashboard', { title : `Dashboard - ${ user.name }`, user, isAuth : req.isAuthenticated(), currentDetails: data })
+        })
+
+
+
     }
 
     else return next()

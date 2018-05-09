@@ -16,10 +16,31 @@ block main-body
                         a(href="#") Social
                     li(data-for="user-settings")
                         a(href="#") Settings
-            .col-md-9.col-sm-12
+            .col-md-9.col-sm-12.dashboard-section
                 .selected-item-content#user-builds.selected
                 .selected-item-content#user-interests
                 .selected-item-content#user-social
+                  .social-cont
+                    form(method='POST' action='/user/social')
+                      div#message-social
+                        p#message-social-text
+                      div.form-group
+                        .social-fi
+                          label(for='facebook') Facebook Handle
+                          input#facebook(type='text', placeholder='Facebook Handle' value= currentDetails ? currentDetails.social.facebook : '')
+                        .social-fi
+                          label(for='facebook') Instagram Handle
+                          input#Instagram(type='text', placeholder='Instagram Handle' value= currentDetails ? currentDetails.social.instagram : '')
+                        .social-fi
+                          label(for='facebook') Twitter Handle
+                          input#Twitter(type='text', placeholder='Twitter Handle' value=currentDetails ? currentDetails.social.twitter : '')
+                        .social-fi
+                          button(id='social-button' type='submit') Save
+
+
+
+
+
                 .selected-item-content#user-settings
 
 block scripts
