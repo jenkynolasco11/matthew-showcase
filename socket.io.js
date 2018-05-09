@@ -26,6 +26,9 @@ const objBase = {
 
 const adminSockets = { ...objBase }
 const clientSockets = { ...objBase }
+// const clients = { ...objBase }
+
+const clientMsgs = { ...objBase }
 
 function emitMessageToSockets(sockets, event, data = {}) {
     for(const [id, { socket }] of sockets) {
@@ -47,7 +50,15 @@ function adminSocketFunctions(socket) {
     async function getOldMessages() {
         try {
             const clients = await ChatMessage.aggregate([
-                { $match : { $or : [{ read : { $exists : false }}, { read : false }]}},
+                {
+                    $match :
+                    {
+                        $or : [
+                            { read : { $exists : false }},
+                            { read : false }
+                        ]
+                    }
+                },
                 {
                     $group : {
                         _id : { email : '$email', name : '$name' },
@@ -57,68 +68,87 @@ function adminSocketFunctions(socket) {
                 {
                     $project : {
                         _id : 1,
-                        messages : { $slice : [ '$messages', -50 ]}
+                        messages : { $slice : [ '$messages', -50 ]},
                     }
                 }
             ])
 
-            socket.emit('server:offline messages', { clients })
+            clients.forEach(({ _id, messages : msgs }) => {
+                const { name, email } = _id
+
+                const messages = msgs.map(({ msg : text, to : type, timestamp, read }) => ({ timestamp, type, text, read }))
+
+                // clientMsgs[ `${name}:${email}` ] = {
+                clientSockets[ `${name}:${email}` ] = {
+                    online : false,
+                    name,
+                    email,
+                    messages,
+                    newMessages : messages.length,
+                    isTyping : false,
+                    isFocus : false
+                }
+            })
+
+            // console.log(clientSockets)
+
+            return socket.emit('server:offline messages', { clients : { ...clientSockets }})
         } catch (e) {
             console.log(e)
         }
-
-        return null
     }
 
     socket.on('disconnect', () => {
+        debugger;
         delete adminSockets[ socket.id ]
     })
 
     socket.on('admin:new message', async ({ id, text : msg }) => {
-        const { socket : socketClient, userData } = clientSockets[ id ]
-        const { name, email } = userData
+        debugger;
+        const { socket : socketClient, name, email } = clientSockets[ id ]
 
-        if(socketClient) {
-            const message = constructMessage('company', msg)
-
-            console.log(message)
-
-            socketClient.emit('new message', message)
-            socket.emit('server:new message', { id, message : { ...message, type : 'client' } })
-
-            const dbMsg = {
-                from : 'company',
-                to : 'client',
-                timestamp : Date.now(),
-                msg,
-                name,
-                email,
-                read : false,
-            }
-
-            try {
-                // TODO: Messages aren't being saved... wtf?
-                await new ChatMessage({ ...dbMsg }).save()
-                console.log('message saved!')
-            } catch (e) {
-                console.log(e)
-            }
+        const dbMsg = {
+            from : 'company',
+            to : 'client',
+            timestamp : Date.now(),
+            msg,
+            name,
+            email,
+            read : true,
         }
+
+        try {
+            await new ChatMessage({ ...dbMsg }).save()
+            await ChatMessage.update({ name, email, $or : [{ read : { $exists : false }}, { read : false }] }, { read : true }, { multi : true })
+
+            const message = constructMessage('company', msg)
+            socket.emit('server:new message', { id, message : { ...message, type : 'client', read : true } })
+
+            if(socketClient) socketClient.emit('new message', message)
+        } catch (e) {
+            console.log(e)
+        }
+        // }
     })
 
-    // socket.on('admin:get offline messages', async () => {
-    //     try {
-    //         const msgs = await getOldMessages()
-
-    //         console.log(msgs)
-    //     } catch (e) {
-    //         console.log(e)
-    //     }
-    // })
-
-    socket.on('admin:set messages to read', async ({ id, name, email }) => {
+    socket.on('admin:set messages to read', async ({ name, email }) => {
+        debugger;
         try {
-            await ChatMessage.update({ name, email, read : false }, { read : true }, { multi : true })
+            const messages = await ChatMessage.update({ name, email, $or : [{ read : { $exists : false }}, { read : false }] }, { $set : { read : true }}, { multi : true })
+
+            const newMsgs = await ChatMessage.count({ name, email, read : false })
+
+            const id = `${name}:${email}`
+
+            // console.log(adminSockets)
+            // console.log(clientSockets)
+            // console.log(clientSockets[ id ])
+
+            if(!clientSockets[ id ].online) {
+                console.log('deleting the object...')
+
+                delete clientSockets[ id ]
+            }
         } catch (e) {
             console.log(e)
         }
@@ -131,25 +161,40 @@ function clientSocketFunctions(socket) {
     const { id } = socket
     let isFirstMessageSent = false
 
-    clientSockets[ id ] = { socket, userData : { name : '', email : '' }}
+    // clientSockets[ id ] = { socket, userData : { name : '', email : '' }}
 
     //#region functions
     function onDisconnect() {
-        delete clientSockets[ id ]
+        let nameEmail = null
+        // for(let [ne, { socket : sckt }] of clientSockets) {
+        //     if(sckt.id === socket.id) {
+        //         nameEmail = ne
+        //         break
+        //     }
+        // }
 
-        emitMessageToSockets(adminSockets, 'server:client disconnect', id)
+        // console.log(nameEmail)
+        // emitMessageToSockets(adminSockets, 'server:client disconnect', nameEmail)
+        for(let [ne, { socket : sckt }] of clientSockets) {
+            if(sckt)
+                if(sckt.id === socket.id) {
+                    delete clientSockets[ ne ].socket
+                    nameEmail = ne
+
+                    break
+                }
+        }
+
+        emitMessageToSockets(adminSockets, 'server:client disconnect', nameEmail)
     }
 
-    async function onNewMessage({ msg }) {
+    // TODO: Come here, set messages properly
+    async function onNewMessage({ name, email, msg }) {
+        const id = `${name}:${email}`
         const message = constructMessage('client', msg)
 
-        // const message = { ...newMsg, type : 'client' }
-
-        emitMessageToSockets(adminSockets, 'server:new message',  { id, message : {  ...message, type : 'company' } })
+        emitMessageToSockets(adminSockets, 'server:new message',  { id, message : {  ...message, type : 'company' }})
         socket.emit('new message', message)
-
-        const { userData } = clientSockets[ id ]
-        const { name, email } = userData
 
         const dbMsg = {
             from : 'client',
@@ -164,29 +209,31 @@ function clientSocketFunctions(socket) {
         try {
             await new ChatMessage({ ...dbMsg }).save()
             // TODO: Messages aren't being saved... wtf?
-            console.log('message of client saved!')
+            // console.log('message of client saved!')
         } catch(e) { console.log(e) }
     }
 
     async function onSetSocketStats({ isFocus, email, name, isTyping }) {
-        const { userData : ud } = clientSockets[ id ]
+        const id = `${name}:${email}`
 
-        const userData = { ...ud, isFocus, email, name, isTyping }
+        const stats = { online : true, isFocus, email, name, isTyping }
 
-        clientSockets[ id ].userData = { ...userData }
+        clientSockets[ id ] = { ...clientSockets[ id ], socket, ...stats }
 
         try {
-            const msgs = await ChatMessage.find({ email }).sort({ timestamp : -1 }).limit(100)
+            const msgs = await ChatMessage.find({ name, email }).sort({ timestamp : -1 }).limit(100).exec()
+            const newMessages = await ChatMessage.count({ name, email, read : false })
 
-            const messages = msgs.map(({ msg : text, to : type, timestamp }) => ({ timestamp, type, text })).reverse()
+            const messages = msgs.map(({ msg : text, to : type, timestamp, read }) => ({ timestamp, type, text, read })).reverse()
 
-            emitMessageToSockets(adminSockets, 'server:chat stats', { id, ...userData, messages })
+            emitMessageToSockets(adminSockets, 'server:chat stats', { id, ...stats, messages })
         } catch (err) {
             console.log(err)
         }
     }
 
     async function onGetRecentMessages({ name, email }) {
+        // debugger;
         try {
             const orClause = { $or : [{ read : { $exists : false }}, { read : false }] }
             const findClause = { name, email, ...orClause }
@@ -212,6 +259,7 @@ function clientSocketFunctions(socket) {
 
 exports.sockets = adminSockets
 exports.chatSockets = clientSockets
+// exports.chatSockets = clients
 
 exports.server = server => {
     const sockets = io(server)

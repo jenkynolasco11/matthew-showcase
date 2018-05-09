@@ -101,11 +101,13 @@ function socketFuncs(socket) {
 
 function sendChatMessage() {
     var msg = messageBox.val()
+    var name = chatStatsOnClient.name
+    var email = chatStatsOnClient.email
 
     if(msg) {
         messageBox.val('')
 
-        socketIO.emit('new message', { msg : msg })
+        socketIO.emit('new message', { name : name, email : email, msg : msg })
 
         clearTimeout(isTypingPromise)
         chatStatsOnClient.isTyping = false
