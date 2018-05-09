@@ -64,8 +64,10 @@ function socketFuncs(socket) {
         data.forEach(function(msg) {
             var newMsg = $(msgTemplate(msg.type, msg.timestamp, msg.text || ''))
 
-            messageWindow.append(newMsg.fadeIn(200))
+            messageWindow.prepend(newMsg.fadeIn(200))
         })
+
+        messageWindow.scrollTop($(messageWindow)[0].scrollHeight)
     })
 
     socket.on('new message', function(msg) {

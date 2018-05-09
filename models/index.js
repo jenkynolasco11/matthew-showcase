@@ -11,7 +11,9 @@ var DealSubsription = require('./deal-sub')
 var CreditApp = require('./credit-app')
 var Message = require('./message')
 var SellCar = require('./sell-car')
-var ChatMessage = require('./chat')
+var Chat = require('./chat')
+var ChatMessage = Chat.ChatMessage
+var ChatStats = Chat.ChatInfoSchema
 var Submission = require('./submissions')
 
 var MetaSchema = new Schema({
@@ -22,16 +24,17 @@ var Meta = mongoose.model('meta', MetaSchema, 'meta')
 
 module.exports = {
     Car,
-    BuiltCar,
     User,
-    UserDetails,
     Meta,
-    Newsletter,
     Refer,
-    CreditApp,
-    DealSubsription,
-    Message,
     SellCar,
+    Message,
+    BuiltCar,
+    CreditApp,
+    ChatStats,
+    Submission,
+    Newsletter,
     ChatMessage,
-    Submission
+    UserDetails,
+    DealSubsription,
 }

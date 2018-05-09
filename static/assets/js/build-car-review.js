@@ -58,4 +58,28 @@ $(document).ready(function() {
             $('#' + contentToShow).addClass('show')
         })
     })
+
+    $('.save-item').on('click', function(e) {
+        e.preventDefault()
+
+        var usr = JSON.parse(window.sessionStorage.getItem('user'))
+
+        // console.log(usr)
+
+        if(usr) {
+            $.post('/car/build/save', function(data) {
+                if(data.ok) {
+                    console.log('data saved!')
+                }
+            })
+        } else return openAuth()
+    })
+
+    $('.compare-item').on('click', function(e) {
+        e.preventDefault()
+
+        //TODO: Add the compare build action in here
+    })
+
+    checkAuthentication()
 })

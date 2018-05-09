@@ -130,6 +130,7 @@ route.get('/review', (req, res) => {
     const query = req.query
     const options = getOptions(query.options.split('|'))
     const selectedOptions = options.selectedOptions
+    const user = req.user
 
     const { year, make, model } = options
 
@@ -150,7 +151,7 @@ route.get('/review', (req, res) => {
     options.hiddenOpt = query.options
     options.img = img
 
-    return res.render('build-car/review', options)
+    return res.render('build-car/review', { ...options, isReview : true, user })
 })
 
 const saveBuiltInDB = data => {
@@ -174,18 +175,6 @@ const saveBuiltInDB = data => {
         return console.log(doc)
     })
 }
-
-// const extractPath = req => {
-//     // Escaping user input to be treated as a literal
-//     // string within a regular expression accomplished by
-//     // simple replacement
-//     const escapeRegExp = str => str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, '\\$1')
-
-//     // Replace utility function
-//     const replaceAll = (str, find, replace) => str.replace(new RegExp(escapeRegExp(find), 'g'), replace)
-
-//     return replaceAll(req.get('referer'), req.get('origin'), '');
-// }
 
 route.get('/user', async (req, res) => {
     const { email } = req.user
@@ -268,6 +257,21 @@ route.get('/all', (req, res) => {
 
         return res.send({ ok : false })
     })
+})
+
+route.post('/save', (req, res) => {
+    //TODO: Working on the save build function
+    const usr = req.user
+
+    console.log(usr)
+
+    try {
+        return res.send({ ok : true })
+    } catch (e) {
+        console.log(e)
+    }
+
+    return res.send({ ok : false })
 })
 
 buildCar.use('/build', route)

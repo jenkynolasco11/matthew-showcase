@@ -213,6 +213,24 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				}
 			}
 		}
+		.build-options {
+			display: flex;
+			justify-content: flex-end;
+			padding: 10px 10px;
+			&>div {
+				padding: 10px;
+				border-radius: 2px;
+				transition: all .2s linear;
+				margin: 10px 5px;
+				&:hover {
+					cursor: pointer;
+					background-color: rgb(221, 221, 221);
+					a {
+						color: white;
+					}
+				}
+			}
+		}
 		@media screen and (min-width: 768px) {
 			margin-right: 30px
 		}
@@ -443,9 +461,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		max-width: 80vw;
 		margin-top: 60px;
 		margin-bottom: 100px;
-		color: blue;
+		color: red;
 		cursor: pointer;
-	} // }
+	}
 }
 
 @keyframes flashTab {
@@ -1511,46 +1529,42 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		}
 	}
 	.close-menu {
-		position : absolute;
-		top : 10px;
-		left : 10px;
-
+		position: absolute;
+		top: 10px;
+		left: 10px;
 		.close {
-			height : 50px;
-			width : 50px;
-			margin-top : 20px;
-			position : absolute;
-
+			height: 50px;
+			width: 50px;
+			margin-top: 20px;
+			position: absolute;
 			&:before {
-				content : '';
-				position : absolute;
-				height : 3px;
-				width : 40px;
-				transform : rotate(-45deg);
-				z-index : 1;
-				background-color : white;
-				transition : all .2s linear;
+				content: '';
+				position: absolute;
+				height: 3px;
+				width: 40px;
+				transform: rotate(-45deg);
+				z-index: 1;
+				background-color: white;
+				transition: all .2s linear;
 			}
-
 			&:after {
-				content : '';
-				position : absolute;
-				height : 3px;
-				width : 40px;
-				transform : rotate(45deg);
-				z-index : 1;
-				background-color : white;
-				transition : all .2s linear;
+				content: '';
+				position: absolute;
+				height: 3px;
+				width: 40px;
+				transform: rotate(45deg);
+				z-index: 1;
+				background-color: white;
+				transition: all .2s linear;
 			}
-
 			&:hover {
-				&:after, &::before {
-					background-color : rgb(179, 179, 179);
+				&:after,
+				&::before {
+					background-color: rgb(179, 179, 179);
 				}
 			}
 		}
 	}
-
 	ul {
 		// position: absolute;
 		margin-top: 30px;
@@ -3761,11 +3775,9 @@ table.icons {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		color : white;
-
+		color: white;
 		&:hover {
-			color : red;
-			// .inner-arrow {
+			color: red; // .inner-arrow {
 			// 	border-color: transparent transparent $arrowHoverClr transparent;
 			// 	cursor: pointer;
 			// 	transition: all .1s linear;
@@ -3773,8 +3785,7 @@ table.icons {
 		}
 		.inner-arrow {
 			transition: all .2s linear;
-			position: relative;
-			// margin-top: -2px; // background-color : black;
+			position: relative; // margin-top: -2px; // background-color : black;
 			// height : 30px;
 			// width : 30px;
 			// border-top: 0;
@@ -3783,18 +3794,14 @@ table.icons {
 			// border-left: 15px solid transparent;
 			&:after {
 				margin-top: -12px;
-				margin-left: -18px;
-				// margin-top: 10px;
+				margin-left: -18px; // margin-top: 10px;
 				// margin-left: -15px;
 				content: 'Chat';
-				position: absolute;
-				// border-top: 0;
+				position: absolute; // border-top: 0;
 				// border-bottom: 30px solid $handleBg;
 				// border-right: 15px solid transparent;
 				// border-left: 15px solid transparent;
-			}
-
-			// display : none;
+			} // display : none;
 		}
 		.messages-count {
 			color: white;
@@ -3832,7 +3839,7 @@ table.icons {
 			50%,
 			70% {
 				transform: translate3d(-4px, 0, 0);
-				color : red;
+				color: red;
 			}
 			40%,
 			60% {
@@ -4060,25 +4067,23 @@ table.icons {
 }
 
 .auth-overlay {
-	position : fixed;
-	top : 0;
-	left : 0;
-	height : 100vh;
-	width : 100vw;
-	display : flex;
-	align-items : center;
-	justify-content : center;
-	z-index : 1206;
-	background-color : rgba(0, 0, 0, 0.367);
-
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1206;
+	background-color: rgba(0, 0, 0, 0.367);
 	.auth {
 		background-color: #1f1f1f;
 		height: 500px;
 		width: 400px;
 		border-radius: 4px;
 		box-shadow: 0px 0px 20px -5px black;
-		position : relative;
-
+		position: relative;
 		.nav {
 			display: flex;
 			label {
@@ -4107,15 +4112,13 @@ table.icons {
 				flex-flow: column nowrap;
 				align-items: center;
 				justify-content: center;
-
 				input {
 					margin-top: 10px;
 					width: 80% !important;
 					text-align: center;
 					padding: 10px;
-					height : 42px;
+					height: 42px;
 					border: none;
-
 					&:first-child {
 						margin-top: 40px;
 					}
@@ -4134,122 +4137,102 @@ table.icons {
 				input:first-child {
 					margin-top: 100px;
 				}
-
 				input:last-child {
-					margin-top : 80px;
+					margin-top: 80px;
 				}
 			}
 		}
-
 		.cancel {
-			padding-bottom : 40px;
-			position : absolute;
-			bottom : 0;
-			color : #71717d;
-			// color : rgb(109, 109, 255);
+			padding-bottom: 40px;
+			position: absolute;
+			bottom: 0;
+			color: #71717d; // color : rgb(109, 109, 255);
 			// text-decoration : underline;
-			width : 100%;
-			cursor : pointer;
-			justify-self : flex-end;
-			text-align : center;
-
+			width: 100%;
+			cursor: pointer;
+			justify-self: flex-end;
+			text-align: center;
 			span {
-				transition : all .1s linear;
+				transition: all .1s linear;
 				&:hover {
-					color : #f0f0f0;
+					color: #f0f0f0;
 				}
 			}
 		}
-
-		@media screen and (max-width : 768px) {
-			height : 100vh;
-			width : 100vw;
+		@media screen and (max-width: 768px) {
+			height: 100vh;
+			width: 100vw;
 		}
 	}
-
-	display : none;
+	display: none;
 }
 
 #user-dashboard {
 	.col-md-3 {
-		@media screen and (min-width : 768px) {
-			border-right : 1px solid rgb(221, 221, 221);
+		@media screen and (min-width: 768px) {
+			border-right: 1px solid rgb(221, 221, 221);
 		}
 	}
-
 	.user-nav {
 		li {
-			padding : 10px 40px;
-			position : relative;
-			// transition : all .2s linear;
-
+			padding: 10px 40px;
+			position: relative; // transition : all .2s linear;
 			&:after {
-				transition : all .2s linear;
+				transition: all .2s linear;
 			}
-
 			a {
-				color : black;
+				color: black;
 			}
-
 			&.selected {
-				background-color : #eee;
-
+				background-color: #eee;
 				a {
-					color : red;
+					color: red;
 				}
-
-				@media screen and (min-width : 768px){
+				@media screen and (min-width: 768px) {
 					&:after {
-						content : '';
-						// background-color : green;
-						position : absolute;
-						border-left : 20px solid #eee;
-						border-top : 22px solid transparent;
-						border-bottom : 22px solid transparent;
-						right : -20px;
-						top : 0;
-						z-index : 1;
+						content: ''; // background-color : green;
+						position: absolute;
+						border-left: 20px solid #eee;
+						border-top: 22px solid transparent;
+						border-bottom: 22px solid transparent;
+						right: -20px;
+						top: 0;
+						z-index: 1;
 					}
 				}
 			}
 		}
 	}
-
 	.selected-item-content {
-		opacity : 0;
-		position : absolute;
-		top : 0;
-		left : 0;
-		transition : all .4s linear;
-
-		// height : 600px;
-		width : 100%;
-
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition: all .4s linear; // height : 600px;
+		width: 100%;
 		&#user-builds {
-			padding : 4px 0 10px 30px;
-			height : auto;
-
+			padding: 4px 0 10px 30px;
+			height: auto;
 			.build-car {
-				height : 300px;
-				background-color : white;
-				border : 1px solid rgb(182, 182, 182);
-				border-radius : 4px;
+				height: 300px;
+				background-color: white;
+				border: 1px solid rgb(182, 182, 182);
+				border-radius: 4px;
 			}
-		}
-		// &:nth-child(1) { background-color : red }
+		} // &:nth-child(1) { background-color : red }
 		// &:nth-child(2) { background-color : pink }
 		// &:nth-child(3) { background-color : green }
 		// &:nth-child(4) { background-color : blue }
-
 		&.selected {
-			opacity : 1;
+			opacity: 1;
 		}
 	}
 }
 
 .remove-padding {
-	padding : 0;
+	padding: 0;
 }
+
 // .auth {
 // 	position : fixed;
 // 	height : 100vh;

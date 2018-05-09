@@ -49,7 +49,7 @@ route.post('/signup', passport.authenticate('signup', {
 
 route.get('/logout', (req,res) => {
     console.log('...signing out')
-    console.log(req.user)
+    // console.log(req.user)
 
     req.logout() // Logs out from passport. Deserializes user
     // res.redirect('/admin')

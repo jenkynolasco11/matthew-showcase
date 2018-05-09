@@ -74,15 +74,32 @@ function addEventToLogout() {
 
 function checkAuthentication() {
     $.get('/auth/is-auth', function(data) {
-        // console.log(data)
-        // console.log(data)
-
         if(data.ok) {
-            // console.log(data.user)
-
             window.sessionStorage.setItem('user', JSON.stringify(data.user))
-        }
+
+            proceedToLogIn(data.user)
+        } else window.sessionStorage.removeItem('user')
     })
+}
+
+function proceedToLogIn(user)  {
+    closeAuth()
+
+    $('.main-menu li.login-button').remove()
+    $('.nav.navbar-nav li.login-button').remove()
+
+    window.sessionStorage.setItem('user', JSON.stringify(user))
+
+    var loggedIn = $(loggedInButtonTemplate(user.name))
+
+    $(loggedIn).on('click', function() {
+        $('li.login-button .wrap-inside-nav').toggleClass('collapse')
+    })
+
+    $('.main-menu').append(loggedIn)
+    $('.nav.navbar-nav').append(loggedIn)
+
+    addEventToLogout()
 }
 
 function onSubmitAuthInfo(e) {
@@ -97,25 +114,7 @@ function onSubmitAuthInfo(e) {
     var url = data.type === 'login' ? '/auth/login' : '/auth/signup'
 
     $.post(url, data, function(res) {
-        if(res.ok) {
-            closeAuth()
-
-            $('.main-menu li.login-button').remove()
-            $('.nav.navbar-nav li.login-button').remove()
-
-            window.sessionStorage.setItem('user', JSON.stringify(res.user))
-
-            var loggedIn = $(loggedInButtonTemplate(res.user.name))
-
-            $(loggedIn).on('click', function() {
-                $('li.login-button .wrap-inside-nav').toggleClass('collapse')
-            })
-
-            $('.main-menu').append(loggedIn)
-            $('.nav.navbar-nav').append(loggedIn)
-
-            addEventToLogout()
-        }
+        if(res.ok) return proceedToLogIn(res.user)
     })
 }
 

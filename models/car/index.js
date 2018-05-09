@@ -63,6 +63,7 @@ var BuiltCarSchema = new Schema({
     }],
     reviewedBy : Date,
     reviewed : { type : Boolean, default : () => false, index : true },
+    createdBy : { type : Date, default : Date.now },
     type : { type : String, default : () => 'build' },
     deleted : { type : Boolean, default : () => false, index : true },
 })
