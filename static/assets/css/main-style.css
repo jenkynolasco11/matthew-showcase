@@ -14975,15 +14975,7 @@ table.icons tr td:first-child {
      -moz-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-#chat-box #chat-handle:hover .inner-arrow {
-  border-color: transparent transparent red transparent;
   cursor: pointer;
-  -webkit-transition: all .1s linear;
-     -moz-transition: all .1s linear;
-       -o-transition: all .1s linear;
-          transition: all .1s linear;
 }
 
 #chat-box #chat-handle .inner-arrow {
@@ -14994,20 +14986,19 @@ table.icons tr td:first-child {
   position: relative;
   margin-top: -2px;
   border-top: 0;
-  border-bottom: 30px solid white;
-  border-right: 15px solid transparent;
-  border-left: 15px solid transparent;
 }
 
-#chat-box #chat-handle .inner-arrow:after {
-  margin-top: 10px;
-  margin-left: -15px;
-  content: '';
-  position: absolute;
-  border-top: 0;
-  border-bottom: 30px solid black;
-  border-right: 15px solid transparent;
-  border-left: 15px solid transparent;
+#chat-box #chat-handle .inner-arrow span {
+  -webkit-transition: all .1s linear;
+     -moz-transition: all .1s linear;
+       -o-transition: all .1s linear;
+          transition: all .1s linear;
+  font-weight: bold;
+  color: white;
+}
+
+#chat-box #chat-handle:hover .inner-arrow span {
+  color: red;
 }
 
 #chat-box #chat-handle .messages-count {

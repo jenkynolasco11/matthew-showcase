@@ -3757,34 +3757,38 @@ table.icons {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		&:hover {
-			.inner-arrow {
-				border-color: transparent transparent $arrowHoverClr transparent;
-				cursor: pointer;
-				transition: all .1s linear;
-			}
-		}
+		cursor: pointer;
+
 		.inner-arrow {
 			transition: all .2s linear;
 			position: relative;
-			margin-top: -2px; // background-color : black;
-			// height : 30px;
-			// width : 30px;
+			margin-top: -2px;
 			border-top: 0;
-			border-bottom: 30px solid $arrowClr;
-			border-right: 15px solid transparent;
-			border-left: 15px solid transparent;
-			&:after {
-				margin-top: 10px;
-				margin-left: -15px;
-				content: '';
-				position: absolute;
-				border-top: 0;
-				border-bottom: 30px solid $handleBg;
-				border-right: 15px solid transparent;
-				border-left: 15px solid transparent;
+			// &:after {
+			// 	transition: all .1s linear;
+			// 	font-weight: bold;
+			// 	content: 'Chat';
+			// 	color : white;
+			// }
+
+			span {
+				transition : all .1s linear;
+				font-weight: bold;
+				color : white;
 			}
 		}
+
+		&:hover {
+			.inner-arrow {
+				// &:after {
+				// 	color : red;
+				// }
+				span {
+					color : red;
+				}
+			}
+		}
+
 		.messages-count {
 			color: white;
 			height: 20px;
@@ -3816,6 +3820,7 @@ table.icons {
 			20%,
 			80% {
 				transform: translate3d(2px, 0, 0);
+				// color : red !important;
 			}
 			30%,
 			50%,
