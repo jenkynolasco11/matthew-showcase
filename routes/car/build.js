@@ -276,6 +276,33 @@ route.get('/all', (req, res) => {
     })
 })
 
+route.get('/saved/compare', async (req, res) => {
+    if(!req.isAuthenticated()) return res.send({ ok : false })
+
+    const { email, _id } = req.user
+
+    try {
+        const builds = await BuiltCar.find({ email })
+        const selected = builds.map(c => c.toObject())
+                                .map(({ options, url }) => ({ year : options.year, make : options.make, model : options.model, trim : options.trim, url }))
+                                .map(JSON.stringify)
+
+        const buildsX = [ ...new Set(selected) ].map(JSON.parse)
+                        .map(({ make, model, year, trim, url }) => ({ make, model, year, trim, img : cars[ year ][ make ].find(t => {
+                            console.log(make, model, year, trim)
+                            return t.Trim === trim
+                        }).Photo }))
+
+        return res.send({ ok : true, builds : buildsX })
+    } catch (e) {
+        console.log(e)
+    }
+
+    return res.send({ ok : false })
+})
+
+// console.log(cars[2018]['Acura'].find(t => t.Trim === 'SH-AWD V6 A-Spec Red' ).Photo)//.find(t => t.Trim === 'MDX')
+
 
 buildCar.use('/build', route)
 

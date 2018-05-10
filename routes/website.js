@@ -214,7 +214,29 @@ function filterCarData(car) {
     return car
 }
 
-route.get('/:route', (req, res, next) => {
+// async function getBuildsForCompare(email) {
+//     try {
+//         const builds = await BuiltCar.find({ email })
+//         const selected = builds.map(c => c.toObject())
+//                                 .map(({ options, url }) => ({ year : options.year, make : options.make, model : options.model, trim : options.trim, url }))
+//                                 .map(JSON.stringify)
+
+//         const buildsX = [ ...new Set(selected) ].map(JSON.parse)
+//                         .map(({ make, model, year, trim, url }) => ({ make, model, year, trim, img : cars[ year ][ make ].find(t => {
+//                             console.log(make, model, year, trim)
+//                             return t.Trim === trim
+//                         }).Photo }))
+
+
+//         return buildsX
+//     } catch (e) {
+//         console.log(e)
+//     }
+
+//     return null
+// }
+
+route.get('/:route', async (req, res, next) => {
     const route = req.params.route
     const user = req.isAuthenticated() ? req.user : ''
 
@@ -253,15 +275,25 @@ route.get('/:route', (req, res, next) => {
         if(!req.isAuthenticated()) return res.redirect('/')
         // console.log(res.isAuthenticated())
         const UserDetails = models.UserDetails
-        const currentDetails = UserDetails.findOne({user : user._id}, function(err, data){
-          console.log(user._id)
-          console.log(`data is here: ${data}`)
+        const Car = models.Car
+        const Builds = models.BuiltCar
+        const { email } = user
 
-          return res.render('user-dashboard', { title : `Dashboard - ${ user.name }`, user, isAuth : req.isAuthenticated(), currentDetails: data })
-        })
+        try {
+            const currentDetails = await UserDetails.findOne({ user : user._id })
+            // const builds = getBuildsForCompare(email)
+            // const cars = 
 
+            return res.render('user-dashboard', { title : `Dashboard - ${ user.name }`, user, isAuth : req.isAuthenticated(), currentDetails })
+        } catch (e) {
+            console.log(e)
+        }
+        //     , function(err, data){
+        // //   console.log(user._id)
+        // //   console.log(`data is here: ${data}`)
 
-
+        // })
+        return res.redirect('/')
     }
 
     else return next()

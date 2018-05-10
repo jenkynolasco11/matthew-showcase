@@ -1,6 +1,7 @@
 const Router = require('express').Router
 const models = require('../../models')
 
+const Builds = models.BuiltCar
 const Car = models.Car
 const Meta = models.Meta
 const fs = require('fs')
@@ -267,6 +268,25 @@ route.put('/:id/like/:user', async (req, res) => {
 
 
         return res.send({ ok : true })
+    } catch (e) {
+        console.log(e)
+    }
+
+    return res.send({ ok : false })
+})
+
+route.get('/saved/compare', async (req, res) => {
+    if(!req.isAuthenticated()) return res.send({ ok : false })
+
+    const { email, _id : likedBy } = req.user
+
+    try {
+        const cars = await Car.find({ /*likedBy*/ }, { make : 1, year : 1, model : 1, imgs : 1 })
+        const selected = cars
+                            .map(c => c.toObject())
+                            .map(({ _id, year, make, model, imgs }) => ({ _id, year, make, model, img : imgs.find(i => i.main).src }))
+
+        return res.send({ ok : true, cars : selected })
     } catch (e) {
         console.log(e)
     }

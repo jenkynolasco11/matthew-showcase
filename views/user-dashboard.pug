@@ -8,7 +8,9 @@ block main-body
         .row
             .col-md-3.col-sm-12.remove-padding
                 ul.user-nav
-                    li(data-for="user-builds").selected
+                    li(data-for="user-compare").selected
+                        a(href="#") Compare Cars
+                    li(data-for="user-builds")
                         a(href="#") Builds
                     li(data-for="user-interests")
                         a(href="#") Interests
@@ -17,7 +19,7 @@ block main-body
                     li(data-for="user-settings")
                         a(href="#") Settings
             .col-md-9.col-sm-12.dashboard-section
-                .selected-item-content#user-builds.selected
+                .selected-item-content#user-builds
                 .selected-item-content#user-interests
                 .selected-item-content#user-social
                   .social-cont
@@ -36,12 +38,48 @@ block main-body
                           input#Twitter(type='text', placeholder='Twitter Handle' value=currentDetails ? currentDetails.social.twitter : '')
                         .social-fi
                           button(id='social-button' type='submit') Save
-
-
-
-
-
                 .selected-item-content#user-settings
+                .selected-item-content#user-compare.selected
+                    form.row
+                        .compare-boxes.row.col-xs-12
+                            .comparing-box-a.col-md-6.col-sm-12
+                                .text-header Main Selection
+                                .image-content
+                                    img(src="/assets/images/no-car-selected.png" alt="placeholder")
+                                .compare-select-saved
+                                    select(name="saved-a")
+                                        option(value="none") Select Saved Entry
+                                .divider
+                                .compare-select-year
+                                    select(name="year-a")
+                                        option(value="none") Select Year
+                                .compare-select-make
+                                    select(name="make-a")
+                                        option(value="none") Select Make
+                                .compare-select-model
+                                    select(name="model-a")
+                                        option(value="none") Select Model
+                            .comparing-box-b.col-md-6.col-sm-12
+                                .text-header Compare Selection
+                                .image-content
+                                    img(src="/assets/images/no-car-selected.png" alt="placeholder")
+                                .compare-select-saved
+                                    select(name="saved-b")
+                                        option(value="none") Select Saved Entry
+                                .divider
+                                .compare-select-year
+                                    select(name="year-b")
+                                        option(value="none") Select Year
+                                .compare-select-make
+                                    select(name="make-b")
+                                        option(value="none") Select Make
+                                .compare-select-model
+                                    select(name="model-b")
+                                        option(value="none") Select Model
+                        .compare-input.col-xs-12.text-center
+                            input(type="submit" value="Compare")
+
 
 block scripts
     script(src="/assets/js/dashboard.js")
+    script(src="/assets/js/dashboard-compare.js")

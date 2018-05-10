@@ -16,7 +16,7 @@ const UserSchema = new Schema({
 })
 
 const UserDetailsSchema = new Schema({
-    user: {type: Schema.ObjectId, ref : 'user', unique: true },
+    user: {type: Schema.ObjectId, ref : 'user', unique: { index : true }},
     social : {
         instagram : String,
         facebook : String,
