@@ -73,7 +73,10 @@ function addEventToLogout() {
 }
 
 function checkAuthentication() {
+  window.sessionStorage.removeItem('user')
+
     $.get('/auth/is-auth', function(data) {
+      console.log(data)
         // console.log(data)
         // console.log(data)
 
@@ -81,6 +84,7 @@ function checkAuthentication() {
             // console.log(data.user)
 
             window.sessionStorage.setItem('user', JSON.stringify(data.user))
+
         }
     })
 }
@@ -115,6 +119,7 @@ function onSubmitAuthInfo(e) {
             $('.nav.navbar-nav').append(loggedIn)
 
             addEventToLogout()
+            window.location.reload()
         }
     })
 }

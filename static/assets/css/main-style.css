@@ -10422,6 +10422,9 @@ body.color-turquoise #road {
   padding: 0;
 }
 /* Adrian Styles for interest begin */
+.fa-heart {
+  color: #d01818;
+}
 
 .dashboard-section {
   height: 600px;
@@ -10433,6 +10436,10 @@ body.color-turquoise #road {
   height: 100%;
   overflow-y: auto;
   position: absolute;
+}
+
+.chat-color {
+  color: white;
 }
 
 .selected {

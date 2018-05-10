@@ -252,20 +252,27 @@ route.delete('/delete/:id', (req, res) => {
 
 route.put('/:id/like/:user', async (req, res) => {
     const { id, user } = req.params
+    console.log('liked the car!')
+    console.log(user);
+    const criteria = {}
+
+
+    if(id.match(/^[0-9a-fA-F]{24}$/)) criteria._id = id
+    else criteria.id = id
 
     try {
-        const car = await Car.findById(id)
+        const car = await Car.findOne(criteria)
 
         if(!car.likedBy) {
-            await Car.findByIdAndUpdate(id, { likedBy : [ user ] })
+            await Car.findByIdAndUpdate(car._id, { likedBy : [ user ] })
 
         } else {
             const pullOrPush = car.likedBy.includes(user) ? '$pull' : '$push'
 
-            await Car.findByIdAndUpdate(id, { [ pullOrPush ] : { likedBy : user }})
+            await Car.findByIdAndUpdate(car._id, { [ pullOrPush ] : { likedBy : user }})
         }
 
-
+        console.log(user)
         return res.send({ ok : true })
     } catch (e) {
         console.log(e)
