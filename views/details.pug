@@ -16,9 +16,18 @@ block main-body
                   // TODO : Not sure if this should be deleted
                   // <div class="b-car-details__address"><i class="icon fa fa-map-marker text-primary"></i> 13165 N Auto Show Ave Surprise, AZ 85388</div>
                   .b-car-details__links
-                    a.b-car-details__link(href="#")
+                    a.b-car-details__link(href="#" id="compare-button")
                       i.icon.fa.fa-share-alt.text-primary
-                      |  Share
+                      |  compare
+                    if(liked)
+                      a.b-car-details__link(href="#", id="save-button")
+                        i.icon.fa.fa-heart.text-primary
+                        |  saved
+                    else 
+                      a.b-car-details__link(href="#", id="save-button")
+                        i.icon.fa.fa-heart-o.text-primary
+                        |  save
+                      
                 #slider-car-details.slider-car-details.slider-pro
                   if(car)
                     .sp-slides

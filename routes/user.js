@@ -23,8 +23,10 @@ const user = Router()
 // })
 
 route.post('/social', (req, res) => {
-  console.log(req.body.fbHandle)
-
+  if (!req.isAuthenticated()) {
+    console.log('redirected kicked in!')
+    return res.send({ok: false, message: 'Not logged in'})
+  }
 
   var socialDetails = new UserDetails({
     user: req.user._id,

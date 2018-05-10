@@ -322,6 +322,7 @@ route.get('/details/(:id?)', (req, res) => {
     const { id } = req.params
     const user = req.isAuthenticated() ? req.user : ''
 
+
     if (!id) return res.render('listing', { ...data, title: 'JYD - Listings', user, isAuth : req.isAuthenticated() })
 
     Car.findOne({ id }, (err, car) => {
@@ -339,7 +340,7 @@ route.get('/details/(:id?)', (req, res) => {
 
             const cars = related.map(filterCarData)
             const featured = filterCarData(car._doc)
-
+            const isLiked = featured.likedBy.includes(`${user._id}`)
             const featImg = featured.imgs.filter(img => img.main )
 
             const detailsData = {
@@ -348,8 +349,9 @@ route.get('/details/(:id?)', (req, res) => {
                 related: cars,
                 featImg : featImg[ 0 ]
             }
+            //console.log(detailsData)
 
-            return res.render('details', { ...detailsData, user, isAuth : req.isAuthenticated() })
+            return res.render('details', { ...detailsData, user, isAuth : req.isAuthenticated(), liked: isLiked})
         })
     })
 })

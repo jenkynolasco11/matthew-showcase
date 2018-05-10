@@ -3,12 +3,15 @@ var sections = $('.selected-item-content')
 var socialButton = $('#social-button')
 var socialMessage = $('#message-social')
 var socialMessageText = $('#message-social-text')
+var authPanel = $('.auth-overlay')
 
 function removeClassTo(cls, items) {
     $(items).each(function() {
         $(this).removeClass(cls)
     })
 }
+
+function openAuth() { authPanel.css('display','flex').hide().fadeIn(500) }
 
 $(socialButton).click(function(e){
   e.preventDefault();
@@ -25,6 +28,7 @@ $(socialButton).click(function(e){
     }
     if (!data.ok) {
       $(socialMessage).append(`<p id="message-social-text">${data.message}</p>`)
+      openAuth()
     }
   })
 })
