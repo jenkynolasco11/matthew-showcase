@@ -4262,6 +4262,7 @@ table.icons {
 						.text-header {
 							text-align : center;
 							margin : 10px 20px;
+							font-size : 22px;
 							color : rgb(255, 37, 37);
 						}
 
@@ -4292,10 +4293,17 @@ table.icons {
 								option {
 									text-align : center;
 								}
+
+								&[disabled] {
+									background-color : #b8b8b8;
+									color : #8b7e7e;
+								}
 							}
 						}
 
-						.compare-select-saved {
+						.saved-compare-select {
+							text-align : center;
+
 							select {
 								width : 260px;
 							}

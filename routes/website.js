@@ -3,6 +3,8 @@ const jydEmailDefaults = require('../mailConfig').keys.jydDefaults
 const sendEmail = require('../mailer').sendEmail
 const templates = require('../email-templates')
 const models = require('../models')
+const fs = require('fs')
+const path = require('path')
 
 const sockets = require('../socket.io').sockets
 // const IO = require('socket.io')
@@ -15,9 +17,11 @@ const CreditApp = models.CreditApp
 const DealSubscription = models.DealSubsription
 const Refer = models.Refer
 const Newsletter = models.Newsletter
-const Submission = models.Submission;
+const Submission = models.Submission
 
-const path = require('path')
+const file = fs.readFileSync(path.resolve(__dirname, './car/cars-file-2.json'), 'utf8')
+const cars = JSON.parse(file)
+
 // const instagram = require('./instagram').getFeed
 
 const route = Router()
@@ -270,10 +274,8 @@ route.get('/:route', async (req, res, next) => {
 
         return res.render(route, { title: `JYD - ${ title }`, user, isAuth : req.isAuthenticated() })
     } else if(route === 'dashboard') {
-        console.log(`So this is the Route=> ${route}`)
-        // const title = titles[route]
         if(!req.isAuthenticated()) return res.redirect('/')
-        // console.log(res.isAuthenticated())
+
         const UserDetails = models.UserDetails
         const Car = models.Car
         const Builds = models.BuiltCar
@@ -281,10 +283,10 @@ route.get('/:route', async (req, res, next) => {
 
         try {
             const currentDetails = await UserDetails.findOne({ user : user._id })
-            // const builds = getBuildsForCompare(email)
-            // const cars = 
 
-            return res.render('user-dashboard', { title : `Dashboard - ${ user.name }`, user, isAuth : req.isAuthenticated(), currentDetails })
+            const years = Object.keys(cars)
+
+            return res.render('user-dashboard', { title : `Dashboard - ${ user.name }`, user, isAuth : req.isAuthenticated(), currentDetails, carOpts : { years } })
         } catch (e) {
             console.log(e)
         }

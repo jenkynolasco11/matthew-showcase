@@ -42,40 +42,50 @@ block main-body
                 .selected-item-content#user-compare.selected
                     form.row
                         .compare-boxes.row.col-xs-12
-                            .comparing-box-a.col-md-6.col-sm-12
+                            .comparing-box-a.col-md-6.col-sm-12(data-car='car1')
                                 .text-header Main Selection
                                 .image-content
                                     img(src="/assets/images/no-car-selected.png" alt="placeholder")
-                                .compare-select-saved
+                                .saved-compare-select
                                     select(name="saved-a")
                                         option(value="none") Select Saved Entry
                                 .divider
                                 .compare-select-year
                                     select(name="year-a")
                                         option(value="none") Select Year
+                                        each y in carOpts.years
+                                            option(value=""+y) #{ y }
                                 .compare-select-make
                                     select(name="make-a")
                                         option(value="none") Select Make
                                 .compare-select-model
                                     select(name="model-a")
                                         option(value="none") Select Model
-                            .comparing-box-b.col-md-6.col-sm-12
+                                .compare-select-trim
+                                    select(name="trim-a")
+                                        option(value="none") Select Trim
+                            .comparing-box-b.col-md-6.col-sm-12(data-car='car2')
                                 .text-header Compare Selection
                                 .image-content
                                     img(src="/assets/images/no-car-selected.png" alt="placeholder")
-                                .compare-select-saved
+                                .saved-compare-select
                                     select(name="saved-b")
                                         option(value="none") Select Saved Entry
                                 .divider
                                 .compare-select-year
                                     select(name="year-b")
                                         option(value="none") Select Year
+                                        each y in carOpts.years
+                                            option(value=""+y) #{ y }
                                 .compare-select-make
                                     select(name="make-b")
                                         option(value="none") Select Make
                                 .compare-select-model
                                     select(name="model-b")
                                         option(value="none") Select Model
+                                .compare-select-trim
+                                    select(name="trim-b")
+                                        option(value="none") Select Trim
                         .compare-input.col-xs-12.text-center
                             input(type="submit" value="Compare")
 
