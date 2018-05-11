@@ -64,8 +64,10 @@ function socketFuncs(socket) {
         data.forEach(function(msg) {
             var newMsg = $(msgTemplate(msg.type, msg.timestamp, msg.text || ''))
 
-            messageWindow.append(newMsg.fadeIn(200))
+            messageWindow.prepend(newMsg.fadeIn(200))
         })
+
+        messageWindow.scrollTop($(messageWindow)[0].scrollHeight)
     })
 
     socket.on('new message', function(msg) {
@@ -99,11 +101,13 @@ function socketFuncs(socket) {
 
 function sendChatMessage() {
     var msg = messageBox.val()
+    var name = chatStatsOnClient.name
+    var email = chatStatsOnClient.email
 
     if(msg) {
         messageBox.val('')
 
-        socketIO.emit('new message', { msg : msg })
+        socketIO.emit('new message', { name : name, email : email, msg : msg })
 
         clearTimeout(isTypingPromise)
         chatStatsOnClient.isTyping = false

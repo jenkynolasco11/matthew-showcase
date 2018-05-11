@@ -3,6 +3,7 @@ const models = require('../../models')
 
 const Builds = models.BuiltCar
 const Car = models.Car
+const ReferenceCar = models.ReferenceCar;
 const Meta = models.Meta
 const fs = require('fs')
 const path = require('path')
@@ -120,6 +121,17 @@ route.get('/featured', (req, res) => {
         return res.status(200).send({ ok : false, cars : [] })
     }
 })
+
+route.post('/autofill', async (req, res) => {
+    const query = {
+        model:  new RegExp(req.body.model, 'i') ,
+        make: new RegExp(req.body.make, 'i'),
+        year: new RegExp(req.body.year, 'i')
+    }
+    console.log(query.model, query.make, query.year)
+    const car = await ReferenceCar.find({ modelMakeId : query.make, modelYear: query.year, model: query.model, modelSoldInUS: true }).lean();
+    res.send(car);
+});
 
 route.get('/edit/:id', (req, res) => {
     const { id } = req.params

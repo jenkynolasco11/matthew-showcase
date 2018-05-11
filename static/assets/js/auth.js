@@ -16,10 +16,15 @@ radioVal.on('change', function () {
     $(signup).toggleClass('hidden')
 })
 
-function openAuth() { authPanel.css('display','flex').hide().fadeIn(500) }
-function closeAuth() { authPanel.fadeOut(500) }
+function openAuth() {
+    authPanel.css('display', 'flex').hide().fadeIn(500)
+}
 
-var loggedInButtonTemplate = function(name) {
+function closeAuth() {
+    authPanel.fadeOut(500)
+}
+
+var loggedInButtonTemplate = function (name) {
     return `
     <li class="login-button has-submenu">
         <a href="#">
@@ -42,13 +47,15 @@ var loggedInButtonTemplate = function(name) {
     `
 }
 
-var logInButtonTemplate = function() { return '<li class="login-button"><a href="#"> Login </a></li>' }
+var logInButtonTemplate = function () {
+    return '<li class="login-button"><a href="#"> Login </a></li>'
+}
 
 function onLogOut() {
     // console.log('sup...')
-    $.get('/auth/logout', function(data) {
+    $.get('/auth/logout', function (data) {
         // console.log(data)
-        if(data.ok) {
+        if (data.ok) {
             $('.main-menu li.login-button').remove()
             $('.nav.navbar-nav li.login-button').remove()
 
@@ -57,7 +64,7 @@ function onLogOut() {
             $('.main-menu').append(logIn)
             $('.nav.navbar-nav').append(logIn)
 
-            $('li.login-button').each(function() {
+            $('li.login-button').each(function () {
                 $(this).on('click', openAuth)
             })
 
@@ -67,41 +74,44 @@ function onLogOut() {
 }
 
 function addEventToLogout() {
-    $('.login-button .wrap-inside-nav .inside-nav .logout-button').on('click', function() {
+    $('.login-button .wrap-inside-nav .inside-nav .logout-button').on('click', function () {
         onLogOut()
     })
 }
 
 function checkAuthentication() {
-  window.sessionStorage.removeItem('user')
+    window.sessionStorage.removeItem('user')
 
-    $.get('/auth/is-auth', function(data) {
-      console.log(data)
+    $.get('/auth/is-auth', function (data) {
+        console.log(data)
         // console.log(data)
         // console.log(data)
 
-        if(data.ok) {
-            // console.log(data.user)
-
+        if (data.ok) {
             window.sessionStorage.setItem('user', JSON.stringify(data.user))
 
         }
     })
+
+    $('.main-menu').append(loggedIn)
+    $('.nav.navbar-nav').append(loggedIn)
+
+    addEventToLogout()
 }
 
 function onSubmitAuthInfo(e) {
     e.preventDefault()
 
-    var data = $(this).serializeArray().reduce(function(p,n){
-        p[ n.name ] = n.value
+    var data = $(this).serializeArray().reduce(function (p, n) {
+        p[n.name] = n.value
 
         return p
     }, {})
 
     var url = data.type === 'login' ? '/auth/login' : '/auth/signup'
 
-    $.post(url, data, function(res) {
-        if(res.ok) {
+    $.post(url, data, function (res) {
+        if (res.ok) {
             closeAuth()
 
             $('.main-menu li.login-button').remove()
@@ -111,7 +121,7 @@ function onSubmitAuthInfo(e) {
 
             var loggedIn = $(loggedInButtonTemplate(res.user.name))
 
-            $(loggedIn).on('click', function() {
+            $(loggedIn).on('click', function () {
                 $('li.login-button .wrap-inside-nav').toggleClass('collapse')
             })
 
@@ -124,10 +134,10 @@ function onSubmitAuthInfo(e) {
     })
 }
 
-$(document).ready(function(){
+$(document).ready(function () {
     cancel.on('click', closeAuth)
 
-    loginLogout.each(function(){
+    loginLogout.each(function () {
         $(this).on('click', openAuth)
     })
 
