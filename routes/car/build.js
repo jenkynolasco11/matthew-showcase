@@ -185,14 +185,13 @@ route.get('/user', async (req, res) => {
     then check if the req.user.id is  == to queried id
 
     */
-
-
+    email.toLowerCase()
     try {
-        const blds = await BuiltCar.find({ email }).skip(skip).limit(limit).exec()
-        const likedCars = await Car.find({ likedBy: req.user._id }).exec()
+        console.log(`email goes here: ${email}`)
+        const blds = await BuiltCar.find({ email }).skip(skip).limit(limit).lean()
+        const likedCars = await Car.find({ likedBy: req.user._id }).lean()
 
         const builds = blds.map(b => ({...b, imgurl : cars[ b.options.year ][ b.options.make ].filter(n => ((n.Trim === b.options.trim) && n.Model === b.options.model))[ 0 ].Photo }))
-
         console.log(JSON.stringify(builds, null, 2))
 
         //console.log(likedCars)

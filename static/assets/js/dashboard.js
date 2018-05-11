@@ -33,15 +33,36 @@ $(socialButton).click(function(e){
   })
 })
 
-function buildTemplate(year, make, model) {
+
+function buildTemplate(year, make, model, price, trim, options) {
+  function mapOptions(option) {
+    return option;
+  }
     return `
-    <div class="build-car col-md-4 col-sm-6 col-xs-12">
-        <figure class="col-md-4 col-sm-12">
-            <img src="" alt="car" />
-        </figure>
-        <div class="car-information col-md-8 col-sm-12">
-            <h5>${ year } ${ make } ${ model }</h5>
+    <div class="build-parent-div col-col-xs-12 no-padding">
+      <div class='builds-list'>
+        <div class='car-information col-sm-12 no-padding'>
+          <div class='builds-container'>
+            <a href='#'>
+              <div class='build-image'>
+                <div class='build-price'>${price}</div>
+                <img src="http://media.carbook.com/autoBuilderData/stockPhotos/28167.jpg" alt='' />
+              </div>
+              <div class='builds-specs'>
+                <div class='builds-child-flex'>
+                  <div class='builds-child-item'>${year}</div>
+                  <div class='builds-child-item'>${make}</div>
+                  <div class='builds-child-item'>${model}</div>
+                  <div class='builds-child-item'>${trim}</div>
+                </div>
+                <div class='builds-child-flex'>
+                  <div class='builds-child-item add-info'>Additional Options: ${options.map(mapOptions).join(' ')}</div>
+                </div>
+              </div>
+            </a>
+          </div>
         </div>
+      </div>
     </div>
     `
 }
@@ -65,7 +86,7 @@ function interestTemplate(year, make, model, source, id) {
 
 function getBuildsFromUser() {
   $.get(`/car/build/user/`, function(data) {
-
+    console.log(data.builds[0].options.selectedOptions)
     if(data.ok) {
       console.log(data.likedCars[0].imgs[0].src)
       var container = $('#user-builds')
@@ -73,7 +94,10 @@ function getBuildsFromUser() {
         return $(buildTemplate(
           build.options.year,
           build.options.make,
-          build.options.model
+          build.options.model,
+          build.options.optionsPrice,
+          build.options.trim,
+          build.options.selectedOptions
         ))
       })
       container.append(content)
@@ -83,7 +107,9 @@ function getBuildsFromUser() {
 
 function getInterestFromUser() {
   $.get(`/car/build/user/`, (data) => {
+    console.log(data)
     if(data.ok) {
+      console.log(data)
       let container = $('#user-interests')
       let content = data.likedCars.map(function(interest) {
         return $(interestTemplate(
