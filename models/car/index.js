@@ -75,7 +75,13 @@ var CarSchema = new Schema({
     }],
     likedBy : [ String ],
     createdBy : { type : Date, default : Date.now },
-    deleted : { type : Boolean, default : () => false }
+    deleted : { type : Boolean, default : () => false },
+    hasBluetooth : { type : Boolean, default : () => false },
+    hasNavigation : { type : Boolean, default : () => false },
+    hasBackupCamera : { type : Boolean, default : () => false },
+    hasSunroof : { type : Boolean, default : () => false },
+    hasLeatherSeats : { type : Boolean, default : () => false },
+    hasSatelliteCameras : { type : Boolean, default : () => false },
 })
 
 var BuiltCarSchema = new Schema({
