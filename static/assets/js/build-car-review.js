@@ -5,7 +5,7 @@ $(document).ready(function() {
 
     setTimeout(function() {
         var flashyTab = $('[data-content=proceed-form]')
-
+        console.log(flashyTab)
         if(!flashyTab.attr('class')) flashyTab.addClass('flash')
     }, 5000)
 
