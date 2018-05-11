@@ -43,13 +43,13 @@
 
         if isAuth
             li.login-button.has-submenu
-                a(href="#") Welcome, #{ user.name }
+                a(href="#") Welcome, #{ user.name.split(' ')[ 0 ] }
                     span.caret
                 .wrap-inside-nav
                     .inside-col
                         ul.inside-nav
                             li
-                                a(href="/dashboard") Settings
+                                a(href="/dashboard") Dashboard
                             li
                                 a(href="#") Logout
         else

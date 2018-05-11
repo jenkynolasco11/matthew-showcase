@@ -79,6 +79,7 @@ route.get('/', (req, res) => {
 })
 
 route.get('/trim', (req, res) => {
+    const user = req.user
     const query = req.query
     const options = query.options.split('|')
 
@@ -98,10 +99,11 @@ route.get('/trim', (req, res) => {
 
     // console.log(trims)
 
-    return res.render('build-car/trim', { trims, make, model, year })
+    return res.render('build-car/trim', { trims, make, model, year, user, isAuth : req.isAuthenticated() })
 })
 
 route.get('/options', (req, res) => {
+    const user = req.user
     const query = req.query
     const options = query.options.split('|')
 
@@ -120,7 +122,9 @@ route.get('/options', (req, res) => {
         trim,
         img : modelSelected.Photo,
         options : modelSelected.Options,
-        hiddenOpt : query.options
+        hiddenOpt : query.options,
+        user,
+        isAuth : req.isAuthenticated()
     }
 
     return res.render('build-car/options', data)
@@ -151,7 +155,7 @@ route.get('/review', (req, res) => {
     options.hiddenOpt = query.options
     options.img = img
 
-    return res.render('build-car/review', { ...options, isReview : true, user })
+    return res.render('build-car/review', { ...options, isReview : true, user, isAuth : req.isAuthenticated() })
 })
 
 const saveBuiltInDB = data => {
@@ -187,14 +191,13 @@ route.get('/user', async (req, res) => {
     */
     email.toLowerCase()
     try {
-        console.log(`email goes here: ${email}`)
+        // console.log(`email goes here: ${email}`)
         const blds = await BuiltCar.find({ email }).skip(skip).limit(limit).lean()
         const likedCars = await Car.find({ likedBy: req.user._id }).lean()
 
         const builds = blds.map(b => ({...b, imgurl : cars[ b.options.year ][ b.options.make ].filter(n => ((n.Trim === b.options.trim) && n.Model === b.options.model))[ 0 ].Photo }))
-        console.log(JSON.stringify(builds, null, 2))
-
-        //console.log(likedCars)
+        
+        console.log(builds)
 
         return res.send({ ok : true, builds, likedCars, user: req.user })
     } catch (e) {
@@ -207,12 +210,20 @@ route.get('/user', async (req, res) => {
 route.post('/new', (req, res) => {
     const body = req.body
     const url = '/car/build/review?options=' + body.options
-    // const url = extractPath(req)
 
     const emailData = {}
 
+    if((!body.firstname || !body.lastname || !body.phone || !body.email) && req.isAuthenticated()) {
+        body.firstname = req.user.name.split(' ')[ 0 ]
+        body.lastname = req.user.name.split(' ')[ 1 ]
+        body.phone = req.user.phoneNumber
+        body.email = req.user.email
+    }
+
     const options = getOptions(body.options.split('|'))
     const data = { ...body, ...options, url }
+
+    console.log(data)
 
     const name = `${ data.firstname } ${ data.lastname }`
     const htmlBody = buildAppTemplate(data)

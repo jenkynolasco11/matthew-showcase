@@ -290,12 +290,15 @@ route.get('/:route', async (req, res, next) => {
 
             years = Object.keys(cars)
             
-            const { car1, car2 } = req.query
+            const { car1, car2, compare, year, make, model } = req.query
 
             let c1 = null
             let c2 = null
+            let carPhoto = null
 
-            if(car1 && car2) {
+            if(compare === 'true') {
+                carPhoto = cars[ year ][ make ].find(c => c.Model === model).Photo
+            } else if(car1 && car2) {
                 const [ year1, make1, model1 /*, trim1*/ ] = car1.split(',')
                 const [ year2, make2, model2 /*, trim2*/ ] = car2.split(',')
 
@@ -352,11 +355,13 @@ route.get('/:route', async (req, res, next) => {
                 currentDetails,
                 title : `Dashboard - ${ user.name }`, 
                 isAuth : req.isAuthenticated(),
-                carOpts : { years : [ ...years.reverse() ]},
+                carOpts : { carPhoto,year,make,model,years : [ ...years.reverse() ]},
                 c1,
                 c2,
-                comparing : !!c1 && !!c2
+                comparing : !!c1 && !!c2,
             }
+
+            console.log(renderBody)
 
             return res.render('user-dashboard', renderBody)
         } catch (e) {

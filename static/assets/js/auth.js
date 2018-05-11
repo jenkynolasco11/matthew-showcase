@@ -23,14 +23,14 @@ var loggedInButtonTemplate = function (name) {
     return `
     <li class="login-button has-submenu">
         <a href="#">
-            Welcome, ${ name }
+            Welcome, ${ name.split(' ')[ 0 ] }
             <span class="caret"></span>
         </a>
         <div class="wrap-inside-nav">
             <div class="inside-col">
                 <ul class="inside-nav">
                     <li class="user-settings">
-                        <a href="/dashboard">Settings</a>
+                        <a href="/dashboard">Dashboard</a>
                     </li>
                     <li class="logout-button">
                         <a href="#">Logout</a>
@@ -84,7 +84,6 @@ function checkAuthentication() {
 
         if (data.ok) {
             window.sessionStorage.setItem('user', JSON.stringify(data.user))
-
         }
     })
 }

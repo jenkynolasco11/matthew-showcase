@@ -1,12 +1,17 @@
 $(document).ready(function() {
     var navItems = $('.nav-item')
-    var tabs = $('.tab-tops span')
+    var tabs = $('.tab-tops span:not(#compare-button):not(#save-button)')
     var form = $('form.form-options')
+
+    var saveBtn = $('#save-button')
+    var compareBtn = $('#compare-button')
+
+    var isSaved = false
 
     setTimeout(function() {
         var flashyTab = $('[data-content=proceed-form]')
-        console.log(flashyTab)
-        if(!flashyTab.attr('class')) flashyTab.addClass('flash')
+
+        flashyTab.addClass('flash')
     }, 5000)
 
     $(form).on('submit', function(e){
@@ -79,6 +84,43 @@ $(document).ready(function() {
         e.preventDefault()
 
         //TODO: Add the compare build action in here
+    })
+
+    saveBtn.on('click', function(e) {
+        if(!isSaved) {
+            var user = JSON.parse(window.sessionStorage.getItem('user'))
+
+            if(!user) return openAuth()
+            
+            var data = $(form).serializeArray()
+
+            $.ajax({
+                type : 'POST',
+                url : '/car/build/new',
+                data : data,
+                success : function(d) {
+                    if(d) {
+                        isSaved = true
+
+                        saveBtn.css('backgroundColor', 'green')
+                        saveBtn.css('color', 'white')
+                    }
+                }  
+            })
+        }
+    })
+
+    compareBtn.on('click', function(e) {
+        var user = JSON.parse(window.sessionStorage.getItem('user'))
+
+        if(!user) return openAuth()
+
+        var options = $('input[name=options]').val().split('|')
+        var year = options[ 0 ]
+        var make = options[ 1 ]
+        var model = options[ 2 ]
+        
+        window.location.href = `/dashboard?compare=true&year=${ year }&make=${ make }&model=${ model }`
     })
 
     checkAuthentication()

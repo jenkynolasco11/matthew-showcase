@@ -34,10 +34,30 @@ $(socialButton).click(function(e){
 })
 
 
-function buildTemplate(year, make, model, price, trim, options) {
-  function mapOptions(option) {
-    return option;
-  }
+function buildTemplate(year, make, model, price, trim, options, img) {
+    var opts = options.map(function(opt){ 
+      var key = opt.match(/\{.*\}/)[ 0 ]
+    //   // console.log(opt.match())
+                      return (`
+                          <div className="option-text">
+                              <span className="field-name">${ key.replace(/[\{\}]/g,'').replace(/_/g,' ') }: </span>
+                              <span className="field-text">${ opt.match(/\}(.*)/)[0].slice(1) }</span>
+                          </div>
+                          <br/>
+                          `)
+    }).join(' ')
+
+    // console.log(opts)
+    // options.forEach(function(op) {
+
+    // })
+
+    // function mapOptions(option) {
+
+    //   if(options[ option[ 0 ]])
+    //   // return option[0][1];
+    // }
+
     return `
     <div class="build-parent-div col-col-xs-12 no-padding">
       <div class='builds-list'>
@@ -46,7 +66,7 @@ function buildTemplate(year, make, model, price, trim, options) {
             <a href='#'>
               <div class='build-image'>
                 <div class='build-price'>${price}</div>
-                <img src="http://media.carbook.com/autoBuilderData/stockPhotos/28167.jpg" alt='' />
+                <img src="${ img || '/assets/images/no-car-selected.png' }" alt='' />
               </div>
               <div class='builds-specs'>
                 <div class='builds-child-flex'>
@@ -56,7 +76,9 @@ function buildTemplate(year, make, model, price, trim, options) {
                   <div class='builds-child-item'>${trim}</div>
                 </div>
                 <div class='builds-child-flex'>
-                  <div class='builds-child-item add-info'>Additional Options: ${options.map(mapOptions).join(' ')}</div>
+                  <div class='builds-child-item add-info'>Additional Options: 
+                  ${ opts }
+                  </div>
                 </div>
               </div>
             </a>
@@ -88,7 +110,7 @@ function getBuildsFromUser() {
   $.get(`/car/build/user/`, function(data) {
     console.log(data.builds[0].options.selectedOptions)
     if(data.ok) {
-      console.log(data.likedCars[0].imgs[0].src)
+      // console.log(data.likedCars[0].imgs[0].src)
       var container = $('#user-builds')
       var content = data.builds.map(function(build) {
         return $(buildTemplate(
@@ -97,7 +119,8 @@ function getBuildsFromUser() {
           build.options.model,
           build.options.optionsPrice,
           build.options.trim,
-          build.options.selectedOptions
+          build.options.selectedOptions,
+          build.imgurl
         ))
       })
       container.append(content)

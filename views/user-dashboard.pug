@@ -19,26 +19,26 @@ block main-body
                         a(href="#") Interests
                     li(data-for="user-social")
                         a(href="#") Social
-                    li(data-for="user-settings")
-                        a(href="#") Settings
+                    //- li(data-for="user-settings")
+                    //-     a(href="#") Settings
             .col-md-9.col-sm-12.dashboard-section
                 .selected-item-content#user-builds
                   .build-parent-div.col-xs-12.no-padding
                     .builds-list
                       .car-information.col-sm-12.no-padding
                         .builds-container
-                          a(href="#")
-                            .build-image
-                              .build-price $25,502
-                              img(src="/image-uploads/ilx.png")
-                            .build-specs
-                              .builds-child-flex
-                                .builds-child-item 2018
-                                .builds-child-item Alfas
-                                .builds-child-item Romeo 4C Spider
-                                .builds-child-item Special Edition Sedan
-                              .builds-child-flex
-                                .builds-child-item.add-info Additional Options: TIRES: 205/45R17 FR &amp; 235/40R18 RR 3-SEASON | WHEELS: 17" X 7.0" FR &amp; 18" X 8.0" RR SPIDER ALLOY | CARBON FIBER INTERIOR TRIM GROUP Carbon Fiber Cluster Bezel | Carbon Fiber I/P Bezel, Carbon Fiber Air Vents | Carbon Fiber Shift Bezel | BLACK, BLACK LEATHER TRIMMED BUCKET SEATS
+                        //-   a(href="#")
+                        //-     .build-image
+                        //-       .build-price $25,502
+                        //-       img(src="/image-uploads/ilx.png")
+                        //-     .build-specs
+                        //-       .builds-child-flex
+                        //-         .builds-child-item 2018
+                        //-         .builds-child-item Alfas
+                        //-         .builds-child-item Romeo 4C Spider
+                        //-         .builds-child-item Special Edition Sedan
+                        //-       .builds-child-flex
+                        //-         .builds-child-item.add-info Additional Options: TIRES: 205/45R17 FR &amp; 235/40R18 RR 3-SEASON | WHEELS: 17" X 7.0" FR &amp; 18" X 8.0" RR SPIDER ALLOY | CARBON FIBER INTERIOR TRIM GROUP Carbon Fiber Cluster Bezel | Carbon Fiber I/P Bezel, Carbon Fiber Air Vents | Carbon Fiber Shift Bezel | BLACK, BLACK LEATHER TRIMMED BUCKET SEATS
                         
                 .selected-item-content#user-interests
                 .selected-item-content#user-social
@@ -58,14 +58,16 @@ block main-body
                           input#Twitter(type='text', placeholder='Twitter Handle' value=currentDetails ? currentDetails.social.twitter : '')
                         .social-fi
                           button(id='social-button' type='submit') Save
-                .selected-item-content#user-settings
                 .selected-item-content#user-compare(class=comparing ? '' : 'selected')
                     form.row
                         .compare-boxes.row.col-xs-12
                             .comparing-box-a.col-md-6.col-sm-12(data-car='car1')
                                 .text-header Main Selection
                                 .image-content
-                                    img(src="/assets/images/no-car-selected.png" alt="placeholder")
+                                    if carOpts.carPhoto 
+                                        img(src=""+carOpts.carPhoto alt="placeholder")
+                                    else
+                                        img(src="/assets/images/no-car-selected.png" alt="placeholder")
                                 .saved-compare-select
                                     select(name="saved-a")
                                         option(value="none") Select Saved Entry
@@ -74,13 +76,17 @@ block main-body
                                     select(name="year-a")
                                         option(value="none") Select Year
                                         each y in carOpts.years
-                                            option(value=""+y) #{ y }
+                                            option(value=""+y selected=y===carOpts.year ? true : false) #{ y }
                                 .compare-select-make
                                     select(name="make-a")
                                         option(value="none") Select Make
+                                        if carOpts.make
+                                            option(value=""+carOpts.make selected) #{ carOpts.make }
                                 .compare-select-model
                                     select(name="model-a")
                                         option(value="none") Select Model
+                                        if carOpts.model
+                                            option(value=""+carOpts.model selected) #{ carOpts.model }
                                 //- .compare-select-trim
                                 //-     select(name="trim-a")
                                 //-         option(value="none") Select Trim
@@ -111,7 +117,6 @@ block main-body
                 if comparing
                     .selected-item-content#user-comparing.selected
                         include partials/_comparison.pug
-
 
 block scripts
     script(src="/assets/js/dashboard.js")

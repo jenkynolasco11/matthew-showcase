@@ -13,10 +13,11 @@ block main-body
             .car-options-trim.col-md-7
                 .tab-tops
                     span(data-content="chosen-items").selected.borders Selected Options
-                    span(data-content="proceed-form") Get a Quote
-                    span.borders save 
-                    span.borders
-                      i.icon.fa.fa-heart Save 
+                    span(data-content="proceed-form").borders Get a Quote
+                    span#compare-button.borders Compare
+                        i.icon.fa.fa-car
+                    span#save-button.borders Save
+                        i.icon.fa.fa-heart
                 .content
                     #chosen-items.show
                         each items, key in selectedOptions
