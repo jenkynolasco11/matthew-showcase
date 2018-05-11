@@ -10,6 +10,7 @@ const sockets = require('../socket.io').sockets
 // const IO = require('socket.io')
 
 const Car = models.Car
+const ReferenceCar = models.ReferenceCar
 const BuiltCar = models.BuiltCar
 const SellCar = models.SellCar
 const Message = models.Message
@@ -36,6 +37,7 @@ const paths = [
     'contact-us-test',
     'admin',
     'details',
+    'comparison',
     // 'dashboard',
     // 'listing',
     'services',
@@ -49,7 +51,8 @@ const titles = {
     'sell-car': 'Sell Us Your Car',
     'listing': 'Search',
     'services': 'Services',
-    'refer-a-friend' : 'Refer a Friend'
+    'comparison': 'Comparing Cars',
+    'refer-a-friend': 'Refer a Friend'
 }
 
 const checkIfAuth = (req, res, next) => {
@@ -280,15 +283,86 @@ route.get('/:route', async (req, res, next) => {
         const Car = models.Car
         const Builds = models.BuiltCar
         const { email } = user
+        let years = null
 
         try {
             const currentDetails = await UserDetails.findOne({ user : user._id })
 
-            const years = Object.keys(cars)
+            years = Object.keys(cars)
+            
+            const { car1, car2 } = req.query
 
-            return res.render('user-dashboard', { title : `Dashboard - ${ user.name }`, user, isAuth : req.isAuthenticated(), currentDetails, carOpts : { years } })
+            let c1 = null
+            let c2 = null
+
+            if(car1 && car2) {
+                const [ year1, make1, model1 /*, trim1*/ ] = car1.split(',')
+                const [ year2, make2, model2 /*, trim2*/ ] = car2.split(',')
+
+                const query1 = { model : model1, modelMakeDisplay : make1, modelYear : year1 }
+                const query2 = { model : model2, modelMakeDisplay : make2, modelYear : year2 }
+
+                // try {
+                const car1Stats = await ReferenceCar.aggregate([
+                    { $match : query1 }
+                ])
+                const car2Stats = await ReferenceCar.aggregate([
+                    { $match : query2 }
+                ])
+
+                // console.log(car1Stats[ 0 ])
+                // console.log(car2Stats[ 0 ])
+                c1 = car1Stats[ 0 ]
+                c2 = car2Stats[ 0 ]
+
+                const cars1 = cars[ year1 ][ make1 ] || []
+                const cars2 = cars[ year2 ][ make2 ] || []
+
+                if(cars1.length === 0 || cars2.length === 0 || !c1 || !c2) return res.render('user-dashboard', { title : `Dashboard - ${ user.name }`, user, isAuth : req.isAuthenticated(), currentDetails, carOpts : { years : [ ...years.reverse() ]}})
+
+                const prices1 = []
+                const prices2 = []
+                let img1 = '/assets/images/no-car-selected.png'
+                let img2 = '/assets/images/no-car-selected.png'
+
+                cars1.forEach(c => {
+                    prices1.push(+c.MSRP.replace(/\D/,''))
+                    if(new RegExp(c.Model.split(' ')[0].toLowerCase(), 'i').test(model1.toLowerCase())) img1 = c.Photo
+                })
+                cars2.forEach(c => {
+                    prices2.push(+c.MSRP.replace(/\D/,''))
+                    if(new RegExp(c.Model.split(' ')[0].toLowerCase(), 'i').test(model2.toLowerCase())) img2 = c.Photo
+                })
+
+                const maxPrice1 = Math.max(...prices1)
+                const maxPrice2 = Math.max(...prices2)
+                const minPrice1 = Math.min(...prices1)
+                const minPrice2 = Math.min(...prices2)
+
+                c1.minPrice = (''+minPrice1).replace(/(\d)(?=(\d{3})+$)/g, '$1,')
+                c2.minPrice = (''+minPrice2).replace(/(\d)(?=(\d{3})+$)/g, '$1,')
+                c1.maxPrice = (''+maxPrice1).replace(/(\d)(?=(\d{3})+$)/g, '$1,')
+                c2.maxPrice = (''+maxPrice2).replace(/(\d)(?=(\d{3})+$)/g, '$1,')
+                c1.img = img1
+                c2.img = img2
+            }
+
+            const renderBody = { 
+                user,
+                currentDetails,
+                title : `Dashboard - ${ user.name }`, 
+                isAuth : req.isAuthenticated(),
+                carOpts : { years : [ ...years.reverse() ]},
+                c1,
+                c2,
+                comparing : !!c1 && !!c2
+            }
+
+            return res.render('user-dashboard', renderBody)
         } catch (e) {
             console.log(e)
+
+            return res.render('user-dashboard', { title : `Dashboard - ${ user.name }`, user, isAuth : req.isAuthenticated(), currentDetails, carOpts : { years : [ ...years.reverse() ]}})
         }
         //     , function(err, data){
         // //   console.log(user._id)
@@ -296,6 +370,8 @@ route.get('/:route', async (req, res, next) => {
 
         // })
         return res.redirect('/')
+    } else if(route === 'comparison') {
+        console.log('right here')
     }
 
     else return next()

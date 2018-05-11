@@ -5,10 +5,10 @@ var Schema = mongoose.Schema
 
 var referenceCarSchema = new Schema({
     modelId: String,
-    modelMakeId: String,
-    model: String,
-    modelTrim: String,
-    modelYear: String,
+    modelMakeId: { type : String, index : true },
+    model: { type : String, index : true },
+    modelTrim: { type : String, index : true },
+    modelYear: { type : String, index : true },
     modelBody: String,
     modelEnginePosition: String,
     modelEngineCC: String,

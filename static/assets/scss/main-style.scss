@@ -4190,6 +4190,7 @@ table.icons {
 			}
 			&.selected {
 				background-color: #eee;
+				z-index : 1;
 				a {
 					color: red;
 				}
@@ -4210,15 +4211,21 @@ table.icons {
 	}
 
 	.dashboard-section {
-		height : 800px;
+		height : 1200px;
 
 		.selected-item-content {
 			opacity: 0;
-			position: absolute;
+			display : none;
+			// position: absolute;
 			top: 0;
 			left: 0;
 			transition: all .4s linear; // height : 600px;
 			width: 100%;
+
+			&.selected {
+				z-index : 1;
+				display : block;
+			}
 
 			&#user-builds {
 				padding: 4px 0 10px 30px;
@@ -4337,6 +4344,16 @@ table.icons {
 			.divider {
 				margin : 10px 30px;
 				border : 1px solid #ccc;
+			}
+		}
+	}
+}
+
+.comparison {
+	table {
+		thead {
+			th:not(:first) {
+				background-color : gray;
 			}
 		}
 	}

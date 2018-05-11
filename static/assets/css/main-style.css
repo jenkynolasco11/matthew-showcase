@@ -15722,6 +15722,7 @@ table.icons tr td:first-child {
 
 #user-dashboard .user-nav li.selected {
   background-color: #eee;
+  z-index: 1;
 }
 
 #user-dashboard .user-nav li.selected a {
@@ -15742,12 +15743,12 @@ table.icons tr td:first-child {
 }
 
 #user-dashboard .dashboard-section {
-  height: 800px;
+  height: 1200px;
 }
 
 #user-dashboard .dashboard-section .selected-item-content {
   opacity: 0;
-  position: absolute;
+  display: none;
   top: 0;
   left: 0;
   -webkit-transition: all .4s linear;
@@ -15755,6 +15756,11 @@ table.icons tr td:first-child {
        -o-transition: all .4s linear;
           transition: all .4s linear;
   width: 100%;
+}
+
+#user-dashboard .dashboard-section .selected-item-content.selected {
+  z-index: 1;
+  display: block;
 }
 
 #user-dashboard .dashboard-section .selected-item-content#user-builds {
@@ -15925,6 +15931,10 @@ table.icons tr td:first-child {
 #user-dashboard .dashboard-section .selected-item-content .divider {
   margin: 10px 30px;
   border: 1px solid #ccc;
+}
+
+.comparison table thead th:not(:first) {
+  background-color: gray;
 }
 
 .remove-padding {

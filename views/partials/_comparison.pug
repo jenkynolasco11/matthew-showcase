@@ -1,0 +1,119 @@
+.container
+    .comparison.table-responsive
+        table.table
+            thead
+                tr
+                    th
+                    th
+                        img(src=""+c1.img)
+                    th
+                        img(src=""+c2.img)
+                tr
+                    th
+                    th #{ c1.modelYear } #{ c1.modelMakeId } #{ c1.model }
+                    th #{ c2.modelYear } #{ c2.modelMakeId } #{ c2.model }
+                tr
+                    th
+                    th $#{ c1.minPrice } - $#{ c1.maxPrice }
+                    th $#{ c2.minPrice } - $#{ c2.maxPrice }
+            tbody
+                tr
+                    td Body Type
+                    td #{ c1.modelBody }
+                    td #{ c2.modelBody }
+                tr.separator
+                    td(colspan=3) Engine
+                tr
+                    td Position
+                    td #{ c1.modelEnginePosition }
+                    td #{ c2.modelEnginePosition }
+                tr
+                    td CC
+                    td #{ c1.modelEngineCC }
+                    td #{ c2.modelEngineCC }
+                tr
+                    td Cylinders
+                    td #{ c1.modelEngineCyl }
+                    td #{ c2.modelEngineCyl }
+                tr
+                    td Type
+                    td #{ c1.modelEngineType }
+                    td #{ c2.modelEngineType }
+                tr
+                    td Valves Per Cylinder
+                    td #{ c1.modelEngineValvesPerCyl }
+                    td #{ c2.modelEngineValvesPerCyl }
+                tr
+                    td Power RPM
+                    td #{ c1.modelEnginePowerRPM }
+                    td #{ c2.modelEnginePowerRPM }
+                tr
+                    td Torque RPM
+                    td #{ c1.modelEngineTorqueRPM }
+                    td #{ c2.modelEngineTorqueRPM }
+                tr
+                    td Bore MM
+                    td #{ c1.modelEngineBoreMM }
+                    td #{ c2.modelEngineBoreMM }
+                tr
+                    td Stroke MM
+                    td #{ c1.modelEngineStroke_mm }
+                    td #{ c2.modelEngineStroke_mm }
+                tr
+                    td Compression
+                    td #{ c1.modelEngineCompression }
+                    td #{ c2.modelEngineCompression }
+                tr
+                    td Fuel
+                    td #{ c1.modelEngineFuel }
+                    td #{ c2.modelEngineFuel }
+                tr.separator
+                    td(colspan=3) Others
+                tr
+                    td Top Speed MPH
+                    td #{ c1.modelTopSpeedMPH }
+                    td #{ c2.modelTopSpeedMPH }
+                tr
+                    td Drive
+                    td #{ c1.modelDrive }
+                    td #{ c2.modelDrive }
+                tr
+                    td Transmission Type
+                    td #{ c1.modelTransmission_type }
+                    td #{ c2.modelTransmission_type }
+                tr
+                    td Seats
+                    td #{ c1.modelSeats }
+                    td #{ c2.modelSeats }
+                tr
+                    td Doors
+                    td #{ c1.modelDoors }
+                    td #{ c2.modelDoors }
+                tr
+                    td Weight (KG)
+                    td #{ c1.modelWeightKG }
+                    td #{ c2.modelWeightKG }
+                tr
+                    td Height (MM)
+                    td #{ c1.modelHeightMM }
+                    td #{ c2.modelHeightMM }
+                tr
+                    td Wheel Base (MM)
+                    td #{ c1.modelWheelbaseMM }
+                    td #{ c2.modelWheelbaseMM }
+                tr
+                    td Fuel Economy City (mpg)
+                    td #{ c1.modelLkmCity }
+                    td #{ c2.modelLkmCity }
+                tr
+                    td Fuel Economy HWY (mpg)
+                    td #{ c1.modelLkmHwy }
+                    td #{ c2.modelLkmHwy }
+                tr
+                    td Fuel Economy Mixed (mpg)
+                    td #{ c1.modelLkmMixed }
+                    td #{ c2.modelLkmMixed }
+                tr
+                    td Sold in US?
+                    td #{ c1.modelSoldInUS ? 'Yes' : 'No' }
+                    td #{ c2.modelSoldInUS ? 'Yes' : 'No' }

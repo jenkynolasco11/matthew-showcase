@@ -8,8 +8,11 @@ block main-body
         .row
             .col-md-3.col-sm-12.remove-padding
                 ul.user-nav
-                    li(data-for="user-compare").selected
+                    li(data-for="user-compare" class=comparing ? '' : 'selected')
                         a(href="#") Compare Cars
+                    if comparing
+                        li(data-for="user-comparing").selected
+                            a(href="#") Comparing results
                     li(data-for="user-builds")
                         a(href="#") Builds
                     li(data-for="user-interests")
@@ -39,7 +42,7 @@ block main-body
                         .social-fi
                           button(id='social-button' type='submit') Save
                 .selected-item-content#user-settings
-                .selected-item-content#user-compare.selected
+                .selected-item-content#user-compare(class=comparing ? '' : 'selected')
                     form.row
                         .compare-boxes.row.col-xs-12
                             .comparing-box-a.col-md-6.col-sm-12(data-car='car1')
@@ -61,9 +64,9 @@ block main-body
                                 .compare-select-model
                                     select(name="model-a")
                                         option(value="none") Select Model
-                                .compare-select-trim
-                                    select(name="trim-a")
-                                        option(value="none") Select Trim
+                                //- .compare-select-trim
+                                //-     select(name="trim-a")
+                                //-         option(value="none") Select Trim
                             .comparing-box-b.col-md-6.col-sm-12(data-car='car2')
                                 .text-header Compare Selection
                                 .image-content
@@ -83,11 +86,14 @@ block main-body
                                 .compare-select-model
                                     select(name="model-b")
                                         option(value="none") Select Model
-                                .compare-select-trim
-                                    select(name="trim-b")
-                                        option(value="none") Select Trim
+                                //- .compare-select-trim
+                                //-     select(name="trim-b")
+                                //-         option(value="none") Select Trim
                         .compare-input.col-xs-12.text-center
                             input(type="submit" value="Compare")
+                if comparing
+                    .selected-item-content#user-comparing.selected
+                        include partials/_comparison.pug
 
 
 block scripts

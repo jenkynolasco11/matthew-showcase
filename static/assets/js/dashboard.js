@@ -101,14 +101,19 @@ function getInterestFromUser() {
 
 selectors.each(function(){
     $(this).on('click', function() {
+      var id = $(this).data('for')
 
-        removeClassTo('selected', selectors)
-        removeClassTo('selected', sections)
+      $(`.selected-item-content.selected`).fadeOut(500).hide().removeClass('selected')
+      $('li[data-for*=user].selected').removeClass('selected')
 
-        var id = $(this).data('for')
+      $(`#${id}`).addClass('selected').css('display','block')
+      $(this).addClass('selected')
+        // removeClassTo('selected', selectors)
+        // removeClassTo('selected', sections)
 
-        $(`#${id}`).addClass('selected')
-        $(this).addClass('selected')
+
+        // $(`#${id}`).addClass('selected')
+        // $(this).addClass('selected')
     })
 })
 

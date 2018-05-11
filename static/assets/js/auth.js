@@ -16,13 +16,8 @@ radioVal.on('change', function () {
     $(signup).toggleClass('hidden')
 })
 
-function openAuth() {
-    authPanel.css('display', 'flex').hide().fadeIn(500)
-}
-
-function closeAuth() {
-    authPanel.fadeOut(500)
-}
+function openAuth() { authPanel.css('display', 'flex').hide().fadeIn(500) }
+function closeAuth() { authPanel.fadeOut(500) }
 
 var loggedInButtonTemplate = function (name) {
     return `
@@ -92,11 +87,6 @@ function checkAuthentication() {
 
         }
     })
-
-    $('.main-menu').append(loggedIn)
-    $('.nav.navbar-nav').append(loggedIn)
-
-    addEventToLogout()
 }
 
 function onSubmitAuthInfo(e) {

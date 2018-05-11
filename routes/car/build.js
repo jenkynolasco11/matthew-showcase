@@ -265,7 +265,59 @@ route.get('/all', (req, res) => {
     })
 })
 
-route.get('/saved/compare', async (req, res) => {
+route.get('/compare/stats', async (req, res) => {
+    const { trim = 'none', make = 'none', year = 'none', model = 'none'} = req.query
+
+    try {
+        const carsInYears = cars[ year ]
+
+        if(!carsInYears) return res.send({ ok : false })
+
+        const selections = carsInYears[ make ]
+
+        if(selections) {
+            const car = selections.find(t => t.Model === model && t.Trim === trim)
+
+            if(car) {
+                console.log(`Car => ${JSON.stringify(car, null, 3)}`)
+
+                return res.send({ ok : true, car })
+            }
+        }
+    } catch(e) {
+        console.log(e)
+    }
+
+    return res.send({ ok : false })
+})
+
+route.get('/compare/stats/img', async (req, res) => {
+    const { make = 'none', year = 'none', model = 'none'} = req.query
+
+    try {
+        const carsInYears = cars[ year ]
+
+        if(!carsInYears) return res.send({ ok : false })
+
+        const selections = carsInYears[ make ]
+
+        if(selections) {
+            const photo = selections.find(t => new RegExp(t.Model,'i').test(model)).Photo
+
+            if(photo) {
+                console.log(`Car => ${photo}`)
+
+                return res.send({ ok : true, photo })
+            }
+        }
+    } catch(e) {
+        console.log(e)
+    }
+
+    return res.send({ ok : false })
+})
+
+route.get('/compare/saved', async (req, res) => {
     if(!req.isAuthenticated()) return res.send({ ok : false })
 
     const { email, _id } = req.user
@@ -278,7 +330,6 @@ route.get('/saved/compare', async (req, res) => {
 
         const buildsX = [ ...new Set(selected) ].map(JSON.parse)
                         .map(({ make, model, year, trim, url }) => ({ make, model, year, trim, img : cars[ year ][ make ].find(t => {
-                            console.log(make, model, year, trim)
                             return t.Trim === trim
                         }).Photo }))
 

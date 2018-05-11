@@ -3,7 +3,7 @@ const models = require('../../models')
 
 const Builds = models.BuiltCar
 const Car = models.Car
-const ReferenceCar = models.ReferenceCar;
+const ReferenceCar = models.ReferenceCar
 const Meta = models.Meta
 const fs = require('fs')
 const path = require('path')
@@ -12,6 +12,9 @@ const imgRoute = '../../static/image-uploads'
 
 const route = Router()
 const car = Router()
+
+const file = fs.readFileSync(path.resolve(__dirname, './cars-file-2.json'), 'utf8')
+const cars = JSON.parse(file)
 
 //#region Aux Functions
 const extractImages = images => {
@@ -128,7 +131,7 @@ route.post('/autofill', async (req, res) => {
         make: new RegExp(req.body.make, 'i'),
         year: new RegExp(req.body.year, 'i')
     }
-    console.log(query.model, query.make, query.year)
+
     const car = await ReferenceCar.find({ modelMakeId : query.make, modelYear: query.year, model: query.model, modelSoldInUS: true }).lean();
     res.send(car);
 });
@@ -294,7 +297,7 @@ route.put('/:id/like/:user', async (req, res) => {
     return res.send({ ok : false })
 })
 
-route.get('/saved/compare', async (req, res) => {
+route.get('/compare/saved', async (req, res) => {
     if(!req.isAuthenticated()) return res.send({ ok : false })
 
     const { email, _id : likedBy } = req.user
@@ -311,6 +314,123 @@ route.get('/saved/compare', async (req, res) => {
     }
 
     return res.send({ ok : false })
+})
+
+route.get('/compare/stored-stats', async (req, res) => {
+    const { year, make, model, trim } = req.query
+
+    const query = {}
+    const projection = { trim : 1, year : 1, model : 1, make : 1, _id : 0 }
+
+    if(year && year !== 'none') query.year = year
+    if(make && make !== 'none') query.make = make
+    if(model && model !== 'none') query.model = model
+    if(trim && trim !== 'none') query.trim = trim
+
+    try {
+        const cars = await ReferenceCar.find(query, trim && trim !== 'none' ? projection : {}).lean()
+
+        console.log(cars)
+
+        return res.send({ ok : true, cars })
+    } catch (e) {
+        console.log(e)
+    }
+
+    return res.send({ ok : false })
+})
+
+route.get('/compare/stats', async (req, res) => {
+    const {
+        get = 'year',
+        year = 'none',
+        make = 'none',
+        model = 'none',
+        trim = 'none'
+    } = req.query
+
+    const query = {}
+
+    if(year !== 'none') query.modelYear = year
+    if(make !== 'none') query.modelMakeId = make
+    if(model !== 'none') query.model = model
+    if(trim !== 'none') query.modelTrim = trim
+
+    try {
+        // const cars = await ReferenceCar.find(query)
+        const data = await ReferenceCar.distinct(get, query)
+
+        return res.send({ ok : true, data })
+    } catch (e) {
+        console.log(e)
+    }
+
+    return res.send({ ok : false })
+})
+
+route.get('/compare/results', async (req, res) => {
+    if(!req.isAuthenticated()) return res.redirect('/')
+
+    const user = req.user
+
+    const { car1, car2 } = req.query
+
+    const [ year1, make1, model1 /*, trim1*/ ] = car1.split(',')
+    const [ year2, make2, model2 /*, trim2*/ ] = car2.split(',')
+
+    const query1 = { model : model1, modelMakeDisplay : make1, modelYear : year1 }
+    const query2 = { model : model2, modelMakeDisplay : make2, modelYear : year2 }
+
+    try {
+        const car1Stats = await ReferenceCar.aggregate([
+            { $match : query1 }
+        ])
+        const car2Stats = await ReferenceCar.aggregate([
+            { $match : query2 }
+        ])
+
+        // console.log(car1Stats[ 0 ])
+        // console.log(car2Stats[ 0 ])
+        const c1 = car1Stats[ 0 ]
+        const c2 = car2Stats[ 0 ]
+
+        const cars1 = cars[ year1 ][ make1 ]
+        const cars2 = cars[ year2 ][ make2 ]
+
+        if(cars1.length === 0 || cars2.length === 0) return res.redirect('/dashboard')
+        if(!c1 || !c2) return res.redirect('/dashboard')
+
+        const prices1 = []
+        const prices2 = []
+        let img1 = '/assets/images/no-car-selected.png'
+        let img2 = '/assets/images/no-car-selected.png'
+
+        cars1.forEach(c => {
+            prices1.push(+c.MSRP.replace(/\D/,''))
+            if(new RegExp(c.Model.split(' ')[0].toLowerCase(), 'i').test(model1.toLowerCase())) img1 = c.Photo
+        })
+        cars2.forEach(c => {
+            prices2.push(+c.MSRP.replace(/\D/,''))
+            if(new RegExp(c.Model.split(' ')[0].toLowerCase(), 'i').test(model2.toLowerCase())) img2 = c.Photo
+        })
+
+        const maxPrice1 = Math.max(...prices1)
+        const maxPrice2 = Math.max(...prices2)
+        const minPrice1 = Math.min(...prices1)
+        const minPrice2 = Math.min(...prices2)
+
+        c1.minPrice = (''+minPrice1).replace(/(\d)(?=(\d{3})+$)/g, '$1,')
+        c2.minPrice = (''+minPrice2).replace(/(\d)(?=(\d{3})+$)/g, '$1,')
+        c1.maxPrice = (''+maxPrice1).replace(/(\d)(?=(\d{3})+$)/g, '$1,')
+        c2.maxPrice = (''+maxPrice2).replace(/(\d)(?=(\d{3})+$)/g, '$1,')
+        c1.img = img1
+        c2.img = img2
+
+        return res.render('comparison', { c1, c2, isAuth : req.isAuthenticated(), user })
+        // return res.send({ ok : true })
+    } catch (e) {
+        console.log(e)
+    }
 })
 //#endregion
 
