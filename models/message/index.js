@@ -13,7 +13,7 @@ var MessageSchema = new Schema({
     }],
     reviewedBy : Date,
     reviewed : { type : Boolean, default : () => false, index : true },
-    createdBy : { type : Date, default : Date.now },
+    createdBy : { type : Date, index : true, default : Date.now },
     type : { type : String, default : () => 'message' },
     deleted : { type : Boolean, default : () => false, index : true },
 })

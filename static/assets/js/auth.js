@@ -78,14 +78,19 @@ function checkAuthentication() {
     window.sessionStorage.removeItem('user')
 
     $.get('/auth/is-auth', function (data) {
-        console.log(data)
-        // console.log(data)
-        // console.log(data)
-
         if (data.ok) {
             window.sessionStorage.setItem('user', JSON.stringify(data.user))
         }
     })
+}
+
+function openErrorMsg(errorMsg) {
+    var msg = errorMsg || 'Username and Password doesn\'t match'
+    var error = $('.auth .cancel .error-message')
+
+    error.html(msg)
+
+    error.fadeIn(500).delay(6000).fadeOut(500)
 }
 
 function onSubmitAuthInfo(e) {
@@ -97,10 +102,15 @@ function onSubmitAuthInfo(e) {
         return p
     }, {})
 
+    if(data.type === 'signup' && data.pass !== data.passConfirm) return openErrorMsg('Passwords doesn\'t match')
+
     var url = data.type === 'login' ? '/auth/login' : '/auth/signup'
 
     $.post(url, data, function (res) {
+        // console.log(res)
         if (res.ok) {
+            if(res.redirectTo) return window.location.href = res.redirectTo
+
             closeAuth()
 
             $('.main-menu li.login-button').remove()
@@ -118,8 +128,9 @@ function onSubmitAuthInfo(e) {
             $('.nav.navbar-nav').append(loggedIn)
 
             addEventToLogout()
-            window.location.reload()
-        }
+
+            window.location.href = '/dashboard'
+        } else openErrorMsg(res.msg)
     })
 }
 
@@ -128,6 +139,11 @@ $(document).ready(function () {
 
     loginLogout.each(function () {
         $(this).on('click', openAuth)
+    })
+
+    $('.auth-overlay').on('click', closeAuth)
+    $('.auth-overlay *').on('click', function(e) {
+        e.stopPropagation()
     })
 
     formLogin.submit(onSubmitAuthInfo)

@@ -11,40 +11,61 @@ const setEmailToUser = (req, res, next) => {
     return next()
 }
 
+const setToLowercase = (req, res, next) => {
+    console.log(req.body)
+    if(req.body.name) req.body.name = req.body.name.toLowerCase()
+
+    req.body.email = req.body.email.toLowerCase()
+
+    next()
+}
+
 route.get('/success', (req, res) => {
+    // console.log(req)
     const user = req.user || null
 
     req.login(user, err => {
-        if(!err) {
-            console.log(`About to log ${ JSON.stringify(user) }`)
+        if(err) return res.send({ ok : false })
 
-            const { _id, email, name, phoneNumber, username } = user
-            try {
-                return res.status(200).send({ ok : true, user : { _id, email, name, phoneNumber, username }})
-            } catch(e)  {}
-        }
-        console.log(`Error... ${ err }`)
+        console.log(`About to log ${ JSON.stringify(user, null, 2) }`)
 
-        return res.status(200).send({ ok : false })
+        const { _id, email, name, phoneNumber, username, type } = user
+
+        if(type === 'admin') return res.send({ ok : true, redirectTo : '/admin' })
+
+        return res.send({ ok : true, user : { _id, email, name, phoneNumber, username }})
+
+        // console.log(`Error... ${ err }`)
     })
 })
 
 route.get('/failure', (req, res) => {
-    console.log('something happened...')
-
-    return res.status(200).send({ ok : false, user : null })
+    console.log(req)
+    return res.status(200).send({ ok : false, user : null, msg : 'Username and Password doesn\'t match' })
 })
 
-route.post('/login', setEmailToUser, passport.authenticate('login', {
+route.post('/login', setToLowercase, setEmailToUser, passport.authenticate('login', {
         successRedirect : '/auth/success',
         failureRedirect : '/auth/failure'
     })
 )
 
-route.post('/signup', passport.authenticate('signup', {
+route.post('/signup', setToLowercase, (req, res, next) =>
+    passport.authenticate('signup', {
         successRedirect : '/auth/success',
         failureRedirect : '/auth/failure'
-    })
+    }, (err, user, msg ) => {
+        console.log(err, user, msg)
+        if(err) return res.send({ ok : false, msg : 'User Already Registered. Invalid Password' })
+
+        req.login(user, err => {
+            if(err) return res.send({ ok : false })
+
+            const { _id, email, name, phoneNumber, username } = user
+
+            return res.send({ ok : true, user : { _id, email, name, phoneNumber, username }})
+        })
+    })(req, res, next)
 )
 
 route.get('/logout', (req,res) => {

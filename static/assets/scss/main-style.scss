@@ -375,9 +375,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 					&.flash {
 						animation: flashTab 2s linear infinite;
 					}
-
 					i {
-						margin-left : 10px;
+						margin-left: 10px;
 					}
 				}
 			}
@@ -1263,16 +1262,21 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			.menu-items {
 				height: 100%;
 				ul {
+					text-transform: uppercase;
 					height: 100%;
 					float: right;
 					li {
 						height: 100%;
-						font-size: .9em; // line-height : 10px;
-						@media screen and (max-width: 998px) {
+						font-size: .75em; // line-height : 10px;
+						@media screen and (max-width: 968px) {
+							font-size: .55em;
+						} // display : flex;
+						@media screen and (max-width: 1200px) {
 							font-size: .7em;
 						} // display : flex;
-						// justify-content: center;
-						// align-content: center;
+						// @media screen and (max-width: 1200px) {
+						// 	font-size: .7em;
+						// } // display : flex;
 						a {
 							color: white !important;
 							padding: 20px 10px;
@@ -1293,6 +1297,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 						&.collapse {
 							&>a {
 								color: black;
+								font-size: 1rem;
 							}
 						}
 					}
@@ -1311,6 +1316,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 							ul {
 								float: none;
 								margin-right: 0;
+								font-size: 1rem;
 								li {
 									line-height: 30px;
 									display: block;
@@ -1340,11 +1346,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				justify-content: center;
 				align-items: center;
 				img {
-					min-width: 120px;
+					min-width: 195px;
 					transition: all .1s linear; // margin: 10px 0 auto;
 					max-width: 70%;
 					@media screen and (max-width: 768px) {
-						min-width: 200px;
+						min-width: 180px;
 					}
 				}
 			}
@@ -1424,9 +1430,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 						a {
 							padding-top: 24px;
 							color: white !important;
-							font-size: .9rem;
-							@media screen and (max-width: 998px) {
-								font-size: .75rem;
+							font-size: .8rem;
+							@media screen and (max-width: 1200px) {
+								font-size: .65rem;
 							}
 						}
 						&:hover a {
@@ -1469,7 +1475,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			// height : 100%;
 			ul li a {
 				color: white !important;
-				font-size: .9rem;
+				font-size: .85rem;
+				@media screen and (max-width: 980px) {
+					font-size: .7rem;
+				}
+				@media screen and (max-width: 890px) {
+					font-size: .6rem;
+				}
 			}
 		}
 		.details {
@@ -1497,7 +1509,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		}
 		.logo {
 			img {
-				min-width: 140px !important; // width: 80px;
+				min-width: 120px !important; // width: 80px;
 				margin-top: 10px; //0 auto !important;
 				@media screen and (min-width: 768px) {
 					max-width: 40px !important;
@@ -1570,7 +1582,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		}
 	}
 	ul {
-		// position: absolute;
+		text-transform: uppercase; // position: absolute;
 		margin-top: 30px;
 		display: flex;
 		flex-flow: column nowrap;
@@ -3771,46 +3783,36 @@ table.icons {
 		transition: all .2s linear;
 		border-radius: 4px 4px 0 0;
 		margin-bottom: -4px;
-		margin-left: 432px;
-		position: relative;
-		background-color: $handleBg;
+		margin-left: 340px;
+		position: relative; // background-color: $handleBg;
+		// width: 50px;
+		background-color: red;
+		width: 150px;
 		height: 50px;
-		width: 50px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		cursor: pointer;
-
 		.inner-arrow {
 			transition: all .2s linear;
 			position: relative;
 			margin-top: -2px;
-			border-top: 0;
-			// &:after {
+			border-top: 0; // &:after {
 			// 	transition: all .1s linear;
 			// 	font-weight: bold;
 			// 	content: 'Chat';
-			// 	color : white;
-			// }
-
+			color: white; // }
 			span {
-				transition : all .1s linear;
-				font-weight: bold;
-				color : white;
+				transition: all .1s linear;
+				font-weight: bold; // color : white;
 			}
 		}
-
 		&:hover {
 			.inner-arrow {
-				// &:after {
-				// 	color : red;
+				color: black; // span {
 				// }
-				span {
-					color : red;
-				}
 			}
 		}
-
 		.messages-count {
 			color: white;
 			height: 20px;
@@ -3837,21 +3839,23 @@ table.icons {
 		@keyframes wiggle-animation {
 			10%,
 			90% {
+				color: white;
 				transform: translate3d(-1px, 0, 0);
 			}
 			20%,
 			80% {
-				transform: translate3d(2px, 0, 0);
-				// color : red !important;
+				color: rgb(31, 31, 31);
+				transform: translate3d(2px, 0, 0); // color : red !important;
 			}
 			30%,
 			50%,
 			70% {
+				// color : white;
 				transform: translate3d(-4px, 0, 0);
-				color: red;
 			}
 			40%,
 			60% {
+				// color : white;
 				transform: translate3d(4px, 0, 0);
 			}
 		}
@@ -4152,7 +4156,10 @@ table.icons {
 			}
 		}
 		.cancel {
-			padding-bottom: 40px;
+			display: flex;
+			flex-flow: column nowrap;
+			align-items: center;
+			height: 70px; // padding-bottom: 40px;
 			position: absolute;
 			bottom: 0;
 			color: #71717d; // color : rgb(109, 109, 255);
@@ -4166,6 +4173,12 @@ table.icons {
 				&:hover {
 					color: #f0f0f0;
 				}
+				&.error-message {
+					margin-top: 10px;
+					color: red;
+					text-shadow: 0 0 20px rgb(140, 140, 140); // display : block;
+					display: none;
+				}
 			}
 		}
 		@media screen and (max-width: 768px) {
@@ -4174,6 +4187,65 @@ table.icons {
 		}
 	}
 	display: none;
+}
+
+.completion-bar {
+	position : relative;
+	height : 36px;
+	width : 100%;
+	margin : -40px 0 50px;
+	background-color : #333;
+
+	.completion-progress {
+		height : 100%;
+		background-color : rgb(191, 191, 191);
+		// transform: skewX(-45deg);
+	}
+
+	.completion-message {
+		top : 0;
+		height : 100%;
+		width : 100%;
+		display : flex;
+		align-items : center;
+		justify-content : center;
+		position : absolute;
+
+		span {
+			text-transform : uppercase;
+			font-size : .9rem;
+			text-shadow : 1px 0 1px black, 0 1px 1px black, 1px 1px 1px black, 0 0 1px black;
+			color : white;
+			margin : 0 2px;
+
+			@media screen and (max-width: 420px){
+				font-size : .65rem;
+			}
+
+			&.percentage {
+				color : red;
+			}
+		}
+		a {
+			text-transform : uppercase;
+			height : 20px;
+			// background-color : #8e8e8e;
+			background-color : #ea0000;
+			vertical-align : middle;
+			font-size : .75rem;
+			padding : 3px 4px;
+			margin : 0 0 0 4px;
+			border-radius : 2px;
+			text-shadow : 1px 0 1px black, 0 1px 1px black, 1px 1px 1px black, 0 0 1px black;
+			font-family : "Lato", sans-serif;
+			// text-transform : capitalize;
+
+			@media screen and (max-width: 420px){
+				font-size : .55rem;
+				padding : 5px 2px;
+			}
+		}
+	}
 }
 
 #user-dashboard {
@@ -4194,7 +4266,7 @@ table.icons {
 			}
 			&.selected {
 				background-color: #eee;
-				z-index : 1;
+				z-index: 1;
 				a {
 					color: red;
 				}
@@ -4213,29 +4285,24 @@ table.icons {
 			}
 		}
 	}
-
 	.dashboard-section {
-		height : 1200px;
-
+		height: 1200px;
 		.selected-item-content {
 			opacity: 0;
-			display : none;
-			// position: absolute;
+			display: none; // position: absolute;
 			top: 0;
 			left: 0;
 			transition: all .4s linear; // height : 600px;
 			width: 100%;
-
 			&.selected {
-				z-index : 1;
-				display : block;
+				z-index: 1;
+				display: block;
 			}
-
 			&#user-builds {
 				padding: 4px 0 10px 30px;
 				height: auto;
-				max-height : 1000px;
-				overflow-y : scroll;
+				max-height: 1000px;
+				overflow-y: scroll;
 				.build-car {
 					height: 300px;
 					background-color: white;
@@ -4243,10 +4310,9 @@ table.icons {
 					border-radius: 4px;
 				}
 			}
-
 			&#user-interests {
 				.interest-list {
-					background-color : red;
+					background-color: red;
 					width: 100%;
 					height: 100%;
 					padding: 0;
@@ -4274,92 +4340,79 @@ table.icons {
 					}
 				}
 			}
-
 			&#user-compare {
 				.compare-boxes {
-					padding : 40px;
-
-					@media screen and (min-width : 768px) {
-						display : flex;
-						flex-flow : row nowrap;
+					padding: 40px;
+					@media screen and (min-width: 768px) {
+						display: flex;
+						flex-flow: row nowrap;
 					}
-
 					[class*=comparing-box-] {
-						background-color : #eee;
-						border-radius : 2px;
-						padding : 10px 4px 30px;
-						margin : 2px;
-
+						background-color: #eee;
+						border-radius: 2px;
+						padding: 10px 4px 30px;
+						margin: 2px;
 						.text-header {
-							text-align : center;
-							margin : 10px 20px;
-							font-size : 22px;
-							color : rgb(255, 37, 37);
+							text-align: center;
+							margin: 10px 20px;
+							font-size: 22px;
+							color: rgb(255, 37, 37);
 						}
-
 						.image-content {
-							background-color : white;
-							border-radius : 2px;
-							overflow : hidden;
-							height : 240px;
-							width : 100%;
-							display : flex;
-							align-items : center;
-							justify-content : center;
-
+							background-color: white;
+							border-radius: 2px;
+							overflow: hidden;
+							height: 240px;
+							width: 100%;
+							display: flex;
+							align-items: center;
+							justify-content: center;
 							img {
-								width : 100%;
+								width: 100%;
 							}
-
-							margin-bottom : 30px;
+							margin-bottom: 30px;
 						}
-
 						[class*=compare-select-] {
-							margin : 10px 20px 20px;
-							text-align : center;
-
+							margin: 10px 20px 20px;
+							text-align: center;
 							select {
-								width : 220px;
-								text-align : center;
+								width: 220px;
+								text-align: center;
 								option {
-									text-align : center;
+									text-align: center;
 								}
-
 								&[disabled] {
-									background-color : #b8b8b8;
-									color : #8b7e7e;
+									background-color: #b8b8b8;
+									color: #8b7e7e;
 								}
 							}
 						}
-
 						.saved-compare-select {
-							text-align : center;
-
+							text-align: center;
 							select {
-								width : 260px;
+								width: 260px;
 							}
 						}
 					}
 				}
 			}
-
 			&.selected {
 				opacity: 1;
 			}
-
 			.divider {
-				margin : 10px 30px;
-				border : 1px solid #ccc;
+				margin: 10px 30px;
+				border: 1px solid #ccc;
 			}
 		}
 	}
 }
+// ---------------------------
 
 .comparison {
 	table {
 		thead {
 			th:not(:first) {
-				background-color : gray;
+				background-color: gray;
 			}
 		}
 	}
@@ -4369,25 +4422,22 @@ table.icons {
 	padding: 0;
 }
 
-/* Adrian Changes */ 
+/* Adrian Changes */
+
 .builds-container {
 	font-family: 'Poppins', sans-serif;
 	display: flex;
 	color: red;
-	border-bottom: 1px solid #f5f5f5;
-	// overflow-y : scroll;
-
+	border-bottom: 1px solid #f5f5f5; // overflow-y : scroll;
 	a {
 		display: flex;
 		width: 100%;
 		text-decoration: none;
 		color: inherit;
-
 		&:hover {
 			background: #f5f5f5;
 		}
 	}
-
 	.build-image {
 		display: flex;
 		align-items: center;
@@ -4397,16 +4447,13 @@ table.icons {
 		height: 200px;
 		position: relative;
 		border: 1px solid #f5f5f5;
-
 		img {
 			// height: 100%;
 			width: 100%;
-			position: absolute;
-			// padding: 15px 15px;
+			position: absolute; // padding: 15px 15px;
 			// margin: 10px;
 		}
 	}
-
 	.build-price {
 		position: absolute;
 		top: 0px;
@@ -4415,227 +4462,227 @@ table.icons {
 		text-align: center;
 		color: white;
 		background: #d01818;
-
 		border-bottom-right-radius: 10px;
 		z-index: 10;
 	}
-} 
+}
 
 .borders {
-  	border-left: 1px solid white;
+	border-left: 1px solid white;
 }
 
 .builds-specs {
-	flex-flow : column nowrap;
+	flex-flow: column nowrap;
 	display: flex;
 	width: 100%;
 	margin: 10px;
 	padding-left: 20px;
 }
+
 .builds-child-flex {
 	display: flex;
 	flex-shrink: 1;
 	justify-content: space-between;
 	align-items: center;
-
 	flex-grow: 1;
 	width: 100%;
-
 	&:first-child {
-		color : #222;
-		height : 60px;
-		font-size : 18px;
+		color: #222;
+		height: 60px;
+		font-size: 18px;
 	}
 }
 
 .builds-child-flex-add-info {
-  
-  display: flex;
-  
-          justify-content: center;
-  
-          flex-grow: 1;
-  width: 100%;
-  text-align: center;
+	display: flex;
+	justify-content: center;
+	flex-grow: 1;
+	width: 100%;
+	text-align: center;
 }
 
 .no-padding {
-  padding: 0px;
-  border: none!important;
+	padding: 0px;
+	border: none !important;
 }
 
 .add-info {
-  font-size: 14px;
-  letter-spacing: 1;
-  padding-top: 20px;
+	font-size: 14px;
+	letter-spacing: 1;
+	padding-top: 20px;
 }
 
-
 .fa-heart {
-  color: #d01818;
+	color: #d01818;
 }
 
 .dashboard-section {
-  height: 600px;
-  margin-bottom: 120px;
-  border-bottom: 1px solid #f5f5f5
+	height: 600px;
+	margin-bottom: 120px;
+	border-bottom: 1px solid #f5f5f5
 }
 
 .selected-item-content {
-  height: 100%;
-  overflow-y: auto;
-  position: absolute;
+	height: 100%;
+	overflow-y: auto;
+	position: absolute;
 }
 
 .chat-color {
-  color: white;
+	color: white;
 }
 
 .selected {
-  z-index: 1;
+	z-index: 1;
 }
 
 .interest-list {
-  width: 100%;
-  height: 100%;
-  padding: 0;
+	width: 100%;
+	height: 100%;
+	padding: 0;
 }
 
 .interest-list:hover {
-  background-color: #f5f5f5;
+	background-color: #f5f5f5;
 }
 
 .build-parent-div {
-  border: 1px solid #f5f5f5;
-
+	border: 1px solid #f5f5f5;
 }
+
 .builds-list {
-  width: 100%;
+	width: 100%;
 }
 
 .flex-container {
-  
-  display: flex;
-  
-          align-items: center;
-  
-          justify-content: center;
-  padding: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
 }
 
 .flex-item {
-
-  display: flex;
-  width: 25%;
-  height: 100px;
-  overflow: hidden;
-  
-          align-items: center;
-  
-          justify-content: center;
+	display: flex;
+	width: 25%;
+	height: 100px;
+	overflow: hidden;
+	align-items: center;
+	justify-content: center;
 }
 
 .flex-container-build {
-  
-  display: flex;
+	display: flex;
 }
 
 .flex-child-cont {
-  
-  display: flex;
-  
-          flex-direction: column;
-  background: red;
-  height: 200px;
-  width: 200px;
-  
-          justify-content: center;
-  
-          align-items: center;
+	display: flex;
+	flex-direction: column;
+	background: red;
+	height: 200px;
+	width: 200px;
+	justify-content: center;
+	align-items: center;
 }
 
 .flex-item-build {
-  padding-top: 100px;
-
+	padding-top: 100px;
 }
 
 .flex-item img {
-  height: auto;
-  width: 300px;
-  overflow: hidden;
+	height: auto;
+	width: 300px;
+	overflow: hidden;
 }
+
 /* interest styles end */
+
 .social-cont {
-  display: flex;
-  
-          flex-direction: column;
-  
-          justify-content: center;
-  
-          align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .social-fi {
-  display: flex;
-flex-direction: column;
-align-items: center;
-  padding: 10px;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	padding: 10px;
+}
+
+.social-fi label {
+	width : 30%;
+	text-align : right;
+	padding-right : 20px;
+
+	@media screen and (max-width: 420px){
+		font-size : .7rem;
+	}
 }
 
 .social-fi input {
-  width: 70%;
-  text-align: center;
-  padding: 5px;
+	width: 70%;
+	text-align: center;
+	padding: 5px;
+
+	@media screen and (max-width: 420px){
+		font-size : .9rem;
+	}
 }
 
 .social-fi input::-webkit-input-placeholder {
-  color:  #C7C7CD;
+	color: #C7C7CD;
 }
 
 .social-fi input:-moz-placeholder {
-  color:  #C7C7CD;
+	color: #C7C7CD;
 }
 
 .social-fi input::-moz-placeholder {
-  color:  #C7C7CD;
+	color: #C7C7CD;
 }
 
 .social-fi input:-ms-input-placeholder {
-  color:  #C7C7CD;
+	color: #C7C7CD;
 }
 
 .social-fi input::placeholder {
-  color:  #C7C7CD;
+	color: #C7C7CD;
 }
 
 .social-fi button {
-  width: 70%;
-  padding: 10px;
+	width: 50%;
+	margin : 20px auto 10px;
+	padding: 10px;
 }
 
 .social-cont form {
-  width: 100%;
+	width: 100%;
 }
 
 #message-social {
-  text-align: center;
-  background: red;
-  width: 70%;
-  margin: 0 auto;
-  margin-bottom: 10px;
+	text-align: center;
+	background: red;
+	width: 70%;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	box-shadow : 0 0px 22px -6px black;
+
+	&-text {
+		color : white;
+	}
 }
 
 .social-cont .form-group {
-  width: 70%;
-  margin: 0 auto;
-  background-color: #f5f5f5;
-  border: 1px solid #eee;
+	width: 70%;
+	margin: 0 auto;
+	background-color: #f5f5f5;
+	border: 1px solid #eee;
 }
 
-// .option-text .field-name { 
+// .option-text .field-name {
 // 	color : #555;
 // }
-
 // .auth {
 // 	position : fixed;
 // 	height : 100vh;

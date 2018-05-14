@@ -13,7 +13,7 @@ var DealSubscriptionSchema = new Schema({
         model : String,
         id : String,
     },
-    createdBy : { type : Date, default : Date.now },
+    createdBy : { type : Date, index : true, default : Date.now },
 
     reviewed : { type : Boolean, default : () => false, index : true },
     reply : [{

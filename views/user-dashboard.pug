@@ -4,24 +4,61 @@ block crumbs
     li Dashboard
 
 block main-body
+    -var shouldShowBar = completion !== 9
+
+    .completion-bar(style='display:' + (shouldShowBar ? 'block' : 'none'))
+        - var completed  = ((completion/9) * 100)
+        - var widthStyle = "width:"+ completed +"%"
+        .completion-progress(style=""+widthStyle)
+        .completion-message
+            span Your profile is
+            span.percentage #{ Math.ceil(completed) }%
+            span complete.
+            a(href="#").btn Complete Profile
     .container#user-dashboard
         .row
-            .col-md-3.col-sm-12.remove-padding
+            .col-md-3.col-xs-12.remove-padding
                 ul.user-nav
                     li(data-for="user-compare" class=comparing ? '' : 'selected')
                         a(href="#") Compare Cars
                     if comparing
                         li(data-for="user-comparing").selected
                             a(href="#") Comparing results
+                    li(data-for="user-messages")
+                        a(href="#") Messages
                     li(data-for="user-builds")
                         a(href="#") Builds
                     li(data-for="user-interests")
                         a(href="#") Interests
-                    li(data-for="user-social")
-                        a(href="#") Social
+                    li(data-for="user-settings")
+                        a(href="#") Personal
                     //- li(data-for="user-settings")
                     //-     a(href="#") Settings
-            .col-md-9.col-sm-12.dashboard-section
+            .col-md-9.col-xs-12.dashboard-section
+                .selected-item-content#user-messages
+                    .messages-section.container
+                        .email-messages
+                            //- h3 Emails
+                            table.table
+                                thead.thead-dark
+                                    tr
+                                        th(colspan=2) Emails
+                                    tr
+                                        th Type
+                                        th Datetime
+                                tbody
+                            ul.pagination
+                        .chat-messages
+                            table.table
+                                thead.thead-dark
+                                    tr
+                                        th(colspan=3) Chat Messages
+                                    tr
+                                        th From
+                                        th Message
+                                        th Datetime
+                                tbody
+                            ul.pagination
                 .selected-item-content#user-builds
                   .build-parent-div.col-xs-12.no-padding
                     .builds-list
@@ -39,23 +76,41 @@ block main-body
                         //-         .builds-child-item Special Edition Sedan
                         //-       .builds-child-flex
                         //-         .builds-child-item.add-info Additional Options: TIRES: 205/45R17 FR &amp; 235/40R18 RR 3-SEASON | WHEELS: 17" X 7.0" FR &amp; 18" X 8.0" RR SPIDER ALLOY | CARBON FIBER INTERIOR TRIM GROUP Carbon Fiber Cluster Bezel | Carbon Fiber I/P Bezel, Carbon Fiber Air Vents | Carbon Fiber Shift Bezel | BLACK, BLACK LEATHER TRIMMED BUCKET SEATS
-                        
                 .selected-item-content#user-interests
-                .selected-item-content#user-social
+                .selected-item-content#user-settings
                   .social-cont
-                    form(method='POST' action='/user/social')
+                    form#settings-form
                       div#message-social
                         p#message-social-text
                       div.form-group
                         .social-fi
-                          label(for='facebook') Facebook Handle
-                          input#facebook(type='text', placeholder='Facebook Handle' value= currentDetails ? currentDetails.social.facebook : '')
+                          label(for='facebook') Facebook
+                          input(type='text' placeholder='Facebook' name="facebook" value= currentDetails ? currentDetails.social.facebook : '')
                         .social-fi
-                          label(for='facebook') Instagram Handle
-                          input#Instagram(type='text', placeholder='Instagram Handle' value= currentDetails ? currentDetails.social.instagram : '')
+                          label(for='instagram') Instagram
+                          input(type='text' placeholder='Instagram' name="instagram" value= currentDetails ? currentDetails.social.instagram : '')
                         .social-fi
-                          label(for='facebook') Twitter Handle
-                          input#Twitter(type='text', placeholder='Twitter Handle' value=currentDetails ? currentDetails.social.twitter : '')
+                          label(for='twitter') Twitter
+                          input(type='text' placeholder='Twitter' name="twitter" value=currentDetails ? currentDetails.social.twitter : '')
+                      div.form-group
+                        .social-fi
+                          label(for='name') Name
+                          input(type='text' name="name" placeholder='Name' value=user.name)
+                        .social-fi
+                          label(for='phone') Phone Number
+                          input(type='text' name="phoneNumber" placeholder='Phone Number' value=user.phoneNumber)
+                        .social-fi
+                          label(for='address') Address
+                          input(type='text' name="street" placeholder='Address' value=currentDetails ? currentDetails.address.street : '')
+                        .social-fi
+                          label(for='city') City
+                          input(type='text' name="city" placeholder='City' value=currentDetails ? currentDetails.address.city : '')
+                        .social-fi
+                          label(for='state') State
+                          input(type='text' name="state" placeholder='State' value=currentDetails ? currentDetails.address.state : '')
+                        .social-fi
+                          label(for='zip') ZIP Code
+                          input(type='text' name="zip" placeholder='ZIP Code' value=currentDetails ? currentDetails.address.zip : '')
                         .social-fi
                           button(id='social-button' type='submit') Save
                 .selected-item-content#user-compare(class=comparing ? '' : 'selected')

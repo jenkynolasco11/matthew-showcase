@@ -17,8 +17,9 @@
                 input(type="text" name="email"  placeholder="Email" required)
                 input(type="text" name="phoneNumber" placeholder="Phone Number" required)
                 input(type="password" name="pass" placeholder="Password" min=8 required).not-match
-                input(type="password" name="passwordConfirm" placeholder="Confirm Password" min=8 required).not-match
+                input(type="password" name="passConfirm" placeholder="Confirm Password" min=8 required).not-match
                 input(type="hidden" name="type" value="signup")
                 input(type="submit" value="Submit")
         .cancel
             span Cancel
+            span.error-message

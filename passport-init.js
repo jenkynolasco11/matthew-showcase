@@ -6,7 +6,6 @@ module.exports = (passport) => {
     const User = mongoose.model('user')
 
     passport.serializeUser((user, done) => {
-        // console.log(user)
         return done(null, user._id)
     })
 
@@ -20,19 +19,18 @@ module.exports = (passport) => {
         passReqToCallback: true
     }, async (req, username, pass, done) => {
         try {
-            console.log(req.body)
             const user = await User.findOne({ username })
 
             console.log(username)
 
             if(!user) {
                 console.log('Username not found by name: ' + username)
-                return done(null, false)
+                return done(null, false, 'There is no user registered under that email')
             }
 
             else if (!user.validPassword(pass)) {
                 console.log('Password incorrect')
-                return done(null, false)
+                return done(null, false, 'Password Is Incorrect')
             }
 
             user.updateLastLogin()
@@ -52,23 +50,21 @@ module.exports = (passport) => {
             //
             const { name, email, pass, phoneNumber } = req.body
 
-            // console.log(email, phoneNumber)
-
             const user = await User.findOne({ $or : [{ email }, { username : email }, { phoneNumber } ]})
-
-            // console.log(user)
 
             if(user) {
                 console.log(`User ${ email } already exists...`)
+                console.log(user.validPassword(pass))
                 // console.log(`Password does${ user.validPassword(pass) ? '' : 'n\'t' } match`)
 
                 if(user.validPassword(pass)) {
+                    // console.log('Password is valid... Signing in...')
                     user.updateLastLogin()
 
                     return done(null, user)
                 }
 
-                return done('User and password doesn\'t match', null, 'dnt match')
+                return done('User and password don\'t match', null, { info : 'Invalid Password' })
             }
 
             const newUser = new User({

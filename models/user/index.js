@@ -10,7 +10,7 @@ const UserSchema = new Schema({
     name : { type : String, required : true },
     phoneNumber : { type : String, required : true, unique : { index : true }},
     email : { type : String, required : true, unique : { index : true }},
-    createdBy : { type : Date, default : Date.now },
+    createdBy : { type : Date, index : true, default : Date.now },
     lastLogin : { type : Date, default : Date.now },
     deleted : { type : Boolean, default : () => false, index : true },
 })
@@ -22,6 +22,12 @@ const UserDetailsSchema = new Schema({
         facebook : String,
         twitter : String,
     },
+    address : { type : {
+        street : String,
+        city : String,
+        state : String,
+        zip : String,
+    }, default : () => ({ street : '', city : '', state : '', zip : '' })}
 })
 
 UserSchema.methods.generateHash = function(pass) {

@@ -5,7 +5,7 @@ var ChatSchema = new Schema({
     from : String,
     to : String,
     msg : String,
-    timestamp : { type : Date, index : true },
+    timestamp : { type : Date, index : true, index : true },
     name : { type : String, index : true },
     email : { type : String, index : true },
     read : { type : Boolean, default : () => false, index : true },

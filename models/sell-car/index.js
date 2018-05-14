@@ -16,7 +16,7 @@ var SellSchema = new Schema({
     vin : { type : String, max : 17 },
     // reminded : { type : Boolean, default : () => 0, index : true },
     reviewed : { type : Boolean, default : () => false, index : true },
-    createdBy : { type : Date, default : Date.now },
+    createdBy : { type : Date, index : true, default : Date.now },
     reply : [{
         text : { type : String, default : () => [] },
         createdBy : { type : Date, default : Date.now }

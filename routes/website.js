@@ -163,9 +163,23 @@ function saveToDatabase(body) {
     }
 }
 
-function stripData(data, cb) {
+function toLowerCase(obj) {
+    const data = {}
+
+    Object.keys(obj).forEach(k => {
+        if(typeof obj[ k ] === 'obj' && !Array.isArray(obj[ k ])) data [ k ] = toLowerCase(obj[ k ])
+
+        else data[ k ] = obj[ k ].toLowerCase()
+    })
+
+    return data
+}
+
+function stripData(rawData, cb) {
     let name = ''
     const emailData = {}
+
+    const data = toLowerCase(rawData)
 
     if (!data.email) return null
 
@@ -178,9 +192,9 @@ function stripData(data, cb) {
     emailData.subject = `${ data.type } - ${ name }`
 
     const body =
-        data.type === 'Credit App' ?
+        data.type === 'credit app' ?
         templates.creditApp(data) :
-        data.type === 'Contact Us' ?
+        data.type === 'contact us' ?
         templates.contactUs(name, data.email, data.message, ('subject' in data), ('subject' in data) ? data.subject : data.phone) :
         templates.sellCar(name, data.email, data.phone, data.vYear, data.vMake, data.vModel, data.vMileage, data.VIN, data.vCondition)
 
@@ -245,10 +259,12 @@ function filterCarData(car) {
 
 route.get('/:route', async (req, res, next) => {
     const route = req.params.route
-    const user = req.isAuthenticated() ? req.user : ''
+    let user = req.isAuthenticated() ? req.user : ''
 
-    // console.log(req.isAuthenticated())
-    // console.log(req.user)
+    if(user.type === 'admin' && route !== 'admin') {
+        req.logout()
+        user = ''
+    }
 
     if (route.match(/^service-/)) {
         const view = route.slice(8)
@@ -286,10 +302,17 @@ route.get('/:route', async (req, res, next) => {
         let years = null
 
         try {
-            const currentDetails = await UserDetails.findOne({ user : user._id })
+            const currentDetails = await UserDetails.findOne({ user : user._id }).lean()
+
+            let completion = 2
+
+            if(currentDetails) {
+                Object.keys(currentDetails.social).forEach(n => completion += +(currentDetails.social[ n ] !== '') )
+                Object.keys(currentDetails.address).forEach(n => completion += +(currentDetails.address[ n ] !== '') )
+            }
 
             years = Object.keys(cars)
-            
+
             const { car1, car2, compare, year, make, model } = req.query
 
             let c1 = null
@@ -350,10 +373,11 @@ route.get('/:route', async (req, res, next) => {
                 c2.img = img2
             }
 
-            const renderBody = { 
+            const renderBody = {
                 user,
+                completion,
                 currentDetails,
-                title : `Dashboard - ${ user.name }`, 
+                title : `Dashboard - ${ user.name }`,
                 isAuth : req.isAuthenticated(),
                 carOpts : { carPhoto,year,make,model,years : [ ...years.reverse() ]},
                 c1,
@@ -361,7 +385,7 @@ route.get('/:route', async (req, res, next) => {
                 comparing : !!c1 && !!c2,
             }
 
-            console.log(renderBody)
+            // console.log(renderBody)
 
             return res.render('user-dashboard', renderBody)
         } catch (e) {
@@ -440,7 +464,12 @@ route.get('/details/(:id?)', (req, res) => {
 })
 
 route.get('/', function (req, res) {
-    const user = req.isAuthenticated() ? req.user : ''
+    let user = req.isAuthenticated() ? req.user : ''
+
+    if(user.type === 'admin') {
+        req.logout()
+        user = ''
+    }
 
     Car.find({ isFeatured : true }, (err, docs) => {
         const authInfo = { user, isAuth : req.isAuthenticated() }

@@ -65,7 +65,7 @@ function onCompareFormSubmit(e) {
         window.location.href = `/dashboard?comparing=true&car1=${ car1Stats }&car2=${ car2Stats }`
     }
 
-    console.log(comparingItems)
+    // console.log(comparingItems)
 }
 
 function onSavedCompareChange(e) {
@@ -121,7 +121,7 @@ function onSavedCompareChange(e) {
         $(parent).children('[class*=compare-select-]').children('select').removeAttr('disabled')
     }
 
-    console.log(comparingItems)
+    // console.log(comparingItems)
 }
 
 function setDefaultValues() {
@@ -142,7 +142,7 @@ function setDefaultValues() {
     $.get('/car/compare/saved', function(resA) {
         if(resA.ok) {
             var cars = resA.cars
-            console.log(cars)
+            // console.log(cars)
 
             var select = $('.saved-compare-select select')
 
@@ -154,7 +154,7 @@ function setDefaultValues() {
         if(resB.ok) {
             var builds = resB.builds
 
-            console.log(builds)
+            // console.log(builds)
 
             var select = $('.saved-compare-select select')
 
@@ -187,7 +187,7 @@ function onYearChange() {
     })
 
     comparingItems[ key ].year = year
-    console.log(comparingItems)
+    // console.log(comparingItems)
 }
 
 function onMakeChange() {
@@ -216,7 +216,7 @@ function onMakeChange() {
 
     comparingItems[ key ].make = make
     // console.log(key)
-    console.log(comparingItems)
+    // console.log(comparingItems)
 }
 
 function onModelChange() {
@@ -248,7 +248,7 @@ function onModelChange() {
     })
 
     comparingItems[ key ].model = model
-    console.log(comparingItems)
+    // console.log(comparingItems)
 }
 
 // function onTrimChange() {

@@ -18,7 +18,7 @@ var SubmissionSchema = new Schema({
     }],
     reviewedBy : Date,
     reviewed : { type : Boolean, default : () => false, index : true },
-    createdBy : { type : Date, default : Date.now },
+    createdBy : { type : Date, index : true, default : Date.now },
     body: Schema.Types.Mixed
 })
 
