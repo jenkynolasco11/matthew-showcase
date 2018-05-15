@@ -268,8 +268,8 @@ route.delete('/delete/:id', (req, res) => {
 
 route.put('/:id/like/:user', async (req, res) => {
     const { id, user } = req.params
-    console.log('liked the car!')
-    console.log(user);
+    // console.log('liked the car!')
+    // console.log(user);
     const criteria = {}
 
 
@@ -288,7 +288,7 @@ route.put('/:id/like/:user', async (req, res) => {
             await Car.findByIdAndUpdate(car._id, { [ pullOrPush ] : { likedBy : user }})
         }
 
-        console.log(user)
+        // console.log(user)
         return res.send({ ok : true })
     } catch (e) {
         console.log(e)
@@ -330,7 +330,7 @@ route.get('/compare/stored-stats', async (req, res) => {
     try {
         const cars = await ReferenceCar.find(query, trim && trim !== 'none' ? projection : {}).lean()
 
-        console.log(cars)
+        // console.log(cars)
 
         return res.send({ ok : true, cars })
     } catch (e) {

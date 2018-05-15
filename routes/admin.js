@@ -42,7 +42,12 @@ route.get('/stats', async (req, res) => {
 })
 
 route.get('/*', function(req, res) {
-    res.render('admin')
+    // if(!req.isAuthenticated()) return res.redirect('/')
+    if(req.user) {
+        if(req.user.type !== 'admin') return res.redirect('/dashboard')
+    }
+
+    return res.render('admin')
 })
 
 admin.use('/admin', route)

@@ -12,17 +12,21 @@ const setEmailToUser = (req, res, next) => {
 }
 
 const setToLowercase = (req, res, next) => {
-    console.log(req.body)
+    // console.log(req.body)
     if(req.body.name) req.body.name = req.body.name.toLowerCase()
 
-    req.body.email = req.body.email.toLowerCase()
+    if(req.body.email) req.body.email = req.body.email.toLowerCase()
 
     next()
 }
 
 route.get('/success', (req, res) => {
-    // console.log(req)
     const user = req.user || null
+    // const { url } = req.body
+
+    // console.log(url, user)
+
+    // if(url === 'admin' && user.type === 'customer') return res.send({ ok : false })
 
     req.login(user, err => {
         if(err) return res.send({ ok : false })
@@ -33,7 +37,7 @@ route.get('/success', (req, res) => {
 
         if(type === 'admin') return res.send({ ok : true, redirectTo : '/admin' })
 
-        return res.send({ ok : true, user : { _id, email, name, phoneNumber, username }})
+        return res.send({ ok : true, user : { _id, email, name, phoneNumber, username }, isCustomer : type !== 'admin' })
 
         // console.log(`Error... ${ err }`)
     })

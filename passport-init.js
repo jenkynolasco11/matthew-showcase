@@ -18,10 +18,10 @@ module.exports = (passport) => {
         passwordField: 'pass',
         passReqToCallback: true
     }, async (req, username, pass, done) => {
+        const { token = '' } = req.body
+
         try {
             const user = await User.findOne({ username })
-
-            console.log(username)
 
             if(!user) {
                 console.log('Username not found by name: ' + username)
@@ -32,6 +32,11 @@ module.exports = (passport) => {
                 console.log('Password incorrect')
                 return done(null, false, 'Password Is Incorrect')
             }
+
+            // console.log(`User => ${ user.type }`)
+            // console.log(`Token => ${token}`)
+            // console.log(token === 'admin' && user.type !== 'customer')
+            if(token === 'admin' && user.type !== 'admin') return done(null, false, 'Not an Admin')
 
             user.updateLastLogin()
 

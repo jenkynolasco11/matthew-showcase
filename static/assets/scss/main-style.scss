@@ -4197,9 +4197,19 @@ table.icons {
 	background-color : #333;
 
 	.completion-progress {
+		transition : all .5s ease-in-out;
 		height : 100%;
-		background-color : rgb(191, 191, 191);
-		// transform: skewX(-45deg);
+		background-color : rgb(58, 232, 0);
+		position : relative;
+
+		&:after {
+			content : '';
+			position : absolute;
+			right : -20px;
+			border-left : 20px solid rgb(58, 232, 0);
+			border-top : 18px solid transparent;
+			border-bottom : 18px solid transparent;
+		}
 	}
 
 	.completion-message {
@@ -4224,12 +4234,12 @@ table.icons {
 
 			&.percentage {
 				color : red;
+				text-shadow : 1px 0 1px white, 0 1px 1px white, 1px 1px 1px white, 0 0 1px white;
 			}
 		}
 		a {
 			text-transform : uppercase;
 			height : 20px;
-			// background-color : #8e8e8e;
 			background-color : #ea0000;
 			vertical-align : middle;
 			font-size : .75rem;
@@ -4238,11 +4248,21 @@ table.icons {
 			border-radius : 2px;
 			text-shadow : 1px 0 1px black, 0 1px 1px black, 1px 1px 1px black, 0 0 1px black;
 			font-family : "Lato", sans-serif;
-			// text-transform : capitalize;
+			animation : pulsate 2s linear infinite;
 
 			@media screen and (max-width: 420px){
 				font-size : .55rem;
 				padding : 5px 2px;
+			}
+
+			@keyframes pulsate {
+				0%, 100% {
+					box-shadow : 0 0 10px 0px rgb(143, 143, 143);
+				}
+
+				50% {
+					box-shadow : 0 0 10px 5px rgb(143, 143, 143);
+				}
 			}
 		}
 	}
@@ -4253,8 +4273,19 @@ table.icons {
 		@media screen and (min-width: 768px) {
 			border-right: 1px solid rgb(221, 221, 221);
 		}
+
+		// @media screen and (max-width: 576px) {
+		// 	border-bottom : 1px solid red;
+		// 	margin-bottom : 20px;
+		// }
 	}
 	.user-nav {
+		@media screen and (max-width: 768px) {
+			border-bottom : 1px solid #eee;
+			margin-bottom : 20px;
+			padding-bottom : 20px;
+		}
+
 		li {
 			padding: 10px 40px;
 			position: relative; // transition : all .2s linear;
@@ -4285,6 +4316,7 @@ table.icons {
 			}
 		}
 	}
+
 	.dashboard-section {
 		height: 1200px;
 		.selected-item-content {
@@ -4394,6 +4426,205 @@ table.icons {
 							}
 						}
 					}
+				}
+			}
+			&#user-docs {
+				#file-uploader {
+					position : relative;
+
+					[type=file] {
+						display : none;
+					}
+
+					input {
+						font-size : 14px;
+						width : 160px;
+						padding : 10px 20px;
+
+						@media screen and (max-width : 768px) {
+							font-size : 12px;
+						}
+
+						&[type=submit] {
+							position : absolute;
+							right : 24px;
+							bottom : -50px;
+						}
+					}
+
+					.file-section {
+						display : flex;
+						align-items : center;
+
+						span {
+							padding : 0 20px;
+						}
+					}
+
+					.drag-zone {
+						margin : 10px 40px 20px;
+						position : relative;
+						overflow-x : auto;
+						min-height : 260px;
+						max-width : 90%;
+						background-color : rgb(214, 214, 214);
+						display : flex;
+						align-items : center;
+						padding-bottom : 60px;
+
+						.img-itm {
+							flex : 1;
+							display : flex;
+							flex-flow : column nowrap;
+							align-items : center;
+							justify-content : center;
+							height : 150px;
+							min-width : 150px;
+							max-width : 150px;
+							position : relative;
+							border : 1px solid #eee;
+							border-radius : 2px;
+
+							// background-color : red;
+
+							margin-right : 20px;
+							margin-left : 20px;
+
+							.img {
+								height : 150px;
+								width : 150px;
+								overflow : hidden;
+								display : flex;
+								align-items : center;
+								justify-content : center;
+
+								img {
+									width : 100%;
+								}
+							}
+
+
+							.close-handle {
+								height : 22px;
+								width : 22px;
+								background-color : red;
+								border-radius : 50%;
+								border : 1px solid white;
+								position : absolute;
+								top : -4px;
+								right : -4px;
+
+								&:hover {
+									opacity : 0.5;
+									background-color : rgb(145, 0, 0);
+								}
+								.close {
+									height : 100%;
+									width : 100%;
+									background-color : transparent;
+									cursor : pointer;
+
+									&:before, &:after {
+										content : '';
+										position : absolute;
+										margin-top : 9px;
+										margin-left : 2px;
+										background-color : white;
+										height : 2px;
+										width : 80%;
+									}
+
+									&:before {
+										transform : rotate(-45deg);
+									}
+									&:after {
+										transform : rotate(45deg);
+									}
+								}
+							}
+
+							.title {
+								position : absolute;
+								top : 140px;
+								padding : 2px 4px;
+								max-width : 160px;
+								background-color : red;
+								color : white;
+								font-size : 14px;
+								word-break : break-word;
+							}
+						}
+
+						&.dragging {
+							&:after{
+								position : absolute;
+								content : 'Drop your file here';
+								background-color : rgba(225, 225, 225, 0.57);
+								height : 100%;
+								width : 100%;
+								left : 0;
+								top : 0;
+								display : flex;
+								align-items : center;
+								justify-content : center;
+							}
+						}
+
+						// @media screen and (max-width : 768px) {
+						// 	display : none;
+						// }
+					}
+				}
+
+				.already-uploaded-files {
+					margin : 80px auto 20px;
+					border-radius : 2px;
+					border : 1px solid #eee;
+					width : 90%;
+
+					.uploaded-file {
+						padding : 10px 10px;
+						display : flex;
+						border-bottom : 1px solid #eee;
+
+						& > * {
+							display : flex;
+							align-items : center;
+						}
+
+						.index {
+							flex : 1;
+						}
+
+						.name {
+							flex : 3;
+						}
+
+						.img {
+							flex : 1;
+							justify-content : center;
+							height : 44px;
+
+							a {
+								height : 100%;
+
+
+								img {
+									height : 100%;
+								}
+							}
+						}
+
+						&:not(.header):hover {
+							background-color : #ddd;
+						}
+					}
+				}
+			}
+			&#user-messages {
+				#open-chat {
+					padding : 4px 10px;
+					font-size : 15px;
 				}
 			}
 			&.selected {

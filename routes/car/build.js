@@ -196,8 +196,8 @@ route.get('/user', async (req, res) => {
         const likedCars = await Car.find({ likedBy: req.user._id }).lean()
 
         const builds = blds.map(b => ({...b, imgurl : cars[ b.options.year ][ b.options.make ].filter(n => ((n.Trim === b.options.trim) && n.Model === b.options.model))[ 0 ].Photo }))
-        
-        console.log(builds)
+
+        // console.log(builds)
 
         return res.send({ ok : true, builds, likedCars, user: req.user })
     } catch (e) {
@@ -223,7 +223,7 @@ route.post('/new', (req, res) => {
     const options = getOptions(body.options.split('|'))
     const data = { ...body, ...options, url }
 
-    console.log(data)
+    // console.log(data)
 
     const name = `${ data.firstname } ${ data.lastname }`
     const htmlBody = buildAppTemplate(data)
@@ -261,18 +261,20 @@ route.get('/trending', (req, res) => {
     })
 })
 
-route.get('/all', (req, res) => {
-    console.log('right here....')
-    BuiltCar.find({
-        $or : [  {reviewed : false }, { reviewed : { $exists : false }} ]
-    }).then(builds => {
-        return res.send({ ok : true, builds })
-    })
-    .catch(err => {
-        console.log(err)
+route.get('/all', async (req, res) => {
+    // console.log('right here....')
+    try {
+        const builds = await BuiltCar.find({
+            $or : [  {reviewed : false }, { reviewed : { $exists : false }} ]
+        }).sort({ createdBy : -1 })
 
-        return res.send({ ok : false })
-    })
+        return res.send({ ok : true, builds })
+
+    } catch (e) {
+        console.log(e)
+    }
+
+    return res.send({ ok : false })
 })
 
 route.get('/compare/stats', async (req, res) => {
@@ -289,7 +291,7 @@ route.get('/compare/stats', async (req, res) => {
             const car = selections.find(t => t.Model === model && t.Trim === trim)
 
             if(car) {
-                console.log(`Car => ${JSON.stringify(car, null, 3)}`)
+                // console.log(`Car => ${JSON.stringify(car, null, 3)}`)
 
                 return res.send({ ok : true, car })
             }

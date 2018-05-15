@@ -191,6 +191,7 @@ sendButton.on('click', sendChatMessage)
 chatForm.on('submit', submitChatInfo)
 
 $(document).ready(function() {
+    // console.log()
     // Mount socket handlers
     socketFuncs(socketIO)
     // add class wiggle to chat instead of open.
@@ -200,9 +201,26 @@ $(document).ready(function() {
 
     if(!checkIfCached()) return
 
+    var user = window.sessionStorage.getItem('user')
+
+    var isFocus = /open/.test(chatBox.attr('class'))
+
+    if(user) {
+        var u = JSON.parse(user)
+        var name = u.name
+        var email = u.email
+
+        chatStatsOnClient.name = name
+        chatStatsOnClient.email = email
+        chatStatsOnClient.isFocus = isFocus
+
+        $('#overlay-data').addClass('is-cached')
+
+        return socketIO.emit('chat:get old messages', { name : name, email : email })
+    }
+
     var name = window.sessionStorage.getItem('chat:name')
     var email = window.sessionStorage.getItem('chat:email')
-    var isFocus = /open/.test(chatBox.attr('class'))
 
     chatStatsOnClient.name = name
     chatStatsOnClient.email = email
