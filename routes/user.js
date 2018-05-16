@@ -6,7 +6,9 @@ const multer = require('multer')
 // const fs = require('fs')
 const models = require('../models')
 
-const { User, UserDetails, ChatMessage : Chat, Submission : Message } = models
+const { User, UserDetails, ChatMessage : Chat, Submission : Message, BuiltCar, Car } = models
+
+// const carsFile = fs.readFileSync(path.resolve(__dirname, './cars-file-2.json'), 'utf8')
 
 const storage = multer.diskStorage({
   destination : (req, file, cb) => {
@@ -29,6 +31,13 @@ const user = Router()
 
 function checkIfAuthenticated(req, res, next) {
   if(!req.isAuthenticated()) return res.send({ ok : false })
+
+  return next()
+}
+
+function checkIfAdmin(req, res, next) {
+  if(!req.isAuthenticated()) return res.send({ ok : false })
+  else if(req.user.type !== 'admin' ) return res.send({ ok : false, message : 'Please, contact an Administrator for JYD Auto Leasing' })
 
   return next()
 }
@@ -87,38 +96,45 @@ route.post('/social', checkIfAuthenticated, async (req, res) => {
   return res.send({ ok : false })
 })
 
+route.get('/all', checkIfAdmin, async (req, res) => {
+  const { skip = 0, limit = 10 } = req.query
 
-  // var socialDetails = new UserDetails({
-  //   user: req.user._id,
-  //   social : { instagram, facebook, twitter },
-  //   address : { street, city, zip, state }
-  // })
+  try {
+    const projection = { createdBy : 1, email : 1, name : 1, phoneNumber : 1 }
 
-  // socialDetails.save(err => {
-  //   console.log(req.user._id)
-  //   if (err) {
-  //     if (err.code == 11000) {
-  //       UserDetails.findOneAndUpdate(
-  //         {user: req.user._id}, /* query */
-  //         {social: {
-  //           instagram: req.body.igHandle,
-  //           facebook: req.body.fbHandle,
-  //           twitter: req.body.twHandle
-  //         }}, /* update */
-  //         { upsert: false}, function(err) {
-  //           if (err) {
-  //             return err;
-  //           }
-  //         });
-  //         return res.send({ ok : true, message: 'Information Updated!' })
+    const count = await User.count({ type : 'customer' })
+    const users = await User.find({ type : 'customer' }, projection).sort({ createdBy : -1 }).skip(+skip).limit(+limit).lean()
 
-  //     }
-  //     return res.send({ ok : false, user: req.user })
-  //   }
-  //   console.log('success')
-  //   return res.send({ ok : true, message: 'Information Saved' })
-  // })
-// })
+    return res.send({ ok : true, users, count })
+  } catch (e) {
+    console.log(e)
+  }
+
+  return res.send({ ok : false })
+})
+
+route.get('/info/:id', /*checkIfAdmin,*/ async (req, res) => {
+  const { id : user } = req.params
+
+  try {
+    const { email } = await User.findById(user).lean()
+
+    const userdetails = await UserDetails.findOne({ user }).lean()
+    const cars = await Car.find({ likedBy : user }).lean()
+    const emails = await Message.find({ email }).lean()
+    const builds = await BuiltCar.find({ email }).lean()
+
+    console.log(emails, builds, userdetails)
+    // const messages = await Chat.find({  })
+
+    return res.send({ ok : true, emails, builds, userdetails, cars })
+
+  } catch (e) {
+    console.log(e)
+  }
+
+  return res.send({ ok : false })
+})
 
 route.get('/messages/count', checkIfAuthenticated, async (req, res) => {
   const { email } = req.user

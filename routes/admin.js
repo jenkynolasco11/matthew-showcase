@@ -1,20 +1,23 @@
-var Router = require('express').Router
-var multer = require('multer')
-var path = require('path')
+const Router = require('express').Router
+// const multer = require('multer')
+// const path = require('path')
 
 const models = require('../models')
 
-var route = Router()
-var admin = Router()
+const route = Router()
+const admin = Router()
 
-var upload = multer({ dest : '../img-uploads' })
+// const upload = multer({ dest : '../img-uploads' })
 
-const Car = models.Car
-const BuiltCar = models.BuiltCar
-const SellCar = models.SellCar
-const Message = models.Message
-const CreditApp = models.CreditApp
-const DealSubscription = models.DealSubsription
+const { Car, BuiltCar, DealSubsription : DealSubscription, Submission : Messages, SellCar } = models
+// const Car = models.Car
+// const BuiltCar = models.BuiltCar
+// // const SellCar = models.SellCar
+// // const Message = models.Message
+// // const CreditApp = models.CreditApp
+// const
+// const DealSubscription = models.DealSubsription
+
 // const Refer = models.Refer
 // const Newsletter = models.Newsletter
 
@@ -24,14 +27,17 @@ route.get('/stats', async (req, res) => {
     try {
         const cars = await Car.count({})
         const builds = await BuiltCar.count({ $or : [ { reviewed : false }, { reviewed : { $exists : false }} ]})
+        const inbox = await Messages.count({ $or : [ { reviewed : false }, { reviewed : { $exists : false }} ]})
         const toSell = await SellCar.count({ $or : [ { reviewed : false }, { reviewed : { $exists : false }} ]})
-        const credAppMsgs = await CreditApp.count({ $or : [ { reviewed : false }, { reviewed : { $exists : false }} ]})
-        const regMsgs = await Message.count({ reviewed : false })
+        // const credAppMsgs = await CreditApp.count({ $or : [ { reviewed : false }, { reviewed : { $exists : false }} ]})
+        // const regMsgs = await Message.count({ reviewed : false })
         const interested = await DealSubscription.count({ $or : [ { reviewed : false }, { reviewed : { $exists : false }} ]})
 
         // console.log(toSell, credAppMsgs, regMsgs)
 
-        const data = { cars, builds, toSell, inbox : credAppMsgs + regMsgs + toSell, interested }
+        const data = { cars, builds, toSell, inbox  }
+
+        console.log(data)
 
         return res.send({ ok : true, data })
     } catch (e) {

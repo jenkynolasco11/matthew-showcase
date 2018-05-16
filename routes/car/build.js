@@ -262,11 +262,11 @@ route.get('/trending', (req, res) => {
 })
 
 route.get('/all', async (req, res) => {
-    // console.log('right here....')
+    const { skip = 0, limit = 10 } = req.query
+    const criteria = { $or : [  {reviewed : false }, { reviewed : { $exists : false }}]}
+
     try {
-        const builds = await BuiltCar.find({
-            $or : [  {reviewed : false }, { reviewed : { $exists : false }} ]
-        }).sort({ createdBy : -1 })
+        const builds = await BuiltCar.find(criteria).sort({ createdBy : 1 }).skip(+skip).limit(+limit)
 
         return res.send({ ok : true, builds })
 
