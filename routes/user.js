@@ -16,7 +16,9 @@ const storage = multer.diskStorage({
     const { username : uname } = req.user
     const { originalname : fname } = file
 
-    cb(null, `${ uname } - ${ fname }`)
+    const newFileName = `${ uname } - ${ fname }`
+    // console.log(newFileName)
+    cb(null, newFileName)
   }
 })
 
@@ -31,32 +33,59 @@ function checkIfAuthenticated(req, res, next) {
   return next()
 }
 
-route.post('/social', checkIfAuthenticated, (req, res) => {
-  if (!req.isAuthenticated()) {
-    console.log('redirected kicked in!')
-    return res.send({ok: false, message: 'Not logged in'})
+route.post('/social', checkIfAuthenticated, async (req, res) => {
+  const { _id : user } = req.user
+  const {
+    instagram = '',
+    facebook = '',
+    twitter = '',
+    street = '',
+    city = '',
+    state = '',
+    zip = '',
+    name = '',
+    phoneNumber = '',
+  } = req.body
+
+  const data = {
+    user,
+    social : {
+      instagram,
+      facebook,
+      twitter
+    },
+    address : {
+      street,
+      city,
+      state,
+      zip
+    }
   }
 
-  const { _id : user } = req.user
-  const { instagram = '', facebook = '', twitter = '', street = '', city = '', state = '', zip = '' } = req.body
-
-  const data = { user, social : { instagram, facebook, twitter }, address : { street, city, state, zip }}
-
-  UserDetails.findOneAndUpdate({ user }, data, { upsert : true, new : true }, (err, _doc) => {
-    if(err) return res.send({ ok : false, user : req.user })
+  try {
+    const usr = await User.findOneAndUpdate({ _id : user }, { name, phoneNumber }, { new : true })
+    const doc = await UserDetails.findOneAndUpdate({ user }, data, { upsert : true, new : true }).lean()
+  // , (err, _doc) => {
+  //   if(err) return res.send({ ok : false, user : req.user })
 
     let completion = 2
 
-    const doc = _doc.toJSON()
+    // const doc = _doc.toJSON()
 
     Object.keys(doc.social).forEach(n => completion += +(doc.social[ n ] !== '') )
     Object.keys(doc.address).forEach(n => completion += +(doc.address[ n ] !== '') )
 
-    console.log(doc)
-    console.log(completion)
+    // console.log(doc)
+    // console.log(completion)
 
     return res.send({ ok : true, message : 'Information Updated', completion })
-  })
+
+  } catch (e) {
+    console.log(e)
+  }
+
+  return res.send({ ok : false })
+})
 
 
   // var socialDetails = new UserDetails({
@@ -89,7 +118,7 @@ route.post('/social', checkIfAuthenticated, (req, res) => {
   //   console.log('success')
   //   return res.send({ ok : true, message: 'Information Saved' })
   // })
-})
+// })
 
 route.get('/messages/count', checkIfAuthenticated, async (req, res) => {
   const { email } = req.user
@@ -149,14 +178,14 @@ route.get('/files', checkIfAuthenticated, async (req, res) => {
   const { _id : user, email } = req.user
 
   try {
-    const {files} = await UserDetails.findOne({ user }, { files : 1, _id : 0 })
+    const userdetails = await UserDetails.findOne({ user }, { files : 1, _id : 0 })
 
-    const fnames = files.map(({ path, name }) => {
-      return {
+    const files = userdetails.files
+
+    const fnames = files.map(({ path, name }) => ({
         name : name.replace(new RegExp(email + ' - ', 'i'), ''),
         path : path.replace(/^static\//,'')
-      }
-    })
+    }))
 
     return res.send({ ok : true, fnames })
   } catch (e) {
@@ -167,7 +196,6 @@ route.get('/files', checkIfAuthenticated, async (req, res) => {
 })
 
 async function uploadFiles(req, res, next) {
-  // if(!req.isAuthenticated()) return res.send({ ok : false, message : 'User is not authenticated' })
   const { _id : user } = req.user
   const { files : fls } = req
 
@@ -178,43 +206,32 @@ async function uploadFiles(req, res, next) {
   })
 
   try {
-    // const details = await UserDetails.updateOne({ user }, { $push : { files }})
     const details = await UserDetails.findOne({ user })
 
     const oldFiles = [].concat(details.files ? details.files : [])
 
+    // console.log('FILES=>\n', JSON.stringify(files, null, 2))
+    // console.log('NEW FILES=>\n',JSON.stringify(oldFiles, null, 2))
+
     const filter = []
     oldFiles.forEach(x => filter.push(x.name))
 
-    details.files = [].concat(...oldFiles, [ ...files ].filter(n => !filter.includes(n.name)))
+    const newFiles = [].concat(...oldFiles, [ ...files ].filter(n => !filter.includes(n.name)))
 
-    console.log(files)
+    details.files = newFiles
+
+    // console.log('DETAILS=>\n',JSON.stringify(details, null, 2))
 
     await details.save()
-
-    console.log(details)
-  } catch (e) {
-    console.log(e)
-  }
-
-  return next()
-}
-
-route.post('/files', checkIfAuthenticated, uploads.array('files[]'), uploadFiles, async (req, res) => {
-  if(!req.isAuthenticated()) return res.send({ ok : false, message : 'User is not authenticated' })
-
-  const { email } = req.user
-
-  try {
-    console
 
     return res.send({ ok : true })
   } catch (e) {
     console.log(e)
   }
-
   return res.send({ ok : false })
-})
+}
+
+route.post('/files', checkIfAuthenticated, uploads.array('files[]'), uploadFiles)
 
 user.use('/user', route)
 

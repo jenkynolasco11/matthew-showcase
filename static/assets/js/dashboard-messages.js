@@ -124,13 +124,6 @@ function getChatMessages() {
             var rows = ''
 
             data.chatMessages.forEach(function (msg) {
-            //     rows += `
-            //     <tr>
-            //         <td>${ msg.from }</td>
-            //         <td>${ msg.msg.length > 50 ? msg.msg.slice(0, 50) + '...' : msg.msg }</td>
-            //         <td>${ new Date(msg.timestamp).toLocaleDateString() + ' ' + new Date(msg.timestamp).toLocaleTimeString() }</td>
-            //     </tr>
-            // `
                 rows += `
                     <tr>
                         <td>${ msg.from }</td>
@@ -161,6 +154,5 @@ $(document).ready(function () {
         }
     })
 
-    // openChatButton.on('click', )
-
+    openChatButton.on('click', openChat)
 })

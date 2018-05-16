@@ -63,6 +63,9 @@ function onLogOut() {
                 $(this).on('click', openAuth)
             })
 
+            window.sessionStorage.removeItem('chat:name')
+            window.sessionStorage.removeItem('chat:email')
+
             window.location.href = '/'
         }
     })

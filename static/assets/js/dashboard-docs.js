@@ -37,7 +37,7 @@ function getFiles() {
             data.fnames.forEach(function(f, i) {
                 var element = itemTemplate(f.name, i+1, ''+f.path, '')
 
-                console.log(element)
+                // console.log(element)
 
                 uploadedFiles.append(element)
             })

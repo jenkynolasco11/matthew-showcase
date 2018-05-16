@@ -4,6 +4,7 @@ var mongoose = require('mongoose')
 
 module.exports = (passport) => {
     const User = mongoose.model('user')
+    const UserDetails = mongoose.model('userDetails')
 
     passport.serializeUser((user, done) => {
         return done(null, user._id)
@@ -58,8 +59,8 @@ module.exports = (passport) => {
             const user = await User.findOne({ $or : [{ email }, { username : email }, { phoneNumber } ]})
 
             if(user) {
-                console.log(`User ${ email } already exists...`)
-                console.log(user.validPassword(pass))
+                // console.log(`User ${ email } already exists...`)
+                // console.log(user.validPassword(pass))
                 // console.log(`Password does${ user.validPassword(pass) ? '' : 'n\'t' } match`)
 
                 if(user.validPassword(pass)) {
@@ -75,7 +76,7 @@ module.exports = (passport) => {
             const newUser = new User({
                 email,
                 name,
-                phoneNumber,
+                phoneNumber : phoneNumber.replace(/\D/g, ''),
                 type : 'customer',
                 username : email,
             })
@@ -83,6 +84,15 @@ module.exports = (passport) => {
             newUser.password = newUser.generateHash(pass)
 
             await newUser.save()
+
+            const userDetails = new UserDetails({
+                user : newUser._id,
+                social : { instagram : '', facebook : '', twitter : '' },
+                address : { street : '', city : '', state : '', zip : '' },
+                files : []
+            })
+
+            await userDetails.save()
 
             console.log(`New User ${ email } has registered!`)
 

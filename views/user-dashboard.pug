@@ -102,10 +102,10 @@ block main-body
                       div.form-group
                         .social-fi
                           label(for='name') Name
-                          input(type='text' name="name" placeholder='Name' value=user.name)
+                          input(type='text' name="name" placeholder='Name' required value=user.name)
                         .social-fi
                           label(for='phone') Phone Number
-                          input(type='text' name="phoneNumber" placeholder='Phone Number' value=user.phoneNumber)
+                          input(type='text' name="phoneNumber" placeholder='Phone Number' required value=user.phoneNumber)
                         .social-fi
                           label(for='address') Address
                           input(type='text' name="street" placeholder='Address' value=currentDetails ? currentDetails.address.street : '')

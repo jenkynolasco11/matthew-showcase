@@ -8,7 +8,7 @@ const UserSchema = new Schema({
     password : { type : String, required : true },
     type : { type : String, required : true, index : true, enum : [ 'admin', 'customer' ] },
     name : { type : String, required : true },
-    phoneNumber : { type : String, required : true, unique : { index : true }},
+    phoneNumber : { type : String, required : true, index : true },
     email : { type : String, required : true, unique : { index : true }},
     createdBy : { type : Date, index : true, default : Date.now },
     lastLogin : { type : Date, default : Date.now },
@@ -33,6 +33,12 @@ const UserDetailsSchema = new Schema({
         type : Schema.Types.Mixed,
         // size : Number,
         // name : String
+        // type : {
+        //     path : String,
+        //     size : String,
+        //     type : String,
+        //     size : Number
+        // }
     }]
 })
 

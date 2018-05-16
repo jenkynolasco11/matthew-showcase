@@ -115,7 +115,7 @@ function sendChatMessage() {
 }
 
 function hideOverlay() {
-    $('#overlay-data').fadeOut(400, function() {
+    $('#overlay-data').fadeOut(600, function() {
         $(this).addClass('is-cached')
     })
 }
@@ -158,15 +158,7 @@ function setTypingStat() {
     chatStatsOnClient.isTyping = true
 }
 
-closeChat.on('click', function() {
-    $(chatBox).removeClass('open')
-    $(handle).removeClass('wiggle')
-    chatStatsOnClient.isFocus = false
-
-    if(checkIfCached()) socketIO.emit('chat:chat focus', { focus : false })
-})
-
-handle.on('click', function () {
+function openChat() {
     $(chatBox).addClass('open')
     $(handle).removeClass('wiggle')
     $(messagesCount).removeClass('show-count')
@@ -179,10 +171,19 @@ handle.on('click', function () {
     }
 
     clearTimeout(autoOpenChat)
-    //TODO: send a message through socket saying person is typing
+}
+
+closeChat.on('click', function() {
+    $(chatBox).removeClass('open')
+    $(handle).removeClass('wiggle')
+    chatStatsOnClient.isFocus = false
+
+    if(checkIfCached()) socketIO.emit('chat:chat focus', { focus : false })
 })
 
-messageBox.keyup(function(e){
+handle.on('click', openChat)
+
+messageBox.on('keyup', function(e){
     if(e.keyCode === 13) sendChatMessage()
     else setTypingStat()
 })
@@ -191,44 +192,91 @@ sendButton.on('click', sendChatMessage)
 chatForm.on('submit', submitChatInfo)
 
 $(document).ready(function() {
-    // console.log()
     // Mount socket handlers
     socketFuncs(socketIO)
+
     // add class wiggle to chat instead of open.
     autoOpenChat = setTimeout(function() {
         $(handle).addClass('wiggle')
     }, 5000)
 
-    if(!checkIfCached()) return
 
-    var user = window.sessionStorage.getItem('user')
+    $.get('/auth/is-auth', function(data) {
+        var isFocus = /open/.test(chatBox.attr('class'))
 
-    var isFocus = /open/.test(chatBox.attr('class'))
+        if(data.ok) {
+            var name = data.user.name
+            var email = data.user.email
 
-    if(user) {
-        var u = JSON.parse(user)
-        var name = u.name
-        var email = u.email
+            chatStatsOnClient.name = name
+            chatStatsOnClient.email = email
+            chatStatsOnClient.isFocus = isFocus
 
-        chatStatsOnClient.name = name
-        chatStatsOnClient.email = email
-        chatStatsOnClient.isFocus = isFocus
+            window.sessionStorage.setItem('chat:name', name)
+            window.sessionStorage.setItem('chat:email', email)
 
-        $('#overlay-data').addClass('is-cached')
+            $('#overlay-data').addClass('is-cached')
 
-        return socketIO.emit('chat:get old messages', { name : name, email : email })
-    }
+            socketIO.emit('chat:get old messages', { name : name, email : email })
 
-    var name = window.sessionStorage.getItem('chat:name')
-    var email = window.sessionStorage.getItem('chat:email')
+            return startSocketInterval()
 
-    chatStatsOnClient.name = name
-    chatStatsOnClient.email = email
-    chatStatsOnClient.isFocus = isFocus
+        } else if(checkIfCached()) {
+            var name = window.sessionStorage.getItem('chat:name')
+            var email = window.sessionStorage.getItem('chat:email')
 
-    $('#overlay-data').addClass('is-cached')
+            chatStatsOnClient.name = name
+            chatStatsOnClient.email = email
+            chatStatsOnClient.isFocus = isFocus
 
-    socketIO.emit('chat:get old messages', { name : name, email : email })
+            $('#overlay-data').addClass('is-cached')
 
-    return startSocketInterval()
+            socketIO.emit('chat:get old messages', { name : name, email : email })
+
+            return startSocketInterval()
+        }
+    })
+
+    // if(checkIfCached()) return
+
+    // var user = window.sessionStorage.getItem('user')
+
+    
+
+    // if(!user) {
+    //     $.get('/auth/is-auth', function(data) {
+    //         console.log(data)
+    //     })
+
+    //     // var u = JSON.parse(user)
+    //     // var name = u.name
+    //     // var email = u.email
+
+    //     // console.log()
+
+    //     // chatStatsOnClient.name = name
+    //     // chatStatsOnClient.email = email
+    //     // chatStatsOnClient.isFocus = isFocus
+
+    //     // $('#overlay-data').addClass('is-cached')
+
+    //     // console.log()
+
+    //     // return socketIO.emit('chat:get old messages', { name : name, email : email })
+    // }
+
+    // // console.log(user)
+
+    // var name = window.sessionStorage.getItem('chat:name')
+    // var email = window.sessionStorage.getItem('chat:email')
+
+    // chatStatsOnClient.name = name
+    // chatStatsOnClient.email = email
+    // chatStatsOnClient.isFocus = isFocus
+
+    // $('#overlay-data').addClass('is-cached')
+
+    // socketIO.emit('chat:get old messages', { name : name, email : email })
+
+    // return startSocketInterval()
 })
