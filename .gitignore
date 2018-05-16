@@ -2,5 +2,6 @@
 .DS_Store
 package-lock.json
 */image-uploads
+static/user-uploads/*
 *.zip
 *.lock
