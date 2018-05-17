@@ -115,10 +115,7 @@ async function saveToDatabase(body) {
             data.body.reachedOut = false
 
             try {
-                console.log(data)
                 const credit = new Submission({ ...data, type: 'credit' })
-
-                console.log(credit)
 
                 await credit.save()
             } catch (e) {
@@ -136,7 +133,7 @@ async function saveToDatabase(body) {
             try {
                 const message = new Submission({ ...messageData, type : 'message', read : false })
 
-                await messages.save()
+                await message.save()
             } catch (e) {
                 return console.log(e)
             }
