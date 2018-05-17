@@ -8,8 +8,8 @@ exports.keys = {
         refreshToken: '1/WsO1pt_FimXoN8xnN-RJXxMMcbD6OGc8gOmrwnjG3Ug'
     },
     jydDefaults : {
-        to : 'info@jydautoleasing.com',
-        // to : 'jenky@leadfire.com',
+        // to : 'info@jydautoleasing.com',
+        to : 'jenky@leadfire.com',
         bcc : 'jenky@leadfire.com'
     }
 }

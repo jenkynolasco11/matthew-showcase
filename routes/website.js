@@ -72,11 +72,11 @@ function getCurrentDate() {
     return today
 }
 
-function saveToDatabase(body) {
+async function saveToDatabase(body) {
     const data = { body : {} }
 
     switch(body.type) {
-        case 'Credit App':
+        case 'credit app':
             data.body.code = body['Salesman\'s Name']
             data.body.firstname = body['First Name']
             data.body.lastname = body['Last Name']
@@ -112,28 +112,35 @@ function saveToDatabase(body) {
             data.body.agreed = body['agree'] !== '0'
             data.body.reachedOut = false
 
-            const credit = new Submission({ ...data, type: 'credit' }).save((err, doc) => {
-                if(err) return console.log(err)
+            try {
+                console.log(data)
+                const credit = new Submission({ ...data, type: 'credit' })
 
-                // return console.log(doc)
-            })
+                console.log(credit)
+
+                await credit.save()
+            } catch (e) {
+                return console.log(e)
+            }
 
             break
-        case 'Contact Us':
+        case 'contact us':
             const messageData = body;
 
             messageData.body = {};
             messageData.body.subject = body['subject'];
             messageData.body.message = body['message'];
 
-            const message = new Submission({ ...messageData, type : 'message', read : false }).save((err, doc) => {
-                if(err) return console.log(err)
+            try {
+                const message = new Submission({ ...messageData, type : 'message', read : false })
 
-                // return console.log(doc)
-            })
+                await messages.save()
+            } catch (e) {
+                return console.log(e)
+            }
 
             break
-        case 'Cash For Cars':
+        case 'cash for cars':
             data.body.firstname = body['First Name']
             data.body.lastname = body['Last Name']
             data.phoneNumber = body.phone
@@ -145,18 +152,17 @@ function saveToDatabase(body) {
             data.body.year = body.vYear
             data.body.vin = body.VIN
 
-            const sellcar = new Submission({ ...data, type : 'sell' }).save((err, doc) => {
-                if(err) return console.log(err)
+            try {
+                const sellcar = new Submission({ ...data, type : 'sell' })
 
-                // return console.log(doc)
-            })
+                await sellcar.save()
+            } catch (e) {
+                return console.log(e)
+            }
 
             break
     }
 
-    // console.log(sockets)
-
-    // Let sockets know that there is a new message
     for(let [ socketId ] of sockets) {
         // console.log(socketId)
         sockets[ socketId ].socket.emit('server:new email')
@@ -180,6 +186,8 @@ function stripData(rawData, cb) {
     const emailData = {}
 
     const data = toLowerCase(rawData)
+
+    // console.log(data)
 
     if (!data.email) return null
 

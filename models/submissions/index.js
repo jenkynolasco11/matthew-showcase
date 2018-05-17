@@ -1,8 +1,7 @@
-var mongoose = require('mongoose')
-var Schema = mongoose.Schema
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
-
-var SubmissionSchema = new Schema({
+const SubmissionSchema = new Schema({
     name: String,
     firstName: String,
     lastName: String,
@@ -22,7 +21,6 @@ var SubmissionSchema = new Schema({
     body: Schema.Types.Mixed
 })
 
-var submission = mongoose.model('submission', SubmissionSchema)
-
+const submission = mongoose.model('submission', SubmissionSchema)
 
 module.exports = submission
