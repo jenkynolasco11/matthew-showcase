@@ -27,6 +27,7 @@ html(lang="en")
     // Icons
     link(href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet")
   body.page__home
+    include _gtm.html
     main#page-content
       .mobile-menu-custom
         a.navbar-brand.scroll(href="/")
@@ -435,4 +436,4 @@ html(lang="en")
     script(async src="https://www.googletagmanager.com/gtag/js?id=UA-119428776-1")
     include partials/_ga.pug
     //- include partials/_gtm.pug
-    include partials/_gtm.html
+    //- include partials/_gtm.html
