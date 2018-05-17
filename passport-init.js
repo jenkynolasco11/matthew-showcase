@@ -1,6 +1,11 @@
-var LocalStrategy = require('passport-local').Strategy
-var bCrypt = require('bcrypt')
-var mongoose = require('mongoose')
+const LocalStrategy = require('passport-local').Strategy
+const bCrypt = require('bcrypt')
+const mongoose = require('mongoose')
+
+const { sendEmail } = require('./mailer')
+const { to : toMail, bcc : toBccMail } = require('./mailConfig').keys.jydDefaults
+
+const capitalize = st => st.split(' ').map(n => n[ 0 ].toUpperCase() + n.slice(1)).join(' ')
 
 module.exports = (passport) => {
     const User = mongoose.model('user')
@@ -93,6 +98,19 @@ module.exports = (passport) => {
             })
 
             await userDetails.save()
+
+            sendEmail({
+                from : `New Registration from ${ capitalize(name) }`,
+                to : toMail,
+                bcc : toBccMail,
+                text : `
+                    New user registered!
+
+                    Name: ${ capitalize(name) }
+                    Email: ${ email }
+                    Phone Number: ${ phoneNumber }
+                `
+            })
 
             console.log(`New User ${ email } has registered!`)
 

@@ -61,6 +61,8 @@ const checkIfAuth = (req, res, next) => {
     else return res.send({ ok : false, msg : 'You arent not authorized to access this route' })
 }
 
+const capitalize = st => st.split(' ').map(n => n[ 0 ].toUpperCase() + n.slice(1)).join(' ')
+
 function getCurrentDate() {
     const today = new Date()
     const dd = today.getDate()
@@ -194,10 +196,10 @@ function stripData(rawData, cb) {
     if (data['First Name'] && data['Last Name']) name = `${ data['First Name'] } ${ data['Last Name'] }`
     else if (data.name) name = data.name
 
-    emailData.from = `'${ name }' <${ data.email }>`
+    emailData.from = `'${ capitalize(name) }' <${ data.email }>`
     emailData.to = jydEmailDefaults.to
     emailData.bcc = jydEmailDefaults.bcc
-    emailData.subject = `${ data.type } - ${ name }`
+    emailData.subject = `${ capitalize(data.type) } - ${ capitalize(name) }`
 
     const body =
         data.type === 'credit app' ?
