@@ -1,3 +1,5 @@
+-var placeholder = 'No Data'
+
 .container
     .comparison.table-responsive
         table.table
@@ -19,100 +21,100 @@
             tbody
                 tr
                     td Body Type
-                    td #{ c1.modelBody }
-                    td #{ c2.modelBody }
+                    td #{ c1.modelBody !== 'NULL' ? c1.modelBody : placeholder }
+                    td #{ c2.modelBody !== 'NULL' ? c2.modelBody : placeholder }
                 tr.separator
                     td(colspan=3) Engine
                 tr
                     td Position
-                    td #{ c1.modelEnginePosition }
-                    td #{ c2.modelEnginePosition }
+                    td #{ c1.modelEnginePosition !== 'NULL' ? c1.modelEnginePosition : placeholder }
+                    td #{ c2.modelEnginePosition !== 'NULL' ? c2.modelEnginePosition : placeholder }
                 tr
                     td CC
-                    td #{ c1.modelEngineCC }
-                    td #{ c2.modelEngineCC }
+                    td #{ c1.modelEngineCC !== 'NULL' ? c1.modelEngineCC : placeholder }
+                    td #{ c2.modelEngineCC !== 'NULL' ? c2.modelEngineCC : placeholder }
                 tr
                     td Cylinders
-                    td #{ c1.modelEngineCyl }
-                    td #{ c2.modelEngineCyl }
+                    td #{ c1.modelEngineCyl !== 'NULL' ? c1.modelEngineCyl : placeholder }
+                    td #{ c2.modelEngineCyl !== 'NULL' ? c2.modelEngineCyl : placeholder }
                 tr
                     td Type
-                    td #{ c1.modelEngineType }
-                    td #{ c2.modelEngineType }
+                    td #{ c1.modelEngineType !== 'NULL' ? c1.modelEngineType : placeholder }
+                    td #{ c2.modelEngineType !== 'NULL' ? c2.modelEngineType : placeholder }
                 tr
                     td Valves Per Cylinder
-                    td #{ c1.modelEngineValvesPerCyl }
-                    td #{ c2.modelEngineValvesPerCyl }
+                    td #{ c1.modelEngineValvesPerCyl !== 'NULL' ? c1.modelEngineValvesPerCyl : placeholder }
+                    td #{ c2.modelEngineValvesPerCyl !== 'NULL' ? c2.modelEngineValvesPerCyl : placeholder }
                 tr
                     td Power RPM
-                    td #{ c1.modelEnginePowerRPM }
-                    td #{ c2.modelEnginePowerRPM }
+                    td #{ c1.modelEnginePowerRPM !== 'NULL' ? c1.modelEnginePowerRPM : placeholder }
+                    td #{ c2.modelEnginePowerRPM !== 'NULL' ? c2.modelEnginePowerRPM : placeholder }
                 tr
                     td Torque RPM
-                    td #{ c1.modelEngineTorqueRPM }
-                    td #{ c2.modelEngineTorqueRPM }
+                    td #{ c1.modelEngineTorqueRPM !== 'NULL' ? c1.modelEngineTorqueRPM : placeholder }
+                    td #{ c2.modelEngineTorqueRPM !== 'NULL' ? c2.modelEngineTorqueRPM : placeholder }
                 tr
                     td Bore MM
-                    td #{ c1.modelEngineBoreMM }
-                    td #{ c2.modelEngineBoreMM }
+                    td #{ c1.modelEngineBoreMM !== 'NULL' ? c1.modelEngineBoreMM : placeholder }
+                    td #{ c2.modelEngineBoreMM !== 'NULL' ? c2.modelEngineBoreMM : placeholder }
                 tr
                     td Stroke MM
-                    td #{ c1.modelEngineStroke_mm }
-                    td #{ c2.modelEngineStroke_mm }
+                    td #{ c1.modelEngineStroke_mm !== 'NULL' ? c1.modelEngineStroke_mm : placeholder }
+                    td #{ c2.modelEngineStroke_mm !== 'NULL' ? c2.modelEngineStroke_mm : placeholder }
                 tr
                     td Compression
-                    td #{ c1.modelEngineCompression }
-                    td #{ c2.modelEngineCompression }
+                    td #{ c1.modelEngineCompression !== 'NULL' ? c1.modelEngineCompression : placeholder }
+                    td #{ c2.modelEngineCompression !== 'NULL' ? c2.modelEngineCompression : placeholder }
                 tr
                     td Fuel
-                    td #{ c1.modelEngineFuel }
-                    td #{ c2.modelEngineFuel }
+                    td #{ c1.modelEngineFuel !== 'NULL' ? c1.modelEngineFuel : placeholder }
+                    td #{ c2.modelEngineFuel !== 'NULL' ? c2.modelEngineFuel : placeholder }
                 tr.separator
                     td(colspan=3) Others
                 tr
                     td Top Speed MPH
-                    td #{ c1.modelTopSpeedMPH }
-                    td #{ c2.modelTopSpeedMPH }
+                    td #{ c1.modelTopSpeedMPH !== 'NULL' ? c1.modelTopSpeedMPH : placeholder }
+                    td #{ c2.modelTopSpeedMPH !== 'NULL' ? c2.modelTopSpeedMPH : placeholder }
                 tr
                     td Drive
-                    td #{ c1.modelDrive }
-                    td #{ c2.modelDrive }
+                    td #{ c1.modelDrive !== 'NULL' ? c1.modelDrive : placeholder }
+                    td #{ c2.modelDrive !== 'NULL' ? c2.modelDrive : placeholder }
                 tr
                     td Transmission Type
-                    td #{ c1.modelTransmission_type }
-                    td #{ c2.modelTransmission_type }
+                    td #{ c1.modelTransmission_type !== 'NULL' ? c1.modelTransmission_type : placeholder }
+                    td #{ c2.modelTransmission_type !== 'NULL' ? c2.modelTransmission_type : placeholder }
                 tr
                     td Seats
-                    td #{ c1.modelSeats }
-                    td #{ c2.modelSeats }
+                    td #{ c1.modelSeats !== 'NULL' ? c1.modelSeats : placeholder }
+                    td #{ c2.modelSeats !== 'NULL' ? c2.modelSeats : placeholder }
                 tr
                     td Doors
-                    td #{ c1.modelDoors }
-                    td #{ c2.modelDoors }
+                    td #{ c1.modelDoors !== 'NULL' ? c1.modelDoors : placeholder }
+                    td #{ c2.modelDoors !== 'NULL' ? c2.modelDoors : placeholder }
                 tr
                     td Weight (KG)
-                    td #{ c1.modelWeightKG }
-                    td #{ c2.modelWeightKG }
+                    td #{ c1.modelWeightKG !== 'NULL' ? c1.modelWeightKG : placeholder }
+                    td #{ c2.modelWeightKG !== 'NULL' ? c2.modelWeightKG : placeholder }
                 tr
                     td Height (MM)
-                    td #{ c1.modelHeightMM }
-                    td #{ c2.modelHeightMM }
+                    td #{ c1.modelHeightMM !== 'NULL' ? c1.modelHeightMM : placeholder }
+                    td #{ c2.modelHeightMM !== 'NULL' ? c2.modelHeightMM : placeholder }
                 tr
                     td Wheel Base (MM)
-                    td #{ c1.modelWheelbaseMM }
-                    td #{ c2.modelWheelbaseMM }
+                    td #{ c1.modelWheelbaseMM !== 'NULL' ? c1.modelWheelbaseMM : placeholder }
+                    td #{ c2.modelWheelbaseMM !== 'NULL' ? c2.modelWheelbaseMM : placeholder }
                 tr
                     td Fuel Economy City (mpg)
-                    td #{ c1.modelLkmCity }
-                    td #{ c2.modelLkmCity }
+                    td #{ c1.modelLkmCity || placehoder }
+                    td #{ c2.modelLkmCity || placehoder }
                 tr
                     td Fuel Economy HWY (mpg)
-                    td #{ c1.modelLkmHwy }
-                    td #{ c2.modelLkmHwy }
+                    td #{ c1.modelLkmHwy !== 'NULL' ? c1.modelLkmHwy : placeholder }
+                    td #{ c2.modelLkmHwy !== 'NULL' ? c2.modelLkmHwy : placeholder }
                 tr
                     td Fuel Economy Mixed (mpg)
-                    td #{ c1.modelLkmMixed }
-                    td #{ c2.modelLkmMixed }
+                    td #{ c1.modelLkmMixed !== 'NULL' ? c1.modelLkmMixed : placeholder }
+                    td #{ c2.modelLkmMixed !== 'NULL' ? c2.modelLkmMixed : placeholder }
                 tr
                     td Sold in US?
                     td #{ c1.modelSoldInUS ? 'Yes' : 'No' }

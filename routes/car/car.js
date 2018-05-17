@@ -39,6 +39,7 @@ const extractImages = images => {
     })
 
     // If there is no main, I'll take the first one
+    console.log(imgs)
     if(!imgs.some(o => o.main)) imgs[ 0 ].main = true
 
     return imgs
@@ -182,10 +183,13 @@ route.get('/edit/:id', (req, res) => {
 route.post('/new', (req, res) => {
     const { body } = req
 
+    // const {imgs : xzx, ...dataToSee } = body
+    // console.log(dataToSee)
+
     const imgs = extractImages(body.imgs)
     const features = body.extraFeatures.split('\n').filter(item => item.length)
     const description = body.description.split('\n').filter(item => item.length)
-    const price = Number(body.price.replace(/[^0-9.]/g,'')) || 0
+    const price = Number((''+body.price).replace(/[^0-9.]/g,'')) || 0
     const newCar = { ...body, price : +price, imgs, extraFeatures : features }
 
     try {
@@ -209,7 +213,7 @@ route.post('/new', (req, res) => {
                 }
 
                 getAllCars((_, cars) => {
-                    return res.status(200).send({ ok : !!err, cars })
+                    return res.status(200).send({ ok : true, cars })
                 })
             })
         })
@@ -234,7 +238,8 @@ route.put('/edit/:id', (req, res) => {
             if(err) return res.status(200).send({ ok : false })
 
             getAllCars((_, cars) => {
-                return res.status(200).send({ ok : !!err, cars })
+                console.log(err)
+                return res.status(200).send({ ok : true, cars })
             })
         })
     } catch (e) {
@@ -320,15 +325,17 @@ route.get('/compare/stored-stats', async (req, res) => {
     const { year, make, model, trim } = req.query
 
     const query = {}
-    const projection = { trim : 1, year : 1, model : 1, make : 1, _id : 0 }
+    // const projection = { trim : 1, modelYear : 1, model : 1, make : 1, _id : 0 }
 
-    if(year && year !== 'none') query.year = year
-    if(make && make !== 'none') query.make = make
-    if(model && model !== 'none') query.model = model
-    if(trim && trim !== 'none') query.trim = trim
+    if(year && year !== 'none') query.modelYear = ''+year
+    if(make && make !== 'none') query.modelMakeId = ''+make
+    if(model && model !== 'none') query.model = ''+model
+    if(trim && trim !== 'none') query.modelTrim = ''+trim
+
+    console.log(query)
 
     try {
-        const cars = await ReferenceCar.find(query, trim && trim !== 'none' ? projection : {}).lean()
+        const cars = await ReferenceCar.find(query).lean()
 
         // console.log(cars)
 
@@ -342,7 +349,7 @@ route.get('/compare/stored-stats', async (req, res) => {
 
 route.get('/compare/stats', async (req, res) => {
     const {
-        get = 'year',
+        get = 'modelYear',
         year = 'none',
         make = 'none',
         model = 'none',
@@ -358,7 +365,11 @@ route.get('/compare/stats', async (req, res) => {
 
     try {
         // const cars = await ReferenceCar.find(query)
-        const data = await ReferenceCar.distinct(get, query)
+
+        const retrieved = await ReferenceCar.distinct(get, query)
+        // const data = await ReferenceCar.distinct('year')
+
+        const data = retrieved.sort((a,b) => b - a)
 
         return res.send({ ok : true, data })
     } catch (e) {

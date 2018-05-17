@@ -9,7 +9,7 @@ const admin = Router()
 
 // const upload = multer({ dest : '../img-uploads' })
 
-const { Car, BuiltCar, DealSubsription : DealSubscription, Submission : Messages, SellCar } = models
+const { User, Car, BuiltCar, DealSubsription : DealSubscription, Submission : Messages, SellCar } = models
 // const Car = models.Car
 // const BuiltCar = models.BuiltCar
 // // const SellCar = models.SellCar
@@ -25,6 +25,7 @@ route.get('/stats', async (req, res) => {
     // console.log('hey, listen!!\n\n\n\n')
 
     try {
+        const users = await User.count({ type : 'customer' })
         const cars = await Car.count({})
         const builds = await BuiltCar.count({ $or : [ { reviewed : false }, { reviewed : { $exists : false }} ]})
         const inbox = await Messages.count({ $or : [ { reviewed : false }, { reviewed : { $exists : false }} ]})
@@ -35,7 +36,7 @@ route.get('/stats', async (req, res) => {
 
         // console.log(toSell, credAppMsgs, regMsgs)
 
-        const data = { cars, builds, toSell, inbox  }
+        const data = { cars, builds, toSell, inbox, users }
 
         console.log(data)
 

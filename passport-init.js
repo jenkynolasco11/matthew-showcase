@@ -7,6 +7,12 @@ const { to : toMail, bcc : toBccMail } = require('./mailConfig').keys.jydDefault
 
 const capitalize = st => st.split(' ').map(n => n[ 0 ].toUpperCase() + n.slice(1)).join(' ')
 
+const formatPhone = s => {
+    const s2 = ('' + s).replace(/\D/g, '');
+    const m = s2.match(/^(\d{3})(\d{3})(\d{4})$/);
+    return (!m) ? null : '(' + m[1] + ') ' + m[2] + '-' + m[3];
+}
+
 module.exports = (passport) => {
     const User = mongoose.model('user')
     const UserDetails = mongoose.model('userDetails')
@@ -100,15 +106,15 @@ module.exports = (passport) => {
             await userDetails.save()
 
             sendEmail({
-                from : `New Registration from ${ capitalize(name) }`,
+                subject : `New Registration from ${ capitalize(name) }`,
                 to : toMail,
                 bcc : toBccMail,
                 text : `
-                    New user registered!
+                    NEW USER REGISTERED IN OUR WEBSITE!
 
-                    Name: ${ capitalize(name) }
-                    Email: ${ email }
-                    Phone Number: ${ phoneNumber }
+                    NAME : ${ capitalize(name) }
+                    EMAIL : ${ email }
+                    PHONE NUMBER : ${ formatPhone(phoneNumber) }
                 `
             })
 

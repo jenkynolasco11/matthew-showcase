@@ -266,9 +266,13 @@ route.get('/all', async (req, res) => {
     const criteria = { $or : [  {reviewed : false }, { reviewed : { $exists : false }}]}
 
     try {
-        const builds = await BuiltCar.find(criteria).sort({ createdBy : 1 }).skip(+skip).limit(+limit)
+        // console.log(typeof +skip, typeof +limit)
+        const builds = await BuiltCar.find(criteria).sort({ createdBy : -1 }).skip(+skip).limit(+limit).lean()
+        const count = await BuiltCar.count(criteria)
 
-        return res.send({ ok : true, builds })
+        // console.log(JSON.stringify(builds, ))
+
+        return res.send({ ok : true, builds, count })
 
     } catch (e) {
         console.log(e)

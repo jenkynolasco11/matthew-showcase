@@ -1,7 +1,7 @@
-var mongoose = require('mongoose')
-var Schema = mongoose.Schema
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
-var referenceCarSchema = new Schema({
+const referenceCarSchema = new Schema({
     modelId: String,
     modelMakeId: { type : String, index : true },
     model: { type : String, index : true },
@@ -42,7 +42,7 @@ var referenceCarSchema = new Schema({
     modelMakeDisplay: String
 });
 
-var CarSchema = new Schema({
+const CarSchema = new Schema({
     id : { type : String, required : true, unique : { index : true }},
     year: Number,
     make: String,
@@ -59,7 +59,7 @@ var CarSchema = new Schema({
     price: Number,
     msrp: Number,
     status: String,
-    vin: { type : String, max : 17, unique : { index : true }},
+    vin: { type : String, max : 17 },
     hp : Number,
     description : [ String ],
     overview : String,
@@ -81,7 +81,7 @@ var CarSchema = new Schema({
     hasSatelliteCameras : { type : Boolean, default : () => false },
 })
 
-var BuiltCarSchema = new Schema({
+const BuiltCarSchema = new Schema({
     firstname : String,
     lastname : String,
     phone : { type : String, index : true },
@@ -114,8 +114,8 @@ var BuiltCarSchema = new Schema({
     deleted : { type : Boolean, default : () => false, index : true },
 })
 
-var ReferenceCar = mongoose.model('referenceCar', referenceCarSchema)
-var Car = mongoose.model('car', CarSchema, 'car')
-var BuiltCar = mongoose.model('builtCar', BuiltCarSchema, 'builtCar')
+const ReferenceCar = mongoose.model('referenceCar', referenceCarSchema)
+const Car = mongoose.model('car', CarSchema, 'car')
+const BuiltCar = mongoose.model('builtCar', BuiltCarSchema, 'builtCar')
 
 module.exports = { Car, BuiltCar, ReferenceCar }
