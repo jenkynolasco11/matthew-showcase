@@ -9,7 +9,6 @@ const auth = require('./auth')
 const user = require('./user')
 
 const instagram = require('./instagram')
-
 const messages = require('./message')
 
 const route = Router()

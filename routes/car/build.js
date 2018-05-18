@@ -97,8 +97,6 @@ route.get('/trim', (req, res) => {
         return { ...p, [ n.Trim ] : [ n ] }
     }, {})
 
-    // console.log(trims)
-
     return res.render('build-car/trim', { trims, make, model, year, user, isAuth : req.isAuthenticated() })
 })
 

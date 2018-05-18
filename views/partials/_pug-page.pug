@@ -1,10 +1,11 @@
 include _head-pages.pug
 body.page__home
-    include _mobile-menu.pug
-    .l-theme.animated-css(data-header="sticky" data-header-top="200" data-canvas="container")
-      include _header-pages.pug
-      block main-body
-      include _footer-pages.pug
-      block footer
-    include _scripts.pug
-    block scripts
+  include _gtm.html
+  include _mobile-menu.pug
+  .l-theme.animated-css(data-header="sticky" data-header-top="200" data-canvas="container")
+    include _header-pages.pug
+    block main-body
+    include _footer-pages.pug
+    block footer
+  include _scripts.pug
+  block scripts

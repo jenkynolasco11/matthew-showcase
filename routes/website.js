@@ -61,7 +61,17 @@ const checkIfAuth = (req, res, next) => {
     else return res.send({ ok : false, msg : 'You arent not authorized to access this route' })
 }
 
-const capitalize = st => st.split(' ').map(n => n[ 0 ].toUpperCase() + n.slice(1)).join(' ')
+const capitalize = st => {
+    try {
+        return st.split(' ').map(n => n[ 0 ].toUpperCase() + n.slice(1)).join(' ')
+    } catch (e) {
+        console.log(e)
+    }
+
+    console.log(`THERE WAS AN ERROR WHILE TRYING TO CAPITALIZE: ${ st }`)
+
+    return ''
+}
 
 function getCurrentDate() {
     const today = new Date()
@@ -118,7 +128,9 @@ async function saveToDatabase(body) {
                 const credit = new Submission({ ...data, type: 'credit' })
 
                 await credit.save()
+                console.log(`NEW SUBMISSION ADDED FOR CREDIT APP. ${ new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString() }`)
             } catch (e) {
+                console.log(`THERE WAS AN ERROR ON => CREDIT APP\nTIMESTAMP => ${ new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString() }`)
                 return console.log(e)
             }
 
@@ -134,7 +146,9 @@ async function saveToDatabase(body) {
                 const message = new Submission({ ...messageData, type : 'message', read : false })
 
                 await message.save()
+                console.log(`NEW SUBMISSION ADDED FOR CONTACT US. ${ new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString() }`)
             } catch (e) {
+                console.log(`THERE WAS AN ERROR ON => CONTACT US\nTIMESTAMP => ${ new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString() }`)
                 return console.log(e)
             }
 
@@ -155,7 +169,9 @@ async function saveToDatabase(body) {
                 const sellcar = new Submission({ ...data, type : 'sell' })
 
                 await sellcar.save()
+                console.log(`NEW SUBMISSION ADDED FOR SELLING. ${ new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString() }`)
             } catch (e) {
+                console.log(`THERE WAS AN ERROR ON => SELLING\nTIMESTAMP => ${ new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString() }`)
                 return console.log(e)
             }
 
@@ -184,9 +200,9 @@ function stripData(rawData, cb) {
     let name = ''
     const emailData = {}
 
+    // console.log(`DATA TO SAVE: ${ JSON.stringify(rawData, null, 3)}`)
     const data = toLowerCase(rawData)
-
-    // console.log(data)
+    console.log(`DATA TO SAVE, ALREADY LOWERCASED: ${ JSON.stringify(rawData, null, 3)}`)
 
     if (!data.email) return null
 
@@ -207,6 +223,8 @@ function stripData(rawData, cb) {
 
     // convertToPDF(body, function(err, stream) {
         // if(err) return null
+
+    console.log(`EMAIL CONFIG TO USE: ${ JSON.stringify(emailData, null, 3)}`)
 
     emailData.html = body
 
@@ -424,7 +442,7 @@ route.post('/data', (req, res) => {
             if (err) return console.log(err)
 
             // TODO: Save in database
-            console.log('Email sent!')
+            console.log(`AN EMAIL WAS SENT FROM: ${ body.email }`)
         })
 
         return res.send('ok')
