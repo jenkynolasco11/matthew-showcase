@@ -3,197 +3,88 @@ const template = require('./email-templates').creditApp
 
 const items = [
     {
-        "driverLicense": {
-            "number": "213202411",
-            "stateIssued": "NY",
-            "expirationDate": "2020-10-17T00:00:00Z"
+        // "_id" : ObjectId("5aff455fb82bcc1bf2d6dcb1"),
+        // "body" : {
+        "code" : "esther",
+        "firstname" : "luis",
+        "lastname" : "llenas, jr.",
+        "middlename" : "a",
+        "dob" : "1976-02-03T00:00:00Z",
+        "ssn" : "132684611",
+        "street" : "302 dwight street",
+        "city" : "waterbury",
+        "state" : "ct",
+        "zip" : "06704",
+        "homeOwnership" : "RENT",
+        "yearsLivingInPlace" : "12",
+        "monthsLivingInPlace" : "6",
+        "monthlyRent" : "0.00",
+        "previousAddress" : "",
+        "driverLicense" : {
+            "number" : "148523845",
+            "stateIssued" : "ct",
+            "expirationDate" : "2020-02-03T00:00:00Z"
         },
-        "employement": {
-            "employerName": "New York Methodist Hospital",
-            "employerAddress": "506 6th St, Brooklyn, NY 11215",
-            "employerYearsAtWork": 3,
-            "employerMonthsAtWork": null,
-            "montlyIncome": 10000
+        "employement" : {
+            "employerName" : "nitro entertainment group",
+            "employerAddress" : "95-36 75th street, ozone park, ny 11416",
+            "employerContact" : "5164999760",
+            "employerYearsAtWork" : "13",
+            "employerMonthsAtWork" : "4",
+            "jobTitle" : "general manager",
+            "montlyIncome" : "7500.00"
         },
-        "reviewed": false,
-        "createdBy": "2018-05-01T16:26:37.247Z",
-        "type": "credit",
-        "reply": [],
-        "deleted": false,
-        "code": "ESTHER",
-        "firstname": "SLIMA",
-        "lastname": "KOUBEK",
-        "middlename": "",
-        "phoneNumber": "(516)732-1733",
-        "dob": "1983-10-17T00:00:00Z",
-        "ssn": "069682294",
-        "email": "JOHN.KOUBEK@EXPEDITIRS.COM",
-        "street": "166 GRAND BLVD",
-        "city": "MASSAPEQUA PARK",
-        "state": "NY",
-        "zip": "11762",
-        "homeOwnership": "OWN",
-        "yearsLivingInPlace": null,
-        "monthsLivingInPlace": 6,
-        "monthlyRent": 3200,
-        "previousAddress": "35 MELROSE AVE. LYNBROOK, NY, 11563",
-        "previousEmployer": "",
-        "__v": 0
+        "previousEmployer" : "",
+        "agreed" : true,
+        "reachedOut" : false,
+        // },
+        "phoneNumber" : "5167871674",
+        "email" : "luisl76@gmail.com",
+        "type" : "credit",
+        "deleted" : false,
+        "reply" : [ ],
+        "reviewed" : false,
+        "createdBy" : "2018-05-18T21:27:59.530Z",
+        "__v" : 0
     },
-    {
-        "driverLicense": {
-            "number": "213202411",
-            "stateIssued": "NY",
-            "expirationDate": "2020-10-17T00:00:00Z"
-        },
-        "employement": {
-            "employerName": "New York Methodist Hospital",
-            "employerAddress": "506 6th St, Brooklyn, NY 11215",
-            "employerYearsAtWork": 3,
-            "employerMonthsAtWork": null,
-            "montlyIncome": 10000
-        },
-        "reviewed": false,
-        "createdBy": "2018-05-01T16:58:51.018Z",
-        "type": "credit",
-        "reply": [],
-        "deleted": false,
-        "code": "ESTHER",
-        "firstname": "SLIMA",
-        "lastname": "KOUBEK",
-        "middlename": "",
-        "phoneNumber": "(516) 732-1733",
-        "dob": "1983-10-17T00:00:00Z",
-        "ssn": "069682294",
-        "email": "JOHN.KOUBEK@EXPEDITIRS.COM",
-        "street": "166 GRAND BLVD",
-        "city": "MASSAPEQUA PARK",
-        "state": "NY",
-        "zip": "11762",
-        "homeOwnership": "OWN",
-        "yearsLivingInPlace": null,
-        "monthsLivingInPlace": 6,
-        "monthlyRent": 3200,
-        "previousAddress": "35 MELROSE AVE. LYNBROOK, NY, 11563",
-        "previousEmployer": "",
-        "__v": 0
-    },
-    {
-        "driverLicense": {
-            "number": "12345678",
-            "stateIssued": "AL",
-            "expirationDate": "2010-02-20T00:00:00Z"
-        },
-        "employement": {
-            "employerName": "testing",
-            "employerAddress": "",
-            "employerYearsAtWork": null,
-            "employerMonthsAtWork": null,
-            "montlyIncome": 100000
-        },
-        "reviewed": true,
-        "createdBy": "2018-05-01T17:41:08.925Z",
-        "type": "credit",
-        "reply": [],
-        "deleted": false,
-        "code": "test",
-        "firstname": "test",
-        "lastname": "test",
-        "middlename": "test",
-        "phoneNumber": "123456789",
-        "dob": "2018-01-01T00:00:00Z",
-        "ssn": "1234567",
-        "email": "test@aol.com",
-        "street": "125 test",
-        "city": "test",
-        "state": "AL",
-        "zip": "11414",
-        "homeOwnership": "RENT",
-        "yearsLivingInPlace": 0,
-        "monthsLivingInPlace": 0,
-        "monthlyRent": 0,
-        "previousAddress": "",
-        "previousEmployer": "",
-        "__v": 0,
-        "reviewedBy": "2018-05-01T18:33:01.065Z"
-    },
-    {
-        "driverLicense": {
-            "number": "471309209",
-            "stateIssued": "NY",
-            "expirationDate": "2019-05-29T00:00:00Z"
-        },
-        "employement": {
-            "employerName": "BOSTON COACH",
-            "employerAddress": "19-1143RD STREET, ASTORIA NY, 11105",
-            "employerYearsAtWork": 14,
-            "employerMonthsAtWork": null,
-            "montlyIncome": 7500
-        },
-        "reviewed": true,
-        "createdBy": "2018-05-01T18:25:30.248Z",
-        "type": "credit",
-        "reply": [],
-        "deleted": false,
-        "code": "CHRIS",
-        "firstname": "ALBELTO",
-        "lastname": "MORALES",
-        "middlename": "",
-        "phoneNumber": "9173489161",
-        "dob": "1960-05-29T00:00:00Z",
-        "ssn": "123503516",
-        "email": "BKLNAL529@AOL.COM",
-        "street": "3101 AVENUE I APT 6-G",
-        "city": "BROOKLYN",
-        "state": "NY",
-        "zip": "11210",
-        "homeOwnership": "OTHER",
-        "yearsLivingInPlace": 19,
-        "monthsLivingInPlace": null,
-        "monthlyRent": 0,
-        "previousAddress": "",
-        "previousEmployer": "",
-        "__v": 0,
-        "reviewedBy": "2018-05-01T18:35:46.626Z"
-    },
-    {
-        "driverLicense": {
-            "number": "756594575",
-            "stateIssued": "NY",
-            "expirationDate": "2026-02-14T00:00:00Z"
-        },
-        "employement": {
-            "employerName": "Harbor fitness center",
-            "employerAddress": "9215 4th ave ",
-            "employerYearsAtWork": 3,
-            "employerMonthsAtWork": 0,
-            "montlyIncome": 3500
-        },
-        "reviewed": false,
-        "createdBy": "2018-05-01T19:05:29.975Z",
-        "type": "credit",
-        "reply": [],
-        "deleted": false,
-        "code": "Ryan miley",
-        "firstname": "Frank",
-        "lastname": "Bergen",
-        "middlename": "J",
-        "phoneNumber": "3475677153",
-        "dob": "1995-02-14T00:00:00Z",
-        "ssn": "088841415",
-        "email": "Frankbergen95@gmail.com",
-        "street": "1859 76th st",
-        "city": "Brooklyn",
-        "state": "NY",
-        "zip": "11214",
-        "homeOwnership": "OTHER",
-        "yearsLivingInPlace": null,
-        "monthsLivingInPlace": null,
-        "monthlyRent": 0,
-        "previousAddress": "",
-        "previousEmployer": "",
-        "__v": 0
-    }
+    // {
+    //     "driverLicense": {
+    //         "number": "213202411",
+    //         "stateIssued": "NY",
+    //         "expirationDate": "2020-10-17T00:00:00Z"
+    //     },
+    //     "employement": {
+    //         "employerName": "New York Methodist Hospital",
+    //         "employerAddress": "506 6th St, Brooklyn, NY 11215",
+    //         "employerYearsAtWork": 3,
+    //         "employerMonthsAtWork": null,
+    //         "montlyIncome": 10000
+    //     },
+    //     "reviewed": false,
+    //     "createdBy": "2018-05-01T16:26:37.247Z",
+    //     "type": "credit",
+    //     "reply": [],
+    //     "deleted": false,
+    //     "code": "ESTHER",
+    //     "firstname": "SLIMA",
+    //     "lastname": "KOUBEK",
+    //     "middlename": "",
+    //     "phoneNumber": "(516)732-1733",
+    //     "dob": "1983-10-17T00:00:00Z",
+    //     "ssn": "069682294",
+    //     "email": "JOHN.KOUBEK@EXPEDITIRS.COM",
+    //     "street": "166 GRAND BLVD",
+    //     "city": "MASSAPEQUA PARK",
+    //     "state": "NY",
+    //     "zip": "11762",
+    //     "homeOwnership": "OWN",
+    //     "yearsLivingInPlace": null,
+    //     "monthsLivingInPlace": 6,
+    //     "monthlyRent": 3200,
+    //     "previousAddress": "35 MELROSE AVE. LYNBROOK, NY, 11563",
+    //     "previousEmployer": "",
+    //     "__v": 0
+    // },
 ]
 
 function setData(data) {
@@ -228,7 +119,9 @@ function setData(data) {
     body['Employee Years'] = data.employement.employerYearsAtWork || ''
     body['Employee Months'] = data.employement.employerMonthsAtWork || ''
     body['Monthly Income'] = '' + data.employement.montlyIncome || ''
-    body['Previous Employer'] = data.previousEmployer || ''
+    body['Job Title'] = '' + data.employement.jobTitle || ''
+    body['Previous Employer'] = '' + data.previousEmployer || ''
+    body['Employer\'s Phone'] = '' + data.employement.employerContact || ''
 
     const dob = new Date(data.dob)
 

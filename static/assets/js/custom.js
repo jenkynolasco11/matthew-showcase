@@ -238,13 +238,13 @@ $document.ready(function () {
 
 	var button = $('.toggle-menu-button')
 
-	button.on('click', function(el){
+	button.on('click', function (el) {
 		// console.log(el)
 		button.toggleClass('open')
 		$('.mobile-menu-custom').toggleClass('open')
 	})
 
-	$('.mobile-menu-custom .close-menu .close').on('click', function() {
+	$('.mobile-menu-custom .close-menu .close').on('click', function () {
 		$('.mobile-menu-custom').removeClass('open')
 		$('.toggle-menu-button').removeClass('open')
 	})
@@ -253,10 +253,10 @@ $document.ready(function () {
 
 	// console.log(collapseSubMenu)
 
-	if(collapseSubMenu) {
-		$(collapseSubMenu).each(function() {
+	if (collapseSubMenu) {
+		$(collapseSubMenu).each(function () {
 			var self = this
-			$(this).on('click', function() {
+			$(this).on('click', function () {
 				var collapsible = $(self).find('.wrap-inside-nav')
 				collapsible.toggleClass('collapse')
 
@@ -275,8 +275,8 @@ $document.ready(function () {
 	selectMake.val('none')
 	selectModel.val('none')
 
-	selectYear.on('change', function() {
-		if($(this).val() === 'none') {
+	selectYear.on('change', function () {
+		if ($(this).val() === 'none') {
 			selectMake.attr('disabled', true)
 			selectModel.attr('disabled', true)
 			submitCarBuild.attr('disabled', true)
@@ -284,36 +284,36 @@ $document.ready(function () {
 			selectMake.removeAttr('disabled')
 		}
 
-		$.get('/car/build?year=' + $(this).val(), function(data) {
+		$.get('/car/build?year=' + $(this).val(), function (data) {
 			selectMake.html('')
 			selectMake.append($('<option value="none">Select Make</option>'))
 
-			data.makes.forEach(function(make) {
+			data.makes.forEach(function (make) {
 				selectMake.append($('<option value="' + make + '">' + make + '</option>'))
 			})
 		})
 	})
 
-	selectMake.on('change', function() {
-		if($(this).val() === 'none') selectModel.attr('disabled', true)
+	selectMake.on('change', function () {
+		if ($(this).val() === 'none') selectModel.attr('disabled', true)
 		else selectModel.removeAttr('disabled')
 
-		$.get('/car/build?year=' + $(selectYear).val() + '&make=' + $(this).val(), function(data) {
+		$.get('/car/build?year=' + $(selectYear).val() + '&make=' + $(this).val(), function (data) {
 			selectModel.html('')
 			selectModel.append($('<option value="none">Select Model</option>'))
 
-			data.models.forEach(function(model) {
-				selectModel.append($('<option value="' + model + '">'+ model +'</option>'))
+			data.models.forEach(function (model) {
+				selectModel.append($('<option value="' + model + '">' + model + '</option>'))
 			})
 		})
 	})
 
-	selectModel.on('change', function() {
-		if($(this).val() === 'none') return submitCarBuild.attr('disabled', true)
+	selectModel.on('change', function () {
+		if ($(this).val() === 'none') return submitCarBuild.attr('disabled', true)
 		else return submitCarBuild.removeAttr('disabled')
 	})
 
-	buildCarAppFor.on('submit', function(e) {
+	buildCarAppFor.on('submit', function (e) {
 		e.preventDefault()
 
 		var year = $(selectYear).val()
@@ -329,40 +329,40 @@ $document.ready(function () {
 		// $.get('/trim', { year : year, make : make, model : model })
 	})
 
-	var closeNewsletter = $('#subscribe-newsletter .close-newsletter')[ 0 ]
+	var closeNewsletter = $('#subscribe-newsletter .close-newsletter')[0]
 	var chatBox = $('#chat-box')[0]
 
 	function fadeNewsletter() {
 		window.sessionStorage.setItem('temp-closed', 'yes')
-		$('.newsletter-overlay').fadeOut(500, function() {
-			setTimeout(function(self) {
+		$('.newsletter-overlay').fadeOut(500, function () {
+			setTimeout(function (self) {
 				$(self).remove()
 				$(chatBox).addClass('open')
 			}, 1000, this)
 		})
 	}
 
-	if(closeNewsletter) $(closeNewsletter).on('click', fadeNewsletter)
+	if (closeNewsletter) $(closeNewsletter).on('click', fadeNewsletter)
 
 	var subscribeForm = $('#subscribe-form')
 
-	if(subscribeForm) {
-		subscribeForm.submit(function(e) {
+	if (subscribeForm) {
+		subscribeForm.submit(function (e) {
 			e.preventDefault()
 
-			var data = $(this).serializeArray().reduce(function(p, n) {
+			var data = $(this).serializeArray().reduce(function (p, n) {
 				var x = $.extend({}, p)
 
-				x[ n.name ] = n.value
+				x[n.name] = n.value
 
 				return x
 			}, {})
 
-			$.post('/subscription/newsletter/new', data, function(res) {
-				if(res.ok) window.localStorage.setItem('subscribed', 'yes')
+			$.post('/subscription/newsletter/new', data, function (res) {
+				if (res.ok) window.localStorage.setItem('subscribed', 'yes')
 
-				$('#subscribe-form').fadeOut(500, function() {
-					$('.thanks-section').css('display', 'flex').hide().fadeIn(500, function() {
+				$('#subscribe-form').fadeOut(500, function () {
+					$('.thanks-section').css('display', 'flex').hide().fadeIn(500, function () {
 						setTimeout(fadeNewsletter, 3000)
 					})
 				})
@@ -377,25 +377,25 @@ $document.ready(function () {
 
 	var itAppeared = false
 
-	$(window).on('scroll', function(e) {
-		if(window.pageYOffset > $(document).height() * 0.4) {
-			if(!itAppeared) {
+	$(window).on('scroll', function (e) {
+		if (window.pageYOffset > $(document).height() * 0.4) {
+			if (!itAppeared) {
 				itAppeared = true
 
 				var prevClosed = window.sessionStorage.getItem('temp-closed')
 				var isSubscribed = window.localStorage.getItem('subscribed')
 
-				if(isSubscribed !== 'yes' && prevClosed !== 'yes') $('.newsletter-overlay').delay(2000).css('display', 'flex').hide().fadeIn(500)
+				if (isSubscribed !== 'yes' && prevClosed !== 'yes') $('.newsletter-overlay').delay(2000).css('display', 'flex').hide().fadeIn(500)
 			}
 		}
 	})
 
-	$.get('/instagram/photos', function(response) {
-		var feedPics = response.data.reduce(function(prev, next) {
+	$.get('/instagram/photos', function (response) {
+		var feedPics = response.data.reduce(function (prev, next) {
 			var tag = ' \
 			<div class="car col-xm-3"> \
 				<a href="' + next.link + '" target="_blank">\
-					<img class="img-responsive" src="'+ next.images.standard_resolution.url +'" alt="car-prop"> \
+					<img class="img-responsive" src="' + next.images.standard_resolution.url + '" alt="car-prop"> \
 				</a> \
 			</div>'
 
@@ -405,15 +405,15 @@ $document.ready(function () {
 		$('#instagram-feed').html($(feedPics))
 	})
 
-	$.get('/car/build/trending', function(data) {
+	$.get('/car/build/trending', function (data) {
 		var trending = $('#trending-builds')
 
-		if(trending && data.ok) {
+		if (trending && data.ok) {
 			var items = ''
 
 			// console.log(data.builts)
 
-			data.builts.forEach(function(car) {
+			data.builts.forEach(function (car) {
 				items += `
 					<li>
 						<a href="${ car.url || '#' }">${ car.year } ${ car.make } ${ car.model }</a>
@@ -424,6 +424,79 @@ $document.ready(function () {
 			trending.html(items)
 		}
 	})
+
+	function objMap(data, delim, spl, decode) {
+
+		var obj = {};
+
+		// If one of our parameters is missing, return an empty object
+		if (!data || !delim || !spl) {
+			return {};
+		}
+
+		var arr = data.split(delim);
+		var i;
+
+		if (arr) {
+			for (i = 0; i < arr.length; i++) {
+				// If the decode flag is present, URL decode the set
+				var item = decode ? decodeURIComponent(arr[i]) : arr[i];
+				var pair = item.split(spl);
+
+				var key = trim_(pair[0]);
+				var value = trim_(pair[1]);
+
+				if (key && value) {
+					obj[key] = value;
+				}
+			}
+		}
+
+		return obj;
+	}
+
+	$(document).bind('ajaxComplete', function (evt, jqXhr, opts) {
+
+		// Create a fake a element for magically simple URL parsing
+		var fullUrl = document.createElement('a');
+		fullUrl.href = opts.url;
+
+		// IE9+ strips the leading slash from a.pathname because who wants to get home on time Friday anyways
+		var pathname = fullUrl.pathname[0] === '/' ? fullUrl.pathname : '/' + fullUrl.pathname;
+		// Manually remove the leading question mark, if there is one
+		var queryString = fullUrl.search[0] === '?' ? fullUrl.search.slice(1) : fullUrl.search;
+		// Turn our params and headers into objects for easier reference
+		var queryParameters = objMap(queryString, '&', '=', true);
+		var headers = objMap(jqXhr.getAllResponseHeaders(), '\n', ':');
+
+		// Blindly push to the dataLayer because this fires within GTM
+		dataLayer.push({
+			'event': 'ajaxComplete',
+			'attributes': {
+				// Return empty strings to prevent accidental inheritance of old data
+				'type': opts.type || '',
+				'url': fullUrl.href || '',
+				'queryParameters': queryParameters,
+				'pathname': pathname || '',
+				'hostname': fullUrl.hostname || '',
+				'protocol': fullUrl.protocol || '',
+				'fragment': fullUrl.hash || '',
+				'statusCode': jqXhr.status || '',
+				'statusText': jqXhr.statusText || '',
+				'headers': headers,
+				'timestamp': evt.timeStamp || '',
+				'contentType': opts.contentType || '',
+				// Defer to jQuery's handling of the response
+				'response': (jqXhr.responseJSON || jqXhr.responseXML || jqXhr.responseText || '')
+			}
+		});
+	});
+
+	function trim_(str) {
+		if (str) {
+			return str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+		}
+	}
 });
 
 
@@ -449,7 +522,7 @@ function undateMenu() {
 		if (scrollTop > 150) {
 			menu.addClass('active-scroll');
 			$('.bg-grey').addClass('stay-top')
-		} else if(scrollTop < 100) {
+		} else if (scrollTop < 100) {
 			menu.removeClass('active-scroll');
 			$('.bg-grey').removeClass('stay-top')
 		}
@@ -458,7 +531,7 @@ function undateMenu() {
 		menu.removeClass('active-scroll');
 	}
 
-	if(window.innerWidth >= 768) {
+	if (window.innerWidth >= 768) {
 		$('.toggle-menu-button').removeClass('open')
 		$('.mobile-menu-custom').removeClass('open')
 	}
@@ -476,19 +549,19 @@ var contactForm2 = $('#contact-form-2')
 
 // console.log(contactForm, contactForm2)
 
-$.each([ contactForm2, contactForm ], function() {
+$.each([contactForm2, contactForm], function () {
 	// console.log(this)
-	if(this) {
-		$(this).submit(function(e) {
+	if (this) {
+		$(this).submit(function (e) {
 			return submitInformation(e, 'Contact Us', $(this))
 		})
 	}
 })
 
-sellingForm.submit(function(e){
+sellingForm.submit(function (e) {
 	return submitInformation(e, 'Cash For Cars', sellingForm)
 })
-creditAppForm.submit(function(e){
+creditAppForm.submit(function (e) {
 	return submitInformation(e, 'Credit App', creditAppForm)
 })
 
@@ -503,7 +576,7 @@ function submitInformation(e, type, form) {
 
 function submitForm(form, formData) {
 	var arr = form.serializeArray()
-	var data = arr.reduce(function(p,n) {
+	var data = arr.reduce(function (p, n) {
 		var x = $.extend({}, p)
 
 		x[n.name] = n.value
@@ -517,7 +590,9 @@ function submitForm(form, formData) {
 
 	$.post('/data', data)
 
-	form.each(function(){ this.reset(); });
+	form.each(function () {
+		this.reset();
+	});
 
 	openModal();
 }
@@ -533,16 +608,16 @@ function openModal(fn) {
 	var modal = $('#myModal')
 	modal.fadeIn()
 
-	$('#modal-close').click(function(){
+	$('#modal-close').click(function () {
 		var modal = $('#myModal')
 		modal.fadeOut()
 
-		if(fn) return fn()
+		if (fn) return fn()
 	});
 
-	setTimeout(function(){
+	setTimeout(function () {
 		modal.fadeOut();
-		if(fn) return fn()
+		if (fn) return fn()
 	}, 2400)
 }
 

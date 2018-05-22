@@ -240,7 +240,7 @@ route.post('/new', (req, res) => {
         return console.log('Email sent!')
     })
 
-    return res.end('ok')
+    return res.send({ ok : true })
 })
 
 route.get('/trending', (req, res) => {

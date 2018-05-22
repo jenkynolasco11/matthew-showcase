@@ -436,7 +436,7 @@ route.post('/data', (req, res) => {
     const body = req.body
 
     stripData(body, data => {
-        if (!data) return res.send('ok')
+        if (!data) return res.send({ ok : false })
 
         sendEmail(data, (err, c) => {
             if (err) return console.log(err)
@@ -445,7 +445,7 @@ route.post('/data', (req, res) => {
             console.log(`AN EMAIL WAS SENT FROM: ${ body.email }`)
         })
 
-        return res.send('ok')
+        return res.send({ ok : true, type : ''+body.type })
     })
 
 })
