@@ -44,7 +44,7 @@ mongoose.connect('mongodb://127.0.0.1/jydautoleasing', err => {
 
     }))
     .use(cors({ origin : ['http://localhost:3000', 'http://localhost:8001'], credentials : true }))
-    .use(logger('dev'))
+    // .use(logger('dev'))
 
   // configure passport
   require('./passport-init')(passport)
