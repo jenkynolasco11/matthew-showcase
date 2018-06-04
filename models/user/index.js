@@ -28,18 +28,8 @@ const UserDetailsSchema = new Schema({
         state : String,
         zip : String,
     }, default : () => ({ street : '', city : '', state : '', zip : '' })},
-    files : [{
-        // path : String,
-        type : Schema.Types.Mixed,
-        // size : Number,
-        // name : String
-        // type : {
-        //     path : String,
-        //     size : String,
-        //     type : String,
-        //     size : Number
-        // }
-    }]
+    files : [{ type : Schema.Types.Mixed }],
+    referrals : [{ type : Schema.Types.Mixed }]
 })
 
 UserSchema.methods.generateHash = function(pass) {

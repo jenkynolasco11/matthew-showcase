@@ -1,6 +1,6 @@
 const Router = require('express').Router
 const jydEmailDefaults = require('../mailConfig').keys.jydDefaults
-const sendEmail = require('../mailer').sendEmail
+const {sendEmail} = require('../mailer')
 const templates = require('../email-templates')
 const models = require('../models')
 const fs = require('fs')

@@ -3,9 +3,9 @@ function buildTemplate(year, make, model, price, trim, options, img) {
         var key = opt.match(/\{.*\}/)[0]
 
         return (`
-            <div className="option-text">
-                <span className="field-name">${ key.replace(/[\{\}]/g,'').replace(/_/g,' ') }: </span>
-                <span className="field-text">${ opt.match(/\}(.*)/)[0].slice(1) }</span>
+            <div class="option-text">
+                <span class="field-name">${ key.replace(/[\{\}]/g,'').replace(/_/g,' ') }: </span>
+                <span class="field-text">${ opt.match(/\}(.*)/)[0].slice(1) }</span>
             </div>
             <br/>
         `)

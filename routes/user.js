@@ -1,5 +1,7 @@
 const passport = require('passport')
-
+const { sendEmail } = require('../mailer')
+const { contactUs : contactUsTemplate } = require('../email-templates')
+const { jydDefaults } = require('../mailConfig').keys
 const Router = require('express').Router
 const multer = require('multer')
 // const path = require('path')
@@ -40,6 +42,47 @@ function checkIfAdmin(req, res, next) {
   else if(req.user.type !== 'admin' ) return res.send({ ok : false, message : 'Please, contact an Administrator for JYD Auto Leasing' })
 
   return next()
+}
+
+async function createUserDetails(user) {
+  try {
+    const details = new UserDetails({
+      referrals : [],
+      files : [],
+      user,
+      social : {
+        twitter : '',
+        facebook : '',
+        instagram : '',
+      },
+      address : {
+        street : '',
+        city : '',
+        state : '',
+        zip : '',
+      }
+    })
+
+    await details.save()
+
+    return details
+  } catch (e) {
+    console.log(e)
+  }
+
+  throw new Error(`Error while creating UserDetails model for user => ${ user.username }`)
+}
+
+const capitalize = st => {
+  try {
+      return st.split(' ').map(n => n[ 0 ].toUpperCase() + n.slice(1)).join(' ')
+  } catch (e) {
+      console.log(e)
+  }
+
+  console.log(`THERE WAS AN ERROR WHILE TRYING TO CAPITALIZE: ${ st }`)
+
+  return ''
 }
 
 route.post('/social', checkIfAuthenticated, async (req, res) => {
@@ -222,7 +265,9 @@ async function uploadFiles(req, res, next) {
   })
 
   try {
-    const details = await UserDetails.findOne({ user })
+    let details = await UserDetails.findOne({ user })
+
+    if(!details) details = await createUserDetails(user)
 
     const oldFiles = [].concat(details.files ? details.files : [])
 
@@ -249,6 +294,63 @@ async function uploadFiles(req, res, next) {
 
 route.post('/files', checkIfAuthenticated, uploads.array('files[]'), uploadFiles)
 
+route.post('/referral-program', checkIfAuthenticated, async(req, res) => {
+  const { name, phone : phoneNumber, email } = req.body
+  const { _id : user } = req.user
+
+  try {
+    const newReferral = {
+      name : name.toLowerCase(),
+      phoneNumber : phoneNumber.toLowerCase(),
+      email : email.toLowerCase()
+    }
+
+    let details = await UserDetails.findOne({ user })
+
+    if(!details) details = await createUserDetails(user)
+
+    const oldReferrals = [].concat(details.referrals ? details.referrals : [])
+
+    const newReferrals = [].concat(oldReferrals, newReferral)
+
+    details.referrals = newReferrals
+
+    await details.save()
+
+    const emailBody = {
+      from : `${ req.user.name } <${ req.user.email }>`,
+      to : jydDefaults.to,
+      bcc : jydDefaults.bcc,
+      subject : `New Referral from ${ req.user.name }`,
+      // html : contactUsTemplate(
+      html : `
+          <div>
+            <h2>New Referral from ${ capitalize(req.user.name) }</h2>
+            <hr />
+          </div>
+          <div style="width:100%;">
+            <p style="width:100%;padding:10px 30px 4px;font-size:20px;">Referral's Information:</p>
+            <div style="width:100%;border:1px solid #eee;margin-bottom:10px;"></div>
+            <p style="width:100%;padding:0 30px 4px;"><strong>Name: </strong>${ name }</p>
+            <p style="width:100%;padding:0 30px 4px;"><strong>Phone Number: </strong>${ phoneNumber}</p>
+            <p style="width:100%;padding:0 30px 4px;"><strong>Email: </strong> ${ email }</p>
+          </div>
+        `
+    }
+
+    sendEmail(emailBody, (err, c) => {
+      if(err) return console.log(err)
+
+      console.log(`AN EMAIL WAS SENT FROM: ${ req.user.email }`)
+
+      return res.send({ ok : true })
+    })
+
+  } catch (e) {
+    console.log(e)
+    return res.send({ ok : false })
+  }
+})
 user.use('/user', route)
 
 module.exports = user

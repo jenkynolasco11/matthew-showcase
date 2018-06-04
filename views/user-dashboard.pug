@@ -34,9 +34,41 @@ block main-body
                         a(href="#") Docs
                     li(data-for="user-settings")
                         a(href="#") Personal
+                    li(data-for="user-refer-a-friend")
+                        a(href="#") Referral Program
+                    li()
+                        a(href="/credit-app") Credit App
                     //- li(data-for="user-settings")
                     //-     a(href="#") Settings
             .col-md-9.col-xs-12.dashboard-section
+                .selected-item-content#user-refer-a-friend
+                    .container.row
+                        .title.col-xs-12
+                            h4 REFERRAL PROGRAM
+                        .content.col-xs-12
+                            p #{ 'OUR REFERRAL PROGRAM GIVES YOU $100.00 FOR EVERY FAMILY MEMBER OR FRIEND THAT LEASES OR FINANCES A NEW VEHICLE WITH US.'.toLowerCase() }
+                            p #{ 'THE MORE YOU REFER THE MORE YOU MAKE!'.toLowerCase() }
+                            p #{ 'EXCLUSIONS APPLY. SEE DEALER FOR DETAILS. MUST BE A NEW CUSTOMER.'.toLowerCase() }
+                        form#referral-form.col-xs-12.row
+                            .col-xs-12.referral-referree
+                                p Referree's Name: #{ user.name }
+                            .col-xs-12.referral-info
+                                label(for="referral-name") Name
+                                input(id="referral-name" name="name" required placeholder="Referral Name")
+                            .col-xs-12.referral-info
+                                label(for="referral-phone") Phone Number
+                                input(id="referral-phone" name="phone" required placeholder="Referral Phone Number")
+                            .col-xs-12.referral-info
+                                label(for="referral-email") Email
+                                input(id="referral-email" name="email" required placeholder="Referral Email")
+                            //- .col-xs-12
+                            //-     label(for="referral-name")
+                                input(id="referral-name" name="referral-" placeholder="Referral Friend")
+                            .col-xs-12.referral-info
+                                input(type="submit" value="Submit Referral")
+                            .col-xs-12.referral-info
+                                p Thanks for the submission!
+                                //- p Something occurred while submitting the information
                 .selected-item-content#user-docs
                     form#file-uploader.container.row
                         input(type="file" name="files[]" data-multiple-caption="{count} files selected" multiple accept="image/*" hide)
@@ -85,48 +117,48 @@ block main-body
                         //-         .builds-child-item.add-info Additional Options: TIRES: 205/45R17 FR &amp; 235/40R18 RR 3-SEASON | WHEELS: 17" X 7.0" FR &amp; 18" X 8.0" RR SPIDER ALLOY | CARBON FIBER INTERIOR TRIM GROUP Carbon Fiber Cluster Bezel | Carbon Fiber I/P Bezel, Carbon Fiber Air Vents | Carbon Fiber Shift Bezel | BLACK, BLACK LEATHER TRIMMED BUCKET SEATS
                 .selected-item-content#user-interests
                 .selected-item-content#user-settings
-                  .social-cont
-                    form#settings-form
-                      div#message-social
-                        p#message-social-text
-                      div.form-group
-                        .social-fi
-                          label(for='facebook') Facebook
-                          input(type='text' placeholder='Facebook' name="facebook" value= currentDetails ? currentDetails.social.facebook : '')
-                        .social-fi
-                          label(for='instagram') Instagram
-                          input(type='text' placeholder='Instagram' name="instagram" value= currentDetails ? currentDetails.social.instagram : '')
-                        .social-fi
-                          label(for='twitter') Twitter
-                          input(type='text' placeholder='Twitter' name="twitter" value=currentDetails ? currentDetails.social.twitter : '')
-                      div.form-group
-                        .social-fi
-                          label(for='name') Name
-                          input(type='text' name="name" placeholder='Name' required value=user.name)
-                        .social-fi
-                          label(for='phone') Phone Number
-                          input(type='text' name="phoneNumber" placeholder='Phone Number' required value=user.phoneNumber)
-                        .social-fi
-                          label(for='address') Address
-                          input(type='text' name="street" placeholder='Address' value=currentDetails ? currentDetails.address.street : '')
-                        .social-fi
-                          label(for='city') City
-                          input(type='text' name="city" placeholder='City' value=currentDetails ? currentDetails.address.city : '')
-                        .social-fi
-                          label(for='state') State
-                          input(type='text' name="state" placeholder='State' value=currentDetails ? currentDetails.address.state : '')
-                        .social-fi
-                          label(for='zip') ZIP Code
-                          input(type='text' name="zip" placeholder='ZIP Code' value=currentDetails ? currentDetails.address.zip : '')
-                        .social-fi
-                          button(id='social-button' type='submit') Save
+                    .social-cont
+                        form#settings-form
+                            div#message-social
+                                p#message-social-text
+                            div.form-group
+                                .social-fi
+                                    label(for='facebook') Facebook
+                                    input(type='text' placeholder='Facebook' name="facebook" value= currentDetails ? currentDetails.social.facebook : '')
+                                .social-fi
+                                    label(for='instagram') Instagram
+                                    input(type='text' placeholder='Instagram' name="instagram" value= currentDetails ? currentDetails.social.instagram : '')
+                                .social-fi
+                                    label(for='twitter') Twitter
+                                    input(type='text' placeholder='Twitter' name="twitter" value=currentDetails ? currentDetails.social.twitter : '')
+                            div.form-group
+                                .social-fi
+                                    label(for='name') Name
+                                    input(type='text' name="name" placeholder='Name' required value=user.name)
+                                .social-fi
+                                    label(for='phone') Phone Number
+                                    input(type='text' name="phoneNumber" placeholder='Phone Number' required value=user.phoneNumber)
+                                .social-fi
+                                    label(for='address') Address
+                                    input(type='text' name="street" placeholder='Address' value=currentDetails ? currentDetails.address.street : '')
+                                .social-fi
+                                    label(for='city') City
+                                    input(type='text' name="city" placeholder='City' value=currentDetails ? currentDetails.address.city : '')
+                                .social-fi
+                                    label(for='state') State
+                                    input(type='text' name="state" placeholder='State' value=currentDetails ? currentDetails.address.state : '')
+                                .social-fi
+                                    label(for='zip') ZIP Code
+                                    input(type='text' name="zip" placeholder='ZIP Code' value=currentDetails ? currentDetails.address.zip : '')
+                                .social-fi
+                                    button(id='social-button' type='submit') Save
                 .selected-item-content#user-compare(class=comparing ? '' : 'selected')
                     form.row
                         .compare-boxes.row.col-xs-12
                             .comparing-box-a.col-md-6.col-sm-12(data-car='car1')
                                 .text-header Main Selection
                                 .image-content
-                                    if carOpts.carPhoto 
+                                    if carOpts.carPhoto
                                         img(src=""+carOpts.carPhoto alt="placeholder")
                                     else
                                         img(src="/assets/images/no-car-selected.png" alt="placeholder")

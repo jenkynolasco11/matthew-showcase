@@ -2,10 +2,31 @@ var selectors = $('.user-nav li')
 var sections = $('.selected-item-content')
 var authPanel = $('.auth-overlay')
 
+var referralForm = $('#referral-form')
 var settingsForm = $('#settings-form')
 var socialButton = $('#social-button')
 var socialMessage = $('#message-social')
 var socialMessageText = $('#message-social-text')
+
+function onSubmitReferral(e) {
+  e.preventDefault()
+
+  var self = this
+  var data = $(this).serializeArray()
+
+  $.post('/user/referral-program', data, function (res) {
+    if(res.ok) {
+      $(self).find('.referral-info:last-child').css('opacity', '1')
+      $(self)[0].reset()
+
+      setTimeout(function() {
+        $(self).find('.referral-info:last-child').css('opacity', '0')
+      }, 5000)
+    }
+
+    else console.log('not success...')
+  })
+}
 
 function removeClassTo(cls, items) {
   $(items).each(function () {
@@ -131,6 +152,7 @@ selectors.each(function () {
 
 $(document).ready(function () {
   $(settingsForm).submit(onSubmitSettings)
+  $(referralForm).submit(onSubmitReferral)
 
   $('.completion-message a').on('click', function(e) {
     e.preventDefault()
